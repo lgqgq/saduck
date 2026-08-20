@@ -79,6 +79,17 @@
       ]
     },
     {
+      "id": "zhenti",
+      "title": "历年真题",
+      "pages": [
+        { "file": "index", "title": "真题总览" },
+        { "file": "guokao", "title": "国考真题与解析" },
+        { "file": "shengkao", "title": "省考真题与解析" },
+        { "file": "shiye", "title": "事业编真题与解析" },
+        { "file": "fangfa", "title": "真题使用方法" }
+      ]
+    },
+    {
       "id": "shizheng",
       "title": "时政常识",
       "pages": [

@@ -4,7 +4,11 @@
       "WebSearch",
       "Bash(npm --version)",
       "Bash(node *)",
-      "Bash(grep -vE '^\\\\s*$')"
+      "Bash(grep -vE '^\\\\s*$')",
+      "Bash(curl *)",
+      "WebFetch(domain:www.jrzp.com)",
+      "WebFetch(domain:www.esgcw.com.cn)",
+      "WebFetch(domain:ks.kkgwy.com)"
     ]
   }
 }
