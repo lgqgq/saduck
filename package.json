@@ -1,0 +1,10 @@
+{
+  "name": "saduck-kaogong",
+  "version": "1.0.0",
+  "description": "SaDuck 考公知识库 —— 面向陕西/西安考区的国考、省考、事业编、申论、面试静态网站",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node build.mjs && node -e \"const s=require('child_process');s.exec('start site/index.html')\""
+  }
+}

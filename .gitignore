@@ -1,0 +1,3 @@
+# 构建产物（GitHub Actions 会自动重建，无需提交）
+site/
+node_modules/

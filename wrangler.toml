@@ -1,0 +1,7 @@
+# Cloudflare Pages 配置
+# 用法：在仓库根目录运行
+#   npx wrangler login
+#   npx wrangler pages deploy site --project-name saduck-kaogong
+name = "saduck-kaogong"
+compatibility_date = "2026-08-20"
+pages_build_output_dir = "site"

@@ -1,0 +1,82 @@
+{
+  "siteTitle": "SaDuck · 考公知识库",
+  "siteSubtitle": "国考 · 省考 · 事业编 · 申论　|　参考考区：陕西 / 西安",
+  "sections": [
+    {
+      "id": "home",
+      "title": "首页",
+      "pages": [
+        { "file": "index", "title": "首页总览" }
+      ]
+    },
+    {
+      "id": "guokao",
+      "title": "国考",
+      "pages": [
+        { "file": "gaishu", "title": "制度概览" },
+        { "file": "jiedian", "title": "流程与时间节点" },
+        { "file": "tiaojian", "title": "报考条件" },
+        { "file": "xingce", "title": "行测五大模块" },
+        { "file": "shenlun", "title": "申论科目" },
+        { "file": "zhuanyeke", "title": "专业科目" },
+        { "file": "shaanxi", "title": "陕西考情" },
+        { "file": "beikao", "title": "备考计划" }
+      ]
+    },
+    {
+      "id": "shengkao",
+      "title": "省考",
+      "pages": [
+        { "file": "gaishu", "title": "陕西省考概览" },
+        { "file": "jiedian", "title": "流程与时间节点" },
+        { "file": "tiaojian", "title": "报考条件" },
+        { "file": "xingce", "title": "行测（陕西卷）" },
+        { "file": "shenlun", "title": "申论（陕西卷）" },
+        { "file": "gongan", "title": "公安专业科目" },
+        { "file": "shaanxi", "title": "考情与职位" },
+        { "file": "beikao", "title": "备考计划" }
+      ]
+    },
+    {
+      "id": "shiye",
+      "title": "事业编",
+      "pages": [
+        { "file": "gaishu", "title": "事业单位概览" },
+        { "file": "jiedian", "title": "流程与时间节点" },
+        { "file": "tiaojian", "title": "报考条件" },
+        { "file": "zhice", "title": "职测（职业能力倾向测验）" },
+        { "file": "zonghe", "title": "综应（综合应用能力）" },
+        { "file": "gongji", "title": "公共基础知识" },
+        { "file": "fenlei", "title": "岗位类别 A–E" },
+        { "file": "shaanxi", "title": "陕西考情" },
+        { "file": "beikao", "title": "备考计划" }
+      ]
+    },
+    {
+      "id": "shenlun",
+      "title": "申论专题",
+      "pages": [
+        { "file": "index", "title": "申论总览" },
+        { "file": "tixing", "title": "五大题型总览" },
+        { "file": "guinakuo", "title": "归纳概括" },
+        { "file": "zonghefenxi", "title": "综合分析" },
+        { "file": "duice", "title": "提出对策" },
+        { "file": "guanche", "title": "贯彻执行" },
+        { "file": "dazuowen", "title": "文章写作" },
+        { "file": "sucai", "title": "素材积累" },
+        { "file": "shizheng", "title": "时政热点（陕西）" }
+      ]
+    },
+    {
+      "id": "mianshi",
+      "title": "面试专题",
+      "pages": [
+        { "file": "index", "title": "面试总览" },
+        { "file": "jiegouhua", "title": "结构化面试详解" },
+        { "file": "tixing", "title": "五大题型" },
+        { "file": "zongfen", "title": "成绩计算与翻盘" },
+        { "file": "zhuzhuang", "title": "仪表举止与表达" }
+      ]
+    }
+  ]
+}
