@@ -3,7 +3,8 @@
     "allow": [
       "WebSearch",
       "Bash(npm --version)",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(grep -vE '^\\\\s*$')"
     ]
   }
 }

@@ -77,6 +77,57 @@
         { "file": "zongfen", "title": "成绩计算与翻盘" },
         { "file": "zhuzhuang", "title": "仪表举止与表达" }
       ]
+    },
+    {
+      "id": "shizheng",
+      "title": "时政常识",
+      "pages": [
+        { "file": "index", "title": "时政与常识总览" },
+        { "file": "lianghui", "title": "2026两会与政府工作报告" },
+        { "file": "ershi", "title": "二十大与三中全会精神" },
+        { "file": "falv", "title": "常识·法律高频考点" },
+        { "file": "keji", "title": "常识·科技人文考点" },
+        { "file": "shijianxian", "title": "备考时政时间线" }
+      ]
+    },
+    {
+      "id": "zhiwei",
+      "title": "陕西职位",
+      "pages": [
+        { "file": "index", "title": "职位与考情总览" },
+        { "file": "guokao2026", "title": "国考陕西职位分析" },
+        { "file": "shengkao2026", "title": "省考陕西职位分析" },
+        { "file": "shiye2026", "title": "事业编联考职位分析" },
+        { "file": "duibi", "title": "西安 vs 各地市" },
+        { "file": "xuangang", "title": "选岗策略" }
+      ]
+    },
+    {
+      "id": "mianshizhenti",
+      "title": "面试真题",
+      "pages": [
+        { "file": "index", "title": "面试真题总览" },
+        { "file": "pingfen", "title": "考官评分表" },
+        { "file": "guokao", "title": "国考面试真题" },
+        { "file": "shengkao", "title": "省考面试真题" },
+        { "file": "shiye", "title": "事业编面试真题" },
+        { "file": "dagan", "title": "高分答题框架" }
+      ]
+    },
+    {
+      "id": "gongji",
+      "title": "公基专题",
+      "pages": [
+        { "file": "index", "title": "公基总览" },
+        { "file": "xianfa", "title": "宪法高频考点" },
+        { "file": "minfa", "title": "民法典高频考点" },
+        { "file": "xingfa", "title": "刑法高频考点" },
+        { "file": "xingzhengfa", "title": "行政法高频考点" },
+        { "file": "zhengjing", "title": "政治与经济常识" },
+        { "file": "gongwen", "title": "公文写作要点" },
+        { "file": "keji", "title": "科技人文常识" },
+        { "file": "dangshi", "title": "党史与时政常识" }
+      ]
     }
   ]
 }
