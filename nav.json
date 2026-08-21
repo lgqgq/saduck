@@ -139,6 +139,27 @@
         { "file": "keji", "title": "科技人文常识" },
         { "file": "dangshi", "title": "党史与时政常识" }
       ]
+    },
+    {
+      "id": "shuati",
+      "title": "事业单位刷题",
+      "pages": [
+        { "file": "index", "title": "刷题库总览" },
+        { "file": "yanyu", "title": "言语理解" },
+        { "file": "panduan", "title": "判断推理" },
+        { "file": "shuliang", "title": "数量关系" },
+        { "file": "ziliao", "title": "资料分析" },
+        { "file": "zongying", "title": "综应 A 类" }
+      ]
+    },
+    {
+      "id": "guokaoshuati",
+      "title": "国考省考刷题",
+      "pages": [
+        { "file": "index", "title": "必刷题库总览" },
+        { "file": "xingce", "title": "行测5000题" },
+        { "file": "shenlun", "title": "申论100题" }
+      ]
     }
   ]
 }
