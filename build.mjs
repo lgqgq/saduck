@@ -402,27 +402,6 @@ function writeSite() {
   // 拷贝 assets
   fs.cpSync(path.join(__dirname, 'assets'), path.join(SITE, 'assets'), { recursive: true });
 
-  // 拷贝题库 PDF 目录（docs/* → site/*）
-  // 注意：此处不能用 fs.cpSync 递归（本环境会被静默终止），改为手动递归拷贝
-  const copyDirRecursive = (src, dst) => {
-    fs.mkdirSync(dst, { recursive: true });
-    let count = 0;
-    for (const e of fs.readdirSync(src, { withFileTypes: true })) {
-      const s = path.join(src, e.name);
-      const d = path.join(dst, e.name);
-      if (e.isDirectory()) count += copyDirRecursive(s, d);
-      else if (/\.pdf$/i.test(e.name)) { fs.copyFileSync(s, d); count++; }
-    }
-    return count;
-  };
-  for (const dir of ['刷题资料', '国考省考题库']) {
-    const pdfSrc = path.join(__dirname, 'docs', dir);
-    if (fs.existsSync(pdfSrc)) {
-      const n = copyDirRecursive(pdfSrc, path.join(SITE, dir));
-      console.log(`  ✓ ${dir} PDF（${n} 份）`);
-    }
-  }
-
   // 生成搜索索引
   const searchData = computeSearchData();
   fs.writeFileSync(
