@@ -98,6 +98,7 @@ footer{text-align:center;font-size:12px;color:#9ca3af;margin-top:24px}
     <select id="f-cat"><option value="">全部类别</option></select>
     <input id="f-min" type="number" placeholder="标准化分下限" style="width:130px">
     <input id="f-max" type="number" placeholder="标准化分上限" style="width:130px">
+    <select id="f-limit"><option value="0">显示全部</option><option value="500">显示 500 条</option><option value="300">显示 300 条</option><option value="200">显示 200 条</option><option value="100">显示 100 条</option></select>
     <span class="cnt" id="cnt"></span>
   </div>
   <div class="tbl-scroll"><table class="data">
@@ -133,11 +134,11 @@ function render(){
   const rs=ROWS.filter(r=>(!e||r['考试']===e)&&(!y||String(r['年份'])===y)&&(!c||r['地市']===c)
     &&(!g||r['类别']===g)&&(isNaN(mn)||r['标准化分数']>=mn)&&(isNaN(mx)||r['标准化分数']<=mx));
   el('cnt').textContent='共 '+rs.length+' 条';
-  const step=150,show=rs.slice(0,step),tb=el('tb');
+  const v=el('f-limit').value,step=+v||Infinity,show=step===Infinity?rs:rs.slice(0,step),tb=el('tb');
   tb.innerHTML=show.map(r=>`<tr><td><span class="badge ${BADGE[r['考试']]||''}">${r['考试']}</span></td><td>${r['年份']}</td><td>${r['地市']}</td><td>${r['区县']||''}</td><td title="${(r['单位名称']||'').replace(/"/g,'&quot;')}">${r['单位名称']||''}</td><td title="${(r['岗位简称']||'').replace(/"/g,'&quot;')}">${r['岗位简称']||''}</td><td style="font-family:ui-monospace,Consolas,monospace">${r['岗位代码']||''}</td><td>${r['类别']}</td><td style="text-align:right;font-weight:600">${r['进面最低分'].toFixed(1)}</td><td style="text-align:right">${r['标准化分数'].toFixed(1)}</td></tr>`).join('');
-  if(rs.length>step){const tr=document.createElement('tr');tr.innerHTML=`<td colspan="10" style="text-align:center;color:#9ca3af;padding:13px">仅显示前 ${step} 条，共 ${rs.length} 条 —— 请继续筛选</td>`;tb.appendChild(tr)}
+  if(rs.length>step){const tr=document.createElement('tr');tr.innerHTML=`<td colspan="10" style="text-align:center;color:#9ca3af;padding:13px">已显示前 ${step} 条，共 ${rs.length} 条 —— 可在上方调整显示条数</td>`;tb.appendChild(tr)}
 }
-['f-exam','f-year','f-city','f-cat','f-min','f-max'].forEach(id=>el(id).addEventListener('input',render));
+['f-exam','f-year','f-city','f-cat','f-min','f-max','f-limit'].forEach(id=>el(id).addEventListener('input',render));
 render();
 </script>
 </body></html>
