@@ -90,11 +90,12 @@ footer{text-align:center;font-size:12px;color:#9ca3af;margin-top:24px}
 
 <section>
   <h2>全量数据查询</h2>
-  <div class="sub">14,756 条岗位记录，可组合筛选：考试类型 × 年份 × 地市 × 岗位类别 × 分数区间</div>
+  <div class="sub">14,756 条岗位记录，可组合筛选：考试类型 × 年份 × 地市 × 区县 × 岗位类别 × 分数区间</div>
   <div class="filters">
     <select id="f-exam"><option value="">全部考试</option></select>
     <select id="f-year"><option value="">全部年份</option></select>
     <select id="f-city"><option value="">全部地市</option></select>
+    <select id="f-dist"><option value="">全部区县</option></select>
     <select id="f-cat"><option value="">全部类别</option></select>
     <input id="f-min" type="number" placeholder="标准化分下限" style="width:130px">
     <input id="f-max" type="number" placeholder="标准化分上限" style="width:130px">
@@ -124,6 +125,7 @@ const ROWS = [{"考试": "西安事业编", "年份": 2022, "批次": "2022下�
 const BADGE = {'西安事业编':'b0','渭南事业编':'b1','陕西省考':'b2','国家公务员考试':'b3'};
 const el=id=>document.getElementById(id);
 const fill=(id,arr)=>{const s=el(id);arr.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;s.appendChild(o)})};
+const rebuildDist=rs=>{const d=el('f-dist'),cur=d.value,set={};rs.forEach(r=>{if(r['区县'])set[r['区县']]=1});const keys=Object.keys(set).sort();d.innerHTML='<option value="">全部区县</option>'+keys.map(k=>'<option value="'+k.replace(/"/g,'&quot;')+'"'+(k===cur?' selected':'')+'>'+k+'</option>').join('');};
 fill('f-exam',['西安事业编','渭南事业编','陕西省考','国家公务员考试']);
 fill('f-year',['2022','2023','2024','2025','2026']);
 fill('f-city',['西安市','西安市(驻陕)','渭南市']);
@@ -131,14 +133,16 @@ fill('f-cat',['综合管理类(A类)','教师类(D类)','医疗卫生类(E类)',
 function render(){
   const e=el('f-exam').value,y=el('f-year').value,c=el('f-city').value,g=el('f-cat').value;
   const mn=parseFloat(el('f-min').value),mx=parseFloat(el('f-max').value);
-  const rs=ROWS.filter(r=>(!e||r['考试']===e)&&(!y||String(r['年份'])===y)&&(!c||r['地市']===c)
+  let rs=ROWS.filter(r=>(!e||r['考试']===e)&&(!y||String(r['年份'])===y)&&(!c||r['地市']===c)
     &&(!g||r['类别']===g)&&(isNaN(mn)||r['标准化分数']>=mn)&&(isNaN(mx)||r['标准化分数']<=mx));
+  rebuildDist(rs);
+  const d=el('f-dist').value;if(d)rs=rs.filter(r=>r['区县']===d);
   el('cnt').textContent='共 '+rs.length+' 条';
   const v=el('f-limit').value,step=+v||Infinity,show=step===Infinity?rs:rs.slice(0,step),tb=el('tb');
   tb.innerHTML=show.map(r=>`<tr><td><span class="badge ${BADGE[r['考试']]||''}">${r['考试']}</span></td><td>${r['年份']}</td><td>${r['地市']}</td><td>${r['区县']||''}</td><td title="${(r['单位名称']||'').replace(/"/g,'&quot;')}">${r['单位名称']||''}</td><td title="${(r['岗位简称']||'').replace(/"/g,'&quot;')}">${r['岗位简称']||''}</td><td style="font-family:ui-monospace,Consolas,monospace">${r['岗位代码']||''}</td><td>${r['类别']}</td><td style="text-align:right;font-weight:600">${r['进面最低分'].toFixed(1)}</td><td style="text-align:right">${r['标准化分数'].toFixed(1)}</td></tr>`).join('');
   if(rs.length>step){const tr=document.createElement('tr');tr.innerHTML=`<td colspan="10" style="text-align:center;color:#9ca3af;padding:13px">已显示前 ${step} 条，共 ${rs.length} 条 —— 可在上方调整显示条数</td>`;tb.appendChild(tr)}
 }
-['f-exam','f-year','f-city','f-cat','f-min','f-max','f-limit'].forEach(id=>el(id).addEventListener('input',render));
+['f-exam','f-year','f-city','f-dist','f-cat','f-min','f-max','f-limit'].forEach(id=>el(id).addEventListener('input',render));
 render();
 </script>
 </body></html>
