@@ -285,21 +285,41 @@ function computeSearchData() {
       const dir = sec.id === 'home' ? '' : sec.id + '/';
       const filePath = path.join(CONTENT, dir, page.file + '.md');
       let md;
-      try { md = fs.readFileSync(filePath, 'utf-8'); } catch { continue; }
-      const { meta, body } = parseFrontmatter(md);
-      const plain = body
-        .replace(/^[#>\-|`!\*\[\]\(\)]/gm, '')
-        .replace(/[#*`\[\]()|<>]/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .slice(0, 120);
-      entries.push({
-        path: (dir ? sec.id + '/' : '') + page.file + '.html',
-        title: page.title,
-        section: sec.title,
-        keywords: meta.keywords || '',
-        excerpt: plain,
-      });
+      try { md = fs.readFileSync(filePath, 'utf-8'); } catch { md = null; }
+      if (md) {
+        const { meta, body } = parseFrontmatter(md);
+        const plain = body
+          .replace(/^[#>\-|`!\*\[\]\(\)]/gm, '')
+          .replace(/[#*`\[\]()|<>]/g, '')
+          .replace(/\s+/g, ' ')
+          .trim()
+          .slice(0, 120);
+        entries.push({
+          path: (dir ? sec.id + '/' : '') + page.file + '.html',
+          title: page.title,
+          section: sec.title,
+          keywords: meta.keywords || '',
+          excerpt: plain,
+        });
+      } else {
+        // 原始 HTML 页面（无 .md）：取 <title> 与 <header> 文本作为搜索条目
+        const htmlPath = path.join(CONTENT, dir, page.file + '.html');
+        if (fs.existsSync(htmlPath)) {
+          const html = fs.readFileSync(htmlPath, 'utf-8');
+          const tm = html.match(/<title>([^<]*)<\/title>/);
+          const hm = html.match(/<header>([\s\S]*?)<\/header>/);
+          const excerpt = hm
+            ? hm[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)
+            : '渭南市事业单位进面分数线数据报告';
+          entries.push({
+            path: (dir ? sec.id + '/' : '') + page.file + '.html',
+            title: tm ? tm[1] : page.title,
+            section: sec.title,
+            keywords: '渭南,事业单位,进面分数线,数据报告,岗位',
+            excerpt,
+          });
+        }
+      }
     }
   }
   return entries;
@@ -362,6 +382,19 @@ function buildPage(section, page, depth) {
   return html;
 }
 
+/**
+ * 给原始 HTML 页面注入「返回站点」导航条（保持独立页与主站连通）
+ */
+function injectReturnBar(html, homeHref) {
+  const bar =
+    '<div style="max-width:1080px;margin:18px auto 0;padding:0 20px;font-size:13px;line-height:1.7;">' +
+    `<a href="${esc(homeHref)}" style="color:#2563eb;text-decoration:none;font-weight:600;">← 返回 SaDuck 考公知识库</a>` +
+    '<span style="color:#9ca3af;margin-left:12px;">渭南市事业单位公开招聘 · 进面分数线数据报告</span>' +
+    '</div>';
+  // 原报告结构为 <body><div class="wrap">，在该边界插入导航条
+  return html.replace('<body><div class="wrap">', '<body>' + bar + '\n<div class="wrap">');
+}
+
 function writeSite() {
   if (fs.existsSync(SITE)) fs.rmSync(SITE, { recursive: true });
   fs.mkdirSync(SITE, { recursive: true });
@@ -404,10 +437,23 @@ function writeSite() {
     }
     for (const page of sec.pages) {
       const depth = depthOf((sec.id === 'home' ? '' : sec.id + '/') + page.file + '.html');
-      const html = buildPage(sec, page, depth);
+      const dir = sec.id === 'home' ? '' : sec.id + '/';
+      const mdPath = path.join(CONTENT, dir, page.file + '.md');
+      const htmlPath = path.join(CONTENT, dir, page.file + '.html');
       const outPath = path.join(SITE, sec.id === 'home' ? '' : sec.id, page.file + '.html');
-      fs.writeFileSync(outPath, html);
-      console.log('  ✓', path.relative(SITE, outPath));
+
+      if (fs.existsSync(mdPath)) {
+        const html = buildPage(sec, page, depth);
+        fs.writeFileSync(outPath, html);
+        console.log('  ✓', path.relative(SITE, outPath));
+      } else if (fs.existsSync(htmlPath)) {
+        // 原始 HTML 页面：原样拷贝，注入返回站点导航条
+        const raw = injectReturnBar(fs.readFileSync(htmlPath, 'utf-8'), relTo(depth, 'index.html'));
+        fs.writeFileSync(outPath, raw);
+        console.log('  ✓ (raw) ', path.relative(SITE, outPath));
+      } else {
+        console.warn('  ⚠ 页面缺少源文件（.md 与 .html 均不存在）:', page.file);
+      }
     }
   }
   console.log('\n构建完成，共', searchData.length, '个页面。打开 site/index.html 即可浏览。');
