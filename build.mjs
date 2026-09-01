@@ -310,7 +310,7 @@ function computeSearchData() {
           const hm = html.match(/<header>([\s\S]*?)<\/header>/);
           const excerpt = hm
             ? hm[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)
-            : '渭南市事业单位进面分数线数据报告';
+            : '西安渭南进面分数线总览（2022—2026）';
           entries.push({
             path: (dir ? sec.id + '/' : '') + page.file + '.html',
             title: tm ? tm[1] : page.title,
@@ -389,7 +389,7 @@ function injectReturnBar(html, homeHref) {
   const bar =
     '<div style="max-width:1080px;margin:18px auto 0;padding:0 20px;font-size:13px;line-height:1.7;">' +
     `<a href="${esc(homeHref)}" style="color:#2563eb;text-decoration:none;font-weight:600;">← 返回 SaDuck 考公知识库</a>` +
-    '<span style="color:#9ca3af;margin-left:12px;">渭南市事业单位公开招聘 · 进面分数线数据报告</span>' +
+    '<span style="color:#9ca3af;margin-left:12px;">西安 · 渭南 进面分数线总览（事业编 · 省考 · 国考）</span>' +
     '</div>';
   // 原报告结构为 <body><div class="wrap">，在该边界插入导航条
   return html.replace('<body><div class="wrap">', '<body>' + bar + '\n<div class="wrap">');
