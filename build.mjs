@@ -383,22 +383,65 @@ function buildPage(section, page, depth) {
 }
 
 /**
- * 给原始 HTML 页面注入「返回站点」导航条（保持独立页与主站连通）
+ * 独立 HTML 页的「站点外框」样式
  *
- * 插入位置为页面自身的 .wrap 容器内首行，这样导航条自动沿用该页的
- * 版心宽度（各独立页 max-width 从 800px 到 1080px 不等）。
+ * 注意：一律用 class 选择器（.sd-*），且顶栏用 <div> 而非 <header>——
+ * 各独立页自己的 CSS 里有裸 `header{background:linear-gradient(...);color:#fff}`
+ * 这类元素选择器，用 header 标签会被漏下来的样式污染。
+ * 版心宽度按各页 .wrap 的实际 max-width 传入，保证顶栏文字与正文左对齐。
  */
-function injectReturnBar(html, homeHref, subtitle) {
-  const bar =
-    '<div style="margin:0 0 14px;font-size:13px;line-height:1.7;">' +
-    `<a href="${esc(homeHref)}" style="color:#2563eb;text-decoration:none;font-weight:600;">← 返回 SaDuck 考公知识库</a>` +
-    (subtitle ? `<span style="color:#9ca3af;margin-left:12px;">${esc(subtitle)}</span>` : '') +
-    '</div>';
-  // 优先插入 .wrap 容器内；无该容器时退回插入 <body> 之后
+function rawChromeCss(wrapWidth) {
+  return [
+    '.sd-topbar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #e4e7f0;',
+    'font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;',
+    'color:#20242f}',
+    `.sd-topbar-inner{max-width:${wrapWidth}px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:10px;`,
+    'font-size:13px;line-height:1.6;text-align:left}',
+    '.sd-topbar a.sd-back{color:#3b5bfd;text-decoration:none;font-weight:600;white-space:nowrap}',
+    '.sd-topbar a.sd-back:hover{text-decoration:underline}',
+    '.sd-topbar .sd-sep{width:1px;height:13px;background:#e4e7f0;flex:0 0 auto}',
+    '.sd-topbar .sd-title{color:#6a7180;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
+    '.sd-top{position:fixed;right:18px;bottom:22px;z-index:61;width:42px;height:42px;border-radius:50%;',
+    'border:1px solid #d3d8e6;background:#fff;color:#3b5bfd;font-size:18px;line-height:1;padding:0;',
+    'box-shadow:0 4px 16px rgba(16,24,40,.14);cursor:pointer;display:none;align-items:center;justify-content:center}',
+    '.sd-top.show{display:flex}',
+    '@media(max-width:640px){.sd-topbar-inner{padding:10px 16px;font-size:12.5px;gap:8px}',
+    '.sd-top{right:12px;bottom:14px;width:40px;height:40px}}',
+  ].join('');
+}
+
+/**
+ * 给原始 HTML 页面注入站点外框：
+ *   1. 吸顶栏（返回知识库 + 页面标题）—— 滚到哪都在，解决长页面返回困难
+ *   2. 悬浮「回顶部」按钮 —— 下滑 320px 后浮现
+ *   3. 解除源文件里写死的 maximum-scale=1 —— 恢复手机端双指缩放
+ */
+function injectRawChrome(html, homeHref, subtitle) {
+  // 恢复双指缩放（部分源文件为 width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1）
+  html = html.replace(
+    /(<meta name="viewport"[^>]*content="[^"]*?),?\s*minimum-scale=1,\s*maximum-scale=1/,
+    '$1'
+  );
+
+  const wrapWidth = (html.match(/\.wrap\{[^}]*max-width:\s*(\d+)px/) || [, '880'])[1];
+
+  const chrome =
+    '<style>' + rawChromeCss(wrapWidth) + '</style>' +
+    '<div class="sd-topbar"><div class="sd-topbar-inner">' +
+    `<a class="sd-back" href="${esc(homeHref)}">← 返回知识库</a>` +
+    '<span class="sd-sep"></span>' +
+    `<span class="sd-title">${esc(subtitle || '')}</span>` +
+    '</div></div>' +
+    '<button class="sd-top" id="sdTop" type="button" aria-label="回到顶部">↑</button>' +
+    '<script>(function(){var b=document.getElementById("sdTop");if(!b)return;' +
+    'function u(){b.classList.toggle("show",window.scrollY>320)}' +
+    'window.addEventListener("scroll",u,{passive:true});u();' +
+    'b.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})})})()<\/script>';
+
   if (/<div class="wrap"[^>]*>/.test(html)) {
-    return html.replace(/(<div class="wrap"[^>]*>)/, '$1' + bar);
+    return html.replace(/(<div class="wrap"[^>]*>)/, chrome + '$1');
   }
-  return html.replace(/(<body[^>]*>)/, '$1' + bar);
+  return html.replace(/(<body[^>]*>)/, '$1' + chrome);
 }
 
 function writeSite() {
@@ -432,8 +475,8 @@ function writeSite() {
         fs.writeFileSync(outPath, html);
         console.log('  ✓', path.relative(SITE, outPath));
       } else if (fs.existsSync(htmlPath)) {
-        // 原始 HTML 页面：原样拷贝，注入返回站点导航条
-        const raw = injectReturnBar(fs.readFileSync(htmlPath, 'utf-8'), relTo(depth, 'index.html'), page.subtitle);
+        // 原始 HTML 页面：原样拷贝，注入吸顶栏 + 回顶部按钮 + 缩放修复
+        const raw = injectRawChrome(fs.readFileSync(htmlPath, 'utf-8'), relTo(depth, 'index.html'), page.subtitle);
         fs.writeFileSync(outPath, raw);
         console.log('  ✓ (raw) ', path.relative(SITE, outPath));
       } else {
