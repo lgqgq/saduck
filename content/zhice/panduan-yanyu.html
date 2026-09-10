@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="q2c7aXChY02x7iMZBAEWEB">
+<head data-page-node-id="53frXDQVp6h9JO7bgR3MVY">
+<meta charset="UTF-8" data-page-node-id="hebqBq6VCKf7P2sAgY9ZbD">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="4Z2oRmCaKXQ3ZbrN01ZSOp">
+<title>职测精细答题框架手册 · 判断推理 · 言语理解</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:#f5f6f8;color:#1f2329;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+header{background:linear-gradient(135deg,#2b5cff,#5b8cff);color:#fff;border-radius:14px;padding:26px 24px;margin-bottom:22px;box-shadow:0 4px 18px rgba(43,92,255,.18)}
+header h1{font-size:23px;font-weight:700;margin-bottom:8px;letter-spacing:.5px}
+header p{font-size:13.5px;opacity:.92}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-meta span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12.5px}
+h2.mod{font-size:19px;font-weight:700;margin:32px 0 6px;padding-left:12px;border-left:5px solid #2b5cff;color:#1a1a1a}
+.mod-sub{font-size:13px;color:#6b7280;margin-bottom:16px;padding-left:14px}
+h3.grp{font-size:16px;font-weight:700;margin:22px 0 10px;color:#2b5cff;background:#eef3ff;display:inline-block;padding:4px 12px;border-radius:6px}
+.card{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h4{font-size:15.5px;font-weight:700;margin-bottom:12px;color:#111;display:flex;align-items:center;gap:8px}
+.card h4 .no{background:#2b5cff;color:#fff;font-size:12px;width:22px;height:22px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.blk{border-left:4px solid #ccc;border-radius:0 8px 8px 0;padding:9px 14px;margin-bottom:10px;font-size:14px;background:#fafbfc}
+.blk b.t{display:block;font-size:13px;margin-bottom:4px;letter-spacing:.3px}
+.b-id{border-color:#2b5cff;background:#f2f6ff}.b-id b.t{color:#2b5cff}
+.b-th{border-color:#f59e0b;background:#fffaf0}.b-th b.t{color:#b45309}
+.b-ru{border-color:#10b981;background:#f0fdf6}.b-ru b.t{color:#047857}
+.b-op{border-color:#8b5cf6;background:#f8f5ff}.b-op b.t{color:#6d28d9}
+.b-tr{border-color:#ef4444;background:#fef4f4}.b-tr b.t{color:#b91c1c}
+.b-de{border-color:#64748b;background:#f8fafc}.b-de b.t{color:#334155}
+.blk ul{margin:4px 0 2px 18px}
+.blk li{margin:2px 0}
+.blk ol{margin:4px 0 2px 18px}
+.blk ol li{margin:3px 0}
+code{background:#eef0f3;padding:1px 6px;border-radius:4px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;color:#c7254e}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+th,td{border:1px solid #e3e6ea;padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#f4f6f9;font-weight:600;color:#333}
+tr:nth-child(even) td{background:#fcfcfd}
+.q{background:#fffbea;border:1px dashed #f0c674;border-radius:8px;padding:10px 14px;font-size:14px;margin:6px 0}
+.q .ans{color:#b91c1c;font-weight:600}
+.tip{background:#eef3ff;border:1px solid #c7d7ff;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#1e40af;margin:10px 0}
+.chip{display:inline-block;background:#f1f5f9;border:1px solid #dbe1e8;color:#334155;border-radius:5px;padding:1px 8px;font-size:12.5px;margin:2px 3px 2px 0}
+footer{margin-top:40px;text-align:center;font-size:12.5px;color:#9aa1ab;line-height:1.9}
+@media(max-width:640px){.wrap{padding:16px 12px 60px}header h1{font-size:19px}.card{padding:14px 14px}}
+</style>
+</head>
+<body data-page-node-id="yzXUYmjFaMZNoV3lbpCOHW">
+<div class="wrap" data-page-node-id="cSt3SUWmEHXRWql2Gi5RVQ">
+
+<header data-page-node-id="vNBSOcHgUs1Zk4hyVJHJFV">
+  <h1 data-page-node-id="7FMYXOStxb8lPaTSkIwIDL">职测精细答题框架手册 · 判断推理 · 言语理解</h1>
+  <p data-page-node-id="3IO4vhLsVUAnMurfkwRfcN">事业单位联考 A 类《职业能力倾向测验》｜六段式解题框架：识别标志 → 思考路径 → 判定标准 → 选项处理 → 高频陷阱 → 示例演示</p>
+  <div class="hero-meta" data-page-node-id="EddS5Zz8jFkTEruAgTMbia">
+    <span data-page-node-id="YR2ZBjczWkU52cQE246gkz">判断推理 18 份框架</span>
+    <span data-page-node-id="9y5kVYdcHtlKzZh6o5WmIM">言语理解 13 份框架</span>
+    <span data-page-node-id="cZTu1QOXAtWU4z24r9w8Lz">含用时目标表</span>
+    <span data-page-node-id="BvRq2HSphJi0PdI6TyNCuN">含超时兜底规则</span>
+  </div>
+</header>
+
+<div class="tip" data-page-node-id="rfD2aKwELWLoVRCsNHdWqS">
+  <b data-page-node-id="P6q3BUCvsCQ0RPyf9ODeaq">怎么用这份手册：</b>不要通读。刷题时遇到某类题卡壳，直接翻到对应框架，按「识别标志 → 思考路径」一步步走一遍；做错的题在「高频陷阱」里找到对应条目，用红笔在错题本上标出来。考前 3 天只翻「判定标准」和「高频陷阱」两块。
+</div>
+
+<!-- ============ 判断推理 ============ -->
+<h2 class="mod" data-page-node-id="1sy5JB1ndRb2VlDAQg7nD2">模块一 · 判断推理</h2>
+<div class="mod-sub" data-page-node-id="MUM6AjiJmNRQrnEizritpx">目标用时 24—28 分钟 ｜ 目标正确率 80% ｜ 题量通常 30—35 题（图形 5—6、定义 8—10、类比 8—10、逻辑 8—10）</div>
+
+<h3 class="grp" data-page-node-id="8XLTlthNaCgBvSP5cgg74P">A. 图形推理（6 份框架）</h3>
+
+<div class="card" data-page-node-id="01H4148Bt0ldVeAbNUGOxp">
+<h4 data-page-node-id="AoFMAnpjyBchdnCyNXB5bM"><span class="no" data-page-node-id="BAZGJIjzGSqCaeHyL1fcDD">1</span>图形推理 · 总判定链（先背这一条）</h4>
+<div class="blk b-id" data-page-node-id="SWSV3UMCQuaGVTihdjbGTj"><b class="t" data-page-node-id="rHqNsAE4nlnFoy5NXGaAtz">识别标志</b>题干给出一组图形（顺推型 / 九宫格 / 分组分类 / 空间折叠）</div>
+<div class="blk b-th" data-page-node-id="ltk5VoK4lEJsixML2EKS4h"><b class="t" data-page-node-id="Bssn6vQL9RyrpMxd5WS3Qk">思考路径（严格按顺序，不可跳步）</b>
+<ol data-page-node-id="l2i2sfxMHhtb8PvQnhdDFT">
+<li data-page-node-id="9MTyU1FS6qKkKyyfCAoIev"><b data-page-node-id="VtOT44TEi0CIzyLbVZPi1F">看元素是否相同</b>：组成元素完全一样 → <b data-page-node-id="ruI1yutR0CJG0wkWicCWQo">位置类</b>（平移/旋转/翻转）</li>
+<li data-page-node-id="f2oPmD16HgUc5sHmvNYa06"><b data-page-node-id="6f4TV7MwmvMrY30VB7jG1g">看元素是否相似</b>：外形相似、局部有变化 → <b data-page-node-id="Ge0iBCgrlMRtz1cB8QjdG9">样式类</b>（加减同异/黑白叠加/遍历）</li>
+<li data-page-node-id="BcqFwBXOgyNZtPcLmlPIgY"><b data-page-node-id="yjRRACB9vtcM4Fb7prPhY3">看元素是否凌乱</b>：差异大 → <b data-page-node-id="L7LGKKlUGymzgcb8GlL0qR">数量类</b>（点线面素角笔）</li>
+<li data-page-node-id="GMWKOeYXhrQUC31pySm2Xr"><b data-page-node-id="vZsmcFU3b49Z1x3EAPMzl2">数量无规律</b> → <b data-page-node-id="tWxuZrtXhsuxq9spd38nZy">属性类</b>（对称/曲直/封闭开放）</li>
+<li data-page-node-id="GAFNhnGd6jUC3aUGN53DuJ">以上都无规律 → 考虑<b data-page-node-id="W4DYnsHuXYwXOMfStwKdb1">特殊</b>：一笔画、重心、相对位置、功能元素标记、图形间相对关系</li>
+</ol>
+</div>
+<div class="blk b-ru" data-page-node-id="b7Gm3GWTnxzjAqDvWIh1f1"><b class="t" data-page-node-id="TzI2pt1lUIWOycGebOgE1F">判定标准速记口诀</b><br data-page-node-id="w8XcIcAPOjy8mt6q3HFLyQ">
+<b data-page-node-id="N4YJYEaV4AT3egHc44FQqQ">相同看位置，相似看样式，凌乱看数量，数量不通看属性。</b><br data-page-node-id="EDsqxxVccaqHH0eldpomuS">
+顺推型：从左到右找递变；九宫格：先横行、后竖列、再米字/对角；分组分类：找"三三一致"的共同属性。</div>
+<div class="blk b-op" data-page-node-id="4BH4hRWa966O5ihAFtEOVN"><b class="t" data-page-node-id="XVNzAtGfn4g26ZmAHAt9as">选项处理</b>不要一个一个套，先用规律<b data-page-node-id="uC3zZswZZJdTqODpJwcSTC">画出"下一幅图应该长什么样"</b>的草图，再去选最像的。两套规律难分时，选<b data-page-node-id="7fEvRqKKkvmMsEDtoJBVHk">覆盖面更广（能解释更多已知图）</b>的那个。</div>
+<div class="blk b-tr" data-page-node-id="EZ9K6u9Knu9v2A1IrTXNuC"><b class="t" data-page-node-id="VhRpRHAGz0GQFiNC6MimZO">高频陷阱</b>
+<ul data-page-node-id="evi7ahj5ClC6pUzwIJMhXB">
+<li data-page-node-id="xga9WjVSUo6QXbTtVuv2lt">一上来就数数，忽略了明显的旋转/翻转——先扫一眼位置。</li>
+<li data-page-node-id="Zh45agXElVQAvFKzujlsOC">九宫格只横看不看竖列，漏掉"每行之和相等"型。</li>
+<li data-page-node-id="QT0uB5ZCKlrYj9Z2zwM3JO">把"对称轴的<b data-page-node-id="JFc7IuZx4Rswwfz24s8GBk">数量</b>"和"对称轴<b data-page-node-id="nObHEJ9ty781t9vLmaUyV6">方向</b>"混为一谈，实际常分开考。</li>
+<li data-page-node-id="odTDwVBkDKn55dxXsAZd11">分组分类题当成顺推题，找递推关系找半天。</li>
+</ul></div>
+</div>
+
+<div class="card" data-page-node-id="0PADMndbC7eq8W79qW80mh">
+<h4 data-page-node-id="1bB9LOU8RWH94PNGcs7MSi"><span class="no" data-page-node-id="Crir6NyWRhjD1m7XLnxij1">2</span>位置类（平移 / 旋转 / 翻转）</h4>
+<div class="blk b-id" data-page-node-id="e7WiI4emBMI5pXZu95qvbm"><b class="t" data-page-node-id="qEJhXlzQFW62csoFUcuRE3">识别标志</b>每幅图元素<b data-page-node-id="oJW6RBp8sFzE8yC0tQ8lF4">完全相同</b>，只是位置/朝向变了</div>
+<div class="blk b-th" data-page-node-id="X70lteWmSbKwP32iUKuD72"><b class="t" data-page-node-id="SpHotUOTvlPbSTJh2etQBk">思考路径</b>
+<ol data-page-node-id="jHRnAEGvyKoXXkkAhh9NdZ"><li data-page-node-id="0nisdDtnCzGSOSejZsKrxi">锁定一个<b data-page-node-id="CXtxoJLBw0pGxS2xL402dI">标记元素</b>（最显眼/最角落的黑块或小图形），盯住它的移动轨迹。</li>
+<li data-page-node-id="StDmiDmCwBn1KiX3J5kv6v">平移：步数是恒定（1、2、3…）还是递增（1、2、3、4）？方向是顺/逆时针还是左右上下？走到头是<b data-page-node-id="hakkMN7NFNi7Dt5OA2HRz4">循环</b>还是<b data-page-node-id="qRKxge1pNii36fUZIjAANV">反弹</b>？</li>
+<li data-page-node-id="JTrcWiiZ0ztAAXRXLAcdC2">旋转：顺时针 / 逆时针，角度是 45°、90° 还是 180°。</li>
+<li data-page-node-id="52zSk3p7c3GbbePO4BF3Hm">翻转：横轴翻转 / 纵轴翻转（<b data-page-node-id="ZqZcIcnQQ1y4nCwbK8moL6">翻转后的图和原图成镜像，不能用旋转得到</b>）。</li>
+<li data-page-node-id="XD7NpQgHbgAlHft8nGOr7g">多元素：分别验证每个元素，可能各走各的。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="cyn9C9NjBLVbd9HjmuV5qh"><b class="t" data-page-node-id="6Rmcj5GbA8JrNWbnLfh6wO">判定标准</b>
+<span class="chip" data-page-node-id="kLjEwGtqQXP4YlQ0ZVGS1v">平移：步数恒定/递增 + 方向固定</span>
+<span class="chip" data-page-node-id="O7bRBGzfDKbDrDVRdYCEef">旋转：角度恒定</span>
+<span class="chip" data-page-node-id="O4KPCt8KxmGsOKecEzbC3L">翻转：横/纵轴对称</span>
+<span class="chip" data-page-node-id="lBTwmNOM5BtOITPSQRpd2t">循环 vs 反弹看首尾</span>
+</div>
+<div class="blk b-tr" data-page-node-id="ENCsBpYUOBIvLH5DPD55Gk"><b class="t" data-page-node-id="ccmgA0HHfzdsdBcDLvmMrF">高频陷阱</b>混淆"整体旋转 180°"与"横向翻转+纵向翻转"——两者结果一样，但题目若只写旋转，中间步骤要一致；另外<b data-page-node-id="t6d0Js2Xq3Y8Pp4A9dEb7P">时针方向</b>可区分旋转和翻转：旋转不改变时针方向，翻转改变。</div>
+<div class="blk b-de" data-page-node-id="os7D736tIzEAcm0YRjKw3x"><b class="t" data-page-node-id="0lTDL1hTCU1nx1GsLedsOG">示例演示</b>
+黑块在九宫格外圈每次顺时针走 1 格，内部白块每次逆时针走 2 格 → 下一步分别推 1 格、2 格，画草图直接匹配。<span class="ans" data-page-node-id="7hciTiJHYnjZEDxP5ST9OY">答案 = 外圈黑块顺时针 1 格且内部白块逆时针 2 格的选项。</span></div>
+</div>
+
+<div class="card" data-page-node-id="orRwPsGbJpce0PMxaeDzv1">
+<h4 data-page-node-id="O8rUQmtWAAENG2qJqmFSzo"><span class="no" data-page-node-id="eabvNx9CajiyWCRIK6NiMY">3</span>样式类（叠加 / 遍历 / 加减同异）</h4>
+<div class="blk b-id" data-page-node-id="ImVH2oD55QB3F5S6UN5cV6"><b class="t" data-page-node-id="5ZcVbCS95iDtYlyJXDeRPR">识别标志</b>图形<b data-page-node-id="h0WyKt42E48bCYnrwC4Cdj">外形相似</b>，局部增减变化；或九宫格每行元素种类相同</div>
+<div class="blk b-th" data-page-node-id="x7j6ueoD9yXGT8D9TCGMqY"><b class="t" data-page-node-id="kl0SYrwPcAP6ZP8Mo5THVH">思考路径</b>
+<ol data-page-node-id="cZPnM1XXLQA1IL86SJ7Qhd"><li data-page-node-id="FPg6dFHZlt84Hu1QC2OVZt">先看是不是<b data-page-node-id="6gGQubtGuPo0KLerPAxECw">遍历</b>：每行/每列出现的元素种类一致，只是排列不同（缺什么补什么）。</li>
+<li data-page-node-id="f92xGOfvb6ocCRuBELI0nx">再看<b data-page-node-id="ATPaRCRUzXzi7CnhdF060u">加减同异</b>：图 3 = 图 1 + 图 2？图 1 − 图 2？"同去异留"还是"异去同留"？</li>
+<li data-page-node-id="vr7qQmooWYS9Lsj0i6yvQx">黑白叠加：白+白、白+黑、黑+白、黑+黑 四种组合分别等于什么，逐格验证。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="tYk1C95gWc2OLnC13IOVQv"><b class="t" data-page-node-id="UqhTTQdABhaaURPSThO8gW">判定标准</b>
+<span class="chip" data-page-node-id="26C8HFHK35XjvURwVO7trA">遍历：每行元素种类和数量相同</span>
+<span class="chip" data-page-node-id="N8RoaxrV9XJM8jsxLQUQC8">叠加：第三幅 = 前两幅按规则合成</span>
+<span class="chip" data-page-node-id="2MbeUnBQOvDX3iF09LqWIV">黑白叠加：先定 4 种组合规则，再套全图</span>
+</div>
+<div class="blk b-tr" data-page-node-id="8Pzi0CG9AeS3swkHoyt4wL"><b class="t" data-page-node-id="H7mxHHsvwmyNgeKLCtdBQX">高频陷阱</b>黑白叠加只验证了 1—2 格就下结论，实际规则是"白+黑=黑、黑+白=白"（<b data-page-node-id="X44JsVmBKj2tsbFp7DGqgt">有顺序，不可交换</b>）；九宫格叠加常是"行内叠加"而不是"逐列叠加"。</div>
+<div class="blk b-de" data-page-node-id="mUSmmFJzk95W5tE6I7waO1"><b class="t" data-page-node-id="BRZtL96BGTBSfv6WItJBxS">示例演示</b>九宫格前两格：图1 白+白=白，白+黑=黑，黑+白=白，黑+黑=白 → 得到第三格。<span class="ans" data-page-node-id="EIdaCVpujRWShH6b7ElHYY">答案 = 符合该四规则合成的选项。</span></div>
+</div>
+
+<div class="card" data-page-node-id="ThU3gCZBEIdugGP7o8bfB1">
+<h4 data-page-node-id="lMrRYHqxQDArMnnSm3vnAo"><span class="no" data-page-node-id="0hA8dylOoBHqddmQlpwIeB">4</span>数量类（点、线、面、素、角、笔画）</h4>
+<div class="blk b-id" data-page-node-id="71LAXBb6BBG9sd6AlcwrFH"><b class="t" data-page-node-id="VIRjOnu7l9JTEtvQ4bXJjt">识别标志</b>图形<b data-page-node-id="FYm2CNwsV0hc4smSsXQq0p">凌乱</b>、差异大、无明显位置/样式关系</div>
+<div class="blk b-th" data-page-node-id="GxWROjMOMRQHn1Uer8feze"><b class="t" data-page-node-id="BuI59KtNQGnjvOvgwW96xn">思考路径（按命中率顺序试）</b>
+<ol data-page-node-id="CZMDnrGlMakGxc9O5XKTaC">
+<li data-page-node-id="CwzJA6mZOXMLGIrs6nc2hb"><b data-page-node-id="nWEHqLoQN1whhnJW9nhWGH">面</b>（封闭区域数）—— 最常见、最快，优先数。</li>
+<li data-page-node-id="aTtH9TLJZK3LDxZ2eqmlxq"><b data-page-node-id="DeIItiXYwx6xD5Z0UvOe3V">线</b>：直线数 / 曲线数 / 总线条数。内外分开数。</li>
+<li data-page-node-id="iTtsg2aIoBJ2RJHp8YWAaz"><b data-page-node-id="CLyUyY3d2Yl4f6fRSKUtwE">点</b>：交点、切点、顶点、出头点；<b data-page-node-id="0oUK1CjJLSGY14tva0QUyg">内外交点分开数</b>。</li>
+<li data-page-node-id="Pd9P4odKGgWpWSdUlFon9w"><b data-page-node-id="Yd3ic5jD5E6DG37XwLDmMx">角</b>：直角数、锐角数（较少单独考）。</li>
+<li data-page-node-id="PFB6zdDy4McJsSbIkC1RPJ"><b data-page-node-id="n7J6oEOADNSiVpuMHcI8pY">素</b>：元素种类数、元素个数、部分数（连通块数）。</li>
+<li data-page-node-id="uujPLM4vkpauwbsxYzcLeh"><b data-page-node-id="BFhCHpM9r4dCnNUaWUkfCS">一笔画</b>：数<b data-page-node-id="tBIZILBn4hPZxQVeEUCmDV">奇点</b>（从该点出发的线条数为奇数），奇点数 = 0 或 2 → 一笔画；笔画数 = 奇点数 ÷ 2。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="2tWoQHIarkNiIqgwC07DpI"><b class="t" data-page-node-id="nbSDxS3JHWk4AMnuVHOy5d">判定标准</b>数量型答案通常是<b data-page-node-id="hEo5eufBGwgBxGknqBUFzi">常数数列、等差、或两项求和=第三项</b>；九宫格常是"每行数量之和相等"或"行内等差"。</div>
+<div class="blk b-op" data-page-node-id="hUOfr63E4ODvCB8ruC2WYW"><b class="t" data-page-node-id="EJdiW2JtvVEV8T8Zmh3mm6">选项处理</b>数量类四个选项数字差异明显时，<b data-page-node-id="wynIwTm3EgVrewyFpdklPH">先数 1—2 幅图就能排除两个选项</b>，不要全数完。</div>
+<div class="blk b-tr" data-page-node-id="vpYqv7VDDEFcAq0wbg2BTk"><b class="t" data-page-node-id="2itLCCn0mzAeGmp2me4Yhu">高频陷阱</b>
+<ul data-page-node-id="GPM1jHk6w0jbGLAd3OKzq3">
+<li data-page-node-id="PdJQHMe789aNlb0OKXovny">数"面"时把背景外的大空白也算进去（只数<b data-page-node-id="t0WkxM3S3Dbx7FZmYr3CsJ">封闭区域</b>）。</li>
+<li data-page-node-id="gntG3NtaBYDHn57yEEXQi3">数"线"时没区分直线/曲线，实际考的是"曲线数"。</li>
+<li data-page-node-id="U9RAFfItCUjv1JgFKD3yuJ">一笔画忘数"端点"也算奇点（端点出发线条数为 1，是奇点）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="z7by4HwMAmitIdhMwn8Wha"><b class="t" data-page-node-id="qwW0yy3Gc6jNp4UjG2DiVN">示例演示</b>三幅图封闭区域数为 1、3、5 → 等差 2 → 下一幅应为 7 个面。<span class="ans" data-page-node-id="dHLJR4lgnIhegPTtwwEzOp">答案 = 含 7 个封闭区域的选项。</span></div>
+</div>
+
+<div class="card" data-page-node-id="SiogRLsVE9t047I5KDJiKU">
+<h4 data-page-node-id="AEIkZH8ulSmN3FuVS4bn29"><span class="no" data-page-node-id="SgEFbfEZGSEDnV3FWTJ7OJ">5</span>属性类（对称 / 曲直 / 封闭开放）</h4>
+<div class="blk b-id" data-page-node-id="soJ687vXmrPZf2gbaLnSg4"><b class="t" data-page-node-id="BcHq27ddWtlpAJAWxmtvGJ">识别标志</b>数量怎么数都没规律；图形看起来"规整""有美感"</div>
+<div class="blk b-th" data-page-node-id="YOFcOX3HDdx3PHJBBCb6Ik"><b class="t" data-page-node-id="SzzPJJCAf7dhF1TyjMUm8p">思考路径</b>
+<ol data-page-node-id="y5JQTpnHOdiJ9froofCKSP"><li data-page-node-id="tAuGNAYPRgT0ZwwiATKKvQ"><b data-page-node-id="WaLHCqTL5TDtaIeZmtBoCW">对称性</b>（最高频）：是否轴对称？是否中心对称？对称轴<b data-page-node-id="gpisICY7c2gH4QqQdUQWeQ">条数</b>是多少？对称轴<b data-page-node-id="sVIkdm5aIu3VUsrDfZuGzk">方向</b>（横/竖/斜）？相邻图对称轴是否<b data-page-node-id="22VBz4spzvFmQaoDCl8jxr">依次旋转 45°</b>？</li>
+<li data-page-node-id="woVBUwvDHATySpYAG71S8W"><b data-page-node-id="uoSIwE4acgLV9eZYYqUSBB">曲直性</b>：全直线 / 全曲线 / 直曲混合。</li>
+<li data-page-node-id="I3uVagnkke9Dbyf0wVjC88"><b data-page-node-id="yglvZkQkAH5Xop3dP4D7XY">封闭开放性</b>：全封闭 / 全开放 / 半开半闭。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="yZLYLqup9c4sV9Www9volu"><b class="t" data-page-node-id="0GVybS5KswpVOdXd01NC2V">判定标准</b>属性类常考"分类"：①②③ 一组轴对称、④⑤⑥ 一组中心对称。</div>
+<div class="blk b-tr" data-page-node-id="8Hj78hG98kDAB9snkA7fKa"><b class="t" data-page-node-id="bRqzRVGZqV7WKhah6anW9E">高频陷阱</b>把"既是轴对称又是中心对称"的图（如正方形、圆）只归入一类；注意<b data-page-node-id="b1xu52G30YKws5svfjyZVz">正六边形有 6 条对称轴</b>、正三角形 3 条。</div>
+<div class="blk b-de" data-page-node-id="YW2GYO9qEYGnlS5HcQCGhg"><b class="t" data-page-node-id="osGU9zOmQIfgD4oOsAh39O">示例演示</b>对称轴方向依次是 竖、横、左斜、右斜 → 循环 → 下一幅回"竖"。<span class="ans" data-page-node-id="dnxAEHiwfbLYFgszhmGb3I">答案 = 对称轴为竖直方向的选项。</span></div>
+</div>
+
+<div class="card" data-page-node-id="0eW8CJq7ZE03FEhprNdUou">
+<h4 data-page-node-id="yBaTEVGcI5M2q21rlAK84q"><span class="no" data-page-node-id="VmeSs9fPIfXinA1XN0z2Dj">6</span>空间重构（六面体折叠）</h4>
+<div class="blk b-id" data-page-node-id="ifCG8TQwjKYXkiInQ3Ltc5"><b class="t" data-page-node-id="2OuYEvIwYl2GL2HhrrUQVN">识别标志</b>给出平面展开图，问折叠后哪个立体图正确 / 或给立体图问展开图</div>
+<div class="blk b-th" data-page-node-id="nY8ooCoD1CQoE77GDWFcFh"><b class="t" data-page-node-id="bGUxLuDl8aNrkY3pWXJjCE">思考路径（两套方法，二选一）</b>
+<ol data-page-node-id="C20hQ01mhkLie2SiF9OFll">
+<li data-page-node-id="tnBbtnXqybEHYazrPCB0r0"><b data-page-node-id="MeTTXC53DSwSWJLlDhlTtV">相对面法（先做）</b>：展开图中<b data-page-node-id="Z2x9KBX3AWnhSFzoIYuvAl">相隔一个面（中间隔一格）</b>或<b data-page-node-id="FS6LehmtZAq6nq7IdlOHRv">同一直线间隔一个</b>的两个面是相对面 → 立体图中相对面<b data-page-node-id="sECxmotNxbEfnUIp2OFNhk">永远不能相邻</b>。据此可直接排除 1—2 个选项。</li>
+<li data-page-node-id="aJmxiIJWKttwcvzFQd62vi"><b data-page-node-id="HMEKS4B8ns0YQJGUiOHpgf">时针法 / 相邻面法（再做）</b>：锁定三个相邻面，看它们在展开图中的<b data-page-node-id="aHqTsoqCnN1oAvTCOJ3RaF">顺时针排列顺序</b>；折叠后这个顺序<b data-page-node-id="R537Y70SA9w2iBysZommB5">不变</b>。选项里顺序反了 = 错。</li>
+<li data-page-node-id="wmUozLqHka3MMtIwOkjtSy">或<b data-page-node-id="df5fyxZm1Kylu4AiuylmX7">公共边法</b>：两个相邻面的公共边，看各自图案在公共边的哪一端。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="pKI1fDRFvbLNrvYYqcIF5E"><b class="t" data-page-node-id="Lscy1mu7MeG9yTGsQ08KSH">判定标准</b>立体图中同时出现的三个面，必须能在展开图中找到对应的"三面相邻关系"且时针方向一致。</div>
+<div class="blk b-tr" data-page-node-id="t2X94g3tDmL5x6L81ixlwy"><b class="t" data-page-node-id="10I8U7ajWQCipMKEmFjxiM">高频陷阱</b>把"相对面"当成"相邻面"；只看图案不看<b data-page-node-id="8WRWYyvRYBHEO1QVhzq9R2">图案的朝向</b>（箭头朝上还是朝下）；跳过了"相对面排除"直接硬折，浪费 1 分钟。</div>
+<div class="blk b-de" data-page-node-id="3xCrEnLoh1uqloSQix5uHf"><b class="t" data-page-node-id="57ZNDPkNgG2KRe7MxYjo2W">示例演示</b>展开图中 A 与 D 隔一格 → 相对面；选项中 A 与 D 出现在相邻两个面上 → 直接排除。<span class="ans" data-page-node-id="deBSuC5Rb1kddZttuBwcXN">答案 = 剩余选项中三面时针方向与展开图一致者。</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="se6B0gKA1ddLotWVdQMit1">B. 定义判断（2 份框架）</h3>
+
+<div class="card" data-page-node-id="EeVkaROnFsS3tdwQC0Jn3m">
+<h4 data-page-node-id="JogxHa3dXIuOvhLpwjKbo0"><span class="no" data-page-node-id="plA2Z93S9CSYHChAI9CSM1">7</span>定义判断 · 单定义（含做题标准动作）</h4>
+<div class="blk b-id" data-page-node-id="PEsMMa6HMYEnlG5Jdqew94"><b class="t" data-page-node-id="CvaCHk6JcvOniVwUieBFUO">识别标志</b>"下列属于/不属于××的是"，给出一个定义</div>
+<div class="blk b-th" data-page-node-id="d6lm7AqU4YngWiToGUdA2g"><b class="t" data-page-node-id="hwmhfBWaABEajxypQ3WY6h">思考路径（八要素拆分法）</b>
+<ol data-page-node-id="4rbtjYDtncmGCnAmzEebhe">
+<li data-page-node-id="HywZoVrnZAMQVOcQxvAaJL"><b data-page-node-id="sy77FEComboeudId9VWpTT">先读问法</b>：是"属于"还是"不属于"——用笔圈出来，很多错在这里。</li>
+<li data-page-node-id="azvvCmJmlZ9QdFnSaJ35kl">拆定义，抓<b data-page-node-id="ZGhPo5DktigMYFU73MaQls">八要素</b>：①<b data-page-node-id="pn1Wv5I9wISULgPmUBNlqb">主体</b> ②<b data-page-node-id="VRdkm7f0l3TKbA13bZ9HuJ">行为/方式</b> ③<b data-page-node-id="BCAqqth5zyt7InvHtJC07s">客体</b> ④<b data-page-node-id="wcgQBRgkOSeHoblgjxNNEi">目的</b> ⑤<b data-page-node-id="J3fgzLJ1QwF4gAFbx6wHxg">原因</b> ⑥<b data-page-node-id="SEIWlL5m5G6xpZ8PCMx1Wu">条件</b> ⑦<b data-page-node-id="os7GYUG5EFVyA32yowwtzM">结果</b> ⑧<b data-page-node-id="osg8GLBnuBQkyfvI4MtmpX">性质</b>。</li>
+<li data-page-node-id="asQWTnHH94LLaYle6dFuAi">把每个要素前圈 <b data-page-node-id="TIsf5rYaA1ZwSS6mmNdhfD">"不"</b> 字：主体不是××、目的不是××、条件不满足××……这就是排除依据。</li>
+<li data-page-node-id="tWUKlkKIcQUyINGlFs6Dav"><b data-page-node-id="cIDKFsw3uuWqA78JjjhynT">拿选项逐要素比对</b>，违反任意一个硬性要素（尤其主体、目的、条件）即排除。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="OHPq0Cxg0ovFhdy8WxVghw"><b class="t" data-page-node-id="jGEXRKb3UBpGadF2asR3J2">判定标准</b>
+<b data-page-node-id="4os2P9GWBMpMbhpLtGvMdC">主体不符、目的不符、条件不符 → 必错。</b>三个是符合性判断中最硬的"一票否决"项；结果、方式有时会放宽。</div>
+<div class="blk b-op" data-page-node-id="qSrWzxdN9kvvQ21xfOGqmD"><b class="t" data-page-node-id="xltDDJZxfpCVntH0pM6UnB">选项处理</b>选"最符合"时用<b data-page-node-id="1i0y0gGKKVAOvynqPGMdhk">符合要素最多</b>原则；选"最不符合"时找<b data-page-node-id="kEVL23gCqyB3jshFBdMG3o">明确违反硬要素</b>的那个，而不是"没提到"的那个（没提到 ≠ 违反）。</div>
+<div class="blk b-tr" data-page-node-id="3GWd3zODfEl8PMROF8FVhE"><b class="t" data-page-node-id="u9d3AXZcQXPZPHG9D1sN84">高频陷阱</b>
+<ul data-page-node-id="DABaIa5yGeFOJZ2aTgLqwx">
+<li data-page-node-id="N5y4Y7fUpoyQF44LHQO6dY">"<b data-page-node-id="w3BnEmc3hvnsz7dTk1d63G">不属于</b>"看成"属于"（最高频，约 30% 的失分来自这里）。</li>
+<li data-page-node-id="lsqIICqjJqxYQfyBHCAHUL">选项里加了定义没有的<b data-page-node-id="49Pa7ShBxfz74AokNMUDvy">新条件</b>，考生自己脑补觉得合理就选了。</li>
+<li data-page-node-id="GUXeCWvQRvABy8ctP9rzll">定义里的"<b data-page-node-id="4BHd93JWNbsN8NSupLQjh9">除外条款</b>"（"……的除外""但……不在此列"）被忽略。</li>
+<li data-page-node-id="fefZFYtNuciN5ybsk25JYK">把"举例说明"当成定义要件。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="aaHZZ5rsJj2hM85ZsrDDmC"><b class="t" data-page-node-id="YgbfFPdXy8YD96bkVZzkoF">示例演示</b>定义："行政指导：<b data-page-node-id="EW9iLs0Xm7R3vVxhRyENKR">行政机关</b>为实现<b data-page-node-id="sOr0OwrcaGZKIfxkdwEV4s">行政管理目的</b>，以<b data-page-node-id="Lx7OBAUGhxiFabH9aDsjUz">建议、劝告</b>等<b data-page-node-id="xAibPTetGYq48iRFP6BEW2">非强制</b>方式……"<br data-page-node-id="iBkY8xw7gF70PlzpIyKGAZ">选项：某市<b data-page-node-id="kRowVCUXDyTF3mzF9Uqxyv">法院</b>建议企业合规 → <span class="ans" data-page-node-id="aM1w2vpf0xjL612RoyPzYU">主体不符（法院非行政机关）→ 不属于，排除。</span></div>
+</div>
+
+<div class="card" data-page-node-id="bqVTGAdTGBxzDbvJeuWkcd">
+<h4 data-page-node-id="s7AndI1tPCZirm9Lzf6Ubc"><span class="no" data-page-node-id="KR7Il8vfU12CISqxxBUP7K">8</span>定义判断 · 多定义</h4>
+<div class="blk b-id" data-page-node-id="600xDtQsFSGuENfGCmqYj3"><b class="t" data-page-node-id="ZTFHnh4PASokMHR30rrbBP">识别标志</b>题干给出 2—3 个相关定义（常为种属或相反关系）</div>
+<div class="blk b-th" data-page-node-id="BLYO8GQXKQynicogVR14xQ"><b class="t" data-page-node-id="UOkiR4DzxrjNeX7IMf3Lss">思考路径</b>
+<ol data-page-node-id="7vp0n2era9cjFtBP61dwGv"><li data-page-node-id="Lwhn1DXCEznrGxho87cGDq"><b data-page-node-id="qIHQHABsolv1qQe5FaPFQV">先看问法问的是哪一个定义</b>，只精读那一个。</li>
+<li data-page-node-id="gBoSYY6NUlLlBlAhaGYCn6">其余定义<b data-page-node-id="ql7s2DJFS84cmy8WdYJKP7">快速扫一眼抓差异点</b>即可，不必拆全要素。</li>
+<li data-page-node-id="VVQLZDf1ctgJa1fxdBAT2T">关键：找出<b data-page-node-id="nZPNk6mDZTD9c15Nfoirrz">几个定义之间的区分要素</b>（通常就在主体或目的上），用它排雷。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="g4HBTXLhnhdtzbNBcaTKi9"><b class="t" data-page-node-id="AH8GfA7pMk1KzjRxnGip3I">高频陷阱</b>选项对应的是<b data-page-node-id="TbYC3kjE99PDHyStYHhLWe">另一个</b>定义，看起来非常符合，但问的不是它——这叫"张冠李戴"，是多定义题第一大坑。</div>
+<div class="blk b-de" data-page-node-id="k9QmtaDHKrsudqyC6gJ7ep"><b class="t" data-page-node-id="Bszb0JyVcgXFospmCjpL8o">示例演示</b>给出"正迁移"与"负迁移"，问"属于负迁移的是" → 选项"学会骑自行车后更容易学电动车"是<b data-page-node-id="qkp71Qrq3ECpa0RrBUTYjJ">促进</b>作用 → <span class="ans" data-page-node-id="3PvvCUVZy0ICK3EHOSxEE0">属于正迁移，正是陷阱项，排除。</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="4kju22OshKSJKAclTuQTr0">C. 类比推理（3 份框架）</h3>
+
+<div class="card" data-page-node-id="eF8Os1z0TdP4LiPAohMQsj">
+<h4 data-page-node-id="mW4SgMH8DE1PHRzCxhRstE"><span class="no" data-page-node-id="WBsDge2Yr02aQyvbd1aMEv">9</span>类比推理 · 两词型 / 三词型</h4>
+<div class="blk b-id" data-page-node-id="Uwz3H2qrohfbffyzblsXn9"><b class="t" data-page-node-id="0myDczbxml90EG4mgaE6S0">识别标志</b>"×× 对于 （） 相当于 （） 对于 ××" 或 "A：B" / "A：B：C"</div>
+<div class="blk b-th" data-page-node-id="BryXwFgCpShHve5AqIakdi"><b class="t" data-page-node-id="kogRXjnJdfdqKugSFLZPC7">思考路径（先语义，后逻辑，再语法）</b>
+<ol data-page-node-id="ZcrMbibahAI2GEZkw7PH61">
+<li data-page-node-id="mbO2pbnU5hJKPzClbo6qDW"><b data-page-node-id="foXVA4BT9yakLabuOWe5i8">语义关系</b>：近义 / 反义 / 比喻象征（如"鸿雁：书信"）。</li>
+<li data-page-node-id="xsnN0Y6MpNQChJRoCgejb5"><b data-page-node-id="FNTYfc88E0VVZcnnNC2umH">逻辑关系</b>（命中率最高）：
+<ul data-page-node-id="ELYAlcJQe0nmochGAuhK0M">
+<li data-page-node-id="eL8K2pNzexUQXBtJWhYB3f"><b data-page-node-id="IWoCnyFiD4fgSiFXHuXWnr">全同</b>（土豆：马铃薯）</li>
+<li data-page-node-id="J0NQKSEAkGwvHHbrXcAPBd"><b data-page-node-id="kBH5KcPUh5DB4qN4AwJsHA">包含</b>（种属：苹果：水果）／（组成：轮胎：汽车）← <b data-page-node-id="VdFSUW70dpxeHzNQkBlyXS">必须区分</b></li>
+<li data-page-node-id="CvCzcDKLnGVScrF8hCeNYS"><b data-page-node-id="X0nMedPagHDeSQ9n9jl8mc">交叉</b>（党员：医生）</li>
+<li data-page-node-id="DAkPq5uzvqh0HCwEGrXcdx"><b data-page-node-id="99racvbrqj2PQwPqgfDzJc">并列</b>（矛盾：生：死）／（反对：红：蓝）</li>
+<li data-page-node-id="YgAi6tqGQ4tvc6RZScTeXd"><b data-page-node-id="r9Uu7bUretwffLishDsFXy">顺承</b>（报名：考试：录取）</li>
+<li data-page-node-id="RViK8FZvEO3GCq7GOhWpOf"><b data-page-node-id="PJ0YdubGfScjlvodZh2jwl">因果</b>（地震：房屋倒塌）</li>
+<li data-page-node-id="gMH1zqH0878NgCWMYtLAwf"><b data-page-node-id="LWZchyyafzIYLwfEjo0Ec5">目的</b>（学习：提升能力）</li>
+<li data-page-node-id="rqDXJVUsa7JzITCayi0QbT"><b data-page-node-id="WnGX7Kb7wVfWGUd420faND">条件</b>（氧气：燃烧）</li>
+<li data-page-node-id="L6CfeTiDsOGff1BooqnyWh"><b data-page-node-id="6lKgycGoc7iDmBeAYJCAze">职业—工具／对象／场所</b>（医生：手术刀／病人／医院）</li>
+<li data-page-node-id="G5zHOrUDfvOam8DAspTCGn"><b data-page-node-id="9PABrzvqkOD3uZUK09BRX4">成品—原料</b>（面包：面粉）、<b data-page-node-id="xRFx3U7A9uVuECJMuIcLtS">物品—功能</b>（钥匙：开锁）</li>
+</ul></li>
+<li data-page-node-id="IjhdJeHJitcp0gPhGOLv8V"><b data-page-node-id="ZrUGBbxEXNYiUdCg8G3crY">语法关系</b>：主谓、动宾、偏正、并列结构。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="qOcF0i7s0YsxcBh85MWuH7"><b class="t" data-page-node-id="Rnmtyl68kVAbbGTqHBV5si">判定标准 · 二级辨析（排除两个选项后用）</b>
+<span class="chip" data-page-node-id="5tjtUAXy7XjLsHGTq5y8Ov">词性一致</span><span class="chip" data-page-node-id="HCcuWl31r71whRCL9xfW05">感情色彩（褒/贬/中）</span><span class="chip" data-page-node-id="gGAfWqbXnANBAu8B83Om9g">程度轻重</span><span class="chip" data-page-node-id="AhmbA11gECjc8TEURB8aHh">必然/或然</span><span class="chip" data-page-node-id="KqhM04CJVoZGTzea8aGykI">主动/被动</span><span class="chip" data-page-node-id="7jULj6Z2fVXHOcDOrZt30K">自然物/人造物</span><span class="chip" data-page-node-id="4e0MiqLUjaDeVDOuzFH3m5">同一领域</span>
+</div>
+<div class="blk b-op" data-page-node-id="hkFDSRQiJNNAlsedYvXtFH"><b class="t" data-page-node-id="gDJBSV8HjDRzXiRmbbDmHB">选项处理</b>先定<b data-page-node-id="sno36avtatP2K5RoqqafP7">一级关系</b>（把 A:B 造一个句子），能淘汰两个；剩下两个用<b data-page-node-id="5Pvoccc2wVoiVMMosVxlDa">二级辨析</b>；还有两个就把句子造<b data-page-node-id="4monmEJ0UoGYaQKNbmCdlH">得更细</b>（"医生用手术刀给病人做手术" vs "老师用粉笔给学生讲课"）。</div>
+<div class="blk b-tr" data-page-node-id="1EsxJ0lxatc7OfcdYq7Ojg"><b class="t" data-page-node-id="JPQ3Vz1yZFDtdNNNq4bQsF">高频陷阱</b>
+<ul data-page-node-id="zlng5mb7A1Ng4uaAGRuHlg">
+<li data-page-node-id="hbcxJxEEQ0xGX5UjQ82B2t"><b data-page-node-id="X7fjEJhGk0p6eliYyshUAC">包含关系混淆</b>："苹果：水果"是种属（苹果是一种水果），"轮胎：汽车"是组成（轮胎是汽车的一部分）——判断口诀：<b data-page-node-id="DziORxpqbv5QAgT6qR6dEo">"××是一种××"成立 = 种属；"××是××的一部分"成立 = 组成</b>。</li>
+<li data-page-node-id="CzQRaGrJguTo1lLG4Bydap"><b data-page-node-id="y3eXSihTTKsdsBIH81w5VP">顺序颠倒</b>：题干是"原因：结果"，选项是"结果：原因"。</li>
+<li data-page-node-id="TlqqJxkbhl3DJzHgi0EB9m">只看语义忘了逻辑（近义词不一定逻辑关系相同）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="2j0YGYW6tDrI79vyeqUO06"><b class="t" data-page-node-id="sqMpEQEMCgzFQMy3OxYW8q">示例演示</b>"医生：手术刀"→ 造句"医生用手术刀"。A. 木匠：锯子（木匠用锯子 ✓）；B. 学生：书包（学生用书包？书包不是专业工具 ✗）。<span class="ans" data-page-node-id="46EA4DEkq6DZ6xXlUFJI70">答案 = A（职业—专业工具，二级辨析"专用工具"胜出）。</span></div>
+</div>
+
+<div class="card" data-page-node-id="TsjdQLBPFHtyNKCkKInrb7">
+<h4 data-page-node-id="TMFuBwwC3jCp3Hu2ayihX3"><span class="no" data-page-node-id="uWvK8y7RifvOCxHb3XFHBc">10</span>类比推理 · 填空型</h4>
+<div class="blk b-id" data-page-node-id="1FpxVRv4x38BwGaE4QNQBj"><b class="t" data-page-node-id="nFSF0A71xiriEL3anFR0fF">识别标志</b>"×× 对于 （ ） 相当于 （ ） 对于 ××"</div>
+<div class="blk b-th" data-page-node-id="7EyhcTGJyHThoicUjWor0I"><b class="t" data-page-node-id="4GNLfUwyQoOgGH9Aj7FH2C">思考路径</b>
+<ol data-page-node-id="FbvZl2bKkknqDQRQr7Ftxl"><li data-page-node-id="CxG52NHVLykL92CrWcYqWD"><b data-page-node-id="4gsug69gD7REycAI2vzi2B">必须把选项逐一代回</b>，读成完整两句话。</li>
+<li data-page-node-id="V7qQZ2a4AcMCHzCE2PdFRf">先验证<b data-page-node-id="OBVBcZOzOZM0KGUn3hcufB">关系是否一致</b>，再验证<b data-page-node-id="HAAeyQU0VL5aMlXaInsDDY">前后顺序是否一致</b>。</li>
+<li data-page-node-id="jBxxAbp5O1opeF2PqN50DC">常见错误：关系对但<b data-page-node-id="Kh86r8dlJFIRgfWs5wy6IU">顺序反了</b>——题干是"工具：职业"，选项代回后变成"职业：工具"。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="ZWMRJtS0zU5FlIRNX1IaUH"><b class="t" data-page-node-id="OanjQFUB8uqbXAS3ZJvWLb">高频陷阱</b>只代入前一半觉得对就选，没检查后一半；或前后都代入了，但没核对<b data-page-node-id="oGz7em3ftOoNq6APyWklr6">方向</b>。</div>
+<div class="blk b-de" data-page-node-id="7zH5SUslZLj3H4HBOwkGfZ"><b class="t" data-page-node-id="1uesBpugSbklNbidzW6gEY">示例演示</b>"手术刀 对于 （ ） 相当于 （ ） 对于 教师"<br data-page-node-id="NIiQBD3A5j3ZJ0y1Gdz6qH">代入 A：手术刀对于<b data-page-node-id="ZP3YLrk12EnlHW8dAJol9A">医生</b>相当于<b data-page-node-id="xzFsDhafBe9hefzwgVDh1O">粉笔</b>对于教师 → 前句"医生的工具是手术刀"，后句"教师的工具是粉笔" → <span class="ans" data-page-node-id="nh7inM1FSu24VWylTsLA1u">顺序一致、关系一致 → 选 A。</span>（若选项为"粉笔：医生"，代回后前后方向相反，错。）</div>
+</div>
+
+<div class="card" data-page-node-id="H7KkBeOrRiF6ZWpRdYNNIA">
+<h4 data-page-node-id="TbuV9sR58rc878nHk73I5D"><span class="no" data-page-node-id="IOgI9yIA5odLiQ3kLKfm4z">11</span>类比推理 · 提速与取舍</h4>
+<div class="blk b-th" data-page-node-id="hwSHpvDHf6tDjAC0G8l7R1"><b class="t" data-page-node-id="fVaGKeqGkVvskLVaA6PNd9">思考路径</b>
+<ol data-page-node-id="oiAc46seVpLgNYitwaEavK"><li data-page-node-id="IJlf9GxI23r4XtYKAlhTgO">类比是<b data-page-node-id="i5FGD31su5CNubEvZTi9j4">整张卷最该抢时间</b>的题，平均每题 <b data-page-node-id="METyHXAMErgHGzfv3Uh3yE">25—30 秒</b>。</li>
+<li data-page-node-id="6ZMitHzGmIBpxFjKjQjnZN">30 秒内定不下一级关系 → 立刻用"造句法"强行造一个最普通的句子。</li>
+<li data-page-node-id="h2K8sR72SV1chTA4Z9eTOp">还是纠结 → 凭<b data-page-node-id="coL6pKmonjslOxLno4Q6iT">语感 + 词性一致</b>直接选，<b data-page-node-id="zPI58qkoAfVpDdPUNCBXFI">不回头</b>。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="IxWCIiOb7VqEuGl06Buys6"><b class="t" data-page-node-id="xTvpryrAdRuYwM436SBiDp">高频陷阱</b>在类比上反复纠结 2 分钟，把资料分析的时间吃掉了——类比一题的分和资料分析一题的分一样，但后者确定性强得多。</div>
+</div>
+
+<h3 class="grp" data-page-node-id="2HJneM0HU9z6PRnpKB29C9">D. 逻辑判断（7 份框架）</h3>
+
+<div class="card" data-page-node-id="KpXB3mJnehb3SCYSH50sRS">
+<h4 data-page-node-id="dinS07dpYr3YhLr1Hogt1o"><span class="no" data-page-node-id="gj76kaEDNf2UZTuqngCANN">12</span>翻译推理（假言命题）</h4>
+<div class="blk b-id" data-page-node-id="xkWFGkWzL0Xi9g3h9oDEBB"><b class="t" data-page-node-id="lEkATjQz2UFc3SN9RHI4Pz">识别标志</b>"如果…那么…""只有…才…""除非…否则…""…是…的必要条件/充分条件"</div>
+<div class="blk b-th" data-page-node-id="WjAwq1ybS1feozb6rdJrwg"><b class="t" data-page-node-id="V0hAczYifgHcr8A3nBlYPo">思考路径</b>
+<ol data-page-node-id="82bBukjqSZ1UbAUYkNf0WS"><li data-page-node-id="Mb6w3mUzZ3U5LulKcpBRht"><b data-page-node-id="yDlSJ8hhkEFVrD7o6AoKyp">先翻译</b>，把题干全部写成箭头式。</li>
+<li data-page-node-id="n97F9oF3dgMhqjkwQ2yems"><b data-page-node-id="xCVXS5Y7F4HyMqFfvE8ut5">再推理</b>，只用三条规则：<b data-page-node-id="vt7LrgS6caQITGMCCL8rT3">肯前必肯后、否后必否前</b>；<b data-page-node-id="ruuDewLWqGpsopEF6R2xTh">否前、肯后 → 无效，推不出</b>。</li>
+<li data-page-node-id="JtSq2bDXu9l2CcODATJp3n">连成链：A→B→C，则 A→C；注意箭头方向。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="BFWMuEME4cA8T1RVRzzYRo"><b class="t" data-page-node-id="vla6qYljWuxeDLFUlcGW3T">判定标准 · 翻译对照表</b>
+<table data-page-node-id="ahqvqLD7yi1KnS6ruJIQyw">
+<tr data-page-node-id="aCh36CGM5ZH9GoJmLMhOsD"><th data-page-node-id="1zFcR38Fs61ferrlFiGCPv">原句</th><th data-page-node-id="2cTGVICWexZmV0JzBZ6NUz">翻译</th></tr>
+<tr data-page-node-id="1nVxZ5gKd2yTzcWjoJGJXn"><td data-page-node-id="KlAtSkoEILcwEakDVdfAcV">如果 A，那么 B</td><td data-page-node-id="V2HqnclSZF7Fd5LMw6vPcJ">A → B</td></tr>
+<tr data-page-node-id="P20a9TvwHGEYv7WAS6XSIk"><td data-page-node-id="IIh9upUSB0p5fYtZqxwcgy">只要 A，就 B</td><td data-page-node-id="Y4RvJt4PKAUibG1C2zkqo8">A → B</td></tr>
+<tr data-page-node-id="tbwhMmmBP3XOEvnGG8NXsS"><td data-page-node-id="EQVMetogV73NAdccRO72Zs">只有 A，才 B</td><td data-page-node-id="RjK9nqfaCipH5GwkA4BNI8"><b data-page-node-id="mBBDe9Lyx7rEzJ5IlQ8ZiD">B → A</b>（A 是 B 的必要条件）</td></tr>
+<tr data-page-node-id="d53EhnzyQIO7pfaI9ZkE0p"><td data-page-node-id="kMv4zEi8A0OcJGGVnjSFw4">除非 A，否则 B</td><td data-page-node-id="ENkV1n5vFreSTbusKmSGmA">¬A → B（等价于 ¬B → A）</td></tr>
+<tr data-page-node-id="OUUEsPGx9H5EYcBTupvo3T"><td data-page-node-id="kJOtTvCDuMG6XAwQLWVy6o">A 是 B 的充分条件</td><td data-page-node-id="qpVxKDzePbe6hU6DN8EEUu">A → B</td></tr>
+<tr data-page-node-id="haANnSdgKbPnvKCUkCxGI6"><td data-page-node-id="pSFDSaHVmbTiRU2O6B3mFt">A 是 B 的必要条件</td><td data-page-node-id="wvwENj9IB4BEHOGv7JPEg2">B → A</td></tr>
+<tr data-page-node-id="Uxh1uG289tQaeHw8CliKAF"><td data-page-node-id="Otc6SvE6xrHcGXAf1W4FLD">没有 A 就没有 B</td><td data-page-node-id="Waf4iGMkLhQaX4gAb3LEQ1">B → A</td></tr>
+<tr data-page-node-id="p2CY1wkxWxOZqO7I7MRTYq"><td data-page-node-id="YTs0BPCz6IhsgEYAIUCsRW">A 且 B</td><td data-page-node-id="avgY9S1Dv6S9z0cKGbt4xG">A ∧ B</td></tr>
+<tr data-page-node-id="OV3COJVXWGl2vZqLdCg6Ry"><td data-page-node-id="FSbTTSqKF37D4G4IYVeokj">A 或 B</td><td data-page-node-id="GqtcYgiXyECkgc2MTmMCHu">A ∨ B（至少一个成立，可同真）</td></tr>
+<tr data-page-node-id="qX4w5JQ4KH6CgRX0lKHXtz"><td data-page-node-id="6jjSjEPFEHksR0qFGChg3K">不可能 A</td><td data-page-node-id="vXmemTFRNajzb1XpschWpO">必然 ¬A</td></tr>
+</table>
+<b data-page-node-id="5b7BOgBbmA8SE6KKHTPTdO">德摩根定律：</b>¬(A 且 B) = ¬A 或 ¬B；¬(A 或 B) = ¬A 且 ¬B。<br data-page-node-id="dv7SgsrRLvdQxxEQrnGdxU">
+<b data-page-node-id="GAdpjEUEEy5BLA2WzvaazU">逆否命题：</b>A → B 等价于 ¬B → ¬A（这是最常用的一招）。</div>
+<div class="blk b-op" data-page-node-id="g4fDl6iCebF96ONWvptUwS"><b class="t" data-page-node-id="mqwFtZykDVDjhNYXFpVNZq">选项处理</b>把选项也翻译成箭头，看能否与题干链对接。看到"<b data-page-node-id="CvH7KUpivshCjJ54aKU3A4">肯后推肯前</b>""<b data-page-node-id="eo5d6ja17SN6KcxAriKzK2">否前推否后</b>"的选项直接排除。</div>
+<div class="blk b-tr" data-page-node-id="gyo2WIkrdKBTlPhleKzrqu"><b class="t" data-page-node-id="nN112OMGdQp7L9Ygs7Dh1a">高频陷阱</b>
+<ul data-page-node-id="kGIHT1eGrKJJZlaepT3t6B">
+<li data-page-node-id="Uv2q485KPjNCDraE49Iko8"><b data-page-node-id="fmUyGTfgBLtgIHu0qW1XPY">"只有 A 才 B" 翻成 A→B</b>（应为 B→A）——最高频错误。</li>
+<li data-page-node-id="ChQvyGyjQ2kUXXRY2XF3wD">把"A 或 B"理解为"要么 A 要么 B（排斥性）"，实际"或"是<b data-page-node-id="VAYsqUOwtrcpqbu87HBatb">相容</b>的，可以都成立。</li>
+<li data-page-node-id="LZlLBbF0fsAHTQtAmdwMsj">把"有些"当"所有"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="OR8MVqWhGFrDT5DVbpswMP"><b class="t" data-page-node-id="1LAF6pQZIFZ8vO8mH0egoI">示例演示</b>"只有努力工作，才能取得好成绩" → 翻译：好成绩 → 努力工作。<br data-page-node-id="Oj8QxcTlKjVysbJW9JHwd0">已知"小张没努力" → 否后 → 否前 → <span class="ans" data-page-node-id="iwJPjR3Hg44sCaUHzt90Dc">小张不能取得好成绩（唯一可推出的结论）。</span>而"小张努力了" → 肯后 → <b data-page-node-id="ELaY75DwZBCWskx03QMGwn">推不出</b>是否有好成绩。</div>
+</div>
+
+<div class="card" data-page-node-id="XSu7bydvsOYLGiLnGIvwjI">
+<h4 data-page-node-id="zEK1tsTznBWVs7cAH2DUic"><span class="no" data-page-node-id="vExzjdUrbmzjBqPY8KBRDV">13</span>真假推理（矛盾关系）</h4>
+<div class="blk b-id" data-page-node-id="faHggtkq5kmDJ8XGbMLmLC"><b class="t" data-page-node-id="nnUj10hCQ6pkFXGermHjdl">识别标志</b>给出几句话，告知"其中只有一句是真的/假的"，问能推出什么</div>
+<div class="blk b-th" data-page-node-id="WVYSS7RPX2sK0jmEHHLtfl"><b class="t" data-page-node-id="DzrVjDGOTMgSca5ShbqDw1">思考路径（三步走，套路固定）</b>
+<ol data-page-node-id="OB3x1PWtrU2raOjLR0TVvb"><li data-page-node-id="2UF9WVCPEeH4znfVnnbiFp"><b data-page-node-id="v2xIhsYB8QSG6da1ykCVLh">找矛盾</b>：四句话中找一对矛盾命题（必有一真一假）。常见矛盾对：
+<ul data-page-node-id="Wy212zRBYRLIMA5G7A9qTp">
+<li data-page-node-id="YMfTtY0F7hhn8BAYDQpcuu">"所有 S 都是 P" ↔ "有的 S 不是 P"</li>
+<li data-page-node-id="2KtjdFG2v3dOFyHYmns7BI">"所有 S 都不是 P" ↔ "有的 S 是 P"</li>
+<li data-page-node-id="BOwqRtBq3ApVy0aJ14X9aA">"A 是" ↔ "A 不是"</li>
+<li data-page-node-id="HRqlBJFJjb6PJgR55ueT59">"A → B" ↔ "A 且 ¬B"</li>
+<li data-page-node-id="2QSBPhKNcWEhgNbd4WnFi1">"A 且 B" ↔ "¬A 或 ¬B"</li>
+</ul></li>
+<li data-page-node-id="mHMABtN4RW4XTErRtb9nve"><b data-page-node-id="yEPvwHcSa4iQMhpc2AjpND">绕开矛盾看其余</b>：既然矛盾对中已占掉一真（或一假），那么<b data-page-node-id="Gvzm7tF0WjX5clj37tEl18">其余的话真假已确定</b>——若题干说"只有一真"，则其余全假；若"只有一假"，则其余全真。</li>
+<li data-page-node-id="YdApxbbBIC3Br70XabUcAl"><b data-page-node-id="CposzHeRtqsc5hX8ovUQGN">回代</b>：用确定的真假反推事实，再回头判定矛盾对谁真谁假。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="vibKMEFV3418u971WFz0EX"><b class="t" data-page-node-id="pfVJlR4dSZpG49BIZdxfFY">判定标准</b>矛盾关系必<b data-page-node-id="RvMM0zcqneTdmjyysUCQK1">一真一假</b>；反对关系（"所有都是"vs"所有都不是"）可<b data-page-node-id="wBNE9rbbDf1oTVJiY1AVMg">同假不可同真</b>；下反对关系（"有的是"vs"有的不是"）可<b data-page-node-id="uKTwBqUgjUIj2bCPDtgDCU">同真不可同假</b>。</div>
+<div class="blk b-tr" data-page-node-id="B6pDHtZLckYLO28jL7L9NO"><b class="t" data-page-node-id="koqyE1QNGomKR4bU9aaKGI">高频陷阱</b>找不到明显的"是/不是"矛盾时，忽略了 <b data-page-node-id="eYlpdTmICXLcAEzW088r0r">"A→B" 的矛盾是 "A 且 ¬B"</b> 这一隐藏对；或把"反对"当"矛盾"。</div>
+<div class="blk b-de" data-page-node-id="ooiwkFe9LPeE6v4NF47Hbi"><b class="t" data-page-node-id="vopPBIMZGD9IIW4gZ9Xupj">示例演示</b>四人中只有一人说真话：甲"是乙"、乙"是丁"、丙"不是我"、丁"乙说谎"。<br data-page-node-id="ltSMqVFTyGn8TXtaW6vVra">乙与丁矛盾 → 必有一真 → 甲、丙皆假 → 丙说"不是我"为假 → <span class="ans" data-page-node-id="vfcvXGOEoihdEqLpBc9d4f">是丙做的。</span></div>
+</div>
+
+<div class="card" data-page-node-id="Ea0460UVW1C4hb4ek6TOFp">
+<h4 data-page-node-id="3RmfWwVBJSQMr8bpnaldE6"><span class="no" data-page-node-id="Bhfy61eTkmj17H2U5T1WLh">14</span>集合推理 / 换位推理</h4>
+<div class="blk b-id" data-page-node-id="nOMhy4d3Z3wqU19zDXQSO1"><b class="t" data-page-node-id="UUs0XrgzTgyEnLo73nl67c">识别标志</b>"所有/有些""是/不是"，几个集合之间圈圈关系</div>
+<div class="blk b-th" data-page-node-id="OAEOQ7Qv5bwbnVreveCajl"><b class="t" data-page-node-id="HjKv6hccBtAQEV9LKrAxd8">思考路径</b>
+<ol data-page-node-id="HnDzNqE48hspzpj7ciwCkA"><li data-page-node-id="l1ri7hdhXHsDVV312ebhkM">牢记四个基本形式：<b data-page-node-id="xFZRAGtmTe4gOQPFvT4IDb">所有 A 是 B / 所有 A 不是 B / 有些 A 是 B / 有些 A 不是 B</b>。</li>
+<li data-page-node-id="mmKw0EZCbgZxP7Y7LBFwV3"><b data-page-node-id="ZC2qBQSB1oU4NnYOxpmYIq">换位规则</b>：
+<ul data-page-node-id="fsHt9yos8eqaSPffzQi1Gk"><li data-page-node-id="7q8y8LTjySpqcRU2aTZJJT">所有 A 是 B → <b data-page-node-id="qkTsGlJwljQl2iw1ceuTyV">有些</b> B 是 A（"<b data-page-node-id="gN7gbHkKCvUOqlCOrcHjpO">所有</b>"换位后变"<b data-page-node-id="R0dLOboAAJgTUNh8pXiKoS">有些</b>"，不能直接说"所有 B 是 A"）</li>
+<li data-page-node-id="oh2BsZDaJnEz6gjdz8EB3r">所有 A 不是 B → 所有 B 不是 A（可直接互换）</li>
+<li data-page-node-id="SQSqMiljSQCdSdXftgrRTa">有些 A 是 B → 有些 B 是 A</li>
+<li data-page-node-id="aVUSZGdXB3RcSLI9FJfUz0"><b data-page-node-id="QCq4kORpzgvHojzJ7pKqYD">有些 A 不是 B → 不能换位</b></li></ul></li>
+<li data-page-node-id="mbFtvo6oBGIMZIbIUl5kiD"><b data-page-node-id="1HSkU4NuG99Ks5XVhPHHkQ">递推</b>：所有 A 是 B + 所有 B 是 C → 所有 A 是 C；"有些"开头的两个前提<b data-page-node-id="i7FAiO1r7ndROQ5Vst1AA2">不能递推</b>（推不出必然结论）。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="TxTJUC5YHbX4CNgPMIuD3T"><b class="t" data-page-node-id="fHsC8kxP86VJWbfD7opDGz">高频陷阱</b>"所有 A 是 B" 直接推出 "所有 B 是 A"（错误，这叫<b data-page-node-id="s68vLARCVUVNTZQ4TRsaN4">不当换位</b>）；两个"有些"前提硬推结论。</div>
+<div class="blk b-de" data-page-node-id="DYR4QxMSbr5xBnEOwOZ6RG"><b class="t" data-page-node-id="K5m2nRM7Ge5MqMUOppcNZA">示例演示</b>"所有团员都是青年，有些青年是学生"。<br data-page-node-id="M10msMqKrB8SE9xeVFq6I7">A. 有些团员是学生 → <span class="ans" data-page-node-id="Qsvxwa0QBSCXaR8L4MBoNF">推不出（两个集合青年与学生关系不明，无法递推）→ 不能选。</span></div>
+</div>
+
+<div class="card" data-page-node-id="h1MOuIUAVgfEw3p1E4iw0d">
+<h4 data-page-node-id="cFQWp63oPwv5V3OMOV6opc"><span class="no" data-page-node-id="kfiNVpssTQJNGU3iWtFYHS">15</span>加强 / 削弱（论证类核心）</h4>
+<div class="blk b-id" data-page-node-id="NvGSaYNPtZwFwo4HH3Bd5M"><b class="t" data-page-node-id="CwMmuLOSHKxDCEEDfk2N20">识别标志</b>"最能支持/加强/削弱/反驳上述观点的是"</div>
+<div class="blk b-th" data-page-node-id="yFZv3VKITp1DtiYJBfOZAm"><b class="t" data-page-node-id="j0rYVwHz4zSFj9t5ORShyo">思考路径（固定四步）</b>
+<ol data-page-node-id="EUc59KoRGOLSbHBEODdikj">
+<li data-page-node-id="mwUeIEEn9hEwEi6ioVBemT"><b data-page-node-id="iKsphJpyM2Jz3YgdPKz8Ze">找论点和论据</b>：结论句（常带"因此、可见、这表明、认为"）；论据是支撑它的理由。<b data-page-node-id="TpS1LfTp17kJQ40m4g7Liw">论点才是攻击/支持的对象</b>。</li>
+<li data-page-node-id="ZivlvwUNxCyR1ofo6eZFZd"><b data-page-node-id="q7et0fNnHajEA8cpZ14EK5">看清论证方式</b>：是由 A 推 B（因果）？是由样本推总体（归纳）？是由类比推结论？</li>
+<li data-page-node-id="r21WvOcR8UFG2S7S9yRGci"><b data-page-node-id="TaKFneoGGKTPhjVx8DjZx7">削弱</b>的四条路径：
+<ul data-page-node-id="u7B9qZ14L4sdWRAdw8ZmG1"><li data-page-node-id="u6O0GiZtzwW6g6xUwbR9UJ"><b data-page-node-id="ChgEcQc3WlF39j4gFdOeto">削弱论点</b>（最直接，力度最强）——直接说结论不成立</li>
+<li data-page-node-id="iceEHlRkSjkCmXbdSAPXuU"><b data-page-node-id="96hhX47FfVzvF92PVuL0No">削弱论据</b>——论据本身有误/样本不具代表性</li>
+<li data-page-node-id="3RQYM29ktaEn2xa7aZ4jvq"><b data-page-node-id="URJWxBoHZO7U9HU81JW4T1">削弱论证方式（拆桥）</b>——指出论据和论点之间没有必然联系，<b data-page-node-id="s3MouMIaCUElVR1AXHjhCl">这是考试最爱考的</b></li>
+<li data-page-node-id="XG3eYJ1r3pz3nrp0GktFJ4"><b data-page-node-id="baGivwoDFG7MJOnzxiviWk">提出他因</b>——有另一个原因也能导致该结果（对因果型论点削弱力度中等）</li></ul></li>
+<li data-page-node-id="FtDtWGCA0QDY75iALq8ssD"><b data-page-node-id="GDBqHihD0OU5eYU5CtKqGg">加强</b>的四条路径：<b data-page-node-id="DQziFJxCiGj9GaziJqFfFG">加强论点 / 加强论据（举实例、数据）/ 建立联系（搭桥）/ 排除他因</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="4dQH0wVM2LjbazObGPZBC1"><b class="t" data-page-node-id="7OARq1PswTSJ5rcwCxXMg5">判定标准 · 力度排序</b>
+<b data-page-node-id="XtV5F2lvCcvKNVHkZmtDYu">削弱：</b>削弱论点 &gt; 拆桥（削弱论证） &gt; 削弱论据 &gt; 提出他因<br data-page-node-id="Ryo6x16DX0ZH6noaMLAQGA">
+<b data-page-node-id="7MuBFNBghfHFPoOSwGxNI5">加强：</b>搭桥（建立联系）&gt; 排除他因 &gt; 加强论点 &gt; 加强论据（举例）<br data-page-node-id="ySNPhUDRAALCHmEpat2tHo">
+注意：<b data-page-node-id="BtGl41x8ug8A1cI65FQsFj">"举例/类比"加强力度最弱</b>，只在没有更强的选项时才选。</div>
+<div class="blk b-op" data-page-node-id="sxT7N7suxJh3JMUxGUhiSC"><b class="t" data-page-node-id="yZZwtsHpMLNqa7zsIxelH4">选项处理</b>先看四个选项各自属于哪一类（削弱论点/拆桥/他因/无关），按力度排序挑最高档。<b data-page-node-id="odr3yksfgEzuO12Rckg5Tm">与论点话题不一致的（跑题项）最先排除</b>。</div>
+<div class="blk b-tr" data-page-node-id="oD8PlqZcn3XMXysDiFM9FF"><b class="t" data-page-node-id="0hlRGadI8CRH4JLSvscl1d">高频陷阱</b>
+<ul data-page-node-id="iK1TJQC2Y9P7MCesLmZteH">
+<li data-page-node-id="eI75x8RRsJxiBqiZTfmdW7"><b data-page-node-id="r31Dyf7OnNRg6iVwoLY8Wf">削弱了论据却当成削弱论点</b>——力度比直接削弱论点弱一档。</li>
+<li data-page-node-id="1XASn7pGrBDCAl6BQ0fRE4">选项"另有他因"时，若题干论点是"A 导致 B"，他因只能<b data-page-node-id="OCIMArAmQ0jT6llduFLM6L">削弱</b>"A 是唯一原因"，不能否定 A 的因果作用，力度有限。</li>
+<li data-page-node-id="dHtIP8A6ydxAmSfffjHWER">题干问"最能<b data-page-node-id="8K1DfLzddbiMxoUf8lhMo9">支持</b>"，看成了"削弱"（同定义判断的"不属于"陷阱）。</li>
+<li data-page-node-id="jeudQQB9O3vBNb6R5Uh4Xf"><b data-page-node-id="b2n4WMeIQmiM5dlgYPq8lw">类比加强/举例加强</b>看似合理，但力度最弱，有搭桥项时优先搭桥。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="6pnjjZZkglMaImiswNspH9"><b class="t" data-page-node-id="QVPBuuqg4TdcTjKVgRNVtY">示例演示</b>论点："喝咖啡能降低患病风险"（论据：调查发现喝咖啡的人患病率低）。<br data-page-node-id="O0zGXPtwNrTZ5A4wcfBNJh">削弱项对比：A"患病风险低的人更爱喝咖啡"（<b data-page-node-id="Zm8Zn93yuN5vfPZvv6T8ry">因果倒置</b>，力度极强）；B"调查样本仅 50 人"（削弱论据）。<span class="ans" data-page-node-id="RcFprWzjQwRdfPjN3rU6Rq">答案 = A。</span>另注：<b data-page-node-id="3oIKOWPYGr2dtJsBpnYq5F">因果倒置是最强削弱之一</b>，见到优先选。</div>
+</div>
+
+<div class="card" data-page-node-id="yqXWpkM5WUrC4iudjh69De">
+<h4 data-page-node-id="QuDkjPtLIXgSVIUjlUHJLV"><span class="no" data-page-node-id="NGSsXP1nBimsHDF4J3QYrd">16</span>前提 / 假设型</h4>
+<div class="blk b-id" data-page-node-id="6MR5atEWABflJznj4gGAJN"><b class="t" data-page-node-id="CjWDfO1GMB1Q42E2UUR05L">识别标志</b>"上述论证成立所必需的前提/假设是"</div>
+<div class="blk b-th" data-page-node-id="olT6eAZfmkyTtbKWi1BPQ5"><b class="t" data-page-node-id="pFQmvDD4MYZQ2VnWameWBz">思考路径</b>
+<ol data-page-node-id="0N6SGBf3Io8bhLNjfIFFJB"><li data-page-node-id="wU4ToDMgJm6yUXcXLOmuZm">找<b data-page-node-id="unWq7O0P2mO77Ds1BmijRI">论点</b>和<b data-page-node-id="D3NQ9yPRuDcxo1lHJxDsXl">论据</b>，看两者之间<b data-page-node-id="TkBXtZJFuQXlkOFr1DjaeO">缺什么</b>——缺的那一环就是前提（<b data-page-node-id="p8iOrZRrIWRMUWSd81HGT0">搭桥法</b>）。</li>
+<li data-page-node-id="ESCmO1Gv6P9k8nMoPiZfmM">用<b data-page-node-id="Ney1Us8K2dp6HW0Jk8FfOE">否定代入法</b>验证：把选项<b data-page-node-id="Mf3yGBGkp0eRrGCZ6DYFKM">否定</b>后，如果论证<b data-page-node-id="DodCb1BKg7nSnlAakvdRtO">完全崩溃</b>，则该选项是必需前提；如果否定后论证仍成立，则不是。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="w6c1Hq23iX9nET0MCcfKaO"><b class="t" data-page-node-id="JSp86jQNiKCTaeahIo3nqG">判定标准</b>前提 = 论证成立"<b data-page-node-id="1ZNRcPttdOaa9vqlmNW7Vd">少了就不行</b>"的条件（必要而非充分）。用否定代入法一验即出。</div>
+<div class="blk b-tr" data-page-node-id="21bG0EFVyCFHvLHFBEDkGQ"><b class="t" data-page-node-id="n0WYl6Q6ApHpnzh8QlxRrA">高频陷阱</b>把"能加强论证的选项"当成"必需前提"——加强项加了更好，<b data-page-node-id="fxrRXxG0abamkfrwiCLEyR">去掉也能成立</b>；前提项是<b data-page-node-id="m4vM8FLR5cQ7MxYDChH8rC">去掉就崩</b>的。另外选项若引入<b data-page-node-id="aNp3ofVbVEQ3sCWCAlxQ5V">新概念</b>而未与原文挂钩，多半是干扰项。</div>
+<div class="blk b-de" data-page-node-id="Xp7FUDwytCPsUOj2Mr5WzF"><b class="t" data-page-node-id="J8JHLoeCdl4b0z6pJ03pGI">示例演示</b>论据"该药在动物实验中有效" → 论点"该药对<b data-page-node-id="UT9VPNwDObMV5EovYloy95">人</b>有效"。<br data-page-node-id="R0OIY0YXCTXWqsdtRZUMwz">前提选项："动物实验结果可外推至人"。否定它 → 动物有效不代表人有效 → <span class="ans" data-page-node-id="4Dw99aS8CrOWPJgupDj3li">论证崩溃 → 是必需前提，选它。</span></div>
+</div>
+
+<div class="card" data-page-node-id="Z4Bse92ZUDor3LpYOra2J3">
+<h4 data-page-node-id="HmObak5ZrG2Swl3RufwAtY"><span class="no" data-page-node-id="6QExwGJQpmjPEhzqXogJBa">17</span>日常结论 / 归纳推理</h4>
+<div class="blk b-id" data-page-node-id="fsDXGuOz2wcLG8BNkv0Yme"><b class="t" data-page-node-id="QdmpzLsaSoOPaVIeobCiic">识别标志</b>"由此可以推出/不能推出的是"（题干无明确论点，只是给一段信息）</div>
+<div class="blk b-th" data-page-node-id="syBcrhXNw0zP5YahVo3C06"><b class="t" data-page-node-id="fzBje7BOtZBQTelYYzAWRg">思考路径</b>
+<ol data-page-node-id="po6dL2q8KCE5zNWa8sUGbJ"><li data-page-node-id="VGrTFBqBHCezaYcQhl4JOR">用"<b data-page-node-id="ylrn4W4SKEVkOrDBGFpd1t">三不一可能</b>"排除法：<b data-page-node-id="f7tjMmPS1hwOWTDsAiaAFz">绝对化的不选</b>（所有、一定、必然、唯一、只要…就）；<b data-page-node-id="o4duMeLdpLMQ3QVaJeASoI">程度过强的不选</b>；<b data-page-node-id="migFwGr4oKvJ01iAFq1BFn">无中生有的不选</b>；<b data-page-node-id="vPHYbPHXsH4AlE3pVY1Bgq">含"可能、有些、未必"的温和表述优先选</b>。</li>
+<li data-page-node-id="OvYmhcftFNXpw4L2UNSFZY">"<b data-page-node-id="9brZim1fG7833n2ZDVifw9">不能推出</b>"型：找<b data-page-node-id="BzjdqJ3MNLFQbSxfDVh6Ui">偷换概念 / 无中生有 / 强加因果 / 范围扩大</b>的那一项。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="KRlAFqolnuHgMB9RY2dGh4"><b class="t" data-page-node-id="QCJTwj24N3UssAQ4SvKFSj">高频陷阱</b>题干说"有些"推出"所有"；题干是"可能"推出"必然"；把"相关"当成"因果"。</div>
+<div class="blk b-de" data-page-node-id="x3f84eGRKmukipX1g6byLy"><b class="t" data-page-node-id="PhAcIdc5U2hCzHtHsTGUMt">示例演示</b>题干："调查显示，经常运动的人<b data-page-node-id="OvKYqO7vWvW4M9E1sMsOPV">普遍</b>心态更乐观。"<br data-page-node-id="aTbPNFsFE2zAsovJ8zu4yB">正确推论："<b data-page-node-id="moEoT33AwmnNVkOOi3RfvG">有些</b>心态乐观的人常运动"或"运动<b data-page-node-id="bQno2rbeGsi8cW6qaA3QJu">可能</b>有助于心态"；<span class="ans" data-page-node-id="4G5KRZZSr5l9FvbfRGWN1l">"所有常运动的人都乐观" → 范围扩大，不能推出。</span></div>
+</div>
+
+<div class="card" data-page-node-id="soKsIhGBg6KVBcJ5XEEFe2">
+<h4 data-page-node-id="GTKk3qhc2ysMjVoGtWIfrN"><span class="no" data-page-node-id="mnL5PWscputAEIv6FZUhej">18</span>解释型 / 排序匹配 / 数字推理型逻辑</h4>
+<div class="blk b-id" data-page-node-id="NZCniGGOKkJZRQZ54Lz3B1"><b class="t" data-page-node-id="5naRdYjzTsZ52raFaUw9mX">识别标志</b>"以下哪项最能解释上述现象"；"已知甲乙丙分别来自…，问对应"</div>
+<div class="blk b-th" data-page-node-id="F5wrpbSzCBvpVWX1m04AkI"><b class="t" data-page-node-id="sqHfWLszaBs6S4MNVynzyE">思考路径</b>
+<ol data-page-node-id="7k4oFT5l2bBEOgqteQQrXq"><li data-page-node-id="zSvyRPziJeOr5fRZGU52KA"><b data-page-node-id="qireau7t5aDFLgaKYaQoBj">解释型</b>：先找出题干中的"<b data-page-node-id="fDufdNrJQGZtHdYa9HIU22">矛盾点/反常识点</b>"（本来应该 A 结果却是 B），正确选项必须<b data-page-node-id="4L6qvRNSYGAZWRslbJC5Ky">同时关照矛盾双方</b>，只解释一方的通常不对。</li>
+<li data-page-node-id="TosdpLkux5xEUGLASyk0EK"><b data-page-node-id="8KrldhY4uzO9xi9kqtN3Ez">排序匹配</b>：把已知条件写成表格，用"<b data-page-node-id="2SITUlS9L1OqZWnmNT5acR">确定信息优先</b>"（谁的位置/身份已确定就从谁入手）→ 逐条打勾排除。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="ptkFDLTNW4KzL1bbcHxZIE"><b class="t" data-page-node-id="FFXHacrYXF5NgEd4u1A8xG">高频陷阱</b>解释型选了"只解释了一半"的选项；排序匹配中把"最大信息优先"用在无确定信息时，导致反复试错。</div>
+<div class="blk b-de" data-page-node-id="xWGGooTvo7rdqobR5lerua"><b class="t" data-page-node-id="PjxEG41VXNVDy3TudjdCsb">示例演示</b>矛盾："某商品价格上涨，销量却不降反增。"<br data-page-node-id="1fCGjyKjX4IuxmEZ13VfPv">正确解释："消费者预期该商品<b data-page-node-id="RCki9EwaunNRIRwxtSgy3r">还会继续涨价</b>，故提前抢购" —— <span class="ans" data-page-node-id="C5P31uoKDVPqRHXlmkzOPr">同时解释了"涨价"和"销量增"两面。</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="QdJbqzU13mNOWCdrALLMl9">判断推理 · 用时与取舍</h3>
+<div class="card" data-page-node-id="N4FTivKDEY3bJCA8vqB3zl">
+<h4 data-page-node-id="zV58IfNCK7vIliBsu5WQsY"><span class="no" data-page-node-id="PKHdBMksop2y4cNrWnG3vG">✓</span>判断推理用时分配与超时兜底</h4>
+<table data-page-node-id="h04F4jrjBFNfVGhcjzNIIZ">
+<tr data-page-node-id="WYyb5ZWW3hnOkI8V22rx8B"><th data-page-node-id="juuBADpTiWVVbnkgdMTHZN">题型</th><th data-page-node-id="HiT1wGgKUYGB3syQ4uNR1F">题量</th><th data-page-node-id="Y4VzflpueKGhh8cMCSBZaG">目标用时</th><th data-page-node-id="9MAY0T4TmlB94THZBvNOE2">单题红线</th><th data-page-node-id="OmLjuTb88O0rU6fCvWDHAA">目标正确率</th></tr>
+<tr data-page-node-id="pq6B0tiYU36Ge8gbjPbDTj"><td data-page-node-id="yWvDNeKqgsFt5W3T1ZexXc">图形推理</td><td data-page-node-id="XiFqgQ7KCIFi7QDEIv3ysy">5—6</td><td data-page-node-id="N7YC3E7G4wQ0iCsVP1TLVB">5—6 分钟</td><td data-page-node-id="1ijsc5CBEFFCJw9LSO9zZ5"><b data-page-node-id="rN6AeuyZrDSs1DKLEtZrJw">50 秒</b>无思路 → 先蒙 B/C 并标记</td><td data-page-node-id="H6GaKUa4ncXE1j28ijtgOh">70%</td></tr>
+<tr data-page-node-id="hFtcUHndAf7YDqCWOf9wNe"><td data-page-node-id="XYJnfYfNpX5FqcFiRwrd5v">定义判断</td><td data-page-node-id="mqHr9mCnOmwUZtx0tbNJ1B">8—10</td><td data-page-node-id="NKMCbaJgezzPYCmA58IqAr">7—9 分钟</td><td data-page-node-id="GitSU95vrPacB4VeqO3rCl">60 秒</td><td data-page-node-id="Qv7ZKAWMZJrhKlLaZZx7fz">85%</td></tr>
+<tr data-page-node-id="27IgeQ4F53QfdgHHRp8xcG"><td data-page-node-id="pGFVMkmJ96Wi7wVzF10GA1">类比推理</td><td data-page-node-id="SvKPwVCLoHj025vUTN7K02">8—10</td><td data-page-node-id="js0wgC4wJKlFB0AzJ7oO0l">4—5 分钟</td><td data-page-node-id="g7yFq3l0mYdEpms5Ca2IkB"><b data-page-node-id="4JCcTy0Jk02aGCjN9E7ZCO">25 秒</b>，纠结即选，不回头</td><td data-page-node-id="oGFRAetvF35kEiKEaFL1x7">85%</td></tr>
+<tr data-page-node-id="XikUSF0vRJhLVG3Tuxjp5v"><td data-page-node-id="Egd33vSP5dMrYE0byLULBE">逻辑判断</td><td data-page-node-id="b2eeetqNyXLuWlPMRKmyPn">8—10</td><td data-page-node-id="06DsRNHCk7EPhWeCHXAqnO">8—10 分钟</td><td data-page-node-id="oNGltDn3AnrztAH3D0pDA4">90 秒（翻译/真假可 60 秒）</td><td data-page-node-id="qWJITDRNRRD7NCs76wUGsi">75%</td></tr>
+<tr data-page-node-id="weiEvukjvrElIgP1g9pzUm"><td data-page-node-id="zGbnaWF67zQcfGAy43HMSV"><b data-page-node-id="H2SCiU5xBseP4Av4qVgJ21">合计</b></td><td data-page-node-id="YwtrgziH1vSgjfeV1r17vr">30—35</td><td data-page-node-id="B9Fa9QCuNebqjyzrB26rWb"><b data-page-node-id="L6NZBNPt830f99X8IzAXDp">24—28 分钟</b></td><td data-page-node-id="6PonDNxqvdWQckE0axxHAL">—</td><td data-page-node-id="UymRDCEH1kyxU3XEGyanHj"><b data-page-node-id="30NrUU4pjFDcAgW4p2gFeP">80%</b></td></tr>
+</table>
+<div class="tip" data-page-node-id="4c0plxGz4eRY7rKrMDEb6d"><b data-page-node-id="5GqAhPGAp1tvpvv2ONdo3s">超时兜底规则：</b>① 图形推理连续 2 道没思路，<b data-page-node-id="7lgHL6Kxc4IFnRZEvaNxG7">整组先跳过</b>，做完定义和类比再回来（换脑后命中率明显上升）；② 定义判断绝不超过 60 秒，长定义只读首尾句 + 要件词；③ 类比推理是"送分抢时题"，省下的时间补给资料分析。</div>
+</div>
+
+<!-- ============ 言语理解 ============ -->
+<h2 class="mod" data-page-node-id="9wd8dtOkirmxlMmV3sb7m0">模块二 · 言语理解与表达</h2>
+<div class="mod-sub" data-page-node-id="bjCMNOJ2pQ2TTKmAqtneWj">目标用时 21—26 分钟 ｜ 目标正确率 78% ｜ 题量通常 25—30 题（填空 10—15、片段 8—12、语句表达 3—5）</div>
+
+<h3 class="grp" data-page-node-id="FFPG9rFnPnEulTpYkAhN7o">A. 逻辑填空（5 份框架）</h3>
+
+<div class="card" data-page-node-id="55ogsD9AxtoEGKSeIDGVas">
+<h4 data-page-node-id="r6GaPsLjCr7yVL6LA625Dn"><span class="no" data-page-node-id="vJPQvc8Rk08BfMGl8C14UB">19</span>逻辑填空 · 总原则与标准动作</h4>
+<div class="blk b-id" data-page-node-id="Ox9Xv1HwT88coUlsa8Wj0h"><b class="t" data-page-node-id="IVsOJNkHxg7MXxJwPEs6so">识别标志</b>文段中挖 1—3 个空，给出四组词语</div>
+<div class="blk b-th" data-page-node-id="3AzJ7V4futtFKihZnZHL7R"><b class="t" data-page-node-id="UyiLB7dhFzDY4vCwBhbGZ2">思考路径（标准动作，务必按序）</b>
+<ol data-page-node-id="zdKHcqALVzY0hsvWkvYyuP">
+<li data-page-node-id="6J0ii02MKT4ogKRiwZ4Wpm"><b data-page-node-id="rLFj8Rh9ICzHy4RBr564wD">先读文段，不读选项</b>——先理解语境，避免被选项带偏。</li>
+<li data-page-node-id="84pyO9ajPdX9VnkAKnOrlW"><b data-page-node-id="hfya728jn1GBUh7d7zmTZy">找逻辑关系</b>：看空前空后的<b data-page-node-id="p17zOR2syhFgxDphYeAhqU">关联词、标点、解釋性语句</b>，判定空处该填<b data-page-node-id="VY6HCflhRgcEw1mTB6ZApq">近义 / 反义 / 递进 / 因果</b>中的哪一种。</li>
+<li data-page-node-id="YY2fZ565HbfriFXjs6EpPn"><b data-page-node-id="BjGvCMf5PXeQHr6CjEk3Ao">预判词义</b>：在脑子里先想一个"大概意思"，再去看选项。</li>
+<li data-page-node-id="7bRmmWmnWETaNHHSm5bpYl"><b data-page-node-id="CyZKNyhmjKKEDmf7jTNts5">以空排项</b>：用<b data-page-node-id="bY0QOIaYw4w4yRxs2a4tsG">最有把握的那个空</b>先排除，不要试图一次定三个。</li>
+<li data-page-node-id="cW6QgO0sa9N2RsVEdRee9c"><b data-page-node-id="v5gaVkERJcIz1B2d0Huwl3">剩余选项代入通读</b>，凭语感定夺（注意搭配是否顺口）。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="ZNtgy65f8Zj9OCm4xcYpDp"><b class="t" data-page-node-id="QWIjYHmzpHf0UPnEjBfbod">判定标准 · 逻辑关系对照表</b>
+<table data-page-node-id="xbwfhG5ty5N2XrSJ2gFw1Y">
+<tr data-page-node-id="QvQTOfYYXRnBMFGV7F1FY0"><th data-page-node-id="HQcFj9wqZGEN4xHHYBiEhl">逻辑关系</th><th data-page-node-id="eFSOOzGFaq5PwERODymblB">标志词</th><th data-page-node-id="Ca7xfvBY8lI0YX3FxErXqY">空处要求</th></tr>
+<tr data-page-node-id="akkeSGjiP5uGYNcFb20fqS"><td data-page-node-id="F5BPJalSNGMWiEj8vrLFlf">转折</td><td data-page-node-id="0Ho5zRZwEQtXxbPUqw3wnG">但是、然而、却、其实、尽管如此</td><td data-page-node-id="eattrLehVWKv947IdxY5JS">与前文<b data-page-node-id="PM210cPun9En6HVZahptx8">语义相反</b></td></tr>
+<tr data-page-node-id="8eefAsCfWlu5CnqawvzF1M"><td data-page-node-id="3hnDDWBXdAzJPGW8zPYj1N">并列</td><td data-page-node-id="JvqMeY3F6sdLCFJ4otUxXI">和、与、也、同样、并且、顿号、分号</td><td data-page-node-id="ZDhYbxDHRqE8cSz5m6UIMo">与并列成分<b data-page-node-id="Q1wxR0YYAwh8jZ9h5efvNO">语义相近、词性一致</b></td></tr>
+<tr data-page-node-id="cFI6LoleKOYkER2mJQFL78"><td data-page-node-id="Ujdc8x9GeYzBJWuGVBfoI5">递进</td><td data-page-node-id="jywKh4smyUCg2nSpzCInOS">而且、甚至、更、不仅…还</td><td data-page-node-id="8VpwLEJ6SndcSPEKSGQNhO">语义<b data-page-node-id="8LGDauRRd6jPFpwGLzJVQz">更进一层、程度更重</b></td></tr>
+<tr data-page-node-id="ZQ6FVSWtBxD13FlW0MEqyh"><td data-page-node-id="g7dgzhoiS3kKHawHFBWk6r">因果</td><td data-page-node-id="Hi3PYhS0zXtSLDDxJHimNT">因此、所以、导致、使得、由于</td><td data-page-node-id="Z9bWaEI6x5CJBzWLH1CgAM">填<b data-page-node-id="uEoth1l6WPcPlFOIIUCnon">结果</b>或<b data-page-node-id="FpwXAwvE5zmJZt2XPeA65a">原因</b>（看空的位置）</td></tr>
+<tr data-page-node-id="3kTyF0KMzD5BFsuEqPsW07"><td data-page-node-id="3fmIgWYVRGggx02q7GfUu4">解释</td><td data-page-node-id="A3lsTh82RwQcAg1obYANYZ">即、也就是说、换言之、冒号、破折号</td><td data-page-node-id="8eVh2AUz9FtFKhCibTvDkJ">与解释句<b data-page-node-id="gXD6FzOQ9EtCqZSxVpyHcE">同义</b></td></tr>
+<tr data-page-node-id="6xR6kAXPQWff7X3AJyzwoU"><td data-page-node-id="EWngFa5kwTYL9jM7PE0iBC">反义并列</td><td data-page-node-id="yV3BEHMqVSiQB9Inj8qASy">不是…而是…、要…不要…</td><td data-page-node-id="mFfJXlc5Ditmch7USR1xXJ">前后<b data-page-node-id="6xD0s99dcTDEzvCrottgaR">反义</b></td></tr>
+<tr data-page-node-id="pqmicwvXaYPSFV4glpHsJQ"><td data-page-node-id="dwvvveUdVspiPbKjxgDNrX">条件/目的</td><td data-page-node-id="qLyjh8mPzj1uKYDG6EY53d">只有…才、为了、旨在</td><td data-page-node-id="4Rzwui1FyuVyCGfaEs5xXb">填<b data-page-node-id="VFSsrrNzkitUqFaKQIn1CU">条件</b>或<b data-page-node-id="WpRcNnNuXwPNAsSHORIGJw">目的</b></td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="qBQxCJMAzW3Z66zV2pkw1O"><b class="t" data-page-node-id="5rlGhFPJydCiJjZMLp3uFO">高频陷阱</b>
+<ul data-page-node-id="IuG2E8uut9kIyWEnydKh1r">
+<li data-page-node-id="IGUNC5GasAkGEBh8KAtWkR"><b data-page-node-id="GBFaYP2kTuD6xiwn8KcSR9">先看选项后读文段</b>，被生僻词吸引，结果语义不符。</li>
+<li data-page-node-id="DagXUpaCsDOansc8HzC49y">只看被挖空那半句，忽略<b data-page-node-id="zUev1yRZPXqgK9DIOHEmBk">后文的解释句</b>（解释句往往是答案直接来源）。</li>
+<li data-page-node-id="L1iNr2jzRwiAwdYKfnUHOB">忽略<b data-page-node-id="NYNdKN5LUA5jE31X6jTZzc">感情色彩</b>：文段褒义却选了贬义词。</li>
+<li data-page-node-id="ljyuLmmgnGGLA7TF14UQ5G">忽略<b data-page-node-id="CGbZ4bBHPRxZtKJa5DhbpR">搭配</b>："提高水平"对，"提升水平"也对，但"改善水平"错。</li>
+</ul></div>
+</div>
+
+<div class="card" data-page-node-id="K6eXmEpngSfoVywnBjydcS">
+<h4 data-page-node-id="Xqf4WhBoEErMxCY5FCZEKm"><span class="no" data-page-node-id="Hsm1SuJCuyjfDSGpZWcXDt">20</span>实词辨析（四维度）</h4>
+<div class="blk b-id" data-page-node-id="dDF7f93TQZuCdPCwF3T3HK"><b class="t" data-page-node-id="7g7aHdvZeS8p8gj59UrC24">识别标志</b>选项为意义相近的实词（动词、名词、形容词）</div>
+<div class="blk b-th" data-page-node-id="UUL6pZmqImAkBcDAOT1BvD"><b class="t" data-page-node-id="HVg9FcD73D7r0ABvvCnSeS">思考路径（四维度，按顺序比）</b>
+<ol data-page-node-id="KK5GV2NmRROHImDCXUkjoc"><li data-page-node-id="fsfq8a08pb5MHQnTFua3kJ"><b data-page-node-id="Xb5nzB6GHc5O4jQ5Q0Vjbp">语义轻重</b>：程度不同。如"缺陷 &lt; 缺点 &lt; 错误 &lt; 犯罪"；"失望 &lt; 绝望"。</li>
+<li data-page-node-id="kYAoLJO6QltmONDDVozg9T"><b data-page-node-id="XXMsJRPlp9yUfZqOqVcVHi">搭配对象</b>：固定搭配。如"改进<b data-page-node-id="0qL9ks8wFt7O04L7AZfuaZ">方法</b>"、"改善<b data-page-node-id="8I7soxq4qRPEbi6phfSee0">生活</b>"、"提高<b data-page-node-id="0BmkrG2FtAaLSnW96fcRDe">水平</b>"、"加强<b data-page-node-id="UflBAI08hOKLZSLXunjamN">管理</b>"。</li>
+<li data-page-node-id="bzIFRLiQ2xUaGh6rQY6HGf"><b data-page-node-id="FzMtS5GgiDlQQzdcLRmwxJ">感情色彩</b>：褒义 / 贬义 / 中性。如"果断（褒）vs 武断（贬）"、"团结（褒）vs 勾结（贬）"。</li>
+<li data-page-node-id="BOZUQSHiUtKduhd5mFF99k"><b data-page-node-id="9hkl5Ikgjaiauh3amPti7A">语体风格</b>：书面 vs 口语；正式 vs 随意。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="8DmchGsAhyFhMbeDoHiwRv"><b class="t" data-page-node-id="uRg7JsKn5KAjtFC4gttC2k">判定标准</b>先用<b data-page-node-id="I1wLqGv5Q83gTLyVr0zSsA">搭配对象</b>排除（最硬性），再用<b data-page-node-id="G4J8B2P3QFW1KixwVsTZMY">语义轻重</b>和<b data-page-node-id="vHyuDkWaYwQpBRsYK2GRki">感情色彩</b>收口。<b data-page-node-id="y07UazuudMTTCZDHzkKizl">搭配不对，一定不选。</b></div>
+<div class="blk b-tr" data-page-node-id="DBerhQ6f3g1PpE5Ng5TUca"><b class="t" data-page-node-id="8pxZYKUFEpsO7NFxDiGDLk">高频陷阱</b>两个词都能讲通时，忽略了<b data-page-node-id="RHAjscGWOQ3B56SO6WbnAD">语义轻重是否与文段程度匹配</b>（文段说"严重"却选了程度轻的词）。</div>
+<div class="blk b-de" data-page-node-id="mfth7PzEEdIHI6Nt0YSImo"><b class="t" data-page-node-id="SacG1bfGoC6JTvhuZThtGf">示例演示</b>"这项政策_____了群众的积极性。" 选项：A 激发 / B 激励 / C 激烈。<br data-page-node-id="tixZ0V3D0R8ov6AN0ffWIC">C 是形容词，先排；"激励"多接人（激励员工），"激发"多接抽象物（激发积极性、热情）→ <span class="ans" data-page-node-id="tJ2w0LFGiMXCDlinmyuO5e">答案 = A 激发。</span></div>
+</div>
+
+<div class="card" data-page-node-id="KoYxgG0cdmokQUyX93NpqF">
+<h4 data-page-node-id="lVElknwDNwT7xSgyl3EW50"><span class="no" data-page-node-id="3XlwQtS53EMb9wIpk1ylMr">21</span>成语辨析</h4>
+<div class="blk b-id" data-page-node-id="WUmmi9lNmeazw1XIEi8naP"><b class="t" data-page-node-id="nWJiPmoZKlQC7SnUxPTsID">识别标志</b>选项含成语，或成语 + 实词混合</div>
+<div class="blk b-th" data-page-node-id="0CuPDqpf8Rcd2EGZnJo1z9"><b class="t" data-page-node-id="XsdKWUe22QlRib0w2Vnvjn">思考路径</b>
+<ol data-page-node-id="KYNp85yYdyD7lsN3IdcKvd"><li data-page-node-id="QjDEUsiAeGpg6Vs5dXsHTc"><b data-page-node-id="BNgWS6q22Fi3vdovMfTdgX">先判断成语能不能用</b>（望文生义 &amp; 对象误用 &amp; 褒贬误用 是三大死穴）。</li>
+<li data-page-node-id="8srgb4X6pUZQmyd14JC7ig">再按<b data-page-node-id="sRIflbHHwhveAS8l94efr2">语义侧重</b>区分近义成语。</li>
+<li data-page-node-id="3OOzX89WxO3ZYNWROTC9RL">成语与实词混搭时，<b data-page-node-id="6LLF9YxKgTFoUnoU4hRqHh">成语是突破口</b>——先用成语排除，再看实词。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="N2tDliMwoDE2cuBOZGoZCr"><b class="t" data-page-node-id="qmOJZS74jUiR8bfvaHF3FX">判定标准 · 高频易错成语分类</b>
+<table data-page-node-id="CF7gMXlUatKKZ013Eh7O4b">
+<tr data-page-node-id="HENFK91AK5bURrUNrD9joS"><th data-page-node-id="QRyPsSGo6r3WM8611MQ7DJ">类别</th><th data-page-node-id="qxVukiMdBLFH2hsUvTLmT9">易错成语</th></tr>
+<tr data-page-node-id="AFruhCVAtN0kYT8jPDDWvh"><td data-page-node-id="i6mAL4RSnptptqTwIEiX3c">望文生义</td><td data-page-node-id="fHYNqXvRl7YKtFCjpfnlfs">不刊之论（不可改动，非"不能刊登"）、差强人意（<b data-page-node-id="4AA0KcMRhnUFbjri5LugBr">大体满意</b>）、首当其冲（最先受冲击）、文不加点（一气呵成）、炙手可热（权势大，<b data-page-node-id="d1lxk5RIxnF5EFkXIXf672">非"热门"</b>）</td></tr>
+<tr data-page-node-id="UwaB1AgVjYR7B5zs9VDI7B"><td data-page-node-id="QvqaNn9RiZrqM7Xdy8DgrV">褒贬误用</td><td data-page-node-id="IkxpCwZHAFiqJbnihlQnES">处心积虑（贬）、殚精竭虑（褒）、趋之若鹜（贬）、蔚然成风（褒）、弹冠相庆（贬）、粉墨登场（贬）</td></tr>
+<tr data-page-node-id="QvfltZSj0UHtHCAXp5SpF7"><td data-page-node-id="Fja0B7DNX3mi7edVdHho9v">对象误用</td><td data-page-node-id="vUUkGIKaJXWW5BX7kD4sjJ">美轮美奂（建筑）、汗牛充栋（书籍）、豆蔻年华（女子十三四）、举案齐眉 / 相敬如宾（夫妻）、鳞次栉比（房屋等密集排列）</td></tr>
+<tr data-page-node-id="zaKVIL66xdpKKdjKi4PCez"><td data-page-node-id="jVVUvJQ4iyvCX1iXCLTACf">语义重复</td><td data-page-node-id="jKryKqCSgcnzSp6Ht0BBmA">忍俊不禁地笑了、难言之隐的苦衷、显得相形见绌、目前的当务之急</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="4RNa2bv1ezK3vUn2gE7FJG"><b class="t" data-page-node-id="FjsS3xd7FoFkwtEXd1XP73">高频陷阱</b>"炙手可热"被误用为"很受欢迎/热门"（实为权势大、气焰盛，贬义）；"差强人意"被当成"不满意"（实为<b data-page-node-id="wnujEIyXWxOVkrwknp0emc">大体还能让人满意</b>）。</div>
+<div class="blk b-de" data-page-node-id="P2YTcxNNPZH9QdtIXRpGMl"><b class="t" data-page-node-id="l3MGVyGMOCj5UpvepM5l2K">示例演示</b>"他的文章写得很好，_____" 选项含"不刊之论" → 指不可磨灭/不可修改的言论，用于<b data-page-node-id="vo6labUH1TmzBGdOhxQO14">文章言论</b>，语境吻合 → <span class="ans" data-page-node-id="Mlq10utLxogb6n69OhqFtH">可选。</span>若选项是"炙手可热"形容文章受欢迎 → 对象与感情色彩双错 → 排除。</div>
+</div>
+
+<div class="card" data-page-node-id="cS8EHKza8KEoXHmdggPF3D">
+<h4 data-page-node-id="HyDTzIpKRtXYJgMM8qLpLA"><span class="no" data-page-node-id="SHW3ZjDIyAxHcX3a99AF32">22</span>多空（两空 / 三空）混合填空</h4>
+<div class="blk b-id" data-page-node-id="qi9BVdX4LZwrBX0LcDCmri"><b class="t" data-page-node-id="RC2m1YnoVzduYCqbEVKWYc">识别标志</b>一题挖 2—3 个空，选项为词语组合</div>
+<div class="blk b-th" data-page-node-id="5a9ZoJaWhEvewSje9IK3sY"><b class="t" data-page-node-id="C3sCEboVlYl6Bp0f2o858Z">思考路径</b>
+<ol data-page-node-id="EtlauVS3g1Aw0STD5BxqEf"><li data-page-node-id="GPrB0tN9e6sk325hPgDJhc"><b data-page-node-id="VpGszlY7EKrPGQaIOZ3cDd">先找"突破口空"</b>：哪一个空的前后逻辑提示最明确（有解释句、有明显关联词、或搭配最固定），就从它下手。</li>
+<li data-page-node-id="X3xlbPQhV5eiwedqpodKWM">用突破口空<b data-page-node-id="SlXpbCTDJAJ4tKziyBzHBs">排除 2 个选项</b>，剩下 2 组再用第二个空定夺。</li>
+<li data-page-node-id="DsC7NgJlh87AxuEtoFAoPo">不要试图同时满足三个空，<b data-page-node-id="hlLs5sajFmokAQNOnRQrIj">满足两个空且第三个空讲得通</b>即可。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="tANunvgAD1oXBacxKMPcHj"><b class="t" data-page-node-id="jufA3pKbvOvFwUddTre08u">判定标准</b>"<b data-page-node-id="XOaVgFaI6uo012O55TMYd6">两空都对 &gt; 一空特别好</b>"。若某选项第一空极贴切但第二空搭配错误 → 排除；反之某选项两空都平平但都成立 → 可选。</div>
+<div class="blk b-tr" data-page-node-id="BydP8uvGGgn9ifju07n8pp"><b class="t" data-page-node-id="2DIIFuKCB89PegbZzKEc4m">高频陷阱</b>被第一空的"完美契合"迷惑，没检查第二空；或者两个空都纠结，浪费 90 秒。</div>
+<div class="blk b-de" data-page-node-id="xxN8A0hQYgabhGrYuhv7rT"><b class="t" data-page-node-id="31lS3J5lli2MzM9w95M3lS">示例演示</b>文段"……虽然起步较晚，但凭借____的投入和____的机制，最终实现了赶超。"<br data-page-node-id="jz6P74yIEQLSC5o7zEyCNC">突破口在第二空"机制"，"健全的机制/完善的机制"是固定搭配 → 排除"优秀机制/优越机制" → <span class="ans" data-page-node-id="xJmhzpl5f6uTWj1gbh01fv">用第二空锁定答案。</span></div>
+</div>
+
+<div class="card" data-page-node-id="mJCacncQYEA0JQwVkW5h21">
+<h4 data-page-node-id="oCfG7zydoMKb7gUPHp2VuH"><span class="no" data-page-node-id="B3mivzrB8tk6i9Lg6BFhfC">23</span>逻辑填空 · 提速与取舍</h4>
+<div class="blk b-th" data-page-node-id="nPrKVxXq7aLI8M7sH8hxE5"><b class="t" data-page-node-id="3Zt1Kzme1YoCuiJqVjU7Nu">思考路径</b>
+<ol data-page-node-id="HJuSWwvuVH6CUNkZnuFEEn"><li data-page-node-id="X91huwuF4S65Yt3dBOx34J">单题 <b data-page-node-id="S7f8ea0yLd1czqSdlEBLrG">40 秒</b>为红线，填空总量控制在 <b data-page-node-id="P5xz9oCHrlHJxL2PZsoq30">7—9 分钟</b>。</li>
+<li data-page-node-id="poAqzSdjHopkgCm9W6l7mN">40 秒拿不定 → 选<b data-page-node-id="gMdh7lPsdc51LHm2lPxBLr">读起来最顺口</b>的那个（语感在填空上准确率高于反复纠结）。</li>
+<li data-page-node-id="LHscOnGCEIi02puA4JqxCs">遇到完全不认识的成语，<b data-page-node-id="Cg1fEcSeVlOctabjpxpkKy">看它的字面是否能与文段形成呼应</b>，不行就先排除它（不认识的词不等于答案）。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="wYgRme37QDuWp1x01hHQ7H"><b class="t" data-page-node-id="wu70564cAiYnvEgyKnTSn8">高频陷阱</b>在填空上反复改答案——第一语感正确率约 70%，改动后反而更差，除非<b data-page-node-id="urRLQDJtvp5V3BeybHpXsD">找到了明确的逻辑错误</b>，否则不改。</div>
+</div>
+
+<h3 class="grp" data-page-node-id="HNuZCvjIy1xxKypUchtDsU">B. 片段阅读（6 份框架）</h3>
+
+<div class="card" data-page-node-id="y5LtHSGdE3xNgVz2Ql1QEX">
+<h4 data-page-node-id="9x4sqDrNlQKrZlebDv0ZWk"><span class="no" data-page-node-id="PHqpVjXF9cKDTY4cD7jTal">24</span>中心理解（主旨概括）</h4>
+<div class="blk b-id" data-page-node-id="mdA5VNOcFYWzKoA3hy786D"><b class="t" data-page-node-id="uw6OlKLFVVuoY6dpm8DviF">识别标志</b>"这段文字主要说明/意在说明/主旨是/核心是/概括最准确的是"</div>
+<div class="blk b-th" data-page-node-id="Eamz04c5h4KkpERhj5T4Hp"><b class="t" data-page-node-id="9LWkslZONcmtwjgq5vQPLA">思考路径（三步）</b>
+<ol data-page-node-id="0bx6g8DgAzxELqswR47Otj">
+<li data-page-node-id="d7BzD33GGLlLCPzyR1pxwK"><b data-page-node-id="PsupjR1JGMrAEeA3N3KHgo">找主题句</b>：重点读<b data-page-node-id="1Egv2JlhsexiTXO6xKLvWV">关联词后半句</b>——转折后（但是/然而/其实）、因果后（因此/所以）、递进后（甚至/更）、对策句（应当/必须/需要）。</li>
+<li data-page-node-id="XA0xvlft6y6XeIKOqlqDsM"><b data-page-node-id="APwbAUF6byGboXDWA9bnE0">划结构</b>：是"提出观点—举例论证"？"提出问题—分析原因—解决对策"？"现象—本质"？<b data-page-node-id="x8dvvU9hrSyvHL4myTLjgG">举例、数据、引用、背景介绍都不是重点</b>。</li>
+<li data-page-node-id="LsmtcG2eGyQyPxGzJRknQU"><b data-page-node-id="BLOF51Bck3EgaI45nH2K4c">抓主题词</b>：全文<b data-page-node-id="iNimwyr8J0m697CHlTDyEZ">高频出现</b>的核心名词（通常出现 3 次以上），正确选项<b data-page-node-id="ZgDDqEKqKpzD72oyR33ivf">必须包含主题词</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="Qg0ZASPwwxDCaUZHx3AZ8v"><b class="t" data-page-node-id="bpKgULgI0RJo2BhBAa9FTo">判定标准</b>正确答案 = <b data-page-node-id="zFpCEz4j6IhDnwEhEXrNTT">主题词 + 作者观点/结论</b>。缺主题词的、只概括了例子的、只讲了背景的一律排除。</div>
+<div class="blk b-op" data-page-node-id="wcFkoIMZLjqCMBVUnoDBIM"><b class="t" data-page-node-id="ihUgCqgItuAOMxgVXsyVl8">选项处理（四类必排除）</b>
+<span class="chip" data-page-node-id="YDH3BjlxxfyRcTGvcsgFQc">① 无中生有（文段没提）</span>
+<span class="chip" data-page-node-id="UuLbds43N3i9fDM6ZqNeH2">② 以偏概全（只说了局部）</span>
+<span class="chip" data-page-node-id="zvcrdqLJSIVoCsZqFE4MkA">③ 范围扩大/缩小</span>
+<span class="chip" data-page-node-id="HFrWk4ozGxaPfFUHjT11i8">④ 非重点（是例子/背景/原因，不是结论）</span>
+剩余两项时，选<b data-page-node-id="IDqC9fJpfzJbUnDdCfFs37">表述更具体、更贴合原文</b>的那个；若一项过于绝对（"所有""必然"），慎选。</div>
+<div class="blk b-tr" data-page-node-id="9sqZ5zPmBdWmHtlP3zRTKf"><b class="t" data-page-node-id="RP0hkZRbnn6BxdHGBxqsI6">高频陷阱</b>
+<ul data-page-node-id="TGZI9B7zcLDRLNM1pREQ64">
+<li data-page-node-id="37h3vT8PAeCir6q1xMNtpf">把"<b data-page-node-id="JEDEDf4APCI4W3STCNVphd">例子</b>"当成主旨（文段"例如""比如"之后的内容永远不是主旨）。</li>
+<li data-page-node-id="fl7WUYD6UMNAXiny971paU">选项<b data-page-node-id="UbWNJATNB2tLLYdGawPnDN">表述正确但不是文段重点</b>（这是最难辨的陷阱，常见于"原因分析"项）。</li>
+<li data-page-node-id="vyL8aURh7h7MvsmYycFKoT">忽略了"<b data-page-node-id="7sZ6mjaUDhiF0vD7YcVfqf">然而</b>"之后才是真观点。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="zrJyeatwDvwVPrYhLjrCjj"><b class="t" data-page-node-id="zCaTw3zusAa0LKDJfENha9">示例演示</b>文段：介绍某现象 → "然而，这种做法也带来了……问题" → 接着举例。<br data-page-node-id="AzUfwCuR3kNgwKsB2BnAPR"><span class="ans" data-page-node-id="DbL4u6TsxnJHhgCoFbVqZv">主旨 = "转折后"的问题（如"××做法存在隐患"），举例部分不选。</span></div>
+</div>
+
+<div class="card" data-page-node-id="rtPZD9tSfe0UQ3A7Qe2phX">
+<h4 data-page-node-id="KyOa5ppLajuYLu3GBt6pQm"><span class="no" data-page-node-id="PCyeH2zWHP3nCF6C7A0AYa">25</span>意图判断</h4>
+<div class="blk b-id" data-page-node-id="2hu8MuvvFkCMhYBtZJGlZ6"><b class="t" data-page-node-id="8ecpF0FmmcDyaACAJhmWz8">识别标志</b>"这段文字意在说明/表达的意思是/作者的意图是/想告诉我们"</div>
+<div class="blk b-th" data-page-node-id="TvEdupEmDN1apNPvh2IujL"><b class="t" data-page-node-id="ELweC13rC9p0kfNjAG4nxG">思考路径（判断口诀）</b>
+<ol data-page-node-id="uG55MkMXXulXham4ZvcACV"><li data-page-node-id="TR9As1CMiR0hZJHcQazpON">先按<b data-page-node-id="K5Sl0W9rAkvPJIGxW2ZMAv">中心理解</b>的方法找主旨。</li>
+<li data-page-node-id="kn5oGchbqTacyQu3H47wzo">看文段<b data-page-node-id="LoMbuI17lsbyLGDSZbLvcC">有没有"问题"</b>：
+<ul data-page-node-id="qbey1E71HBEWwHr2IqaDID">
+<li data-page-node-id="nX9DtFuWlIkOe4jkeuwoCd">文段<b data-page-node-id="O5GZkq93nH3fjcA4YiRTP2">只阐述一个观点/事实</b>（无问题）→ 选<b data-page-node-id="aClLg4AyyYFzFIFOfdK5PM">主旨概括项</b>。</li>
+<li data-page-node-id="nR44hKAX9H7XLfgfRJxXPn">文段<b data-page-node-id="56S9dbLO6oZcAJL5DWqCgT">提出了问题</b>（负面现象、危害、不足）→ 优先选<b data-page-node-id="XviQ1hRnlOQhB5etKIRjUu">对策项</b>（"应当/需要/必须…"）；<b data-page-node-id="ldLCgOEv9jDYYyYnuHYDrX">没有对策项时，退而选问题项</b>。</li>
+</ul></li>
+<li data-page-node-id="SCGX7kY5rXsAMhIbI3cWTt">对策项必须<b data-page-node-id="qHwVDWjs9fLWQMOhsLjSoB">针对文段的问题</b>，不能是"万能正确但无关"的呼吁。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="Bl90uBmVkc6QBo8zldLdPb"><b class="t" data-page-node-id="bhLu7CYJ47hTL4glTgVEfD">判定标准</b><b data-page-node-id="02ybvB35lYWBfo8zUFawwH">有问题 → 选对策；无问题 → 选主旨。</b>且对策要"对症"——解决的是文段说的那个具体问题。</div>
+<div class="blk b-tr" data-page-node-id="pXKupWxnpxTNCk8cDpGjUU"><b class="t" data-page-node-id="E8DieAdZlSqpwTpkzwCndQ">高频陷阱</b>
+<ul data-page-node-id="HB27rtEglRZfLrmIngcxtF">
+<li data-page-node-id="qC8B9pnW999HcAlzIJEwM7">文段有问题，选项也有对策，但<b data-page-node-id="rNaPqMjguF97M7pwfXBfej">对策不对症</b>（说的是别的问题的解决方案）。</li>
+<li data-page-node-id="p0GRHVuRquqHHerPWKSSO8">文段无问题，却选了"呼吁式"的引申项（<b data-page-node-id="ZcmwlQB8qNhEakJ4LmOXJv">过度引申</b>）。</li>
+<li data-page-node-id="E5V7Oxm5TiBA6VmZ04cMbH">把"意图"当成"主旨"，漏掉了隐含的对策倾向。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="XMtQrfRuvwTGJ5ZKyCWIng"><b class="t" data-page-node-id="hA7ssxsAhVtNhG1z2reHtt">示例演示</b>文段："……农村留守儿童心理健康问题日益突出……"<br data-page-node-id="hhVzvfHoHENj7QTAGEfvKq">选项：A"留守儿童心理健康问题严重"（问题项）；B"应加强对留守儿童的心理疏导"（对策项）。<span class="ans" data-page-node-id="3w6WTeFUVX5E3uhrCVty5o">答案 = B。</span>若选项 B 是"应加强农村教育投入" → 不对症 → 选 A。</div>
+</div>
+
+<div class="card" data-page-node-id="QhADc1gs1UfPjmQQrm45zB">
+<h4 data-page-node-id="DaR91i64uogK6mzGdCftgN"><span class="no" data-page-node-id="NiCq3HHioZFOcJ92JtiF62">26</span>细节判断</h4>
+<div class="blk b-id" data-page-node-id="4S2qUlVSsqHMDBebzEkjbp"><b class="t" data-page-node-id="bUj2KeFkYFeheoCEZWFJ8T">识别标志</b>"下列说法与原文<b data-page-node-id="6F0iYSY8Y52osA3ZSYiSCH">相符/不相符</b>的是""下列说法正确的是"</div>
+<div class="blk b-th" data-page-node-id="67zlMuZAs1GtdU2yAmYA8f"><b class="t" data-page-node-id="TopDaReR9y6JiFHqpkkW9J">思考路径</b>
+<ol data-page-node-id="CvbujmI0S4oKdXA7WFF6MV"><li data-page-node-id="6dJ2cs9V00giDiwSiXnb3f"><b data-page-node-id="DtiFXZQ3d5ZbbYkxYmskv4">先圈"符合"还是"不符合"</b>（同定义判断的陷阱）。</li>
+<li data-page-node-id="s6LCxKQxkDX3EBMNm9sdqQ">按<b data-page-node-id="BUQr7Kz81tI7zJIdhN3pzN">选项顺序</b>回文段定位（不要先读完整段再做题，浪费时间）。</li>
+<li data-page-node-id="X6xIHvI1ATFCVOo4zVRhYl">逐字比对，找<b data-page-node-id="EjmGJy7N0GeakEkuGMcIbj">六种偷换</b>。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="BPWlQasSkhpZIg74I1KOaC"><b class="t" data-page-node-id="pCl7tdqIsGVaGesPahFQgX">判定标准 · 六种典型设错</b>
+<table data-page-node-id="CkrRNimOQKeYjyzUVgtFrA">
+<tr data-page-node-id="s4omD2l8tKLAxD5dFf5m2A"><th data-page-node-id="hiso66C6d59Q9IM5nRrSEy">设错类型</th><th data-page-node-id="vveZHLFyxdSktRqn46AL96">表现</th></tr>
+<tr data-page-node-id="9wwg7xCLk8WfZT3O1PvQAr"><td data-page-node-id="wc0CLqHbIUelhRcTlpGOBp">偷换时态</td><td data-page-node-id="hJSlG0SJUoOkEJLHXBRbRq">文段"将要/已经"，选项"已经/将要"；加"了""过"</td></tr>
+<tr data-page-node-id="h4A9mY1RsKaqyAAepgFD07"><td data-page-node-id="i1LyGyKfSEw55FN5Kd68tb">偷换数量</td><td data-page-node-id="jZn0YLCFoQjrtrqkWBsqBh">"有些"→"所有"；"部分"→"全部"</td></tr>
+<tr data-page-node-id="8RBDXZ2vYDFhH7SaGIIdWq"><td data-page-node-id="0PGgE4qA7AHFQx8FfVaP6B">偷换语气</td><td data-page-node-id="S18UsCbzawf1PlZ3QZzxlG">"可能"→"一定"；"也许"→"必然"</td></tr>
+<tr data-page-node-id="aaeJ3BeLJsWgKGDYFYfP7F"><td data-page-node-id="qUmOHAQvFFKMLIJMToSgdM">偷换概念</td><td data-page-node-id="MuRJgWRY6oStgiiyPVDGL2">换成相近但不同的名词</td></tr>
+<tr data-page-node-id="luUMCmLNsMT5eMfd1mOzQQ"><td data-page-node-id="oGw4ST9rMZfKrSaldFneH2">强加因果/因果倒置</td><td data-page-node-id="pHIFxhsFCOWtllE0Zfm1dV">文段无因果却说"因为…所以"；或把因说成果</td></tr>
+<tr data-page-node-id="meYGTHqVZ68iXkDCNclD8C"><td data-page-node-id="rUcFvPMCLJnzqfPoQHal49">无中生有</td><td data-page-node-id="SrfUd65XD1MAu7OmKBeSFO">文段完全没有提及</td></tr>
+</table>
+另：<b data-page-node-id="9CblYwNBzuhMMXyECj7sAE">选项表述温和（可能、有些、一定程度上）的，正确的概率更高。</b></div>
+<div class="blk b-op" data-page-node-id="l0XPjL8CYch0mjAoHckqxs"><b class="t" data-page-node-id="0wjOYGV3B5JUqNOKh0LQxx">选项处理</b>"不符合"题：先找<b data-page-node-id="qraya3DEg2W4ctEXgulhMl">最明显错误</b>的那项（通常是无中生有或绝对化），定位到就直接选，不必验证其余。</div>
+<div class="blk b-tr" data-page-node-id="sdaIA9kh0N0pI7hGGcqEo1"><b class="t" data-page-node-id="kGylEZU4aNbzngzf5GwvhG">高频陷阱</b>选项<b data-page-node-id="uZiLSs4cKlIHxqQFU2T8Xw">本身说法正确但文段没提</b>（常识干扰项）——细节判断只看文段，<b data-page-node-id="jBu73Ezi19wxSqsQaujMqX">不看常识对错</b>。</div>
+<div class="blk b-de" data-page-node-id="lptigThADzDVN00AEYmpfS"><b class="t" data-page-node-id="jy7f69dyitgyW7VT8sFo6B">示例演示</b>文段："该技术在实验室阶段<b data-page-node-id="yw4M6d4QT8viYgphDZWlW8">已取得</b>突破。" 选项："该技术<b data-page-node-id="QzEqznj9WeypPsaDNdTppU">将</b>在实验室取得突破。" → <span class="ans" data-page-node-id="GJ0Zg9mSkD9yBCfisMCDxW">偷换时态（已→将）→ 与原文不相符。</span></div>
+</div>
+
+<div class="card" data-page-node-id="szsyr5XXPuPvrPOwBwDHTd">
+<h4 data-page-node-id="1wLkiI5mVk49lQarJndhSC"><span class="no" data-page-node-id="N9a2j879m1UrZrA6nRspfF">27</span>标题填入</h4>
+<div class="blk b-id" data-page-node-id="WJiNYRJdxnZCua4sqDXH6Z"><b class="t" data-page-node-id="3G8YBntZrijtTMcXK3UHwk">识别标志</b>"最适合做这段文字标题的是"</div>
+<div class="blk b-th" data-page-node-id="svlsMFNTzdOOqKdkGmdGIp"><b class="t" data-page-node-id="YzaUWGTKXYFdZoOIu8kML1">思考路径</b>本质是<b data-page-node-id="jqwou3TEf08v8rlA9nZ1Ra">中心理解 + 形式要求</b>。先找主旨，再按三标准筛：
+<span class="chip" data-page-node-id="ID9wjhxQFJnEOPuek27jwF">① 紧扣主题词</span><span class="chip" data-page-node-id="DiPtiYvmTXkgDFEQQvqsfC">② 全面（不含糊、不片面）</span><span class="chip" data-page-node-id="GqaxVumKinJcxSEAXPuPn2">③ 生动简洁、有吸引力</span></div>
+<div class="blk b-ru" data-page-node-id="7Jp9XXKS2IR6b8feAqZfws"><b class="t" data-page-node-id="dY252N3X4CWyOyerpggCYy">判定标准</b>记叙文/新闻类标题要有<b data-page-node-id="gv4rU4rUu0cFjED7eWpfGN">事件主体</b>；说明文标题要<b data-page-node-id="r47sd568nIOzFiFmzsJt7G">点明说明对象</b>；议论文标题最好<b data-page-node-id="bDxBDkRweA3aVUXrXAZdlY">体现观点</b>。</div>
+<div class="blk b-tr" data-page-node-id="itWa2qpBvzeqpEwmEN3dza"><b class="t" data-page-node-id="SkByyAOVdGL0UOtLcuXBzi">高频陷阱</b>选了"生动但没点出主题词"的（太文艺/太宽泛，如"人生的智慧"）；或选了"只是文段一个小方面"的（片面）。</div>
+<div class="blk b-de" data-page-node-id="O7vsrikHBWXiweWKHNHaQk"><b class="t" data-page-node-id="6rs7qL56bxN9Ym3BFxUiJC">示例演示</b>文段讲"人工智能在医疗影像诊断中的应用与局限"。<br data-page-node-id="381XGmnrhHChpv7rbaAE7H">候选：A"人工智能"（太宽）；B"医疗影像诊断"（偏）；C"AI 看片：能力有多大，边界在哪里"（点明主题 + 生动）→ <span class="ans" data-page-node-id="lIvnQnqj7enYQQAGYYjAvW">答案 = C。</span></div>
+</div>
+
+<div class="card" data-page-node-id="zLD5Ts6ER65vA8z2WIJjxt">
+<h4 data-page-node-id="3PCEccFdkwESfbUhPUCZq6"><span class="no" data-page-node-id="CVq3x3XjTC7B8aGqXrBHh1">28</span>词语理解 / 代词指代</h4>
+<div class="blk b-id" data-page-node-id="IxADvpOdyRfzyfZub7KPlC"><b class="t" data-page-node-id="crTolGAyHGX0LDJBuCk3K8">识别标志</b>"文中的'××'指的是""'这''它''此'指代的是"</div>
+<div class="blk b-th" data-page-node-id="mZFGtNrPvQ4VfYBd5TLfD5"><b class="t" data-page-node-id="lE5tVYdzWFsVfg94Y4NRTU">思考路径</b>
+<ol data-page-node-id="KrNyYxnEmKk3FEwmj4xhmy"><li data-page-node-id="3ThLDA9xFj7HDJ7bDWzB4Y"><b data-page-node-id="tOxfIjqTb109uHBR8a3MBy">代词指代</b>：往<b data-page-node-id="GaYNePwp8PcdjQgYBdWqX8">前</b>找（就近原则），找最近出现的、能被替代的名词性成分；代入读一遍看通不通。</li>
+<li data-page-node-id="EJ9UVNdutKfhnE4g6W19Jv"><b data-page-node-id="tTKB1beWqjrr10sm3zh00W">词语理解</b>：定位原词，读<b data-page-node-id="298ABcxKAAbxkzfiTpz5FC">前后句</b>的解释/例子；把选项<b data-page-node-id="UXwSB53ufjIZcN3IFOvMhB">代入原句</b>，看语义是否连贯。</li>
+<li data-page-node-id="BJxMhNdrOFfsVmI4Psvlyu">注意"这""此"常指代<b data-page-node-id="dPNClTM2xIgmXBELi6Q9vd">前面一整句话或一种现象</b>，而非单个名词。</li></ol></div>
+<div class="blk b-tr" data-page-node-id="n0KGYDjHPzPmKziVZJ9BLa"><b class="t" data-page-node-id="6RQSBUn6miWDLsG3ZfVpfg">高频陷阱</b>只往前找最近的<b data-page-node-id="0avhopjiUq54NTgmCbyx7W">一个词</b>，而实际指代的是前面<b data-page-node-id="SBv7eSVyIhD0lppZ5Zout4">整件事</b>；或往后找（错误，指代必在前）。</div>
+<div class="blk b-de" data-page-node-id="7VYYAGgvsWsv1FixcS5X98"><b class="t" data-page-node-id="6TH5yMgjfB285hKiZ3m8LC">示例演示</b>"……很多年轻人选择'反向消费'，<b data-page-node-id="fqW8uEdudU0FGu4n8sRt83">这</b>反映了消费观念的转变。"<br data-page-node-id="TAIoiz29cVvnq5adcVauar">"这"指代 = <span class="ans" data-page-node-id="xCWyXSOIBqRwrVv6UaFHZ3">"很多年轻人选择反向消费"这一现象</span>，而非"年轻人"或"消费"。</div>
+</div>
+
+<div class="card" data-page-node-id="XAgOO0TCbE7ncbrhefzXGL">
+<h4 data-page-node-id="VvomEbPc0T8lZF2C8rlfnn"><span class="no" data-page-node-id="DJGK3IDdDEyF9L0GQm0p5w">29</span>下文推断</h4>
+<div class="blk b-id" data-page-node-id="gGS2MAyC5QnsTf9JlNiUns"><b class="t" data-page-node-id="tOXaCgYAS8Nu9nmLKCp7Pn">识别标志</b>"接下来最可能讲的是""作者接下来会谈论""这段文字是一篇文章的引言，文章接下来最可能讨论的是"</div>
+<div class="blk b-th" data-page-node-id="xW1jt0BCEMCgXNGyAh3Bfa"><b class="t" data-page-node-id="T0FvYCAl6ADky9wsU4KMNO">思考路径</b>
+<ol data-page-node-id="yIVhEFk4Eh1087S6AdjAfK"><li data-page-node-id="5BxRBMf4HPl4GaFJXrrtf9"><b data-page-node-id="NmI53dKDSTXM2S9ARdAUxw">紧扣最后一句</b>：接下来要讲的，一定是<b data-page-node-id="u9kqv9mvFjFqITBJHBFG5L">尾句话题的延续</b>。</li>
+<li data-page-node-id="0ME0gD7Yg4MxDtf72K1E2A"><b data-page-node-id="Z4IYHpzOkE784yqj0lvWNz">已讲过的一律排除</b>（这是最高频的排除依据）。</li>
+<li data-page-node-id="Fv4wYALGDVVxOsJSJcNTrN">若尾句提出了一个<b data-page-node-id="Alj2HEqWjSo9wrA0wwTkFy">新概念/新现象</b>，下文通常是<b data-page-node-id="iFTLiaYtNZAYlIpnRBDR6Q">解释它</b>；若尾句提出了<b data-page-node-id="7nmkFFt7fXpkjfgjnsZYCR">问题</b>，下文通常是<b data-page-node-id="gsCRzi57Rno8WfFC7hs6JB">分析原因或给对策</b>。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="NHgOsgJoX7pq3CcHADn0xL"><b class="t" data-page-node-id="zwnfMIwYWEJ5GVVzIXWSbe">判定标准</b>话题<b data-page-node-id="CuRCM5RoWF9SvdEqWWaWnL">一致</b>（与尾句同主题）+ 内容<b data-page-node-id="J4fV3qv1zWAQd89c3qudBC">未讲过</b>。二者缺一不可。</div>
+<div class="blk b-tr" data-page-node-id="4GdDFHKhpzpMFHC522hZkw"><b class="t" data-page-node-id="M4w3yu7gWK80Ium84F7ifu">高频陷阱</b>选了"文段已经详细讲过的内容"；或选了与尾句话题无关的新话题（跳跃太远）。</div>
+<div class="blk b-de" data-page-node-id="251b4Z0c4M4eDRwTvJ8jWk"><b class="t" data-page-node-id="YZOqtBBAv2j6MDfsaCa7oB">示例演示</b>文段尾句："……而'数字鸿沟'正是当下亟待解决的问题。"<br data-page-node-id="jQ9IIFzCCkX7ZpJI33HETD">A"数字鸿沟的定义"（若前文已讲过 → 排除）；B"化解数字鸿沟的具体措施" → <span class="ans" data-page-node-id="FbNszd80AkNY0by1cRMp2T">答案 = B（问题 → 对策）。</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="erzM8CSwnOuu6DTtiJnanG">C. 语句表达（2 份框架）</h3>
+
+<div class="card" data-page-node-id="eWHSzHLVjMyNK6M9Kpmjna">
+<h4 data-page-node-id="BBmS8d6BUO0BCRskgPWYlj"><span class="no" data-page-node-id="pkq8RyjTUtDVNa8D4GqFMQ">30</span>语句排序</h4>
+<div class="blk b-id" data-page-node-id="XMjGjGId9QxaRF2RBD6iDT"><b class="t" data-page-node-id="xBCmMgXjb5nX6qEF8Z9BoG">识别标志</b>给出 5—7 个打乱的句子，要求重新排列</div>
+<div class="blk b-th" data-page-node-id="L0lBjdnIpCICpccGcGBN03"><b class="t" data-page-node-id="qJUbwvF4V86qR9hBxmCghS">思考路径（四步，不要直接硬排）</b>
+<ol data-page-node-id="RTrR0EuFZ9WyxPvNSpaBV9">
+<li data-page-node-id="X2HrfppTlsw72zkcGFAm0b"><b data-page-node-id="TIbNbBIeq4GsyCBSrSxCfT">定首句</b>（先排除不能做首句的）：含<b data-page-node-id="EghiyPQB9elGhltmLj6wZP">指代词</b>且指代不明的（"这""他""其"）；含<b data-page-node-id="bdUe71p1cJxKJhJHADfSVi">关联词后半部分</b>的（"但是""而且""因此""所以"）；含<b data-page-node-id="0ng2x7o398b27jqA5D3mUl">补充/递进</b>词的（"另外""此外""同时"）；<b data-page-node-id="lQY9v2w27cYDulACiQvmLe">具体举例</b>句。适合做首句：下定义、提背景、总起句。</li>
+<li data-page-node-id="p8R4sTztFsTHHiztaGHhSQ"><b data-page-node-id="n2dAPYWn20phfUVXKkBHWh">找捆绑</b>：① 关联词配对（虽然…但是…、不但…而且…）；② 指代词 + 被指代对象（"这"前必有指代内容）；③ 同一话题相邻；④ 时间顺序/逻辑顺序（先…后…、起因→经过→结果）。</li>
+<li data-page-node-id="4DhMTQXIJkE17WYwMRPFxi"><b data-page-node-id="QnRymebE7hlf2BcVAYlyiz">看选项</b>：用首句排除 + 捆绑排除，一般能剩下 1—2 项。</li>
+<li data-page-node-id="ZHvO0B2MABzuldsf9CEm3a"><b data-page-node-id="xYsDg5JFshl0HFBJ6W46du">通读验证</b>：把剩下的选项连起来读一遍，语感不通的即错。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="niXeoQgFGxZtmjOCkhDJVD"><b class="t" data-page-node-id="nd64TMzoZioa2dE2enxnEs">判定标准</b>首句要能"独立成立"；捆绑要"挨着且顺序对"；整体要"逻辑通顺 + 指代明确"。</div>
+<div class="blk b-op" data-page-node-id="YNr6AMYLFcmdH7NhlPjhm4"><b class="t" data-page-node-id="qmPfOcpW8XHxtfexKB1Wsn">选项处理</b><b data-page-node-id="fc3zueV4d7N5XML9WIt4Sq">从选项入手，不要从句子入手</b>——比较四个选项的首句，先干掉两个，再比较尾句，最后验证中间捆绑。</div>
+<div class="blk b-tr" data-page-node-id="ypXm6MEpu5hHZ5nQ3jPq0H"><b class="t" data-page-node-id="Wj81O3C8QtG8IoQIYvjSPK">高频陷阱</b>从头到尾硬排序（最慢且易错）；忽略了"指代词必须紧跟被指代对象"这条硬规矩。</div>
+<div class="blk b-de" data-page-node-id="IAtceEZCmW9BiLWm9QlYHV"><b class="t" data-page-node-id="iMYaiayjVyLiqfy8cstIvC">示例演示</b>选项中首句分别是 ②"这导致了……"（含"这"，排除）和 ④"近年来，随着……"（背景句，保留）→ 直接排除含 ② 开头的选项，剩两项再比尾句。</div>
+</div>
+
+<div class="card" data-page-node-id="so44wYpTU6u8Gmn5OobCrR">
+<h4 data-page-node-id="CVFPcCIE4YHXkPnI8kTXC3"><span class="no" data-page-node-id="OTnEOARLmpvcw6lXqHHBAi">31</span>语句填空（衔接）</h4>
+<div class="blk b-id" data-page-node-id="9W5EQKtCcpGsX8y4tjRpHR"><b class="t" data-page-node-id="tDESuux2YgMndkj1mnqhXK">识别标志</b>文段中间挖一句，要求填入最恰当的一句（通常在段首/段中/段尾）</div>
+<div class="blk b-th" data-page-node-id="JlhrdbSQqEmoVN3WZ17KSG"><b class="t" data-page-node-id="FzLyF6S7LyYh9bJVGPjlvA">思考路径</b>
+<ol data-page-node-id="7MNBATK6nrnWJCMpKUsfeD"><li data-page-node-id="ITYdKVly6JB4EC2tUcoCDT"><b data-page-node-id="OHxGYWsGTvSEf7xxHr2uQi">看位置定功能</b>：
+<ul data-page-node-id="rGljNKTbmhGQyANcPhuqWn"><li data-page-node-id="Ml1qJv7C7LNBVjXzOUxb2e"><b data-page-node-id="p4W0mSXqYlq2MBEVICAwpy">段首</b>：总起、引出话题 → 要能统领后文</li>
+<li data-page-node-id="ABgKwKaYn8OY2bc1DqLeQP"><b data-page-node-id="BdIJHOEr7YKqFpKrMpOCyg">段中</b>：承上启下 → 既要承接上文又要引出下文</li>
+<li data-page-node-id="8CrTMY6WoFPW7BYwZUPIIM"><b data-page-node-id="w5dVPC12iiKEd165Wk66AM">段尾</b>：总结、得出结论 → 要能收束全段</li></ul></li>
+<li data-page-node-id="rRe6CsMi9kzsrakj95FLnD"><b data-page-node-id="FEOCkD5mddc1sACcwzEhha">抓话题一致</b>：填入句的主题词必须与前后文一致。</li>
+<li data-page-node-id="pmegbYzMp76A4nhRJWK5Hr"><b data-page-node-id="mj4ZcLzo9msCBJyIdrEyFE">注意关联词</b>：空格后有"但是" → 空格句应与后文构成转折；空格在"因此"前 → 应是原因。</li></ol></div>
+<div class="blk b-ru" data-page-node-id="9IKcUVqnULXVnEqMg0FoXw"><b class="t" data-page-node-id="EMXw7HOsuGE7YWcnVfyU29">判定标准</b>"<b data-page-node-id="g9KTWnLjc0cg1mMmtAcYL7">话题一致 + 逻辑连贯</b>"，代入后读一遍，<b data-page-node-id="I33LsR2Tq39Af9SpAsbRjG">代词有指代、关联词能配、语气能接</b>。</div>
+<div class="blk b-tr" data-page-node-id="ESAWkflKtA5izbHBPHI6dL"><b class="t" data-page-node-id="mCGugIbEIF8JGDbRfyr2mp">高频陷阱</b>填了"本身很漂亮但与前后文话题无关"的句子；或段尾填了"开启新话题"的句子（段尾应收束）。</div>
+<div class="blk b-de" data-page-node-id="MJD6ia5qBnnY001TJhzlOS"><b class="t" data-page-node-id="EOXeAEexwCHtGSpA3yYekc">示例演示</b>"_____，但是在实际操作中却困难重重。"<br data-page-node-id="JSLxl2l955q9wFhAo5HAB0">空格后是"但是" → 空格应说"<b data-page-node-id="9uoBzvdMTI04FlEsCkfRz3">理论上可行/前景良好</b>" → <span class="ans" data-page-node-id="LEFSF7nkgXchpVIO8bbLEA">选"该方案在设计上颇具创新性"这类句子。</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="Lgtkn4YVNcDUYY62VTNfBg">言语理解 · 用时与取舍</h3>
+<div class="card" data-page-node-id="HF0ypfz4LHnzm9ClHWAwuP">
+<h4 data-page-node-id="spx4mEaldyGluUXGxvILTU"><span class="no" data-page-node-id="M8TKluytr3AqbfvFth3EhQ">✓</span>言语理解用时分配与超时兜底</h4>
+<table data-page-node-id="iYptHkGlz9XphWJTfnoP9G">
+<tr data-page-node-id="SNKtiNIIVB1TZOKxtCDpeb"><th data-page-node-id="FFDFoptWhFVfU8mbv2qoL4">题型</th><th data-page-node-id="nwSADMpwXlgmq8Fr8q2E0h">题量</th><th data-page-node-id="M6faqX8Homv6GEW9BlgsNS">目标用时</th><th data-page-node-id="WCZ4RSMlhk5Y5QJUYcTB9X">单题红线</th><th data-page-node-id="m9pG7BgAF8WLlDEM0RjNQj">目标正确率</th></tr>
+<tr data-page-node-id="wS6i6A1U0wUEQFneniO6tt"><td data-page-node-id="oCwEVrD7RqVnn6CQksqtU2">逻辑填空</td><td data-page-node-id="4uyeX29FkoFE3YBqezWqAt">10—15</td><td data-page-node-id="ezPXPRtuj8pORD3RWs5u8E">7—9 分钟</td><td data-page-node-id="yI7cSUc4XE84ZCNREiD1Gi">40 秒 → 凭语感定，不改答案</td><td data-page-node-id="n4SwwqabvODwryey4Ue2sO">75%</td></tr>
+<tr data-page-node-id="kZ8uo6BHG7zBkmjHet11Ea"><td data-page-node-id="bDYRpDV3zyr8SAyr1hloyS">中心/意图</td><td data-page-node-id="ysruNNB9MPRWjIfg7oDHC4">4—6</td><td data-page-node-id="6WwJ0j5GaM5wuECl9x7Arw">5—7 分钟</td><td data-page-node-id="zb2Ni1qnNujGM6pcd5GcSB">70 秒</td><td data-page-node-id="QjZbFyb79Yjnsp3BGYX1W8">85%</td></tr>
+<tr data-page-node-id="mdzkZt4L42ZmF8q9psDrkX"><td data-page-node-id="1UJwF9jiefojTI4nwab7uz">细节判断</td><td data-page-node-id="E6UIhCW0F5Tq4gi0FgvwQC">2—3</td><td data-page-node-id="AXq0BkcVM7SurCWnCt2AZZ">2—3 分钟</td><td data-page-node-id="XPHqdwSvkkGBwGdKF3R2tp">60 秒（定位即可）</td><td data-page-node-id="83aBhcufPuFFwkVUFAfu4L">80%</td></tr>
+<tr data-page-node-id="48oeoPzk6r6ZcLd8HWCqGE"><td data-page-node-id="czMdJUeCIb0HOMepAS8Yt7">标题/词句/下文</td><td data-page-node-id="xEC7vfOT5lsnlwUrpyniSy">2—3</td><td data-page-node-id="XlH0RKqcs5u6sjKnqfv6zK">2—3 分钟</td><td data-page-node-id="mmDHf7NCcIq73XspFvh6tc">45 秒</td><td data-page-node-id="TplC3ilP5rg2qjEUV0idVo">80%</td></tr>
+<tr data-page-node-id="knW0K8Y8QVjvsziDHQ69vd"><td data-page-node-id="C3tHtwddftNimapKN14uZl">语句排序/填空</td><td data-page-node-id="qFyTQhhGhZWkKVDBLsEJy2">3—5</td><td data-page-node-id="kXk4drpD2dhEOPaFA1BoWh">4—5 分钟</td><td data-page-node-id="ovP4SIryjryzo21grFOzqu"><b data-page-node-id="V38COfIrBNuLWI1TI1XpGm">90 秒</b>，超时蒙 B/C</td><td data-page-node-id="4H7yOJ6dqniNN7bIfjryZu">70%</td></tr>
+<tr data-page-node-id="wZPh2v5HsbtxhpgBRzfj6Y"><td data-page-node-id="kffsuxCDaribwPaXesiT4i"><b data-page-node-id="WHn2ZEEfkKOHj94y67EyLh">合计</b></td><td data-page-node-id="nmE91sL1wDcaN4oMrjE1EN">25—30</td><td data-page-node-id="ChAdeKyKm2nScD1VHRqPf5"><b data-page-node-id="ZjWf8YxGuexwWcOQ956qQw">21—26 分钟</b></td><td data-page-node-id="0tEDVtvGMyqdasuL4JKnLx">—</td><td data-page-node-id="eseNHYSR478V1p0JsO0OxU"><b data-page-node-id="rNhWf0j1DjuznlGogwUH7G">78%</b></td></tr>
+</table>
+<div class="tip" data-page-node-id="eBnwOiL1H8ZBaMb5SCyZSX"><b data-page-node-id="FDwCsy1samaEjFE5OQdLC6">超时兜底规则：</b>① 逻辑填空<b data-page-node-id="hHgLaStjDqrTgeX0mlJeSJ">第一语感不改</b>，除非发现明确逻辑错误；② 排序题 90 秒没排出来，用"首句排除 + 捆绑排除"快速定，还不行就蒙 B/C，<b data-page-node-id="2ui6CL2z5CCZaQQu5EMJgc">绝不恋战</b>；③ 细节判断"不符合"题优先找<b data-page-node-id="8vsLGNeotzuJhtp1KEqrz8">绝对化表述</b>（所有、一定、必然），命中率极高。</div>
+</div>
+
+<h2 class="mod" data-page-node-id="MLvxD4VZA4L5DAXvjs5m3Y">附 · 全卷时间轴（90 分钟）</h2>
+<div class="card" data-page-node-id="XG3lKJBxvmzMEEMCJI0YI9">
+<table data-page-node-id="LKxJS0cQ2A6B094Hxt2s7H">
+<tr data-page-node-id="XzzeOzr0J5GqfqIPccKJ1y"><th data-page-node-id="F0onl7kBjkzER5MRV6ohFS">顺序</th><th data-page-node-id="d05WeJnnKPBPvClfhuBWTo">模块</th><th data-page-node-id="B4hSvmRhdtOr8uQr7znKtu">用时</th><th data-page-node-id="vnGvleVvo3ss4fiAGt3NBW">要诀</th></tr>
+<tr data-page-node-id="5Iwb3FgtQ6LdgvX8pu6TtZ"><td data-page-node-id="e23kbCcodFsLC6J8z8mGc7">1</td><td data-page-node-id="8cImopGWvy1fj1BeGAqMsA">常识判断</td><td data-page-node-id="OSsXTJAhgnszWvxEcDvekj">6 分钟</td><td data-page-node-id="7KSN2RCfS5JfRaTERw0lvN">会就选不会就蒙，<b data-page-node-id="NHTcgTkgwaiaGW3uUSPjmC">不纠结</b>，用来热身</td></tr>
+<tr data-page-node-id="FaWIiMlDhHHoRdN7B6vTKW"><td data-page-node-id="kLfTlmFlyFELdSNyqsHVb4">2</td><td data-page-node-id="dzfN9FMppsEVpCaKNID2sf"><b data-page-node-id="DlKILIN9Z44XpgrDynQ1HD">资料分析</b></td><td data-page-node-id="JSaNMtmURaDFtemHDLcj7S">20 分钟</td><td data-page-node-id="zGzt5DqVPTN2aUiqdFo6TZ">清醒时先拿下，目标 85—90%</td></tr>
+<tr data-page-node-id="cqxazsMQb2WkVpWlREGpgk"><td data-page-node-id="ZP73wIC9EAI8TrB7m1HHm1">3</td><td data-page-node-id="GTDT1XfNf5W1TLSn2gcWf4">判断推理</td><td data-page-node-id="gpUgHLrioqpaAehpqHmnQM">25 分钟</td><td data-page-node-id="AaOJbaAHmXsvyBBFVp9HXM">类比抢时间，图形卡住就跳</td></tr>
+<tr data-page-node-id="b6KI44Di03DKAnRi7Vi7xL"><td data-page-node-id="wFChpfVripvc053fpiqvWP">4</td><td data-page-node-id="n9SMbEm79aCHVPvNgb2NvK">言语理解</td><td data-page-node-id="ZAUjtH4kT8PcBG1H5nm92Q">23 分钟</td><td data-page-node-id="cSyzUK2f9HnQcPDGArw2nV">填空靠语感，排序不恋战</td></tr>
+<tr data-page-node-id="E50aUhYEcU1D9cd2HtEaZD"><td data-page-node-id="h6dnzGTk5ICAB55HZWCI9c">5</td><td data-page-node-id="CtLWgEoYff8lOevzuJxykB">数量关系</td><td data-page-node-id="uOAGv1hnOOa7fmHjmHAEKd">9 分钟</td><td data-page-node-id="pmML7jGYJTu07rFpDsloE5">只做会的 3—4 题，其余统一蒙同一选项</td></tr>
+<tr data-page-node-id="Pf5JzcW8OvUFxMzWJjuaz1"><td data-page-node-id="y7kKQH2pQ2xjxfMqMRDPPk">6</td><td data-page-node-id="V8paVtVT8eUoN5VXbLpC1z"><b data-page-node-id="elYeMPTPk1r4Hrd97QgieB">涂卡 + 检查</b></td><td data-page-node-id="L7eSPRLPUf2w2gRY2dwJC4">7 分钟</td><td data-page-node-id="L03pMEmSgOkABjhSCekglG"><b data-page-node-id="3OeLvm7zj1cPwZpJskilcf">做完一个模块涂一个模块</b>，绝不最后集中涂</td></tr>
+</table>
+<div class="tip" data-page-node-id="ipLcfYLyfsCDIeFva2bjwD"><b data-page-node-id="W7CT1gCzKyyrh0mIb7JEcb">提醒：</b>职测 08:30—10:00 与综应 10:00—12:00 连考，中间不休息。职测必须在 09:50 前做完并涂完卡，留 10 分钟收尾与上厕所，别把疲劳带进综应。</div>
+</div>
+
+<footer data-page-node-id="Or0V66HoMlyq2J449rRdlC">
+本手册为方法论框架整理，题型规律与解题口诀为通用应试技巧总结。<br data-page-node-id="xIZyYZu7BFZQvF3M2xt1ZZ">
+招录政策、考试时间等以官方公告为准。
+</footer>
+
+</div>
+</body>
+</html>

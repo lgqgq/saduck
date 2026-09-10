@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="rCoUgPVidIXHo2QRhjgJvH">
+<head data-page-node-id="l6KYUhoGwKE4QwkAwehhMe">
+<meta charset="UTF-8" data-page-node-id="ZZBs0vk89G0sezTMBraUZR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="a1wVDEwI8gMRbZilgBcH1Q">
+<title>职测精细答题框架手册 · 资料分析</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:#f5f6f8;color:#1f2329;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+header{background:linear-gradient(135deg,#0e9f6e,#34d399);color:#fff;border-radius:14px;padding:26px 24px;margin-bottom:22px;box-shadow:0 4px 18px rgba(14,159,110,.18)}
+header h1{font-size:23px;font-weight:700;margin-bottom:8px;letter-spacing:.5px}
+header p{font-size:13.5px;opacity:.94}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-meta span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12.5px}
+h2.mod{font-size:19px;font-weight:700;margin:32px 0 6px;padding-left:12px;border-left:5px solid #0e9f6e;color:#1a1a1a}
+.mod-sub{font-size:13px;color:#6b7280;margin-bottom:16px;padding-left:14px}
+h3.grp{font-size:16px;font-weight:700;margin:22px 0 10px;color:#047857;background:#eafaf3;display:inline-block;padding:4px 12px;border-radius:6px}
+.card{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h4{font-size:15.5px;font-weight:700;margin-bottom:12px;color:#111;display:flex;align-items:center;gap:8px}
+.card h4 .no{background:#0e9f6e;color:#fff;font-size:12px;width:22px;height:22px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.blk{border-left:4px solid #ccc;border-radius:0 8px 8px 0;padding:9px 14px;margin-bottom:10px;font-size:14px;background:#fafbfc}
+.blk b.t{display:block;font-size:13px;margin-bottom:4px;letter-spacing:.3px}
+.b-id{border-color:#2b5cff;background:#f2f6ff}.b-id b.t{color:#2b5cff}
+.b-th{border-color:#f59e0b;background:#fffaf0}.b-th b.t{color:#b45309}
+.b-ru{border-color:#10b981;background:#f0fdf6}.b-ru b.t{color:#047857}
+.b-op{border-color:#8b5cf6;background:#f8f5ff}.b-op b.t{color:#6d28d9}
+.b-tr{border-color:#ef4444;background:#fef4f4}.b-tr b.t{color:#b91c1c}
+.b-de{border-color:#64748b;background:#f8fafc}.b-de b.t{color:#334155}
+.blk ul{margin:4px 0 2px 18px}
+.blk li{margin:2px 0}
+.blk ol{margin:4px 0 2px 18px}
+.blk ol li{margin:3px 0}
+code{background:#eef0f3;padding:1px 6px;border-radius:4px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;color:#c7254e}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+th,td{border:1px solid #e3e6ea;padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#f4f6f9;font-weight:600;color:#333}
+tr:nth-child(even) td{background:#fcfcfd}
+.q{background:#fffbea;border:1px dashed #f0c674;border-radius:8px;padding:10px 14px;font-size:14px;margin:6px 0}
+.q .ans{color:#b91c1c;font-weight:600}
+.tip{background:#eafaf3;border:1px solid #a7e8cd;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#065f46;margin:10px 0}
+.warn{background:#fef4f4;border:1px solid #f5b5b5;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#b91c1c;margin:10px 0}
+.chip{display:inline-block;background:#f1f5f9;border:1px solid #dbe1e8;color:#334155;border-radius:5px;padding:1px 8px;font-size:12.5px;margin:2px 3px 2px 0}
+footer{margin-top:40px;text-align:center;font-size:12.5px;color:#9aa1ab;line-height:1.9}
+@media(max-width:640px){.wrap{padding:16px 12px 60px}header h1{font-size:19px}.card{padding:14px 14px}}
+</style>
+</head>
+<body data-page-node-id="y2MMoY8Gk0gLHwEqNT2Hmq">
+<div class="wrap" data-page-node-id="3iLrWj7xqqyqsceHZaAE4M">
+
+<header data-page-node-id="Dml8ROAKXxxcLWJpOS6ECD">
+  <h1 data-page-node-id="jXrZORLdIkNEzaqKdr3N8v">职测精细答题框架手册 · 资料分析</h1>
+  <p data-page-node-id="Ti4Ce5SnMB8SXjgv5S1sky">事业单位联考 A 类《职业能力倾向测验》｜六段式解题框架：识别标志 → 思考路径 → 判定标准 → 选项处理 → 高频陷阱 → 示例演示</p>
+  <div class="hero-meta" data-page-node-id="s6B4SCVEZX0sKzGBuTJ7GA">
+    <span data-page-node-id="L55RmCgNx4xiD3AEQa2EcG">14 份框架</span>
+    <span data-page-node-id="VsKCX8Mudk6Cq0JoH8ieU8">三大速算方法</span>
+    <span data-page-node-id="oICxuYUFP3dtTsR3CyuG9j">专属量级校验篇</span>
+    <span data-page-node-id="AwUPz4Yx4WDWhzEqidSF0h">含用时与兜底</span>
+  </div>
+</header>
+
+<div class="tip" data-page-node-id="Q6euIZrNwHo523OhDGBKKw">
+<b data-page-node-id="MlGWTMsOUErffloovDOyLU">记号统一：</b>全文 <code data-page-node-id="unHTBG6dQXXFcuCFRKIfYV">A = 现期量</code>、<code data-page-node-id="WdOub3H4nD6dthMKYVhigo">B = 基期量</code>、<code data-page-node-id="I1CkYtcXoOIAKFP5eGIgT5">R = 增长率</code>、<code data-page-node-id="iCKrngxJq0B3oxPDEmBbCr">X = 增长量</code>、<code data-page-node-id="Pk3S71A19GtAsGtLIgEp49">W = 比重</code>、<code data-page-node-id="n56fThsQI2PJIRzuBPOTaF">M = 平均数</code>、<code data-page-node-id="4xpS3L2y12Iz2VA9AH572C">K = 倍数</code>。
+资料分析是整张卷<b data-page-node-id="ErjIzoxkKDaHIPrZvJNSAP">确定性最高</b>的模块，必须放在清醒时段优先拿分，目标 85—90%。
+</div>
+
+<h2 class="mod" data-page-node-id="EHCz7n0TTKQBOpxOUC1fyp">模块 · 资料分析</h2>
+<div class="mod-sub" data-page-node-id="ZphPira93xECy4e5ZpecP0">目标用时 18—22 分钟 ｜ 目标正确率 85—90% ｜ 题量通常 15—20 题（3—4 篇材料，每篇 5 题）</div>
+
+<h3 class="grp" data-page-node-id="yfx2pHaZindu4OPxH1vGLS">A. 材料层面（1 份）</h3>
+
+<div class="card" data-page-node-id="Y01egeyAPea2ksDGFOE7qT">
+<h4 data-page-node-id="uyvcdrJSulfILxI4fSMy4m"><span class="no" data-page-node-id="YR70z34MQssmA4wSEnym1a">1</span>材料速读标准动作（文字 / 表格 / 图形 / 综合）</h4>
+<div class="blk b-id" data-page-node-id="kGvaBLF4cyABwEoaIy5uDp"><b class="t" data-page-node-id="KBO136RXVtTFthjt8AYG5W">识别标志</b>看到题本上一整块数据信息，<b data-page-node-id="zhB3zqlV9HuDqGeoP6lNq0">在读题之前</b>执行，全程限时 <b data-page-node-id="bq71955lbzECY8a1aPw57v">60—90 秒</b></div>
+<div class="blk b-th" data-page-node-id="qHm70T2akpQe4rqNGQLEQo"><b class="t" data-page-node-id="zTK4fEi7rjURyC2nb4oHxq">思考路径（六步，顺序不可乱）</b>
+<ol data-page-node-id="YY2poVpQH1IOmmd5bNTibf">
+<li data-page-node-id="cnJjKU9KldIl1jvrfRQWDP"><b data-page-node-id="win1senDnKgIwEOibLQ9dP">扫单位</b>：表头括号里、图右上角、文字材料里的"亿元/万吨/‰"。单位先定，后面量级不会翻车。</li>
+<li data-page-node-id="MC8WpvdebSgAmEQHZiclyl"><b data-page-node-id="dQQN5otZJkxqPv7ACLbY6U">扫时间</b>：圈出所有时间词——年份、"1—5月"、"一季度"、"比上年同期"、同比/环比，并标"现期 = ？年"。</li>
+<li data-page-node-id="CMZfHu1DnE9diSVAmnXXLz"><b data-page-node-id="nrI7bEDxQhgWNJbtRigBGi">标节奏点</b>：文字材料每段首句写 2 字索引（工业、投资、消费、外贸）；表格在左标目旁写行号 ①②③；图形给每条线编号。</li>
+<li data-page-node-id="P1QJOwiYyuwrLygxx5OoNp"><b data-page-node-id="GQomJQYfBbGU3Gy7IyAynt">标结构</b>：找"整体—部分"链条（总量 = 各分项和；进出口 = 出口 + 进口）。凡出现"占""其中"，立刻画分界线。</li>
+<li data-page-node-id="msusHvGwYq2Q3mstruWIAZ"><b data-page-node-id="pvsk2KJMTKKbeH9PGTeiqR">标陷阱</b>：出现"累计""其中""剔除""可比价""名义"就地打三角。</li>
+<li data-page-node-id="9YMeNChoQ6e5Kg7uqcB0rk"><b data-page-node-id="WPQXvYkmfHuHHDuKICAImO">不读数字</b>：只读结构与单位，具体数字留到做题时定位。先读数字必然要重读一遍。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="EW7MgXxMidmDg1SIryUVqu"><b class="t" data-page-node-id="edFB9LcCZGkQ8YRcfzYoSC">判定标准 · 四类材料速读口诀</b>
+<table data-page-node-id="qoiCTcZ9vCcLqSpWaTH7Yd">
+<tr data-page-node-id="FPQ3j6szV9IXYzfA91buYk"><th data-page-node-id="gFwf06Ia122DdVo949X78h">材料</th><th data-page-node-id="EDiDTEeGik0MW8ua3byu0G">口诀</th><th data-page-node-id="G5ojMckL52TdWz5MFz27Xy">一眼要抓到</th></tr>
+<tr data-page-node-id="1JPHxoSZwoDOzrMerxGIcs"><td data-page-node-id="vmq31oFBmGfnfGIqgAtEUy">文字型</td><td data-page-node-id="4FdoEAG2Fl9nmzHyZ4bwne">一段一主体，首句定全段</td><td data-page-node-id="EMJqujsq08C2KjA2BIR7R8">段落顺序通常 = 出题顺序</td></tr>
+<tr data-page-node-id="ANaLFT1dB5xiNm2fCRsHPc"><td data-page-node-id="basxhp4u3WUnwBJgFT9ksG">表格型</td><td data-page-node-id="voEMAanbmU8WpbfcZ2crHz">横看主体，竖看时间，交叉点取数</td><td data-page-node-id="1JAWgYS2ieVN31OqiwUvmW">合计列、备注行、"其中"行；<b data-page-node-id="DAlwjglwFYUxJDUmXpIeCO">累计 ≠ 当期</b></td></tr>
+<tr data-page-node-id="QR6C3mZK5cpZA8x71m1Lc2"><td data-page-node-id="4rB7lBWxqPjNFyKgWgeuBv">柱状图</td><td data-page-node-id="6DGZYhmxzqAVmne3hx81an">看高度差 + 看标签</td><td data-page-node-id="GUBs4xEN0kt7QWBQ41ypem"><b data-page-node-id="NsCeiDNBjw2y7qB7WA5gkw">纵轴是否被截断</b>（非 0 起点时视觉比例失真）</td></tr>
+<tr data-page-node-id="C20qZGLF5uJXnIGXI8YkQ9"><td data-page-node-id="RkMWtoc94rxcBM0Z78lb0n">折线图</td><td data-page-node-id="omrCqyNzYz8WjPpqynHaCM">看斜率 + 看拐点</td><td data-page-node-id="S6hZjBG4GNbixijCMuhpgn">斜率 = <b data-page-node-id="nn7v4JEVCloEk4V5VGZAy8">增长量</b>趋势，不是增长率（最常见读图错）</td></tr>
+<tr data-page-node-id="NpkcyiBATGQQAdesYt9ct0"><td data-page-node-id="SLw8fZJ6JC3EPrNUBsKXNP">饼图</td><td data-page-node-id="DTd0WtGFUTOOY4hPBAhLg5">看扇形 + 看占比标注</td><td data-page-node-id="xBWfj6bcFPJhubJfslmcRM">12 点方向起顺时针；各扇区之和 = 100%，可验证</td></tr>
+<tr data-page-node-id="Y5DlAG1sG5ZPOu40MOvJrE"><td data-page-node-id="HnHsBEqztRbaKbV9aDO1tC">综合型</td><td data-page-node-id="4YULRKwrGesPXAmt4STefi">总在多处出现 = 交叉定位锚</td><td data-page-node-id="LRE6lLrHf8YYt0R2UByo8O">同一"总计"在两表都出现 → 串联两表的钥匙</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="O3kTr4mgwhQGOUFqFScm3u"><b class="t" data-page-node-id="ic8iZMmGqqxyweHAySs5sZ">选项处理</b>速读阶段<b data-page-node-id="ZLQfwxqcrWLie4XHfx1DKc">不看选项、不做计算</b>。读完立刻在草稿纸写一行锚点信息：<code data-page-node-id="7AIgRV0AFHnPipcRgkHCcX">现期年 = 2025｜单位 = 亿元/万吨｜整体 = XX｜部分 = XX</code>。做题时定位超 15 秒未找到 → 跳过，最后回头。</div>
+<div class="blk b-tr" data-page-node-id="YfJ7y0HjhEB0Qw1mfcgl9X"><b class="t" data-page-node-id="0ct0KFutxWmsGkSkLosVt9">高频陷阱</b>
+<ul data-page-node-id="s2ALv112fqp19nbI8NfJJD">
+<li data-page-node-id="7FrgTrt2J37tkFwLYDVPKf"><b data-page-node-id="Hamwf4YWR868li4EimPNrZ">累计 vs 当期</b>：把"1—5月累计"当成"5月当月"。</li>
+<li data-page-node-id="Mr0G2gzYT5JflKolwPdOrI"><b data-page-node-id="BuiisUBOOn0bph0qCDpcrl">单位不统一</b>：文字用"万吨"、表格用"吨"；金额一处美元一处人民币。</li>
+<li data-page-node-id="2Bs0F8Rz2IFHNq9FpARV4m"><b data-page-node-id="vmxL1afckynwUbNWT1yDMc">图轴起点非 0</b>：柱高差 2 倍但实际比值 1.2 倍。</li>
+<li data-page-node-id="8VCQSX8XCDAXG0dYPCEwop"><b data-page-node-id="9jYKwZpCYLG3VsJ0mqwkeb">不看注脚</b>："注：自本年口径调整"直接影响所有比较题。</li>
+<li data-page-node-id="hXDJOTw43PUOkB7YFEKmrn"><b data-page-node-id="HpUEyphOjoq4kiqUEyQPH9">"其中"只列部分项</b>：把"其中"几项相加当成整体合计，漏了未列项。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="GMcZVTKqJJVgEq36dPmFYm"><b class="t" data-page-node-id="6QSgTbtXFS2mHJrG1Dro3b">示例演示</b>
+材料："2025 年 H 省粮食播种面积 4523 千公顷，比上年增加 38 千公顷；粮食产量 2865 万吨，同比增长 1.8%。其中，夏粮 1421 万吨（+2.3%），秋粮 1382 万吨（−0.6%）……"<br data-page-node-id="7GvKxG3zdOaEqrxOabObqo">
+→ 单位扫描：千公顷 / 万吨（两套，别混）；现期 2025；索引【粮食】【肉】；<b data-page-node-id="LaGMy8l4xg7LwDOwuScNlg">验算：1421 + 1382 = 2803 ≠ 2865</b> → 存在 62 万吨未说明 → 草稿纸记 ⚠，后续任何"除粮食外"型题都要小心。</div>
+</div>
+
+<h3 class="grp" data-page-node-id="HSr7rJDWY3ttR7Ft8uKBUr">B. 核心题型（9 份）</h3>
+
+<div class="card" data-page-node-id="4tuS4XxiTnxV41kphrXjX6">
+<h4 data-page-node-id="cTOmIpl9A9OeITmznmrLhB"><span class="no" data-page-node-id="VlQUTGUNnrn2WSgWE89DdH">2</span>基期量（含基期求和、基期比较、隔年基期）</h4>
+<div class="blk b-id" data-page-node-id="IjKDhZVoXFvboAfb9ofWNW"><b class="t" data-page-node-id="q27OCIXB1eM9wH583KMmzi">识别标志</b>关键词"上年""同期""2024年""比上年……之前"；<b data-page-node-id="WhNffdCfGbnHPKIYkjzjTY">题干时间比材料年份早一年</b>。变形问法：多个主体基期相加（基期求和）、比较谁去年更大（基期比较）、跨两年往前推（隔年基期）。</div>
+<div class="blk b-th" data-page-node-id="cXrAEOpIzXqBpKlLf4JGHH"><b class="t" data-page-node-id="NH24hdX1iSvYMAZaMBXlOg">思考路径</b>
+<ol data-page-node-id="GxTUIevtn7dB2WmRjTRKvP">
+<li data-page-node-id="wjC27BelhPCFrJj7cwHCGB">确定已知什么：给现期 A + 增长率 R？还是 A + 增长量 X？</li>
+<li data-page-node-id="TAWcaWFbMTVbPMMleC7uVC">给 A + R → <code data-page-node-id="HFDOv8nQxeJpVQeqsFEhtK">B = A/(1+R)</code>，用截位直除；R 在 5%—25% 且选项差距小时用假设分配法。</li>
+<li data-page-node-id="Fb6ChbZC8fQW7nMtBzn8mr">给 A + X → <code data-page-node-id="LGbHk5qzpVcZ8Ie1Gr69tK">B = A − X</code>，直接减；<b data-page-node-id="Wkhm8klo4jiZXGXP27xsAU">下降时 B = A + |X|</b>。</li>
+<li data-page-node-id="suJ8a7thuBh6DfLLuyl8jQ"><b data-page-node-id="s6B7BtyCO6xxreQEdhCkg8">下降情形先定界</b>：<code data-page-node-id="6fuuHZN4yjGCTunmwxCIH8">1+R = 1−|R|</code> 分母变小 → 基期必然<b data-page-node-id="lDWBFZirPPsxqBAYwojYCX">大于</b>现期。</li>
+<li data-page-node-id="8xC1sJxIdu6esH5Pq2YCRf">基期求和：两个 R 接近（差 &lt;3 个百分点）可用"先合后除"<code data-page-node-id="LuMyWyzwZt4EdqfnTlMn8S">(A₁+A₂)/(1+R̄)</code>；R 差异大必须分开算。</li>
+<li data-page-node-id="JmU2kYWORTh8rqylEHKLeH">基期比较：先试<b data-page-node-id="TAgxBMzA6pVHFaWtb1NmtR">定性排除</b>（A 大且 R 小者必大），不行再用分数比较。</li>
+<li data-page-node-id="zXmDfXNgQmQG4QBSfqY3CR">隔年基期：先算隔年增长率 <code data-page-node-id="wGu9VuNhGuRaQDu2vn9Rzo">R隔 = r₁ + r₂ + r₁r₂</code>，再一次除 <code data-page-node-id="g6plODybnslQtAtm4AHqm0">B₂ = A/(1+R隔)</code>。</li>
+<li data-page-node-id="RA08fmYVjFiomAqDIROEDJ"><b data-page-node-id="XD4LlApCaPjdAMTSQe9KVu">算出必回乘</b>：<code data-page-node-id="ENmr2tYG7e54Fmn8k0NEJQ">B×(1+R) ≈ A</code>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="f96bEN1kBEP1kRGm9SAU5F"><b class="t" data-page-node-id="5i8zzRnbvEz8poQLHKOfdC">判定标准 · 公式清单</b>
+<table data-page-node-id="ZZQFBar9CM2CBOs2rtCYxh">
+<tr data-page-node-id="LEtkYRHJxb1wA9TP0MWv5Q"><th data-page-node-id="qG6n7LcZNCpeFBxiwuneZQ">情形</th><th data-page-node-id="IWVr97W1YDJNoErLbJMDAW">公式</th><th data-page-node-id="UcZhT4hspLUyxXfvmUPGlZ">速技法</th></tr>
+<tr data-page-node-id="yKP5lTXTvKbKxw8fyRGgtM"><td data-page-node-id="afPTym0IoiI0xiHFVeBfZu">已知 A、R</td><td data-page-node-id="mQykIfBurmiHebqYNa8T27"><code data-page-node-id="1sUyEjvhByGzDapSWYvVfK">B = A/(1+R)</code></td><td data-page-node-id="2NVCwtBbouNwaUl62cU0Br">截位直除</td></tr>
+<tr data-page-node-id="2ANyIavWUSt4JXBHunLPv4"><td data-page-node-id="RUwqNthN8NCjJDEa9J7fWL">已知 A、X</td><td data-page-node-id="Xq7ZDi4HE4LHQouRRFMYAp"><code data-page-node-id="s4xDA1bR7954MJaqR9ta6i">B = A − X</code>（下降 <code data-page-node-id="oPxckMfjJkQtJ4BnAG7A9v">A+|X|</code>）</td><td data-page-node-id="cbFK4X6weNxNOTafXp55O1">直减</td></tr>
+<tr data-page-node-id="0Pa4Hlum63LM7GQko6BTix"><td data-page-node-id="JsmyFTBh3DNagMJ2IFJTCa">R &lt; 10% 速估</td><td data-page-node-id="JqfmaXW6GBL5qowAC5Z0ey"><code data-page-node-id="FW0ECyWqu06oJ2YqYd8pgn">B ≈ A×(1−R)</code></td><td data-page-node-id="YUF7Lz2rP8vztsverrUpmS">化除为乘</td></tr>
+<tr data-page-node-id="RjrbsYs28liZP8qCTE1WeF"><td data-page-node-id="KmdoGYmj6yL9eLztV1vb4p">隔年增长</td><td data-page-node-id="cq8WxHrtko9VqxOttRycrV"><code data-page-node-id="tG6fddagcKUdN0GF05Z2Jb">R隔 = r₁ + r₂ + r₁r₂</code></td><td data-page-node-id="76lIhxcn97v67zPP3XuEsR">两率相加再加乘积</td></tr>
+<tr data-page-node-id="GW6UcbOkEBlLKBE5KAbgPr"><td data-page-node-id="tjpqDsAHLZCdCFrnNw5XCv">隔年基期</td><td data-page-node-id="7JNAY0DyoZgQlEMf2AnQJ5"><code data-page-node-id="glgCbiYpVwld0xkull4kIe">B₂ = A/[(1+r₁)(1+r₂)]</code></td><td data-page-node-id="KNyq2YYCfAxCk1EiCGaOWl">等价于 ÷(1+R隔)</td></tr>
+</table>
+<b data-page-node-id="WU62D4UMYBbvXUgg3BWouD">放缩锚</b>：<code data-page-node-id="2p7FDnym2UaqHqIeNx6fIO">1/1.1≈0.909</code>、<code data-page-node-id="Vo3zuv8Z1Rb3LGy55lm7jM">1/1.2≈0.833</code>、<code data-page-node-id="kzLDseHH5cD0IA2cDZTAGW">1/1.05≈0.952</code>、<code data-page-node-id="b40OETneH5CrYwl8OkRVXj">1/0.95≈1.053</code>、<code data-page-node-id="hrEJ5hR0aEdJX3ndplaa6Q">1/1.15≈0.87</code></div>
+<div class="blk b-op" data-page-node-id="xc3wjrwuEObqH5PUmqbOfr"><b class="t" data-page-node-id="uzemmX7W50tsw2zCZTPfjs">选项处理</b>先看选项再定截位：首位不同 → 分母截 2 位；首位同第二位不同 → 截 3 位。<b data-page-node-id="sM85DKTdsBtKQDPuboJtxH">下降题用定界</b>：R = −22.9% → <code data-page-node-id="F7k4W4BiTodeNpxZBJB5FS">B = 8872/0.771</code>，因分母 &lt;1 答案必 &gt;8872，直接砍掉所有小于材料的选项。</div>
+<div class="blk b-tr" data-page-node-id="xT9c3E6d4YKwWaBXdYhyPY"><b class="t" data-page-node-id="TCUlMH0cWWbTpKmTVethNJ">高频陷阱</b>
+<ul data-page-node-id="A5QtnlQwJRbP3N48CrrIP2">
+<li data-page-node-id="cNlqv2Ki204PWs3SoCf7eJ"><b data-page-node-id="cZT5X1vn3vTI8LK5mqqpE8">下降当成增长</b>：把"同比下降 6.1%"算成 <code data-page-node-id="hhIEwL59IRwAjAjVALoyXN">A/1.061</code>，正确是 <code data-page-node-id="kd8pHCPcAGukITDDroNTM6">A/0.939</code>。<b data-page-node-id="Nqf09h8ve9dxHKecUP9Qkn">判据：下降 → 基期比现期大；增长 → 基期比现期小。</b></li>
+<li data-page-node-id="bJCMTw661Ybe7YJhNzfC8i"><b data-page-node-id="nORXTenokFaammibYBcrKJ">时间退错一年</b>：问"两年前"只退了一年。</li>
+<li data-page-node-id="lEtdutdlnHAeGxCmJW7uGO"><b data-page-node-id="j21L0VFtZauGz071bKBYgn">百分点 vs 百分比</b>："增速比上年回落 3 个百分点" → 上年增速是 <code data-page-node-id="3OYtTgXBRhxkC8Aenw6Vvj">r + 3%</code>，不是 <code data-page-node-id="wpEPOHBDJ55DATbterkF6k">r×1.03</code>。</li>
+<li data-page-node-id="KEHR2ciAryZwg3sVCEMrBm"><b data-page-node-id="2SGJZ78foum02FXQ6a83O6">基期求和先加现期再除</b>：两个主体的增速是加权结果，不能随便拿一个 R 代。</li>
+<li data-page-node-id="B7WGe7B0d2hDzW9QrHMYoo"><b data-page-node-id="LllScvqeS5vK347lonmOPI">量级</b>：算完检查方向，增长时 B 必须小于 A，若反了说明除乘搞反。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="lOwCSSsX11syKqfs2ecimB"><b class="t" data-page-node-id="m0ztkrvnb0P8CHGEs3emJp">示例演示</b>
+<div class="q" data-page-node-id="NCmcKFCZ4A4Iso0qyxRIOE">2025 年某省规上工业增加值 12345 亿元，同比增长 8.5%。问 2024 年约为多少亿元？<br data-page-node-id="mmJA7GUMPIVx1dqc5yUnFn">A. 11260　B. 11380　C. 11500　D. 12100</div>
+① 识别：给现期 + 率求基期 → <code data-page-node-id="IISA0X17Na2zyOKr6AhJZ2">B = A/(1+R)</code><br data-page-node-id="KQJm4kXa0uocdg9eKJumcw">
+② 定界：增长 → 基期 &lt; 12345，四项都满足，需计算<br data-page-node-id="kHBvOLJaobvdo8rXKN2CAn">
+③ 看选项截位：选项首位均为 1，第二位有差异 → 截 3 位<br data-page-node-id="BLsqpuin4HMLfFVmPBMkFx">
+④ 计算：<code data-page-node-id="oXRZWqvqR8rRhnktw9HvD0">12345/1.085 ≈ 12345/1.09 ≈ 11326</code>；回乘验证 <code data-page-node-id="pYgd0ZCRrU91JD8FgPYoAH">11380×1.085 = 11380+967.3 = 12347.3</code>，与 12345 差 0.02%<br data-page-node-id="qcQJfJR1tWfbDj2rUmFL7F">
+⑤ 量级：11380 与 12345 同量级且略小 ✓　<span class="ans" data-page-node-id="TvkM85HEESOYgUQ75rLtEV">答案 = B</span><br data-page-node-id="TZPaNRNJE86eCo4D0cdauJ">
+<b data-page-node-id="MJOyYOSz0A1rrJNuDadCi2">隔年延伸</b>：若 2024 年同比 +8%，求 2023 年 → <code data-page-node-id="KWz9UW02hu3ZJa2B01K66h">R隔 = 8.5%+8%+0.68% = 17.18%</code>，<code data-page-node-id="zeSjSJdP4Y6ZKAB54rDom1">12345/1.1718 ≈ 10535</code>。</div>
+</div>
+
+<div class="card" data-page-node-id="KJHcH0SsL15aGSE7wrorVU">
+<h4 data-page-node-id="alq92Irs2M0TAibioSAHnW"><span class="no" data-page-node-id="Iem71cqDeAoJ40KyEgDr6x">3</span>现期量（含追赶 / 假设增长）+ 假设分配法</h4>
+<div class="blk b-id" data-page-node-id="spVYMBH4enFQn65A3CDdCn"><b class="t" data-page-node-id="O1L7YTVdmZ2kspA9DKiFfZ">识别标志</b>"按此速度""照此增长趋势""预计明年""到 2027 年将是""翻番到"；<b data-page-node-id="z1ZtW4zboCmjCoDrEl6MXR">题干时间在材料年份之后</b>。追赶快问法："乙保持此增速，几年后能超过甲？"</div>
+<div class="blk b-th" data-page-node-id="RvG1DVejv9ni6einHFJxZw"><b class="t" data-page-node-id="d0LzkEYMJvexCJ4QIVKibN">思考路径</b>
+<ol data-page-node-id="DllUvFTwova4o72VoeeobI">
+<li data-page-node-id="omdf7FXU8CnxkyUfXAzdCn">判断基数是哪一个：从哪年往后推，就把哪年当作 B。</li>
+<li data-page-node-id="FRzy4gIhHQ6nJpNERCLcjh">单期推：<code data-page-node-id="KJAZmvlAUpebnz6tSHPuFz">A = B×(1+R)</code>，<b data-page-node-id="UNjPES8dQBfbkT3domIVkY">用乘法不用除法</b>。</li>
+<li data-page-node-id="HhOLv4OEG5oaGQFHt4o5hC">多期推：<code data-page-node-id="R87TX3uCeAo3vnTntBtjG7">Aₙ = B×(1+R)ⁿ</code>；n ≤ 3 逐年乘，n ≥ 4 用 <code data-page-node-id="5BaevXXwvGw32jGgCOFDw3">1+nR</code> 粗估再修正。</li>
+<li data-page-node-id="N1PsZZHm6xxEI7zMO7TGsC"><b data-page-node-id="GzKrQZalHjQn5AqeZOeLPq">追赶/追平：逐年列账</b>，每年记录甲值、乙值、差值直到变号，<b data-page-node-id="rfeB0c7f6FC855kxq8RMc4">不要列方程</b>。</li>
+<li data-page-node-id="eBECYfQ6J3aTBdIkVmzVpN">假设增长型（"增速与 2023—2024 年均值持平"）：先算平均增速再代入。</li>
+<li data-page-node-id="3tLGJSFJaj82LdB0zsNdNT">分段增速：<code data-page-node-id="KzLScGGKqZMDBldwsck1E8">Aₙ = B×(1+r₁)^a×(1+r₂)^b</code>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="qfeAjNC5HdkNNg6Pv0aPqi"><b class="t" data-page-node-id="wz1U73D3PcgThJlA4k7WWk">判定标准 · 假设分配法（两套）</b>
+<b data-page-node-id="Ko9pxahRWN4EDHUp6FFNal">乘法版（求现期）</b>：① 设基期 100 份 → <code data-page-node-id="EppXT3283VpEH87GKIKNm0">每份 = B/100</code>；② 现期份数 = <code data-page-node-id="RWVauN6Kfi0WxRAbOYVAPQ">100+R</code>（下降 <code data-page-node-id="HYneQ8cAEOafFhQ2CbQUGX">100−|R|</code>）；③ <code data-page-node-id="Kez2yku5uFFWzXBlwuO0PS">A = 每份 ×(100+R)</code>。<br data-page-node-id="7k8LfoE7bpZaTKDb49BLRO">
+<b data-page-node-id="FLx3W2CJBeguF3FMxFHwIz">反向版（求基期，R 在 5%—25% 最准）</b>：① 假设 <code data-page-node-id="wPqeWHCiI1zxlbY3bw7XGE">B₀ = A</code>；② 假设增量 <code data-page-node-id="w6F9HhwKEIwsymeJbf7e04">X₀ = A×R</code>；③ 真实增量 <code data-page-node-id="mCEmLtvQzelP84KG7lPDjB">X = X₀/(1+R)</code>；④ <code data-page-node-id="5wL3i1iaUaTafrnpdPTniP">B = A − X</code>。<br data-page-node-id="oKnBltjDyFjWnip2rhgtGd">
+<b data-page-node-id="XCwQ46CXcW9grVR0OpSnK1">R &gt; 50% 时误差大，改用截位直除。</b><br data-page-node-id="9cg5UrR2xk7xVlf0iOwR6r">
+<b data-page-node-id="UzCDIWbFyj3mV478ZvhEO7">复利速查</b>：<code data-page-node-id="DQCaDEbU7IEE8wI2AHYAff">1.1²=1.21, 1.1³=1.331, 1.1⁴=1.464, 1.1⁵=1.611；1.2²=1.44, 1.2³=1.728, 1.2⁴=2.074</code><br data-page-node-id="8cENWrHLaXBU3Xaos6z2vD">
+<b data-page-node-id="7XSVfj2CIGbifCVBsyYy9A">72 法则</b>：翻番年数 ≈ <code data-page-node-id="YAo0AVDxNtFEf6GpAWn0Vv">72 ÷ R的百分数</code>（R=10% → 约 7.2 年）</div>
+<div class="blk b-op" data-page-node-id="ICNPFCuIYL1ifcUyTvbfya"><b class="t" data-page-node-id="hsyO28Klxfz42cm1n4BkEI">选项处理</b>单期推选项差距通常很大，乘到两位有效数字即可。多期推先算 <code data-page-node-id="CHUNXqhFZyGHCMc8MRW5gd">(1+R)ⁿ</code> 整体倍数再乘 B，减少中间舍入误差。追赶题选项多是"第 N 年"，逐年做差即可，做出现实答案再对照。</div>
+<div class="blk b-tr" data-page-node-id="fswA1vkhlIXbMY2MGEge5H"><b class="t" data-page-node-id="zOf27A56JFtKmXkDvg7vDv">高频陷阱</b>
+<ul data-page-node-id="wJt3izLZwaZpY25zRyz13e">
+<li data-page-node-id="KJbjOEYhBzFHsXCQUC2bER"><b data-page-node-id="zgtllnAC68ThKNAKijKRnG">n 数错</b>：2024 年底到 2027 年底是 <b data-page-node-id="Ga5nJOK6A1UU7W8h32Vdyv">3 年</b>（2025、2026、2027），不是 4 年。</li>
+<li data-page-node-id="072TTx9Q0DXgbXz8lNIQWK"><b data-page-node-id="NULZssA1To8wBDte1JS7a1">用除法代替乘法</b>：<code data-page-node-id="wJZuriPgCU8JvDYX8gIgkh">B/(1+R)</code> 结果偏小。自检：<b data-page-node-id="ihLv1l9hQlWU5yG4ACIuWQ">往后推必然变大</b>。</li>
+<li data-page-node-id="0trcgouMBWbtQlgMERg7Uc"><b data-page-node-id="RlTm70DJF3VFO1kU6bKJ3S">追赶题用全期平均增长</b>：绝对差距逐年不同，必须逐年算。</li>
+<li data-page-node-id="ABWWnbbk9DAiBbELqJCYuh"><b data-page-node-id="r4RkVcIzK1Cs5DjPORyaDD">"增速不变" ≠ "增量不变"</b>：默认"保持增速"用等比，明确说"保持增量"才用等差。</li>
+<li data-page-node-id="awZjD2T1iGKvcj5g10wslI"><b data-page-node-id="BauxUBJPA6ietpMPERWjvK">量级</b>：份数法漏掉百分位（写成 ×1.15 而非 ×115）→ 答案缩水 100 倍。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="LdEpV5AD84vMXNKv5WIu27"><b class="t" data-page-node-id="cx8mVfLyq1BcgnGBEj3zsA">示例演示</b>
+<div class="q" data-page-node-id="EUKofdXmzxHsQsNCuahUdG">2025 年甲企业营收 1200 万，乙 900 万。此后甲每年 +8%，乙每年 +20%。问乙第几年超过甲？<br data-page-node-id="05Me435eTCBU0vJrDp5moa">A. 第2年　B. 第3年　C. 第4年　D. 第5年</div>
+<table data-page-node-id="SteNSXJPSivTIzNmYCGx8J"><tr data-page-node-id="JKaCR8lmCNWmc60c0IZeMO"><th data-page-node-id="ivykuksKTNFseeZDvq5SjH">年</th><th data-page-node-id="Na4fSjd09gRhVR9zxSLTLV">甲 1200×1.08ⁿ</th><th data-page-node-id="SpKFgRZDEng1w7tl1EPASp">乙 900×1.2ⁿ</th><th data-page-node-id="FqhuoPcbdgW9FtZkwblcu7">甲−乙</th></tr>
+<tr data-page-node-id="pWBjTBthDYcilYhRFV2ErA"><td data-page-node-id="tlSaDUwdMjxOzK8K1rju8c">0</td><td data-page-node-id="s7Pa8FBvVTEdeqXpGYCDIL">1200</td><td data-page-node-id="UenIa8gPZ5JCj20EnLVskr">900</td><td data-page-node-id="Xj6ln4EG2hjQqvMPKMdrIJ">+300</td></tr>
+<tr data-page-node-id="0vEkAYGiYvaLw5cLq2HHv1"><td data-page-node-id="FISvoF6PBE1BOsCHD4YCKn">1</td><td data-page-node-id="o0dF9ypGDhWneIaFnegOiX">1296</td><td data-page-node-id="nHADAgIXbPZig1AlpZDHZB">1080</td><td data-page-node-id="XrWbEWQsgnvyrNK7WWeqDi">+216</td></tr>
+<tr data-page-node-id="XZ65qKVGpgv9rgJ3AmJMtl"><td data-page-node-id="HpcrC7srj9Ea8TQgtZwYTF">2</td><td data-page-node-id="RsFTgoAgHraBcPtVuGOHzA">1399.7</td><td data-page-node-id="qG0hHnNEZlCzs4ZOhCcGpU">1296</td><td data-page-node-id="h61T7TxAc4x1WThSvnCh7A">+103.7</td></tr>
+<tr data-page-node-id="BO2IaRzyhEDRn8ovDtbWuq"><td data-page-node-id="i4t8vH1HXNoojOiJUXfXCA">3</td><td data-page-node-id="kWQb9IkixpPkkuvQmmLkOX">1511.7</td><td data-page-node-id="oW7vABZvdvyWb9y6ie6Xr7">1555.2</td><td data-page-node-id="APAeG8BJ0YVx45sphFY9FL"><b data-page-node-id="ZkOGDWZRLJ6NxXEPakJpAA">−43.5</b></td></tr></table>
+第 3 年差值由正转负 → <span class="ans" data-page-node-id="tNdSZ4xUl5x5M5eC60NL5x">答案 = B</span>。量级校验：两者同量级 ✓，乙增速更快终将超出 ✓。<br data-page-node-id="chr3lBJ0md2qIVuR1fsioB">
+<b data-page-node-id="VjPQ5FI105rPYQGK3v6M5U">份数法单期演示</b>：某县 2024 年一般公共预算收入 86.4 亿元，2025 预计 +12.5% → 每份 = 0.864，现期 = <code data-page-node-id="IbyDl8US2H6ozxbWC6ma8o">0.864 × 112.5 = 97.2</code> 亿元；回乘 <code data-page-node-id="uD7maMv7GCV0NH4PNVDhL4">97.2/1.125 = 86.4</code> ✓</div>
+</div>
+
+<div class="card" data-page-node-id="1npl7JRk49OJlOo2uKM8bg">
+<h4 data-page-node-id="9PZkY95YeDRjlBW2XKNtzO"><span class="no" data-page-node-id="QTeTUJEjRNqZPmWxrDlwH1">4</span>增长率（一般增长率 · 比较 · 隔年 · 同比环比）</h4>
+<div class="blk b-id" data-page-node-id="GXcg8lHxkugfd34tG7JnSS"><b class="t" data-page-node-id="8YZWZWWLUhFaqeXz6z49Za">识别标志</b>"增长/下降…%""增速""增幅""同比/环比"；<b data-page-node-id="0o0HczPEsZcMuDOI8BPHVC">答案单位一定是 %</b>。若问"增长了多少亿元"则是增长量。比较问法："增速最快/最慢的是"。</div>
+<div class="blk b-th" data-page-node-id="F3VUJaCtTRU9mQBJDnd57u"><b class="t" data-page-node-id="k0hAwcnz8GEmRmMRi5qIat">思考路径</b>
+<ol data-page-node-id="OxXho8LWifovzEji65YHQU">
+<li data-page-node-id="WjzYOsy70HneSIVEnDKWtJ"><b data-page-node-id="E7RcW1gc97yVI81o8gigjY">先锁定分子分母</b>：<code data-page-node-id="XDplZlk7w7PikcAo0EHxlQ">R = X/B = (A−B)/B</code>。分母<b data-page-node-id="VMKqMyxSORML7BHuAVUvoH">永远是基期</b>，不是现期（第 1 号错误源）。</li>
+<li data-page-node-id="LdUAGUBCopvBixNlFhwGwW">已知 A、B → <code data-page-node-id="vnMRsHJfgyy5QXf5WUnHDy">R = A/B − 1</code>，比较时直接比 <code data-page-node-id="XhEM5GwaMpgYH5bTUsuSVb">A/B</code> 即可。</li>
+<li data-page-node-id="8AO7M7JmOiQoWG2DuvZyKD">已知 A、X → <code data-page-node-id="wBFC3F8U4LgVenBfRkifPJ">R = X/(A−X)</code>；已知 B、X → <code data-page-node-id="a1sHmApKJqwkmh1kvrsWJL">R = X/B</code>。</li>
+<li data-page-node-id="rpdkGClyM1aoV8C24v1cGC">增长率比较：分母量级差 10 倍以上时<b data-page-node-id="ElhRBkj7gZVhXkrbZ4gaU8">先统一量级再比</b>。</li>
+<li data-page-node-id="O5Xz3uW4H4zmo7lAHBJd6M">隔年增长率：<code data-page-node-id="9G2sLJvnBGuEs1IgM0MVfD">R隔 = r₁ + r₂ + r₁r₂</code>。</li>
+<li data-page-node-id="bCLXQBqtl0wPQ3sTeePJjf">同比 = 与上年同期；环比 = 与上一个相邻统计期。材料未给上月数据 → 环比算不出，别硬套。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="j8qz3SL1JF1u68ju4GV9FQ"><b class="t" data-page-node-id="gHKFIQdrfdVjnhPakVHPsb">判定标准 · 公式清单</b>
+<table data-page-node-id="X3psiqKJqqrTet836VFvg4">
+<tr data-page-node-id="ENHFyzgarsHK1A43mMsI4R"><th data-page-node-id="tA7yEFhzE1bXKLkwglmkwF">类型</th><th data-page-node-id="XLyVTDuQGiQ3yd6EUi5inF">公式</th></tr>
+<tr data-page-node-id="izruubHvXjGGQQAEpzoW4c"><td data-page-node-id="YT7wmR8nlQTAoiSDPB7shN">一般增长率</td><td data-page-node-id="ajAnhHvYLtVFgDHGmpv4ht"><code data-page-node-id="hUGE1flSHqXhzeL7tHjBKs">R = (A−B)/B = A/B − 1 = X/B</code></td></tr>
+<tr data-page-node-id="OlQyBXckuoaF0aBCsFBDJf"><td data-page-node-id="uvF48ozMqifLPz2EyPXAED">已知 A、X</td><td data-page-node-id="Aksu7iPsCDbEITgtF8C2Fz"><code data-page-node-id="g5K1jEucRNoVgwqgUxfgQR">R = X/(A−X)</code></td></tr>
+<tr data-page-node-id="WvrSAHXU4DL1XgsZjryxS3"><td data-page-node-id="5Esv5nN0sGciWHobRng8p9">隔年增长率</td><td data-page-node-id="fBcpYWjn4NRfc3SFGGubd0"><code data-page-node-id="R2ClyGfFFMlJDOE1FditAN">R隔 = r₁ + r₂ + r₁·r₂</code></td></tr>
+<tr data-page-node-id="DhOcKHm5SNiMDO6qZbMSQ1"><td data-page-node-id="6NN4TNfqVQ5WzxTvOWx4fL">环比推同比</td><td data-page-node-id="yNtrgyJuBWre8BpgA4j1vy"><code data-page-node-id="C1oeExcDVgxMFBraUtJlEg">(1+r₁)(1+r₂)… − 1</code></td></tr>
+</table>
+<b data-page-node-id="Fd8G2c8Q3MJvfyEFFUAxXu">负增长注意</b>：A &lt; B 则 R &lt; 0。比较"<b data-page-node-id="QoYsFNpIYQFc2OGfcnV5GX">增速</b>"时带符号比大小；比较"<b data-page-node-id="dnOhTDMJQ7ExjMn4RAaDpe">降幅</b>"时看绝对值。</div>
+<div class="blk b-op" data-page-node-id="Ou7cm5QLQ0iSleML5fKJZw"><b class="t" data-page-node-id="q45Q7iRWD9lYYeZyocayXT">选项处理</b>选项是百分数且首位不同 → 截 2 位一步出结果。增速比较题先扫一眼有没有明显量级差，分子小分母大者直接排除。隔年增长率常设计"两率相加"和"再加乘积"两个版本，若 <code data-page-node-id="d7UWLqFH4aUMKsy6pPgrAR">r₁r₂ &lt; 1%</code> 且选项差 &gt;1 个百分点可忽略。</div>
+<div class="blk b-tr" data-page-node-id="jiulJgk8G4EvAx4Vf8NpHg"><b class="t" data-page-node-id="cz1Ie7wIp5hO6rXwLVjHwR">高频陷阱</b>
+<ul data-page-node-id="xTQ3lOtLqoxCGoVaDhfiYB">
+<li data-page-node-id="6TyAgXPwH9ZcT0Dld9xFZS"><b data-page-node-id="a2mPyRV3mjecmTmOKLH7GQ">分母用错基期</b>：用现期 A 做分母。永远除以<b data-page-node-id="56iubXeMovTjyiCxDGUQMh">较早那个</b>。</li>
+<li data-page-node-id="FLX8BPrff5TxhWoAaaUUJ0"><b data-page-node-id="eIgM72B0k6rclbg9qhNAIs">下降率写成正数</b>：算出 0.88 写成"增长 12%"，实为"下降 12%"。</li>
+<li data-page-node-id="3A927kK66AZyd2Jhj5kGmK"><b data-page-node-id="zrv7F50SnToP5W7RMCGpbE">隔年方向倒反</b>：把"2025 较 2023"当成"2023 较 2025"。</li>
+<li data-page-node-id="gaoYFQX5A86LkwXnoEZ16C"><b data-page-node-id="D0fNHEwG42BwDQG1FuJrEy">比较时不看负号</b>：−5% 与 +3%，增速是 +3% 大；但<b data-page-node-id="PjUIGUnsrNNu2B0wntZX8S">降幅</b>是 5% 更大。</li>
+<li data-page-node-id="a6TL4kJlv3K3ugFqse1jDZ"><b data-page-node-id="TibMgl25thats915VMDcaS">量级</b>：X 与 B 单位不同（一个万元一个亿）未换算 → 差 10 的幂次。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="6QdXl3HXZZAyyd6XG5gBNT"><b class="t" data-page-node-id="cIvHv0odE1wETnZXTWIqWl">示例演示</b>
+<div class="q" data-page-node-id="ygAh98HrAdEBHjlzFfisdw">2025 年某市社零总额 7560 亿元，2024 年 6800 亿元。问 2025 年同比增速约为？<br data-page-node-id="vL5E9dUG9mqgs76LiBCuvp">A. 10.2%　B. 11.2%　C. 12.4%　D. 13.6%</div>
+① <code data-page-node-id="doxddqBxAcYux8aRCuJRHw">X = 7560 − 6800 = 760</code>　② <code data-page-node-id="3BPUz8c9XCZ3XSbtjuQtCF">760/6800 = 76/680 = 0.1118 = 11.18%</code>　③ 回代 <code data-page-node-id="3rRbCqsPtBlD5pXb7UcPum">6800×1.112 = 7561.6 ≈ 7560</code> ✓　<span class="ans" data-page-node-id="EbY2rrP1MQUSBAh4fvIb01">答案 = B</span><br data-page-node-id="ufyWyw3nIW22IMo9WwFXS3">
+<b data-page-node-id="GHAcWys7GItgswwbAIWzOF">隔年延伸</b>：若 2024 较 2023 增长 8% → 2025 较 2023：<code data-page-node-id="7nkdGwIVU8U3K1M6QUXUyP">R隔 = 11.18% + 8% + 0.89% ≈ 20.1%</code>。验证 <code data-page-node-id="5a1aYTDRIaRWolT5HHndVj">6800/1.08 = 6296</code>，<code data-page-node-id="K2K0O9ORr9g2cJf2gDvM9F">7560/6296 = 1.2008</code> ✓</div>
+</div>
+
+<div class="card" data-page-node-id="eDYGCzswh31Vw5777WoKJl">
+<h4 data-page-node-id="kJZOiBU354s9DdohdeC5z2"><span class="no" data-page-node-id="XjPOPDw39zcXYfsxGTniLO">5</span>年均增长率 · 混合增长率 · 拉动与贡献率</h4>
+<div class="blk b-id" data-page-node-id="A0vDP6a0z15ckytXEs6TmH"><b class="t" data-page-node-id="fXmMsGxbtScOlLYEdDyp8A">识别标志</b><br data-page-node-id="n6Ittyj6Oc7QDWze167JXq">
+<b data-page-node-id="pG3nQYOPz9oXLZ0ZZSSlp6">年均</b>："年均增长""平均每年增长 XX%""2018—2023 年间年平均增速""十三五期间"<br data-page-node-id="sHOZBTaGaZhJOJIvn1F8Fw">
+<b data-page-node-id="L76rTOxKYgGN8ElwSWOE3B">混合</b>：两个部分 + 一个整体，已知各部分增速问整体增速（典型：进出口、城乡收入、一二三产、男女、上下半年）<br data-page-node-id="xBM9ByYiEqtjHQlr1m0ktn">
+<b data-page-node-id="HywFSBsvT7J96fpU52EnHo">拉动/贡献</b>："拉动……增长 X 个百分点""对整体增长的贡献率为"</div>
+<div class="blk b-th" data-page-node-id="47QGgMds4hoWpS0tHkFXra"><b class="t" data-page-node-id="IOtWmRSgW0kmXAtTGZQZC9">思考路径</b>
+<b data-page-node-id="N98DA6HjpfWGAAtHjMFdy5">年均增长率</b>：① 确定 <code data-page-node-id="3AxBhePug4aDhWGhtAdafA">n = 末期年份 − 初期年份</code>（年份<b data-page-node-id="cS78yYUCLDmShaex7KK0n4">差</b>）；② 求倍数 <code data-page-node-id="64DPxCaRic76iCOBl3PnF3">A末/A初</code>；③ <b data-page-node-id="8EjVH6EEGVzGX6SuxkPBvE">代入选项开方验算</b>——把选项最中间的值代入 <code data-page-node-id="skQ2boBMByU5uMygtRdB79">(1+r)ⁿ</code>，看是否接近目标倍数。比较型题 n 相同时只比 <code data-page-node-id="mPhtzewL0wR3NnFznhM3lg">末期/初期</code> 即可。<br data-page-node-id="bphFSJZW6siTahu9YM1CO6">
+<b data-page-node-id="a6d2MH8C4bmakHiNuBie19">混合增长率（十字交叉，权重是基期量）</b>：① 确认"整体 = 部分₁ + 部分₂"；② <b data-page-node-id="UDlSbJqXBcKCg5VkHjgQC6">先定界</b>：混合增速必介于 min(r₁,r₂) 与 max(r₁,r₂) 之间 → 直接排除区间外选项；③ <b data-page-node-id="5MarscqQfqZMoPMT75SiiG">再定偏向</b>：偏向<b data-page-node-id="C8VnhLNLwBMIjm1ZR7H5Qm">基期量较大</b>的一方；④ 精算用 <code data-page-node-id="AFESpdqeJLe1QIAcDVaeMx">(R混−r₂)/(r₁−R混) = B₁/B₂</code>。<br data-page-node-id="oxlOGQmgEhHeAK0ZPY8hs3">
+<b data-page-node-id="1OsPhxv5sGkJZJEHKxUcUA">拉动/贡献率</b>：拉动 = <code data-page-node-id="CgcY4QiEuqwHO5sHUhPhUF">部分X / 整体B</code>（除整体<b data-page-node-id="b2x9grGoYTnYFFxONE0ulp">基期</b>）；贡献率 = <code data-page-node-id="G4iRGOLEEv3FwWr0E3mdfl">部分X / 整体X</code>；关系式 <code data-page-node-id="fcr8BphKYtGyr2LEXXNZeR">拉动 = 贡献率 × 整体R</code>。</div>
+<div class="blk b-ru" data-page-node-id="jYAtPcyNnjbYpzFYd3haUE"><b class="t" data-page-node-id="S9BX3U1BZ84kt8WWFJZjnO">判定标准 · 公式与 n 值速判</b>
+<table data-page-node-id="pH3Ot0FqKFgDTWe5tVucEH">
+<tr data-page-node-id="dWYdgJGGMYxbmMznaiWzN4"><th data-page-node-id="QvGD0bgYEPGlzcIDZkT1Q1">类型</th><th data-page-node-id="1c2z38mqCjrpFdzfrmWkAP">公式</th><th data-page-node-id="2paF5QlrRYRmW0aOCCTYCu">速判</th></tr>
+<tr data-page-node-id="WXqg0hq7PrX3KRTDggoQcQ"><td data-page-node-id="BQXEvsWmKOWMZEZ18xGKkN">年均增长率</td><td data-page-node-id="tJXlG7CxTIxRBljpCIWGOU"><code data-page-node-id="coPGY0xo25mnivK28MDf8n">(1+R年)ⁿ = A末/A初</code></td><td data-page-node-id="rGwB1D9uuuEHDIKKrKWo8E">代入选项开方验证</td></tr>
+<tr data-page-node-id="oD8dZcAC4jJOmjcJqE0M90"><td data-page-node-id="M9sfYPfk9EWvfWeTCNxr1u">年均增长量</td><td data-page-node-id="XFnpaoBFpMmgcxxuWykZyY"><code data-page-node-id="U8YLemHRnjyAZDjE7HjPkm">(A末 − A初)/n</code></td><td data-page-node-id="RLDTf6lCESumrP1BkJlY9H">直接减后除</td></tr>
+<tr data-page-node-id="3rusvKOrESr030Tj7HM6a5"><td data-page-node-id="5aAecSNgXtggdRoThxYlXk">混合增长率</td><td data-page-node-id="mrc6iVMMMeQO5qrKB5t7Mv"><code data-page-node-id="wqaHjWjagkKMEB3DwaBO0Q">R混 ∈ (min r, max r)</code></td><td data-page-node-id="toME0RiUGFRYvF2w4WI2E9">先定区间再定偏向</td></tr>
+<tr data-page-node-id="BD3WNFZWVnT0s78yY0uAKQ"><td data-page-node-id="sR7wFOblk2WSCaSu05v2Fs">十字交叉</td><td data-page-node-id="yshzg3DCjBOkWXvNb8tdIR"><code data-page-node-id="xkybaYukInU6KvcvJnYrbH">B₁/B₂ = (R混−r₂)/(r₁−R混)</code></td><td data-page-node-id="bxGmUZElMxgvFmouBdPSPK">权重必须是<b data-page-node-id="2w0ySIq2ioHpIED7vDYDrD">基期量</b></td></tr>
+<tr data-page-node-id="YT6hP7pzABk5DvArNe7CRq"><td data-page-node-id="AYspVMO5JP3tq1gs7kee9z">拉动增长率</td><td data-page-node-id="E7wrbCSXR7NCa2z9wSHS5z"><code data-page-node-id="HP9AKjAuFl575MVDAfaZFB">部分X / 整体B</code></td><td data-page-node-id="OIFE5gq8d1eMpfEGa6Wdzx">单位：<b data-page-node-id="TVnhiJxezzaRh57ODEWrUn">百分点</b></td></tr>
+<tr data-page-node-id="q0QYEy7Jpz7Yvr1cFJXwhL"><td data-page-node-id="Ytb9k6jyhmIo6GCEv3hrAV">贡献率</td><td data-page-node-id="0QFYhzQwy5MVgO4Vj2RnWP"><code data-page-node-id="ZJp36UteRQXgnsMYpsSDC9">部分X / 整体X</code></td><td data-page-node-id="PzAGDCycfDNZFGPhmZJmsB">单位：<b data-page-node-id="Zb9SQW81rCtumJbPWl628L">%</b></td></tr>
+</table>
+<b data-page-node-id="9JWvayuOUSAGMECKLAVAoB">n 值速判</b>：2018—2023 年 → 5；"十三五"（2016—2020）→ 5；"近 5 年" → 5；2020 年较 2015 年 → 5。<b data-page-node-id="kRyc1SrBE6JweTKt7VJjmA">口诀：n = 年份差 = 大减小。</b></div>
+<div class="blk b-op" data-page-node-id="wQDsu7YKD7RxqkRhM625Fd"><b class="t" data-page-node-id="DUi0Rd46PipCLjf9PJo6jH">选项处理</b>年均增长率优先代入选项中值，比大小后决定往大调还是往小调。<b data-page-node-id="CeH98WQsQfSKOpBNBIp4E5">混合增长率可跳过选项直接定区间</b>：若只有一项落在 (min,max) 内，一秒出答案；有两项落在区间内才用基期量之比定偏向。</div>
+<div class="blk b-tr" data-page-node-id="R1YluABqtpvcm4hH0J1BTs"><b class="t" data-page-node-id="CXfBOWDZjc3CM203dvo4MH">高频陷阱</b>
+<ul data-page-node-id="qmewn7NuGyG35GtrELcGn3">
+<li data-page-node-id="lVEhfRicZ2z9Aiyl8dHJrP"><b data-page-node-id="plXYTDik89JUnZt1fhtRMe">n 多算一年</b>：2018—2023 的 n = 5 不是 6。</li>
+<li data-page-node-id="DYe4KoosgBFWodwW1ddq3r"><b data-page-node-id="BQt3W3Xeqggeojj7yIgfkY">年均增速 ≠ 增速之和÷n</b>：要开方。</li>
+<li data-page-node-id="bpQXSY2lToQj60m51DMUUs"><b data-page-node-id="V6THijEcXaEyiST5ODXGfJ">混合定错参照</b>：忘了确认"整体 = 部分之和"。</li>
+<li data-page-node-id="gIBFz6ILrHkC1vzGwSpyPa"><b data-page-node-id="nL6vPuXrTXSJ6IQP3jbnaV">权重用现期而非基期</b>：会系统偏向量小一侧，差 0.3—1 个百分点，正好踩进陷阱选项。</li>
+<li data-page-node-id="nVUs6h3hrK6w9HxtCeIoRq"><b data-page-node-id="hhB9AqQ1fGJEdjuvP33hS8">量级</b>：拉动增长率单位是<b data-page-node-id="f1nYGr1pHHjBqw8vb5fKEJ">百分点</b>，贡献率才是 <b data-page-node-id="9GjGjovV7xP0G2DTabaxQX">%</b>，两者混用会差 100 倍。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="wxeTushWbI9NqE1aYCtN38"><b class="t" data-page-node-id="dla3A6YyB3tK0OZdIJbAIk">示例演示</b>
+<div class="q" data-page-node-id="gRDxYIPxCSYFLwFgQxwush">2025 年某市出口 8600 亿元（+12%），进口 5400 亿元（+4%）。问进出口总额增速约为？<br data-page-node-id="UxE4nK8DSximlVQZzVobPf">A. 6.5%　B. 7.4%　C. 8.8%　D. 9.6%</div>
+① 定区间：(4%, 12%)，四项都在，需定偏向<br data-page-node-id="NReWqgfjFJMRtytD8HTU3r">
+② 定基期权重：出口基期 <code data-page-node-id="zdctvdZY99HARuDArUYIIz">8600/1.12 ≈ 7679</code>；进口基期 <code data-page-node-id="1bCeA76QsSMjGW0nCpOYrx">5400/1.04 ≈ 5192</code> → 出口基期更大，偏向 12%<br data-page-node-id="yRhO5fxFRI7NsYAGtSnbIT">
+③ 精算：整体增量 = <code data-page-node-id="uhRbzCYdNgEqH4LSiZY4IE">8600×0.12/1.12 + 5400×0.04/1.04 = 921.4 + 207.7 = 1129.1</code>；整体基期 = 12871；<code data-page-node-id="IZetwSX1C1nGsta9TaolE2">R混 = 1129.1/12871 = 8.77%</code><br data-page-node-id="ahnWK6iCXwtzv7tz7sPfWl">
+④ 校验：8.77% 在区间内且偏向 12% 一侧（中点 8% &lt; 8.77%）✓　<span class="ans" data-page-node-id="rzKHBbfFKmuAZ5zGCvp4VD">答案 = C</span><br data-page-node-id="s5BEMErWkbl62gyQz4lhou">
+<b data-page-node-id="oAzivc9Mn3G8r8mezFTU5J">年均延伸</b>：若 2019 年 8000 亿、2024 年 12600 亿，n = 5，倍数 1.575；代入 9.5%：<code data-page-node-id="6VVG0tFzl1xxE7B9q79B63">1.095⁵ ≈ 1.574</code> → 年均约 9.5%。</div>
+</div>
+
+<div class="card" data-page-node-id="XdARKPOpW0hNC0BM67Lvzr">
+<h4 data-page-node-id="Cfwz3bgYEOZh8qYCNpPCEQ"><span class="no" data-page-node-id="aWicFHHhN8LGta61pwu14k">6</span>增长量（一般增长量 · 比较 · 年均 · 倍数）</h4>
+<div class="blk b-id" data-page-node-id="HfuqCGYjAUU768OTTCTd4v"><b class="t" data-page-node-id="ZC9P6VrCKEAapBPG9xK8lH">识别标志</b>"增加了多少""净增""同比增加 X 亿元/万吨""增量"；<b data-page-node-id="ZEkVA22jZYpwYb93BgFPe6">正确答案是带单位的绝对数</b>，不是百分数。比较问法："增长最多的是""增量超过 X 的有几个"。</div>
+<div class="blk b-th" data-page-node-id="yQrBbbyhJtxV1AxSGKOAYo"><b class="t" data-page-node-id="XpSbGkYEM9aQHNhxGxDWGr">思考路径</b>
+<ol data-page-node-id="pO99fiMLmACxxcskEfCdX7">
+<li data-page-node-id="SXaCHXFuF2fkeXbyN3rHR0">看给了什么：给 A + R → <b data-page-node-id="gpzuQBO1ETmVh22Q39Fz96">415 份数法</b>（先除后乘）；给 B + R → <code data-page-node-id="GFGLUGqaEKeuwoScnwy3TQ">X = B×R</code> 直接乘；给 A + B → <code data-page-node-id="uHv8ZcBGTe5GxT5wiq6OLL">X = A − B</code>。</li>
+<li data-page-node-id="J8pvtpDCNoRpx3vdAn3nn0"><b data-page-node-id="fTymciPzeUMFD5H6XV6qbP">增长量比较三步</b>：① 先用"<b data-page-node-id="kdQVTWYXzBacMYAf0aB93z">大大则大</b>"秒定；② 若一者 A 大 R 小，用 <code data-page-node-id="f99vuh888yN1jbjESqUnjj">X = A×R/(1+R)</code>——R 接近看 A，A 接近看 R；③ <b data-page-node-id="ZC7jmiust9gflbjmd6H63x">不要全算</b>，只算疑似最大的两项。</li>
+<li data-page-node-id="oI0ASgt2ZyoA3DyTwhvOEV">年均增长量：<code data-page-node-id="9qr7m4RJdizxbt4RuFGLPE">X̄ = (A末 − A初)/n</code>，n 同样为年份差。</li>
+<li data-page-node-id="89jaV1j4S1aup8zAgOIfNB">增长量倍数：各自求 X 再相除，<b data-page-node-id="U95pqvMMBAf2TVpBy8QP3f">别直接用现期比</b>。</li>
+<li data-page-node-id="wn1KAzgoVnH178kwWKWC1I">算完自检：<code data-page-node-id="eRlbWW9AQF6lqiNJ1DGBde">A − X</code> 应等于基期；X 一般不大于 A 的一半（除非增速 &gt;50%）。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="auIxzBNmRxdfmarnzYwr2c"><b class="t" data-page-node-id="gB7EEfCH7x9zPTzmt4Z8nC">判定标准 · "大大则大"判定表</b>
+<table data-page-node-id="u7OaEh7yY3R6k46hAqVQYB">
+<tr data-page-node-id="g9Qp2dCt1Dm14yQu4JyhtM"><th data-page-node-id="eoqDbIofhVuxkH8MErokuI">条件</th><th data-page-node-id="YeHfdmnt9kQY2klTIDFl2U">结论</th></tr>
+<tr data-page-node-id="gVpz07zqvlG9K8gsODJsNT"><td data-page-node-id="BeyJ0GsuxOmcMDuf0CS1uL">A₁ &gt; A₂ 且 R₁ &gt; R₂</td><td data-page-node-id="Vp45FUjA2pl1HXIjuwzJoV">X₁ &gt; X₂（<b data-page-node-id="O4ROjBSuG8lJV2S1yOMAmS">不需计算</b>）</td></tr>
+<tr data-page-node-id="NtZxHFwJYefksxpLq1Ls5M"><td data-page-node-id="PhTF6PXnuWHfopiuWp6MTh">A₁ &gt; A₂ 且 R₁ = R₂</td><td data-page-node-id="QT5qL7xVBlKMxP6IZI5zFz">X₁ &gt; X₂</td></tr>
+<tr data-page-node-id="tn3RbNT0BQV583UAgcVBNE"><td data-page-node-id="Dwo0l31RFRS3tNCIyxKluq">A₁ = A₂ 且 R₁ &gt; R₂</td><td data-page-node-id="km85LXRJgNkiiDl89B03Jt">X₁ &gt; X₂</td></tr>
+<tr data-page-node-id="JqCkOLF1fx9u3oTOnUZaX5"><td data-page-node-id="gYQiN4hli4maTGhQIorbrK">A₁ &gt; A₂ 但 R₁ &lt; R₂</td><td data-page-node-id="FIM3uoaCEl8RTYvF7QbuzA"><b data-page-node-id="Zl8P8awmk2ugYNSAXeGYfY">必须计算</b>，比较 <code data-page-node-id="asDRo4UmyzrdVOSFml04HD">A·R/(1+R)</code></td></tr>
+</table>
+核心公式：<code data-page-node-id="3mrCPXucqGp2SqLaxDm7tm">X = A×R/(1+R)</code>　　<code data-page-node-id="YDFy3UL5CfjknB560FNX3d">X̄ = (A末 − A初)/n</code></div>
+<div class="blk b-op" data-page-node-id="r5rrIuVmVtuNzABDgsseBF"><b class="t" data-page-node-id="9QFFrsfnsyv5E4s3Iu6Eqx">选项处理</b>选项差距大 → 415 每份可截 2 位；差距小 → 保留 3 位。比较/排序题先把四项的 A 与 R 抄成两列，用"大大则大"打叉淘汰，一般能淘汰一半。带"约"字可放胆估算；带"超过/不足 X"用<b data-page-node-id="CuGRVD9qgLWSF7cJCk0Hv8">定界估算</b>（只需判断是否越过门槛）。</div>
+<div class="blk b-tr" data-page-node-id="1MBVeR9AW1szD4rGRItdlR"><b class="t" data-page-node-id="mlOK0hPWUUkFidmZDUbR8J">高频陷阱</b>
+<ul data-page-node-id="VX7g8rdNoMV2BTRFiF8OHO">
+<li data-page-node-id="xSjYWkCrPyd45yrtPJUiM2"><b data-page-node-id="0vtyUyBTXU19NwK7JNRTYG">用 A×R 直接当增长量</b>：忘了除以 (1+R)，结果偏大，而偏大的量正好是常见陷阱选项。</li>
+<li data-page-node-id="dWumvUIEi8TbcTh0TS3BXi"><b data-page-node-id="ibBPdQtljH8UUDEWUBil40">误用"大大则大"</b>：两项都不严格偏优时用了此法，选反。</li>
+<li data-page-node-id="ZOnQJ2LOTyEzDNO1YtAxQU"><b data-page-node-id="GaG7qJbI4LCr6xu0lXY6sO">年均增长量的 n 数错</b>：同年均增长率。</li>
+<li data-page-node-id="CQeEK0IvH8NBpnHQQollhr"><b data-page-node-id="4rs3STxyy9SCN456AwPoIB">把增长率当增长量</b>：题干"提高了 XX%"选了带单位的答案。</li>
+<li data-page-node-id="XM4qsTCQIalsOKB2HUyWhz"><b data-page-node-id="rAtBNJ6SuIze2z4zJoroaR">量级</b>：415 法把 <code data-page-node-id="fPg6hrpFT1QyM1stgyEhjz">A/(100+R)</code> 写成 <code data-page-node-id="8saCe1ODiM4ghjvk4WKRgl">A/100</code>，或份数小数点移错 → 10 倍偏差。<b data-page-node-id="jxDcUI3gL3GLNVWgqqXxBo">每份算完必须回乘 <code data-page-node-id="QnUbPWcSOe1EKT8vzfnHCp">每份×(100+R) ≈ A</code> 才算过关。</b></li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="nZC6dxXo4vd9FlwVTvKU7I"><b class="t" data-page-node-id="FHRWHCRbTqoW6LKgUFa31s">示例演示</b>
+<div class="q" data-page-node-id="wdePcHGqcOQojsRbNkZ9zQ">2025 年 H 省 GDP 48810 亿元，同比增长 4.6%。问同比增长约多少亿元？<br data-page-node-id="TOoRIynhkWKmuqUjOrqZSY">A. 1950　B. 2150　C. 2240　D. 2440</div>
+① 415 份数法：<code data-page-node-id="8QFKN2FCq5Xkw4l7HEq5Hy">现期 : 增量 = 104.6 : 4.6</code><br data-page-node-id="B1NjN6n4qVuCkJLr5Z20Uk">
+② 每份 = <code data-page-node-id="Ls6gL0I9xy20j8Cde2H2hB">48810/104.6 ≈ 48810/105 ≈ 465</code>（选项第二位不同，截 3 位安全）<br data-page-node-id="yeQQfLPMNPCYypQXwHPoFk">
+③ 增量 = <code data-page-node-id="gFpYeVyoy3UEDO8juhKOm7">465 × 4.6 ≈ 2139</code>；精算 <code data-page-node-id="Du9p7rBnA9zkVSVuOczSmS">48810×0.046/1.046 = 2245.3/1.046 ≈ 2147</code><br data-page-node-id="OAif5GMWm2rbPTvlmvkaMg">
+④ 量级：2147 约为现期的 4.4%，与 4.6% 一致 ✓　<span class="ans" data-page-node-id="FXAVZcCRvFFm6T2FQd72OT">答案 = B</span><br data-page-node-id="jOK7I1BHTLEPELFOISWbM2">
+<div class="warn" data-page-node-id="9GxOJt2dqq4TufFH6mHC3d"><b data-page-node-id="LAR3PYDO1WGuG25JnGawUg">陷阱对照：</b>若直接算 <code data-page-node-id="jaBKv0DH9GrzTEWIfzw5ma">48810 × 4.6% = 2245</code> → 正好对应选项 C，这是命题人准备的"没除以 1+R"陷阱。</div></div>
+</div>
+
+<div class="card" data-page-node-id="vbwBuQC3cJVj5WIWZlcCMX">
+<h4 data-page-node-id="5YmcDMTWtCs483ErJgcSXk"><span class="no" data-page-node-id="a4KASlyHfEZBGNCWkKZbql">7</span>比重（现期 · 基期 · 两期比重差 · 趋势）</h4>
+<div class="blk b-id" data-page-node-id="VoCYlgwygQoO2naSVALw1v"><b class="t" data-page-node-id="E127QDOC1wvG75s20Gax74">识别标志</b>"占……的比重""占比""其中……所占比例""……率"（城镇化率、利润率、恩格尔系数）。<b data-page-node-id="CGZC0ka4WxDnxKVwpLNqKu">必有部分—整体关系</b>。两期比重："比上年上升/下降了 X 个百分点"。</div>
+<div class="blk b-th" data-page-node-id="bo4RLjAZ43l1pUZsGTNDTD"><b class="t" data-page-node-id="xZfzLgAeuYt6LJA8BjwCZZ">思考路径</b>
+<ol data-page-node-id="FYyu136kDCCKMJqYruITrp">
+<li data-page-node-id="hvd6LX1ZkMnoE9bum3liTh"><b data-page-node-id="ZAnOTgy0BNJbkzSks9zO14">先认整体</b>：带"全""总""该类合计"的那个量。比重 ≤ 100%（"完成率"可 &gt;100%，但那叫率不叫比重）。</li>
+<li data-page-node-id="N7rgBlnVZaWsNFBjmNiflt">现期比重：<code data-page-node-id="QX49Vpb4H4ngd1LNHnvrsQ">W₁ = 部分A / 整体A</code>，截位直除。</li>
+<li data-page-node-id="mmII3EfaMR4wWBmIPWUhgX">基期比重：<code data-page-node-id="GruFSIF4fr2cD0121BlyGj">W₀ = W₁ ×(1+R整体)/(1+R部分)</code>。<b data-page-node-id="tXqOcNGUc8mppEGdm1aWdb">记忆：整体率在分子上</b>。</li>
+<li data-page-node-id="uHoRreNuQ8LIVtMWpegCzJ"><b data-page-node-id="Q2NImQNIJRP3jf9yr8cohm">比重趋势（定性，不算）</b>：R部分 &gt; R整体 → 上升；&lt; → 下降；= → 不变。</li>
+<li data-page-node-id="oZakBlGdkojQtKUzFxuFnH">两期比重差：<code data-page-node-id="E9CfdBIBREt8F23FzLWf61">ΔW = W₁ ×(R部分 − R整体)/(1+R部分)</code>，<b data-page-node-id="NDnZiDtTkt4E9tPIwZbd7i">单位百分点</b>。</li>
+<li data-page-node-id="ohULR2WMRqLl1pdeQBavF4">速算：<b data-page-node-id="6EPCrnxDHnNjbvbbBm6qzN">先算 W₁（一个除法），再乘率差（一个乘法）</b>，两步出结果，绝不套原始分式。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="8SPGY7QTb5BMv63B4X2Tdw"><b class="t" data-page-node-id="aLYQbk3uXmwbyAhcHp4TOJ">判定标准 · 公式清单</b>
+<table data-page-node-id="YBjshXRM73za3AKitzHhGS">
+<tr data-page-node-id="wluZEtQORqbKKpmFbCqbBY"><th data-page-node-id="Ds2arCA8UAKXm4NGUaSoHg">求什么</th><th data-page-node-id="8VlzA6pHmhXgBU9nt1n4EW">公式</th></tr>
+<tr data-page-node-id="UF4qRBYxvscJTEL8wKR5GW"><td data-page-node-id="SHoFWpmrSxNKxi0L9JmymS">现期比重</td><td data-page-node-id="Gg2SORZ2aOAUwANcaw0eFu"><code data-page-node-id="L4i0lRnSY8hd4i4kC6Mmkb">W₁ = 部分/整体</code></td></tr>
+<tr data-page-node-id="vbiNeaZeSzGPiiqbfwhhlh"><td data-page-node-id="10jNSxb8SEtqqCoSVJVlEG">基期比重</td><td data-page-node-id="jXAtGDiAG5Oj2DaxIPEXI9"><code data-page-node-id="AVR7B1INbHIUsoQ8D7EMQg">W₀ = W₁×(1+R整体)/(1+R部分)</code></td></tr>
+<tr data-page-node-id="5gOmi59gkb0gGJfIzBSU6P"><td data-page-node-id="LSFlhg7789D33Au2BZVU76">两期比重差</td><td data-page-node-id="nlhJ3tIgBLIoCvDAFlZ5j3"><code data-page-node-id="iVIAC6PuIXFkTx3Xu1PBej">ΔW = W₁×(R部分 − R整体)/(1+R部分)</code>（<b data-page-node-id="R0gH9zgDJGTKcs7bhlrqrl">百分点</b>）</td></tr>
+<tr data-page-node-id="FfELNX9AG47G1JJPHLxeJG"><td data-page-node-id="Felh3CHJed6Wh6c09EY5SL">比重趋势</td><td data-page-node-id="GdMT9gPJ9DuOF1MgCDJyRJ">比较 R部分 与 R整体</td></tr>
+<tr data-page-node-id="7F2zAAey0j29uqJ3EnXxVC"><td data-page-node-id="Ll6VJb1cTe2bLs21Dmpdjf">比重差上界</td><td data-page-node-id="9BLHm1KJC8QovLqYp0Ogoz"><code data-page-node-id="ffQIZkC0TsPlW1YWVzEOsb">|ΔW| &lt; |R部分 − R整体|</code>，也 <code data-page-node-id="SSVDLJtoEjqINSnCUfQ1OY">&lt; W₁</code>　← 秒排除用</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="zww1ZeNV84jB8tvseGnfZI"><b class="t" data-page-node-id="D0JbMDhDRT8OuwInAOSQwE">选项处理</b>趋势题先看 A、D（上升/下降各一），用定性判据砍掉一半。定量阶段看剩余两项差距：若一为 0.4、一为 4，只需估 <code data-page-node-id="Rlx7UJ0o7OLMEYxPS460au">W₁×率差</code> 的数量级（<code data-page-node-id="IkJyxtxUeLYyJLywOteGHU">30% × 1.4% ≈ 0.42 个百分点</code>）即可秒出。常设"忘记乘 W₁"的陷阱选项。</div>
+<div class="blk b-tr" data-page-node-id="OpcFI5YX7P4BcGIn0uiHyg"><b class="t" data-page-node-id="tGNv8OisnuLt8Kffo9B2PG">高频陷阱</b>
+<ul data-page-node-id="a0qCVMaj0az1mxggEsI9c0">
+<li data-page-node-id="tQg5oHhsfYxJebMlhcwCsr"><b data-page-node-id="MjB7kQ5VM7brH89YCDZ9VI">基期比重公式写反</b>：<code data-page-node-id="UAvLLXheikrCkE2ZnVyklT">(1+R部分)/(1+R整体)</code> 是错的。<b data-page-node-id="lj0R6rARwIJE93nfwXZjLm">分子永远是整体的率。</b></li>
+<li data-page-node-id="hGG8gp85JYtP3ROYMWU01P"><b data-page-node-id="msImYArDrY3eybr6lB2x8l">比重差写成百分比</b>：比重差 = <b data-page-node-id="SprywnpjkO2f2LLHKoWumP">百分点</b>，不是 %。</li>
+<li data-page-node-id="e3oTkZYVJOiWAQUMOnEDEM"><b data-page-node-id="2xeGsqxNUGTQTfm0pTfWje">部分/整体张冠李戴</b>：把"私营占规上工业"倒过来算。</li>
+<li data-page-node-id="6xiLY9opCyTE7O8ATGAxo7"><b data-page-node-id="C1U7dqL4jDRtkWV895RBLK">忽略 (1+R部分)</b>：R=25% 时误差达 25%。</li>
+<li data-page-node-id="vHUrUh1dOAOe6X8qRxZhC8"><b data-page-node-id="FXtRmxqD6CtLHpnf0OVidF">量级</b>：<code data-page-node-id="lD8lMNjABhFORsrB2GCusW">32% × 1.4%</code> 算成 44.8% —— 正确是 <code data-page-node-id="AePjVIGLRTjNKaECPlI0Xj">0.32×0.014 = 0.00448 = 0.448 个百分点</code>。<b data-page-node-id="bW0m8p8JA5PzT5jyn02xWl">每次乘百分数前先把 % 写成小数。</b></li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="6rwE2KTGvaZqpl8f5I1CbU"><b class="t" data-page-node-id="B4v3zc6mk8N8sWSPGSFwnp">示例演示</b>
+<div class="q" data-page-node-id="Z11US3gpGGl9ZTLDMJXrfp">2025 年全国规上工业企业营收 159.4 万亿元（+1.1%），其中私营企业 51.2 万亿元（+2.5%）。问私营占比比上年：<br data-page-node-id="X5bRLTMEEoek8CktOk7IKo">A. 上升约 0.4 个百分点　B. 下降约 0.4 个百分点　C. 上升约 4 个百分点　D. 下降约 4 个百分点</div>
+① 定性：R部分 2.5% &gt; R整体 1.1% → 上升 → 排除 B、D<br data-page-node-id="JrdGXyoHq7DC9AJ86J63tk">
+② <code data-page-node-id="7HyRC5vibyDXaZoJUoCH75">W₁ = 51.2/159.4 ≈ 0.321 = 32.1%</code>；率差 = 1.4 个百分点<br data-page-node-id="qCtlyLnvozwkkt8bdl6jQb">
+③ <code data-page-node-id="tGBxW1ScuVWNHEEjVPXe0M">ΔW = 32.1% × 1.4%/(1+2.5%) = 0.321 × 0.014/1.025 = 0.00438 = 0.44 个百分点</code><br data-page-node-id="6cInh6zJjdAydXSICMntFo">
+④ 定界：0.44 &lt; 1.4 ✓ 且 &lt; 32.1% ✓　<span class="ans" data-page-node-id="SX3X6kjo23V95x7C1bRRTE">答案 = A</span></div>
+</div>
+
+<div class="card" data-page-node-id="J1SW4eZ7BakBnLbWzVeyFT">
+<h4 data-page-node-id="CAUwpbfuJRrlMYpQKGCgzF"><span class="no" data-page-node-id="fhQ3YXryaANhU9NLyQiduF">8</span>平均数（现期 · 基期 · 增长率 · 变化量）</h4>
+<div class="blk b-id" data-page-node-id="n4fQ634jAjB5t4nbK9ZSHN"><b class="t" data-page-node-id="JdrLMqSd6CEf8KE3OefXaZ">识别标志</b>"平均""每""人均""单位面积产量""月均""场均""单产""客单价""亩产"。本质是"比重"的变形，但<b data-page-node-id="BJUJi4GjzrqJWRgOQHho9K">分母是数量</b>（人数、面积、场次、月数）。变形问法："比上年平均每 X 增加/减少了多少"（变化量）、"同比增长百分之几"（增长率）。</div>
+<div class="blk b-th" data-page-node-id="EAOLwvdtV89uH2ohdhuW9L"><b class="t" data-page-node-id="LKFdHkZlsJfoUBSOBGuPcF">思考路径</b>
+<ol data-page-node-id="pp5iOCGpzGgtbko3xLQWBg">
+<li data-page-node-id="acinSp9UYd2rjB8RQ5vNbc"><b data-page-node-id="BWR4PGrFVRyWuZbV3nTJt7">先定谁是总量谁是份数</b>：分子 = 被分的量（产值、收入、产量），分母 = 分的数量（人数、面积、月数）。</li>
+<li data-page-node-id="mS7H11BPpATQtfnGbbiQej">现期平均：<code data-page-node-id="htSbwHL8KDCYTDnC3HDEo4">M₁ = 总量/份数</code>，注意单位合成（亿元/万人 = 万元/人）。</li>
+<li data-page-node-id="WD8m2MRcRrPebq63Pmrm4s">基期平均：<code data-page-node-id="S88ST2vHNHvDznQ3uAm3uo">M₀ = M₁ ×(1+R份数)/(1+R总量)</code> —— 注意<b data-page-node-id="FfV99OaQJs3FQ5vFRquLjF">分子率是份数的率</b>，与比重公式恰好互补。</li>
+<li data-page-node-id="bBO1z93reoaXA72JxmQkMC">平均数增长率：<code data-page-node-id="hLJHIvBeVe03YQov0Wvywa">RM = (R总量 − R份数)/(1+R份数)</code>。</li>
+<li data-page-node-id="5HkndD697bvaggMndrkBzJ">定性：R总量 &gt; R份数 → 平均数上升。</li>
+<li data-page-node-id="pEwYpDGfnWng2pfS5mVXWT">变化量：<code data-page-node-id="55mrLj6KgG6U0zocpn6KX0">ΔM = M₁ − M₀</code>（直接用减法最稳），或 <code data-page-node-id="UBRMuJke1otFTgfxQPULMg">M₀ × RM</code>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="ww2KiHGaNBhuAjrhK977F1"><b class="t" data-page-node-id="fNpTKkVAbNjoxqty33aO50">判定标准 · 极易混的对照表（务必对照背）</b>
+<table data-page-node-id="OStkf1tM75WGXsw9UU2vLH">
+<tr data-page-node-id="a2NLYDXNEPTBtmfuno4s46"><th data-page-node-id="RTrCzAbCxGIBdujWHH6Db4"></th><th data-page-node-id="A6ZCpHboSm8LQaKMMJ2FWe">基期公式</th><th data-page-node-id="FFhIRNJHoctDxnzwdAhZU6">变化公式</th><th data-page-node-id="gwwyLF5TfByCqjmAWatT4g">单位</th></tr>
+<tr data-page-node-id="czAKEIMEBvZ00pQQvE6RWF"><td data-page-node-id="YkCCgkKmwU5fvMw7AnPg6Q"><b data-page-node-id="Lb1ErSUW2lo3eq1DE2gd1A">比重</b></td><td data-page-node-id="qvQFkvTFrzju5FUy5gxhUG"><code data-page-node-id="nl7rgW7H4LDpNmNbr8Z7pq">W₀ = W₁×(1+R整体)/(1+R部分)</code></td><td data-page-node-id="eCFfKWHodp2jv3ch8pNzfP"><code data-page-node-id="OJTw3dHFVkkR1ZvsYRYxHV">ΔW = W₁×(R部分−R整体)/(1+R部分)</code></td><td data-page-node-id="XPbqhAcvAYtnuRHLl1T7ZT"><b data-page-node-id="SwRK7Q05iaNlvFmkarVe4N">百分点</b></td></tr>
+<tr data-page-node-id="jhe2FierCn03dnHd6kibmf"><td data-page-node-id="9UEjudlDTiAALNBziiMUi5"><b data-page-node-id="vZEYDDzkDuwlGxUTeISwTj">平均数</b></td><td data-page-node-id="PXkG1SNdHBZUYpXhqsP4cB"><code data-page-node-id="QRjy55idohEYn4VNBO0sUF">M₀ = M₁×(1+R份数)/(1+R总量)</code></td><td data-page-node-id="cWBGmFxLDLIseXZZFM2n30"><code data-page-node-id="PIECWHHjJe6QGdZP09mK5B">RM = (R总量−R份数)/(1+R份数)</code></td><td data-page-node-id="kgHbeaGC5B4BtFTveDOIpr"><b data-page-node-id="PEJvkiXKs22ztmfANBeXmS">%</b></td></tr>
+</table>
+记忆法：比重"整体率在分子"，平均数"份数率在分母"；比重差减法是"部分−整体"，平均数增长率是"总量−份数"。</div>
+<div class="blk b-op" data-page-node-id="AWO3UUKjAzSYfqCCeV3k6t"><b class="t" data-page-node-id="GLdn2a30BVoDRvFLqHE4rW">选项处理</b>求 RM 时选项常被设计成"总量率 − 份数率"的原值（忘记除以 1+R份数）——若 R份数 &lt;5%，两者接近，需看选项精度。求 ΔM 时选项是<b data-page-node-id="CjvH3IncRf7N4b9XnqzshJ">带单位数值</b>，别把增长率当答案。定界：<code data-page-node-id="DvjkbNm0kgKm5VBsHUE0eb">|RM| &lt; |R总量 − R份数|</code>（当 R份数 &gt;0）。</div>
+<div class="blk b-tr" data-page-node-id="bLXQEf5Xx9EOZxdT8ciyqR"><b class="t" data-page-node-id="Z3WUlYiiKGXi2CK8ZGVv7q">高频陷阱</b>
+<ul data-page-node-id="tyoFBlXaZzubU7kvACXc1p">
+<li data-page-node-id="EqsJtCF5xQaoWSSLUoIzYO"><b data-page-node-id="mBGGPJVVJO2YeRtOf9Simb">分子分母颠倒</b>：写成"人数/收入"，答案成原值倒数，恰好常是某个选项。</li>
+<li data-page-node-id="cLMQWBVMot7fSpFI0OxXW4"><b data-page-node-id="d12hywsBj1W7yVZ7jMnqsu">公式分子分母写反</b>：<code data-page-node-id="degxmLeEyAreCCpckszYA5">(R份数−R总量)/(1+R总量)</code> 是错的。</li>
+<li data-page-node-id="ZaWKTJ8keEhAlLQIYeQXro"><b data-page-node-id="U2zjQIAIXHdeJpaiL0xKNj">单位未换算</b>：亿元/万人 → 万元/人，答"8.9"（错）vs"8.9 万元/人"（对）。</li>
+<li data-page-node-id="KHqgEdEYuj4xC8UMPwkaOx"><b data-page-node-id="RLg3Hqx4k9AOZNdkaWgK7U">把"月均"当成"全年"</b>：份数是 12。</li>
+<li data-page-node-id="jCKzfagD5nepn4Jn6VHM8Z"><b data-page-node-id="65HKMF6h43IJ7eTiQo8g75">量级</b>：份数用"万人"总量用"元" → 结果差 10⁴ 倍。<b data-page-node-id="PPyTFYQcQfnEEe4mW0T9ja">先写"答案单位 = 总量单位 ÷ 份数单位"再动笔。</b></li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="FVRB45p8IzMU3hdGZRYWZk"><b class="t" data-page-node-id="3DHRrmmFHF0ZtmtDlUR0PT">示例演示</b>
+<div class="q" data-page-node-id="TbSr6IPPvknJV0CPiW8pEu">2025 年某市接待游客 8600 万人次（+12%），旅游收入 1032 亿元（+20%）。问人均旅游消费同比增长约？<br data-page-node-id="XAhNjAdBXi9H1kB6p89WnR">A. 6.4%　B. 7.1%　C. 8.0%　D. 20%</div>
+① 人均 = 收入/人次 → 平均数增长率<br data-page-node-id="KKYCZ7m4J8W1QNDF8fXTPS">
+② <code data-page-node-id="GxSukELcG9pffc49STv41g">RM = (20% − 12%)/(1+12%) = 8%/1.12 = 7.14%</code><br data-page-node-id="hYYNtkCS8PfUC4LjcYbzjL">
+③ 定界：7.14% &lt; 8% ✓　<span class="ans" data-page-node-id="G4FKvuK9LV7V9mxxxOxe5y">答案 = B</span><br data-page-node-id="HxUBpZhZXVTMAXBISpt7OG">
+<b data-page-node-id="dSvdfzeiwLaJWd6cDymIss">延伸 · 变化量</b>：<code data-page-node-id="n8yFFE1idnWL8E8RLQV4vx">M₁ = 1032亿/8600万 = 1200 元</code>；<code data-page-node-id="p9124sHZv57jZIiqjtuEmz">M₀ = 1200×1.12/1.2 = 1120 元</code>；<code data-page-node-id="1DiKEi2S5ofqYjRyCTqPOe">ΔM = 80 元</code>。交叉校验 <code data-page-node-id="GLJkULho3uMe4CmqcDSIrA">1120 × 7.14% = 80</code> ✓</div>
+</div>
+
+<div class="card" data-page-node-id="veRAdfWoaHdKlFMxuJff6i">
+<h4 data-page-node-id="DvycZH7LcMNxwtJnjIZZg7"><span class="no" data-page-node-id="gmmFDzbCXxiGqA103c7D18">9</span>倍数与比值（现期 · 基期 · 翻番 · 比较）</h4>
+<div class="blk b-id" data-page-node-id="NrOSr11zBW3IZxFAqW0CoH"><b class="t" data-page-node-id="VQP235URd1PW1yfsoz6peM">识别标志</b>"是……的多少倍""相当于""多几倍""倍数为""翻了几番""与之比是多少"。<b data-page-node-id="elGypKx5Bgt8IN6XxqFhCg">"是几倍" = A/B，"多几倍" = A/B − 1</b>，两者差 1 是命题高频点。时间倒退为去年 → 基期倍数。</div>
+<div class="blk b-th" data-page-node-id="mIYsw8bG8q9I9UN5ADxPzd"><b class="t" data-page-node-id="Do3lpA6svlRfiCthuA42rh">思考路径</b>
+<ol data-page-node-id="DdCVeZ5qAtiQdXysFCiBPw">
+<li data-page-node-id="AjXGGnua7xH8GkjH24AE78">分清比较双方："A 是 B 的几倍" → <code data-page-node-id="O0oc8MkNejnbkQpQyeMRky">A/B</code>。</li>
+<li data-page-node-id="dALIl1SHZ27g3AWmkfUXEc">"多几倍" → 算出比值后<b data-page-node-id="cMJMEbjjq429RWM0r0RpGU">减 1</b>。</li>
+<li data-page-node-id="DC212SwNdqtPE2FmYdT6gD">基期倍数：<code data-page-node-id="RPa8QR8bdTXiGg9jI3oEc8">K₀ = K₁ ×(1+R_B)/(1+R_A)</code>（与基期比重同构：A 是"部分位"，B 是"整体位"）。</li>
+<li data-page-node-id="FSUxDKP5z94Q28o1f4Y77P">翻番：翻 n 番 = <code data-page-node-id="TRBujK4cghBbGtpDer4Gda">2ⁿ</code> 倍。翻一番 = 2 倍（+100%），翻两番 = 4 倍（+300%）。</li>
+<li data-page-node-id="STnyCw2VfBSSTe0w6KFVvQ">倍数与增长的关系：<code data-page-node-id="ryqaq77xtU00qKNeFP5D7F">A/B = 1 + R</code>（跨一期时）。"增长 60%" = "是基期的 1.6 倍" = "多 0.6 倍"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="hYjFbppH54BA7MbBY4vlkx"><b class="t" data-page-node-id="RlReYbexTgb0ZHtjVno3su">判定标准 · 公式清单</b>
+<span class="chip" data-page-node-id="hYEJjLFCZ2S5mtXrQ4qKST">现期倍数 <code data-page-node-id="LnusjKLNoTic8TpD6cCOul">K₁ = A/B</code></span>
+<span class="chip" data-page-node-id="lk2NAckgLqyvBWQtJbihqe">多几倍 <code data-page-node-id="LshLFu0G9mt1iOPQZVWM6V">K₁ − 1</code></span>
+<span class="chip" data-page-node-id="Xo8bvDDBcbmBEyCWGhRkg9">基期倍数 <code data-page-node-id="fAwBQIf72bxjzshEgKqzT7">K₀ = K₁×(1+R_B)/(1+R_A)</code></span>
+<span class="chip" data-page-node-id="92c7baNhVlh4ADEGKM2mJP">翻 n 番 = 2ⁿ 倍</span>
+<span class="chip" data-page-node-id="pFpRTqaoiB8ijk9D5m8EyD">72 法则：翻番年数 ≈ 72/R百分数</span>
+</div>
+<div class="blk b-op" data-page-node-id="2975I0ODNYMwyqhZHVkvG7"><b class="t" data-page-node-id="JHzD7l53QbQMM2wHzWJTqB">选项处理</b>选项常并列 2.4 和 1.4 → 先判断题干是"是几倍"还是"多几倍"。基期倍数用定性先排一半：<b data-page-node-id="WxesoCepG5mCeaGYCjGVn2">分子增速 &gt; 分母增速 → 基期倍数 &lt; 现期倍数</b>（与比重逻辑完全一致）。回乘 <code data-page-node-id="IafifCYtQ0qZ8E4XiEbm9K">B × 所选倍数 ≈ A</code>。</div>
+<div class="blk b-tr" data-page-node-id="l29AhGdTIvDLCh2CbCDjaa"><b class="t" data-page-node-id="JCvppxlZ0EpMQQpT4cMgFg">高频陷阱</b>
+<ul data-page-node-id="PwGr9RQq7NQxWxvaASS4Io">
+<li data-page-node-id="WAZmSCDVgyZcH47q9DIHCy"><b data-page-node-id="hcD6lkzVUZ3LZg3EH5wZv1">"是几倍"与"多几倍"混</b>：正确答案差 1。<b data-page-node-id="axrFg5d2n57ipD4pJVosM5">读题时在"多"字下划线。</b></li>
+<li data-page-node-id="MSTMXxsR8EVkcxe6wUVuMj"><b data-page-node-id="0uhW7zBAqtw3u4KLDpnS9G">基期倍数方向搞反</b>。</li>
+<li data-page-node-id="4V4ziUV3kxemMO3Kknj7il"><b data-page-node-id="qikgSoqmCPyNuQgtLUd3Wo">翻番与翻倍混淆</b>：翻两番 = 4 倍，不是 2 倍也不是 3 倍。</li>
+<li data-page-node-id="NAGCowwkEtQLfr2SZpiOBX"><b data-page-node-id="g2GdpxsiKzV8bpp66dkBK7">A 与 B 位置颠倒</b>：得到倒数。</li>
+<li data-page-node-id="5BDHs1gSOKvohggSoRhgVt"><b data-page-node-id="Jukl2LVUMOv8hBvDqjueYY">量级</b>：一方"万人"一方"亿人"未统一 → 差 10⁴ 倍。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="Xcdy7P3SH6guJVYTtXm09u"><b class="t" data-page-node-id="mhAJiNmPBRQGl31AMgk4R9">示例演示</b>
+<div class="q" data-page-node-id="yoo6Al0B4lRKfXtcnj7eGF">2025 年甲公司营收 3600 万元（+20%），乙公司 1200 万元（+10%）。问 2024 年甲公司营收约是乙公司的多少倍？<br data-page-node-id="iFMTyBAUSMvH0TkMp0epDi">A. 2.45　B. 2.75　C. 2.95　D. 3.15</div>
+① <code data-page-node-id="7Cb3ZRTJftizpZ8o7R9XrF">K₁ = 3600/1200 = 3</code>　② <code data-page-node-id="63tN51NKNp312IKvNMbbP0">K₀ = 3 × 1.10/1.20 = 3 × 0.9167 = 2.75</code><br data-page-node-id="bjlLcSJhGAg1l5etKEFHmC">
+③ 定性校验：甲增速 20% &gt; 乙 10%，甲相对乙在变大 → 基期倍数应 &lt; 现期 3 ✓<br data-page-node-id="7mpKxpKaBfqcxYiMif3rlk">
+④ 精算校验：甲基期 3000，乙基期 1090.9，<code data-page-node-id="7SjIApBF1KRCDYCMSfM0AK">3000/1090.9 = 2.75</code> ✓　<span class="ans" data-page-node-id="rvNUgoiSOBjTzTpUVYwDky">答案 = B</span><br data-page-node-id="OHUjl0NXhLY8Jgpw3zoHAK">
+<b data-page-node-id="HEbW46pJpE3MW4FpY0TJoB">翻番延伸</b>：甲按 20% 增速，72/20 = 3.6 → 取 <b data-page-node-id="9DonF85zbOqiNHA4OIAbZh">4 年</b>（<code data-page-node-id="Wnv2JmXTPp42ZzGIU1EMIi">1.2⁴ = 2.07 &gt; 2</code> ✓）</div>
+</div>
+
+<div class="card" data-page-node-id="yZ5Pp1vsGuKe5ujVQhoJNP">
+<h4 data-page-node-id="Odg8yY5j9WpdoYbeoMSIlr"><span class="no" data-page-node-id="FsM9MFxp6jqGxQhYopezNS">10</span>简单计算与查找（找数 · 排序 · 计数 · 顺逆差）</h4>
+<div class="blk b-id" data-page-node-id="cYSIYeD2cHDP54z67IElxa"><b class="t" data-page-node-id="HnDaKtBhsfW2Lk7af5uU08">识别标志</b>"超过 X 的有几个""从大到小排序正确的是""最高/最低的是""顺差/逆差为多少""差额是多少""合计为多少"。看似不用算，但极易因<b data-page-node-id="8DAvhPmzBWrknYN62gbVjZ">漏项、错单位、错时间</b>丢分。</div>
+<div class="blk b-th" data-page-node-id="IuA1xlu19dPMWlxBVj1vdE"><b class="t" data-page-node-id="vWcxS6XLyhjgilxXVs87mT">思考路径</b>
+<ol data-page-node-id="kU673ai0StUECa4EbKYARq">
+<li data-page-node-id="VfQTW9TkHHIGce5YBI8cMx"><b data-page-node-id="XOSSekeqQ9XoBOG5ovA00v">先明确三项</b>：统计范围（哪些行参与）、时间（哪一期/哪一列）、单位。</li>
+<li data-page-node-id="zzMELtNbGaP9yuGl1Ihyu2">直接找数：定位 → 比对，注意"<b data-page-node-id="wBm3aUpioe7WlL8wIcrwbn">同年不同列</b>"（本期值 vs 同比增速列）。</li>
+<li data-page-node-id="xKuvehNIPTVaMjk8I4h2CD"><b data-page-node-id="Xj4Jsa0EBAnrtBwMMu392p">排序题</b>：不必全排，只比较<b data-page-node-id="VgGEBQDOOslgqIO0ZeBAA4">相邻两项的相对关系</b>，用"首两项 + 末两项"验证即可拆掉 2 个选项。</li>
+<li data-page-node-id="ck3ZxoO9OL2EXlb4SYwh7G"><b data-page-node-id="78xxz7xEwNlgsscnA6AFow">计数题</b>：逐项打勾 ✓/✗，把"边界值"（刚好等于门槛的）单独标 ⚠。</li>
+<li data-page-node-id="BYuOT75RFnPpDPdtUaUdyz">差额类：明确谁减谁。顺差 = 出口 − 进口。</li>
+<li data-page-node-id="4iNBa7sSFZq3xfbFggx0Pi">合计类：先换成同一单位再相加，警惕"其中"项之外的隐藏项。</li>
+<li data-page-node-id="a2O5lpMiQJXHyWzuHrESY3">别忘了看材料"注"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="3juw30weLg6A85mEc2q8qz"><b class="t" data-page-node-id="HcdxRJnlX2FmoPToz4hvie">判定标准 · 门槛词对照</b>
+<table data-page-node-id="KaGHXwhi8FJmPoqO36zzO7">
+<tr data-page-node-id="evVlge4wQJa2hHBidPNlgM"><th data-page-node-id="6xqLUO7JTB0uRSEXigwnVj">表述</th><th data-page-node-id="Bg9m5Yn73kL5pvRd1KcYQJ">含义</th></tr>
+<tr data-page-node-id="rWTRluhUXgczFoZmM7NupH"><td data-page-node-id="Bi8YfbtFyOJ2cgWNNkpZel">超过</td><td data-page-node-id="2HBGjWLpQ6CBL987cchBb5"><code data-page-node-id="pdoxDyKN709ZXdbwF1oVtg">&gt;</code></td></tr>
+<tr data-page-node-id="6CFPQ8Y6PfBStzunNcOxaE"><td data-page-node-id="imI2dyOYbAMiJo1D3FfCrj">不足 / 低于</td><td data-page-node-id="1wdX6sOxmQh71SNXUSZDLa"><code data-page-node-id="yEJaZj2zyYsah0vmkseHQW">&lt;</code></td></tr>
+<tr data-page-node-id="eJFtTP9gI0bmqArMxJsBNH"><td data-page-node-id="fHF1Q5dzYPRLAokOSJFa7M">不低于 / 达到</td><td data-page-node-id="zG3Fm0EJ0liUp5cD6rpaB3"><code data-page-node-id="XHeDC6MvS2FhoBC2c8MbDv">≥</code></td></tr>
+<tr data-page-node-id="K3mfXve7m6VzqAr2BJYAHj"><td data-page-node-id="QOMSPHqZzK69yunxIJbvmC">顺差</td><td data-page-node-id="WyXFkw2mFZWDks1PKqLfYl">出口 − 进口（&gt;0 顺差，&lt;0 逆差）</td></tr>
+<tr data-page-node-id="qPyabQBIjKIEHK1wnbxdIn"><td data-page-node-id="jpyQSB6sq3RnTc2l2us85c">增速差</td><td data-page-node-id="EuDf7y8VCm4yPDlJQX84Zy"><code data-page-node-id="3cxWJ3hgtH1FCoFhPbNMx6">r₁ − r₂</code>，单位<b data-page-node-id="R9Q3BUSUdiSLjxcB28iiSG">百分点</b></td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="odOGUZLjyTkhWyyrFCRmL6"><b class="t" data-page-node-id="czMF2gYLMYnKS5Cd9boETH">选项处理</b>排序题先看四项首两位，只比较摇摆的两项。计数题务必把等于门槛的数值标 ⚠（"超过"≠"达到"）。差额类选项常含"反号"和"减反"两个陷阱值（如 ±4400 都出现），先定方向再选。</div>
+<div class="blk b-tr" data-page-node-id="tQRokRP2CDi2m5s4ZjdHQ4"><b class="t" data-page-node-id="7KjWk4GXO5m8OCJwzpDnAn">高频陷阱</b>
+<ul data-page-node-id="6xGhDtUzgrzB2ixh7J4nQQ">
+<li data-page-node-id="zBWR6wIZatkt22BOCgjnYD"><b data-page-node-id="nqKjPwPUB4iSiznX3wlGNy">"超过"与"不低于"</b>：<code data-page-node-id="Zv2kMhzGaUOZa3zElBPCxS">&gt;</code> vs <code data-page-node-id="6FkDab1OS2sDXaQVsVxrx1">≥</code>，一个数字之差即丢分。</li>
+<li data-page-node-id="u8zcRmjf1IS3DuUlMc1QLr"><b data-page-node-id="ow9peaz48PjYTkg49sJ4Zk">排序单位不统一</b>：同一列中某行是"万元"、其他是"亿元"。</li>
+<li data-page-node-id="GeT90HhC0QSVdbjvbNJWID"><b data-page-node-id="ulq8eSFsE9dm6vmXLoibRZ">漏看"其中"项</b>。</li>
+<li data-page-node-id="BGwHjvxpayIaHcj5XCFmlw"><b data-page-node-id="2SzicFC3VrkgiPvgZAvQjb">顺逆差方向反</b>：记牢"顺差 = 出口多"。</li>
+<li data-page-node-id="5v78P0s2WjNsgv2hxAvfdu"><b data-page-node-id="XwAhTXaYbNR7foKqpyvdMb">量级</b>：<code data-page-node-id="2vAVFlQZuVEWbx7pXDiDvx">4200万吨 + 3.2亿吨</code> 未统一单位 → 差 10 倍。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="CeGQaGiwTLgSJQVI8kMgAX"><b class="t" data-page-node-id="i83wDEkkf79Un8rocx2LOL">示例演示</b>
+<div class="q" data-page-node-id="DjR5YBHfF8jUJOAG7LNl4O">六个口岸进出口（亿元）：甲 6800，乙 5230，丙 4980，丁 3750，戊 5020，己 2150。超过 5000 亿元的有几个？</div>
+门槛"超过"→ <code data-page-node-id="xMUnbRHaBW2OYP9E5guHIj">&gt; 5000</code>（等于 5000 不算）。甲 6800 ✓；乙 5230 ✓；<b data-page-node-id="MhcrzaMs8zHPTX3mjGMat6">丙 4980 ✗（最接近，易误判）</b>；丁 3750 ✗；戊 5020 ✓；己 2150 ✗ → <span class="ans" data-page-node-id="AnzSFabxu1AWmJHjloGNiN">答案 = 3 个</span><br data-page-node-id="aYsIm5F8xaAvCRABnYanOS">
+顺逆差延伸：出口 18600、进口 14200 → 顺差 <code data-page-node-id="W71Iyxh5blqB9IMGmppCBd">18600 − 14200 = 4400 亿元</code>；算成 −4400 说明方向搞反。</div>
+</div>
+
+<div class="card" data-page-node-id="WBLZo0H8Dc8FQAO1z28mOW">
+<h4 data-page-node-id="Ywed6w1yK13lXY2MxhkBbH"><span class="no" data-page-node-id="67HzBEih6o54SgHooUL1p1">11</span>综合分析题（"下列说法正确的是/错误的是"）</h4>
+<div class="blk b-id" data-page-node-id="FNb2kY5EdthjQaGDXdC7BX"><b class="t" data-page-node-id="Dzu1kkdgGe8AFCzqgTDp2a">识别标志</b>每篇材料最后一题："能够从上述资料中推出的是""以下说法正确的是/错误的是""正确的有几个"。四个选项分别指向不同考点。</div>
+<div class="blk b-th" data-page-node-id="UGeQS8gRC3wM376TKq2ljH"><b class="t" data-page-node-id="wi5nsZGclFOTdqSoR5AELQ">思考路径 · 核心是验证优先级</b>
+<ol data-page-node-id="aDaIYVCezHmC6bxRLUfqXR">
+<li data-page-node-id="xSZifYsiB5ByYfHtNBParU"><b data-page-node-id="BH7Y0dLEYomLCSRAjb4sgZ">第一步（10 秒）</b>：确定是找"唯一正确"还是"唯一错误"，这决定收手条件。</li>
+<li data-page-node-id="ofk44fhhWLeE7VRPoqMSrQ"><b data-page-node-id="23gH8oW10osadRZksEoben">第二步（20 秒）</b>：浏览四选项，<b data-page-node-id="iqM3m10Zda6B7CFJGDZn5i">标记计算量等级</b>：<code data-page-node-id="DupgJVVTej7ME2mn7UTEjz">0 = 直接读材料</code>、<code data-page-node-id="6pDtM4SNokcBxXXz3jP89b">1 = 一步比较</code>、<code data-page-node-id="xUcLzDiol9LQSZlkzyVCEC">2 = 一步除法</code>、<code data-page-node-id="s08rc7HdkqaHCqSpv9ZvBU">3 = 两步以上或跨段</code>。</li>
+<li data-page-node-id="PELD1K3DI2AOIILA67t1IB"><b data-page-node-id="wJg4RDCXywnniLwhcPKomG">第三步：按下表顺序验证</b></li>
+</ol>
+<table data-page-node-id="5zNlWLdQMomeXrP45xh8n6">
+<tr data-page-node-id="Y7mKxTCK2oc0H9TfCvp668"><th data-page-node-id="wCMfV1fZCkxjuhP9Yfy4ua">顺序</th><th data-page-node-id="0HHx5JpdAambFdcno2yYfL">先验证</th><th data-page-node-id="SM9HjexppMELbxOOi4QxZl">次优先</th><th data-page-node-id="aOWC8ONeoATDEtHxs4crfx">再其次</th><th data-page-node-id="fHfB6ovii47seFL6Im3Wqh">最后</th></tr>
+<tr data-page-node-id="1G5ZDEOxt9X9ry2ZIHiELJ"><td data-page-node-id="HzPH1xcMneOs0klJizryrd">验什么</td><td data-page-node-id="62xtJLLC10HDt9XBTACUte">① 能直接读材料/看符号判的<br data-page-node-id="sM9dkDkJlDfFGJSqQSNwol">② 含"逐年""均""所有""一定"等<b data-page-node-id="55IRdXBIbRkd0XPpyBFLMo">绝对词</b>（多半错，先砍）<br data-page-node-id="EVcW1ab8VsQKPWjN5Q6LcX">③ 只看大小/方向不需算的</td><td data-page-node-id="Mg61Hgbd0wq9UvhZhIxjZK">④ 一步比较类，用<b data-page-node-id="snbNSgrCrpyDCpfDvGlEPM">放缩定界</b></td><td data-page-node-id="d4tEOx1nfT5qcSYAbCHYvH">⑤ 一步除法类（比重、倍数、平均数）</td><td data-page-node-id="4EaCZv2CdCsdiKgOgzrEpt">⑥ 跨段/多步/求基期再求比重</td></tr>
+<tr data-page-node-id="LtDGSu21FaIa6AOmGBDyya"><td data-page-node-id="S8AHEVqa6cB9psw2hCSsyD">限时</td><td data-page-node-id="SEgDgdPU696DephnLo8C82">&lt;20 秒</td><td data-page-node-id="ase7BWgmws4oJ5i71qJxtM">&lt;30 秒</td><td data-page-node-id="UCzvHYGIQORzoVCH8HOl8p">&lt;40 秒</td><td data-page-node-id="vINYnBbk12pKiu0r9tH5Ob">&lt;60 秒</td></tr>
+</table>
+<ol start="4" data-page-node-id="lc9gxpyyDBSZHZ6ga4DA7E">
+<li data-page-node-id="DOLvT3SFPVNYkueaubfBvA"><b data-page-node-id="TWhTQpsYWXsDf6gpq0cexv">收手规则</b>：问"能推出/正确的" → 验出<b data-page-node-id="SVqNYHAtSXhAGXN5SmGb0S">第一个对</b>的立即选，其余不验；问"不能推出/错误的" → 验出<b data-page-node-id="voRJFV7hwmUMyKDQVn5VHQ">第一个错</b>的立即选；问"正确的有几个" → 必须四项全判，优先做 0/1 级。</li>
+<li data-page-node-id="UIu2pxqGVzaHZVDzgnBHZ2"><b data-page-node-id="61cBUDLWBoAwgqSWcu6MYE">应急</b>：验完 3 个仍无结论 → 第 4 个即答案，不再计算。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="25oOfyxdTimbitUpRxEWI0"><b class="t" data-page-node-id="a1sL4txCFwcQTQbPSa7xJs">判定标准 · 表述与含义</b>
+<span class="chip" data-page-node-id="0K37kvsya2WSbPTUP1UZSX">超过 = &gt;</span><span class="chip" data-page-node-id="lyFtudgl4phyvSyc6dAVEL">不足 = &lt;</span><span class="chip" data-page-node-id="SMjkKRO320rQAia5ryoH5r">不低于/达到 = ≥</span><span class="chip" data-page-node-id="4CuEyec2FTzoE4dgeFtafa">约/左右 = 允许 ±5%</span><span class="chip" data-page-node-id="ym3TBxRl2WYV4kmq07tCCO">逐年递增/均 = 有一反例即错</span><span class="chip" data-page-node-id="McoM6Rv39Ap4R2mKr4GXBT">首次超过 = 需逐年查证</span><span class="chip" data-page-node-id="mHyCjTOG5SbYL0eTse8dZa">月均 = ÷12 或实际月数</span>
+</div>
+<div class="blk b-op" data-page-node-id="LILD0U2I3jK0e548mHJkJM"><b class="t" data-page-node-id="CuMH97WEQTzB1nsFdNG7C1">选项处理</b>用<b data-page-node-id="wkhOVawI8lHwKHNXOiBMdy">放缩法</b>替代精算：判断"超过 8%"只需算是否 &gt;8%，不需算真实值。每个选项设 <b data-page-node-id="4aIBQECmL9vLKMXOAFY9oO">40 秒硬上限</b>，超时立即标记往下走。<b data-page-node-id="YNELLFhG567EbRhfoy8Jvg">若两个选项互相矛盾（一说升、一说降），答案多半在两者之一</b>，优先验这两个。定位失败（找不到数据）→ 该项大概率"不能推出"。</div>
+<div class="blk b-tr" data-page-node-id="pJnnYkhJ6t5X2llzVgFiA9"><b class="t" data-page-node-id="l8UAp9UFtzXKqbZ1WpKRnm">高频陷阱</b>
+<ul data-page-node-id="6AzDn9OTOUEBsmu2Dw1HVA">
+<li data-page-node-id="997DHiCP34cBU1Z3RxsHv1"><b data-page-node-id="ryJ3Cy0RdOY8yu12qZKbNo">时间与口径不符</b>：选项说"2024 年"但材料只有"2025 年 1—5 月"。</li>
+<li data-page-node-id="qA6kT8ru6D34aBq4MVhQPF"><b data-page-node-id="FysJ9U1QfjGisY4Y4YCq4t">"高于上年"缺数据</b>：材料没给上年增速 → 无法判断，属"不能推出"。</li>
+<li data-page-node-id="sYoSxq1lpM4ylGIetxfmh3"><b data-page-node-id="Xap52JvXelPWHbewEnpMhO">绝对化词</b>："逐年""均""全部" → 优先当错误项验证。</li>
+<li data-page-node-id="CgWG7HV72tiJ2CuXiRLM3Q"><b data-page-node-id="TM4PLVugOhkO3jvxXVfky3">单位/范围偷换</b>：把"占工业的比重"说成"占 GDP 的比重"。</li>
+<li data-page-node-id="CK1ljoYDN1Y6B4rtHbHpas"><b data-page-node-id="Hj9V58Q6RIaM46C19rImWx">量级</b>：四选项常有一个"10 倍偏差值"藏在需计算的选项里，一旦估算落在两个相差 10 倍的数值附近，<b data-page-node-id="DrW6r4A0jlnHmZpUg9E1Qq">用回乘确认</b>。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="22nyrZQUGkgtdRTu1gVkXs"><b class="t" data-page-node-id="aMr1iD9Nqn5wyJd4EtLrOW">示例演示</b>
+<div class="q" data-page-node-id="NjWix0bCbqJCA49oCL1SCj">2025 年某市 GDP 8600 亿元（+7.5%）。一产 430 亿（+3.2%），二产 3698 亿（+6.8%），三产 4472 亿（+8.6%）。能推出的是：<br data-page-node-id="8amM334OMdfBjy07LZYfmP">A. 一产占比超过 5%　B. 二产同比增长超过 250 亿元　C. 2024 年 GDP 低于 8000 亿元　D. 三产占比比上年上升</div>
+<b data-page-node-id="DljRt2aVvLYz4ErbTitDjI">定级</b>：A = 2 级，B = 3 级，C = 3 级，<b data-page-node-id="yAJOKfnidgbqRPgslH90aI">D = 1 级（定性比较率）</b> → 先验 D<br data-page-node-id="zcSni9NXwqg0N0TCP66FU8">
+<b data-page-node-id="8fEWk387CeYtgXvy0uTxex">验 D</b>：三产增速 8.6% &gt; GDP 增速 7.5% → 比重上升 ✓ → 问"能推出" → <b data-page-node-id="3fCl8FR08r7G4J6hFj914p">立即选 D</b><br data-page-node-id="L4CbhI6MOctGVFeXxZ1a0l">
+（核对）A：<code data-page-node-id="2t6mDe39aUkMvDQgRht3bQ">430/8600 = 5.0%</code>，恰好等于 5%，"超过 5%" ✗；B：<code data-page-node-id="A1ozPW3wWOoaZbdj2uCgo1">3698×6.8%/1.068 ≈ 235 &lt; 250</code> ✗；C：<code data-page-node-id="dgDaDNkLOMFYUux8NRQFhC">8600/1.075 = 8000</code>，恰好等于，"低于" ✗<br data-page-node-id="8w7UEkBBlwMP7fUUfgANSt">
+三项全错、D 正确，逻辑自洽。　<span class="ans" data-page-node-id="QULHRM6C3P50EJE1Z6qgGS">答案 = D</span>（考场上验完 D 即可收手）</div>
+</div>
+
+<h3 class="grp" data-page-node-id="8l1VcEJX67MZeorsSE71jt">C. 三大速算与量级校验（3 份）</h3>
+
+<div class="card" data-page-node-id="tFirvsq0F4zHnLY9LraGSp">
+<h4 data-page-node-id="0iTT33QUEQcLpS1fNCxOWX"><span class="no" data-page-node-id="5wRCL58jXohnHJlCQ5Ucsx">12</span>截位直除（含"看选项差距定截几位"判定表）</h4>
+<div class="blk b-id" data-page-node-id="QU3TPaiBmeoNxQgAzeY8KJ"><b class="t" data-page-node-id="fjrcq7bOGyn8HQszObIt1Z">识别标志</b><b data-page-node-id="zzapVCXkBMXlhcUB32zhyT">凡是出现一步除法的场合</b>：求比重、倍数、平均数、基期、增长率。只要列式是"分子 ÷ 分母"就该用。</div>
+<div class="blk b-th" data-page-node-id="2VBBiNsKVmllpoygjUIWoi"><b class="t" data-page-node-id="FkOBateYJNz6c9urfCg9d2">思考路径</b>
+<ol data-page-node-id="lsCFKj7D7er4sQlQgmBMKB">
+<li data-page-node-id="xGIC1CXfXmG2dwRmEHbhRG"><b data-page-node-id="wzNQ5NYWRNPV1QCqJas94t">先写列式，别急着算</b>。</li>
+<li data-page-node-id="2kQZdl04sUeltxyM4MTO9b"><b data-page-node-id="1ZjtE6UfO7HNSs76KjWtJq">统一单位/量级</b>：分子分母同乘除 10ⁿ 化为易读形式。</li>
+<li data-page-node-id="5NQ4uciTHF2Fp9ocRT7zM5"><b data-page-node-id="4LpMOL3aBsTQqX5xBWYjuJ">看选项定截位</b>（关键第一步，必须先看完选项再截）。</li>
+<li data-page-node-id="mEHiA7JA1e92q3rGcPGrYv"><b data-page-node-id="6qAFpqwfiz5NL6yiYzImlh">截分母</b>：四舍五入到指定有效位数；对被舍去部分记 (+)/(−) 以便判断结果偏向。</li>
+<li data-page-node-id="ztl0luvELmZUFWjnnIhQVg"><b data-page-node-id="7gq5OJwtEMv4Af9rx5byr0">分子尽量不截</b>（分子小尤其不截）。</li>
+<li data-page-node-id="A3q5GLf4kkFF3RYbbjkgdO">估商首位 → 补齐小数/百分位 → 对齐选项。</li>
+<li data-page-node-id="yAaiH3reBWYfhxatumyhrJ"><b data-page-node-id="gh00jejhXKJduLJN6TmDrs">回乘校验</b>：<code data-page-node-id="hp28RdwrDHTW8YkkKmqMTB">商 × 分母 ≈ 分子</code>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="ZddGbbAvgeTfehk2jMDw3p"><b class="t" data-page-node-id="nGag8EX1gzUjpu13sIsEtv">判定标准 · 截位档位表（核心）</b>
+<table data-page-node-id="xU3vPuRqTuTfJP2uj9fMEA">
+<tr data-page-node-id="bluYu7qcZpP33PR171Ui7m"><th data-page-node-id="PaA4dLaIE0blGpvwBtaFGx">选项特征</th><th data-page-node-id="2S2qfyGyNSunR5C7gnZIgQ">截位档</th><th data-page-node-id="KWDy1nMF4twh3UqhNB826c">示例</th></tr>
+<tr data-page-node-id="gPmfzBB84Bi5ZR3hpJ271G"><td data-page-node-id="Sp4T4MtEc6hQIgmyqD3GGD"><b data-page-node-id="t8K1w5VeDpLu8wPBsliaX0">首位数字不同</b></td><td data-page-node-id="rij0WEW1H2z3nEDeu70afg">分母截 <b data-page-node-id="5PF9B3hzBImc6aSamK79et">2 位</b></td><td data-page-node-id="CCVd3BGv93QugBQ7BR8vqr">13% / 24% / 35% / 46%</td></tr>
+<tr data-page-node-id="0DbDo5dUpdi2kRmnbjOxUm"><td data-page-node-id="q4ldGjlcS4IZEciTRFE7WM"><b data-page-node-id="207yboF6rKNq1YoS3IqlXp">首位相同，第二位不同</b></td><td data-page-node-id="DiHpQpijf7TfVqUwS8ZYZh">分母截 <b data-page-node-id="mnjQ26dE5r3PnoGwSjNFrf">3 位</b></td><td data-page-node-id="rciFfgVzCbPezoOInRPHRk">12.1% / 12.5% / 12.8% / 13.2%</td></tr>
+<tr data-page-node-id="Nfrw8C06C51OrCS20gTnD7"><td data-page-node-id="NrTHbY5J8vjThaUafUk07e"><b data-page-node-id="qdkCPvkvF9BlHbd2RPTrdP">前两位相同，第三位不同</b></td><td data-page-node-id="9tg7ZyPMxqXC9np3UKSKyb">分母截 <b data-page-node-id="Am7IeHFtUB4kCJ9xBORPXD">4 位</b> 或差分法</td><td data-page-node-id="MUQpVLxk2IWktYkpMkGjd9">12.11 / 12.15 / 12.18</td></tr>
+<tr data-page-node-id="cM7UBjywmLHXcIOxhYPZsk"><td data-page-node-id="zqx6zTSFVTiFFlEZa0z39I">只需<b data-page-node-id="S86Xie8eMH3OP0lDaUH9H8">定界</b>（"超过 X 吗"）</td><td data-page-node-id="98C3xdRSmXkOjQLzCdEgRm">放缩法：往有利于结论的方向截一端</td><td data-page-node-id="7USA34HeYquAyn0d6xpBIZ">—</td></tr>
+<tr data-page-node-id="o58uywxjMY7H3sWmqd6Vzq"><td data-page-node-id="0BxwZEqLwwpTXmtyoFL8r0"><b data-page-node-id="t01T5cu9J9IVKwMIHS374R">分母首位为 1 或 2</b></td><td data-page-node-id="G2mvylLX0Ys0nTxUoafmTd"><b data-page-node-id="Rpv17GuBp6F0Kk7Smwj1QW">多截一位</b>（1 开头误差最敏感）</td><td data-page-node-id="9QsqwYflRCEzM8G06UMf6m">19xxx → 至少截 3 位</td></tr>
+<tr data-page-node-id="CyBheqXUncdgtbfXmstDOt"><td data-page-node-id="Yh5SSg1fG2dkMz1r9jqScb">分母接近整十/整百/1</td><td data-page-node-id="QGUHfOOCRl8tABJtEHRueb">凑整：998→1000，1.03→1</td><td data-page-node-id="WmgVqeuxN43EfFC7RxCjsX">—</td></tr>
+</table>
+<b data-page-node-id="9FjZnfydoPzUxmF1sep9hg">口诀：选项差距看首位，不同截二同截三，1 开头再多截一位。</b></div>
+<div class="blk b-op" data-page-node-id="IroyRFuzu2PxcHBiEWCUFf"><b class="t" data-page-node-id="CoXNajOvaZE3wtAFqKW8r6">选项处理</b>若截 2 位得到的商落在两选项中间 → <b data-page-node-id="RgSYWPfkjHNcAmCGNPcITA">立即补截一位重算</b>，不要"取最靠近的"。有"最接近"字眼 → 允许粗估；要求精确值 → 3 位保底。<b data-page-node-id="yjOqjJTO0tBRDLjlML3KrN">算完把结果乘以分母，量级和首位都对才算完成（3 秒，能救很多分）。</b></div>
+<div class="blk b-tr" data-page-node-id="FePKLMDtWutdxWqsvqWHGQ"><b class="t" data-page-node-id="5uH4yv8Yfye5Uhz0EzZKvK">高频陷阱</b>
+<ul data-page-node-id="ZeqvRDZCyKlP2G3wtwo2Ws">
+<li data-page-node-id="gkZwrH7yDa1TdBpgVWzzxS"><b data-page-node-id="obpOarSHBFFUWcf3slld0y">分子分母同时粗截</b>导致误差叠加：只截分母，分子保留。</li>
+<li data-page-node-id="asmhAH4lWsB2V2eUcJ6sBx"><b data-page-node-id="RhA7vGvC6oJUX3580vp7KB">截错方向</b>：四舍五入时看错后一位。</li>
+<li data-page-node-id="RAJvPiC1rPgBLsonGa5jbu"><b data-page-node-id="kacuWMqrcceoEsazMr1oWz">忘记负增长</b>：<code data-page-node-id="0rQFFmuNET8H4ccl5dtj7u">/(1−8%)</code> 变成 <code data-page-node-id="uElEVvxAJfLCYpB1dwPJhi">/(1+8%)</code>。</li>
+<li data-page-node-id="qyDvYwG5DU6cmqM8mJcmua"><b data-page-node-id="HJfApOT8e6hIIu9iCIsgcM">分母是小数时生硬截位</b>：先同 ×1000 化为整数（<code data-page-node-id="FDEwyKJGASj8bF7ISIse2c">8872/0.771 = 8872000/771</code>）。</li>
+<li data-page-node-id="VDRtLJ58Cpjm7kxhFFWRMX"><b data-page-node-id="khy8FNhNdEGditR4r2BzYJ">量级</b>：<code data-page-node-id="iuHOEsa644Wg5DclUXV9EN">4287/32456</code> 写成 <code data-page-node-id="3TsEqSK2FVGpXnVYC8uHfQ">43/325</code> 后忘了 <code data-page-node-id="M3p0PPNkr4oP1bVEOETsjh">×10⁻²</code>。<b data-page-node-id="uf1xHcZUxJcyTYZJ20twcx">每步以"首数量级"自检：4287 约为 32456 的 1/8 ≈ 12.5%，是"十几 percent"，不是 1.3% 也不是 130%。</b></li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="MGg4FDl35PsPxSYbeWYXxH"><b class="t" data-page-node-id="NNH9zA3JJsB0F1mMvfgFEV">示例演示</b>
+<div class="q" data-page-node-id="ytwizJaZ6mafCIfS6C3gBs"><code data-page-node-id="wfGVbmNroxot2vki6H7wo7">4287 ÷ 32456 = ?</code>　A. 13.2%　B. 15.6%　C. 18.4%　D. 21.1%</div>
+① 选项首位均不同 → 截 2 位　② 分母 <code data-page-node-id="CoBbLfZTc4rFxEyDJZzveK">32456 → 32000</code><br data-page-node-id="IQG18zG5GyJWOJZKNfvQU3">
+③ 商 <code data-page-node-id="n8mV49p00tUSWaU1SSUZFJ">4287/32000 = 4287/32 ×10⁻³ = 133.97×10⁻³ = 13.4%</code><br data-page-node-id="PdmZf7uO7EylhrTQ2oIcMs">
+④ 精一档：分母实际比 32000 大 1.4% → 商应小 0.19 个百分点 → <b data-page-node-id="RigIgkrjbEVTXxvywDFDJt">13.2%</b><br data-page-node-id="850wMSxtm6mOMK9uQqJS8k">
+⑤ 回乘 <code data-page-node-id="AaEJjPF8l3tgx45eQtp6lT">32456 × 13.2% = 4284 ≈ 4287</code> ✓　<span class="ans" data-page-node-id="nqGmoxaLpTE2RUEXT0Ao2m">答案 = A</span></div>
+</div>
+
+<div class="card" data-page-node-id="J2Xz70CDkwRhQKDoJQyxOf">
+<h4 data-page-node-id="u9Q3yId4V9wwqHhH70W5D6"><span class="no" data-page-node-id="6oOZBF6jcFyORHJ1Of1BWM">13</span>415 份数法（增长量专用）</h4>
+<div class="blk b-id" data-page-node-id="2Y3VopxDKPdpydZeqFsEBo"><b class="t" data-page-node-id="2xjFaecKKXeBBU5ElQZwRc">识别标志</b><b data-page-node-id="sOyjVRo89LvFB6xFgNp5JX">给了现期量 A 与增长率 R，求增长量 X</b>（或求基期 B 再变形）。看到"今年 XX，同比增长 Y%，问增加了多少" → 直接调用。</div>
+<div class="blk b-th" data-page-node-id="h67YvEhSouUSRQAHCfn4rb"><b class="t" data-page-node-id="FKxQKmMdyDBtMzvrAtKA0r">思考路径</b>
+<ol data-page-node-id="akYCxS4oQDsyCQ5whXESry">
+<li data-page-node-id="EKZTBMlPbmNpFkUPxh4LjP">写下 R。</li>
+<li data-page-node-id="GgRHNJ0TAzkxUWOXCaAfZv">写份数比：<code data-page-node-id="WKoRviUA50sVSWKUQfJVdh">基期 : 增长量 : 现期 = 100 : R : (100+R)</code>。<b data-page-node-id="48f82T1Jth6wQwSX8HdCzO">下降时 <code data-page-node-id="Akd9HSbvbZMIOoLgGqUBWu">100 : |R| : (100−|R|)</code></b>。</li>
+<li data-page-node-id="DZrx5BJaEgOP1IGFPisEWl">能化简就化简：<code data-page-node-id="eKK0bPetGizGqqFkOFfACF">110:10 → 11:1</code>、<code data-page-node-id="Vp5IJFQVC1Ev9vy4DamD7Q">125:25 → 5:1</code>、<code data-page-node-id="1bf2MtpRSLfqS6XnPmwfvX">133:33 → 4:1</code>。</li>
+<li data-page-node-id="PgzfTIrAXckFabh92me2Ke"><code data-page-node-id="NdxDqbnQANvkHWlQBjokY3">每份 = A ÷ (100+R)</code>（除法用截位直除，看选项截位）。</li>
+<li data-page-node-id="279RRZCq8kkktpAHiKlPYP"><code data-page-node-id="QEB49BV19EThwqsRTj57kw">X = 每份 × R</code>；求基期则 <code data-page-node-id="RSp9wcL6LB2D2j80mMYLVs">B = 每份 × 100</code> 或 <code data-page-node-id="ELtnByNhf4QypYJiX3t6VB">B = A − X</code>。</li>
+<li data-page-node-id="ers5q6MXHtjU1KqsC9PNQt"><b data-page-node-id="EyYDDbVtL1RwL1wLoQVXQy">校验：每份 ×(100+R) ≈ A。</b></li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="cGbV4HDDS79W0tj9crawMp"><b class="t" data-page-node-id="44ECiTCUpU1qEBUKwtHjFF">判定标准 · 常见 R 的份数速查表（背熟，省一半时间）</b>
+<table data-page-node-id="eHZc0oqFDPZITLY18gmkV1">
+<tr data-page-node-id="jR6ok5DR0GfcYVEKTtWgDs"><th data-page-node-id="mWCUlWdA8tDIjbrw0fSpHm">R</th><th data-page-node-id="zIxQzVrpV1x5p4B8dei872">现期 : 增量</th><th data-page-node-id="G3RB6MFluzTbw2H3ubrpTh">化简</th><th data-page-node-id="OxoicUnBCPNr6woB2PXLNs">增量 = 现期 ÷</th></tr>
+<tr data-page-node-id="pypBq7lHxEXf6SCDCbyxkC"><td data-page-node-id="38Ybm1mtVnMs5UWCIIgbl1">5%</td><td data-page-node-id="ndgSdUa2BxLCj0KjElQ2iW">105 : 5</td><td data-page-node-id="6KDSccemuTQr7dwPM7mkzQ">21 : 1</td><td data-page-node-id="j3ftr55t3O5c3AXqRSI2Sm">21</td></tr>
+<tr data-page-node-id="lBFaKSnFFAmAnY4JVwIqxn"><td data-page-node-id="0LBHRNwopyCtFmlzcWL7pr">10%</td><td data-page-node-id="TdM1kypIVePwCuDJMYGrHP">110 : 10</td><td data-page-node-id="rSg0jScKmDEDodDECe1bQE">11 : 1</td><td data-page-node-id="E8jmBzwKyl86LjpuPnm5Rq">11</td></tr>
+<tr data-page-node-id="feJ5wtp52le6wb1G1Y43bl"><td data-page-node-id="m99Nwc9M6q0p8t4NAs1bpI">12.5%</td><td data-page-node-id="RCmNPrbZbgpg7LDmAsweSo">112.5 : 12.5</td><td data-page-node-id="pXEj6DCMtYPdxvLVmSYCzH">9 : 1</td><td data-page-node-id="p7FkHbHBQRWqmxecp4INwl">9</td></tr>
+<tr data-page-node-id="J58vy5uwF1Vc5b4ksl6UZA"><td data-page-node-id="V11HtP0o3lZla318onPaKA">20%</td><td data-page-node-id="Avix1yfRcEQynbWzgF8ptB">120 : 20</td><td data-page-node-id="uopwluDR1KkNcphinlJOV6">6 : 1</td><td data-page-node-id="2PGo0yHW58NiaeEASpDNCX">6</td></tr>
+<tr data-page-node-id="lICuzkFEuKGo01gZYqtxJ9"><td data-page-node-id="JJdl1R1UIrBlTLCTyQVnBp">25%</td><td data-page-node-id="fhMgbBsdxbP34XsSUrAN5j">125 : 25</td><td data-page-node-id="HHXYmDKguh6ccARgxOIWNK">5 : 1</td><td data-page-node-id="N73dzKMMWN8xiVV0DfVe98">5</td></tr>
+<tr data-page-node-id="3UsDxGHvWeNhf6isvm0wAs"><td data-page-node-id="clSE7TDrQcMtpP74QbWT3b">33.3%</td><td data-page-node-id="eZu5rAZM9AkK0DR56ueL5j">133.3 : 33.3</td><td data-page-node-id="NRqj0I9dvtcSvrTicyjtpw">4 : 1</td><td data-page-node-id="T9iYACvNlp7O3klOWjow35">4</td></tr>
+<tr data-page-node-id="V1u5DwusI3RtFGAJRDU3IX"><td data-page-node-id="TytDCDEPWizOkcdpQuxolC">50%</td><td data-page-node-id="isUFyToUwnZi2eZYJ9DHub">150 : 50</td><td data-page-node-id="SwR5oEmj5C0FJtHSogF83P">3 : 1</td><td data-page-node-id="EoVGqwx4h3e6s58c35xEHj">3</td></tr>
+<tr data-page-node-id="zXsPwfm9Wcsq6CU6FyN7LV"><td data-page-node-id="XTWDgJRJdgh9bqxANNOJ5b">−12.5%</td><td data-page-node-id="VVZdf5acCdiaSDcB8ZRdki">87.5 : 12.5</td><td data-page-node-id="k2ZBZr0XaWwNfYxjNJwLYy">7 : 1</td><td data-page-node-id="iLa5iXLPDxClDlJqI5brJG">7（<b data-page-node-id="v8QNPjCEGW1dLPx9q3FYZ5">减量</b>）</td></tr>
+<tr data-page-node-id="CXVg6IEFNOTt9r9Rtk2Jqh"><td data-page-node-id="jkhzY8uJvuiEjsxijzyBnZ">−20%</td><td data-page-node-id="UTBSe8toPWhnFsid5IDhjl">80 : 20</td><td data-page-node-id="sGmA4SF77WyfohLKEr2gUO">4 : 1</td><td data-page-node-id="r1TDFYdCwFl8AB8obtrPUk">4（减量）</td></tr>
+<tr data-page-node-id="EsTIscATBlOPliKNPA9ZRR"><td data-page-node-id="CuSvlb6KYs3J5FsbpNERna">−25%</td><td data-page-node-id="0KYFPLpJA9KZ49wVJirD4c">75 : 25</td><td data-page-node-id="2zLQqnV5qOrWgASS1ssFNO">3 : 1</td><td data-page-node-id="hCA5kexme91Bs4I8PHC0CU">3（减量）</td></tr>
+</table>
+<b data-page-node-id="VTSBrRmBS7IDIA7HtDmUSH">通用结论</b>：<code data-page-node-id="oEWJmfBBylL1mbG4gn2Sfe">R = 1/n</code> 时增量 = <code data-page-node-id="BnEuv7YAAQ6D4VieJ5C3tc">现期 ÷(n+1)</code>；<code data-page-node-id="rTyx4E2KAwa3goWEZIryL6">下降 1/n</code> 时减少量 = <code data-page-node-id="dCZdD0KOkM1uZs0tMyOyGf">现期 ÷(n−1)</code>。<br data-page-node-id="KF4UezywHALqmVxJaLnRz1">
+例：R = 12.5% = 1/8 → 增量 = <code data-page-node-id="gGNFSoWakqAJk2ZsM17Q5O">现期 ÷ 9</code>；R = −12.5% → 减量 = <code data-page-node-id="QLUdBKnF02Kew4PWouKUHe">现期 ÷ 7</code>。</div>
+<div class="blk b-op" data-page-node-id="qF2Avdelzlwamd2m2KZlit"><b class="t" data-page-node-id="DEZsg30PQ7o8jzbBZyxTxu">选项处理</b>选项差距大 → 每份截 2 位；差距小 → 保留 3 位。<b data-page-node-id="g16Cs0MVFELZ7KHg8ucGRK">每份算完立刻回乘 <code data-page-node-id="vwtIltBd0ZC8OPFVSGlKCo">每份×(100+R) ≈ A</code></b>，不等就重算。R 不是表中整齐值时，可先按最接近的整齐值估出量级，再微调。</div>
+<div class="blk b-tr" data-page-node-id="OdwvGCkNka2Mp0qeBuTgqJ"><b class="t" data-page-node-id="qH9ryVMidnkqJafUtUIqVI">高频陷阱</b>
+<ul data-page-node-id="Y74IRZc7gnQe61nYU1zusB">
+<li data-page-node-id="PbDFlaO43xsCRNCnFX5GNB"><b data-page-node-id="OU5L85CmJlXfzD60z9lzYX">忘记除以 (1+R)</b>：直接用 <code data-page-node-id="Mz3k3u2WBwJirwVBPed8rN">A×R</code>，结果偏大，正好是陷阱选项。</li>
+<li data-page-node-id="6Ri4CC6E9VymHlFBWDLco5"><b data-page-node-id="SK2Tmkw8xvRYG2tcwJIkx7">下降时用错分母</b>：现期对应 <code data-page-node-id="2A514KgSZAIiKgyAE2QKab">(100−|R|)</code> 份，不是 <code data-page-node-id="xaMZcrwoL6F4PdxtveXtP7">(100+|R|)</code>。</li>
+<li data-page-node-id="CtPw5B9sFCmgIEj4LAfxrg"><b data-page-node-id="4bXOuejnClVzEa2GIakRhD">份数与现期对应错</b>：现期 = 100+R 份，不是 100 份。</li>
+<li data-page-node-id="uBpR6sADv8KU5FK1NysmKg"><b data-page-node-id="ORiUJfVWmiA9JhDescQbuW">量级</b>：每份算成 8.2 而实际是 82 → 增量差 10 倍。<b data-page-node-id="YvuyAM9UdB4D9OWC8xVU3o">用"估算锚点"定每首位：如 <code data-page-node-id="vUfExWciDgww8sbkCqCRsD">5430÷7</code>，想 7×700=4900、7×800=5600 → 商在 700~800。</b></li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="2kMKGroBTEKROPofsCtTCx"><b class="t" data-page-node-id="KzrHnH3pecbzf2HI8lhyM8">示例演示</b>
+<div class="q" data-page-node-id="8QbvlUuxKo0QPAnOcaplgM">某商品销售额 5430 万元，同比下降 12.5%。问同比减少约多少万元？</div>
+① R = −12.5% = −1/8 → 下降 1/8 → 减少量 = <code data-page-node-id="KXBdooLiRAQyrt0BEs90sw">现期 ÷(8−1) = 5430 ÷ 7</code><br data-page-node-id="chkzDibJ05HT8Oudsms0ut">
+② 估算锚点：<code data-page-node-id="MoL6xkHRmdavEgpPyFLCD6">7×700 = 4900</code>、<code data-page-node-id="049z22rQXXT0FKn1CuHhUJ">7×800 = 5600</code> → 商在 700~800<br data-page-node-id="pmzjCwOQXxW1u30fgUAkPn">
+③ 精算 <code data-page-node-id="lOnGj0f7aXMAoEpKXLeX9W">5430/7 = 775.7</code><br data-page-node-id="LtbHKhtFH4zcjhm1FqHtO7">
+④ <b data-page-node-id="nTzZ3GDguFoiv7wrUMmMV4">回乘检验</b>：<code data-page-node-id="DPTiahHrDBJIMG50i4atIz">775.7 × 7 = 5430</code> ✓　<span class="ans" data-page-node-id="1sUepHatXzlEsVffQP299X">答案 ≈ 776 万元</span><br data-page-node-id="K7z9D00C0LFOO90UufmEsw">
+<div class="warn" data-page-node-id="32Uy04W14hbGsUWO84kW9b">若算出 77，立即回乘 <code data-page-node-id="iiRO9gzaTKgLkH8ddNxrzR">77×7 = 539 ≠ 5430</code> → 差 10 倍，必错。这就是"回乘检验"的价值。</div></div>
+</div>
+
+<div class="card" data-page-node-id="jE7abo7870RJSac6dNRtXd">
+<h4 data-page-node-id="x10IYS5kpuizpzY9aXA9fa"><span class="no" data-page-node-id="dAMVkr19xDPn56gcdEPjo9">14</span>估算与量级校验（针对"商差 10 倍"的专项纠错）</h4>
+<div class="blk b-id" data-page-node-id="VJcmUgd6nPk6DLYMWjLY2g"><b class="t" data-page-node-id="dUSHMaJhLi1AxSD4s55AqY">识别标志</b><b data-page-node-id="IsuCWxXXDWHgxz7X2unmhk">任何除法算完之后立即执行</b>，不需要题目触发。如果你曾经出现过"答案和正确值差 10 倍"的错误，这一篇必须每次都用。</div>
+<div class="blk b-th" data-page-node-id="0G5u4GlaOhd0QdDsq3XxkJ"><b class="t" data-page-node-id="SnLng1ezwRsRnPbYZ8YWYg">思考路径 · 三道防线</b>
+<ol data-page-node-id="rbWXS1rM9cTK5cJ2cYkd2U">
+<li data-page-node-id="CvE1JfwRPVx3SSyajWkpkY"><b data-page-node-id="BVm4mjVwiQNPeW8Yb9KIsk">防线一 · 动手前先估量级</b>：列完式先问自己"答案大概是多少、几位数"。如 <code data-page-node-id="6tiB4Uki4xXMlmmCRqXHdT">8680 ÷ 1.084</code> → 分母略大于 1 → 商略小于 8680，是<b data-page-node-id="5V5R98jjQLpKrBgq134yHt">四位数八千多</b>。若算出 37.7，量级明显不对，根本不该写下去。</li>
+<li data-page-node-id="Jf9aLAY2HQgGJIOR8ChPDV"><b data-page-node-id="KzXPRGBVIikTR9ecBZ46vB">防线二 · 估算锚点定首位</b>：用整十整百夹逼。<code data-page-node-id="m7pGommStR96gDBJUeQo4E">5430÷7</code> → 7×700=4900、7×800=5600 → 商在 700~800，首位是 7。</li>
+<li data-page-node-id="bEt0awxADzDK2HxoFsXiL5"><b data-page-node-id="BtEbw9diFJCGmJGFYpsUba">防线三 · 算完必回乘</b>：<code data-page-node-id="JchWiZw0jZhY2lsfhFWxYi">商 × 除数 = 被除数</code>。<code data-page-node-id="fcINHI9h2RBH8GguZmb5a4">77×7 = 539</code>，与 5430 差 10 倍 → 立刻发现错误。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="a4yaSltYRwdFTp3WAsqQF0"><b class="t" data-page-node-id="93niqMF9KPb53KteCiao8i">判定标准 · 常见量级锚点</b>
+<table data-page-node-id="6jrEp3KJzotgIju6rbNnWZ">
+<tr data-page-node-id="D7Mzq2OAbkRhqNwmanjMDy"><th data-page-node-id="mgg5zXxxrYKta7pFUvmYuq">列式</th><th data-page-node-id="xCHaBcYu93WXRpX21ejrci">量级判断</th><th data-page-node-id="GtRTiCBlStY2Et97BJWqzc">答案应是</th></tr>
+<tr data-page-node-id="hsSACpow0YsT7cYuBui1sk"><td data-page-node-id="QyTtlA4HFjIHnEnbfJPGOG"><code data-page-node-id="rjy5A2IuncTsj7313kH3yO">A ÷ (1+R)</code>，R &gt; 0</td><td data-page-node-id="ST5kyBzexwUZHWNjql4CaS">分母 &gt;1</td><td data-page-node-id="RAd9hyXnnphnUHNhbJYLmQ"><b data-page-node-id="diAJS0fNwxSjSDotvISR0v">小于 A</b>，与 A 同量级</td></tr>
+<tr data-page-node-id="WVIseCEBwhWUpfs0CxqrFl"><td data-page-node-id="QRPWLEwVHlahOsHOYfjChb"><code data-page-node-id="H4C9a29Gu4PtAncLFJ1HZ5">A ÷ (1−|R|)</code>，下降</td><td data-page-node-id="CfzzKZ4tBGHQZL84qubcQh">分母 &lt;1</td><td data-page-node-id="zK0qYHzT1wIG2uiDhAr1Ej"><b data-page-node-id="OZNNpEFnkrXzqBn8Dl766d">大于 A</b>，与 A 同量级</td></tr>
+<tr data-page-node-id="u4zksNj7Nju5F2FqIk90it"><td data-page-node-id="M1RaFrJnoDGpvMk5sG2qHx"><code data-page-node-id="o30aaaiJwsIZcmQuh6TcDN">A × R</code>（R 为百分数）</td><td data-page-node-id="zpvmaHTWyZKgEOAxuMm04C">乘的是小数</td><td data-page-node-id="4UE5JFejHpwRIGoZGN6Bee">约 A 的百分之几，<b data-page-node-id="fkXRws1cI7ZrNan9IR5WED">比 A 小两个数量级</b></td></tr>
+<tr data-page-node-id="CFYvluUqWBSIxtAth78myT"><td data-page-node-id="cICrrKSst7XJ81BzoX138J"><code data-page-node-id="BelRkvh0CaUH9KLU7VjDHR">X = A×R/(1+R)</code></td><td data-page-node-id="mNLUuHGyrkNFUHNs72wyld">小于 A×R</td><td data-page-node-id="hcGFFU1QC5NoAvNmuquBLa">约为 A 的 R 成（略小）</td></tr>
+<tr data-page-node-id="FgtcA7JE3B1xvj1eDwZJ6p"><td data-page-node-id="q2FjaFedNhquubvnsUvL9D">比重 W</td><td data-page-node-id="AO4GEeyppAfE147elM6qwC">部分 / 整体</td><td data-page-node-id="HIEDmcsuBdC2vTh869bVD8">小数形式（0.32）或百分数（32%）</td></tr>
+<tr data-page-node-id="R7HRHWGMOjp5vCuCB716RY"><td data-page-node-id="72zE3jelqUR5ds9oflF769">平均数（亿元/万人）</td><td data-page-node-id="lpd88uUZqXe2mb5ZgyxDSa">1亿 = 10⁴万</td><td data-page-node-id="p8Wt8b68OCcjseCfcjY8RC"><b data-page-node-id="YFaYiBi03SRTRKBU7Hleo9">万元/人</b>，数值不变</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="ME09RZAvn3Si58QSCE66gg"><b class="t" data-page-node-id="kJJobkF3B986uISxXfrOy5">选项处理</b>如果算出的数<b data-page-node-id="GPrCgNIcgPC0Wa8MgFkpje">在四个选项里都找不到</b>：先怀疑量级（10 倍），回乘检验一次；回乘通过再怀疑单位（万元/亿元、%/百分点）。<b data-page-node-id="dFN1OwcU2myMr9WI6FsEu1">绝不因为"算出来没有"就去改方法或硬凑选项。</b></div>
+<div class="blk b-tr" data-page-node-id="1N3AltD2HQ9Bq8vReCHVzo"><b class="t" data-page-node-id="Vs3laZQEvEMl9FVSWxjfJV">高频陷阱（你的三类典型错误复盘）</b>
+<ul data-page-node-id="xmWHfxX32hD5qnsn0x3vn7">
+<li data-page-node-id="vzGNwEcSjqgXOoXbf1NjrZ"><b data-page-node-id="WjQwEUNsHOfn7Nzydvb8PO">8680，+8.4%，求基期</b>：你答 37.7，正确 ≈ 8000 左右。<code data-page-node-id="b9e8NbJPbAOl6rNFw2cu98">8680/1.084</code> 商应为八千多，你算成了 8 点多 → 漏了两位。</li>
+<li data-page-node-id="zlunH7ywEWpRE9nXlma7Ce"><b data-page-node-id="u5GSLo4ypa9bcvVL9Iofle">7280，−6.4%，求基期</b>：你答 721，正确 ≈ 7778。<code data-page-node-id="A7nJTB2x5EyTusJH89cOIf">7280/0.936</code>，分母 &lt;1 → 结果应<b data-page-node-id="6gA6W58M6j42RMpCAkpEcT">大于</b> 7280。</li>
+<li data-page-node-id="y9L0MWmKtuYVgURi200wCM"><b data-page-node-id="BSEw3eUOSci7KsLPVtsufp">5430，−12.5%，求减少量</b>：你答 77，正确 ≈ 776。<code data-page-node-id="fQ3LFcZGKDT2WkXAYC8tyO">5430÷7</code>，回乘 <code data-page-node-id="98rOCX6RZBal8EOCNG6ZXE">77×7 = 539 ≠ 5430</code> 立刻现形。</li>
+</ul>
+<b data-page-node-id="7PBnjbhmESWWDzYhGGhNqq">共同根因</b>：没有在动笔前先估量级，也没有算完回乘。<b data-page-node-id="xA0ckdjY6Y2vBslv6FQF2D">对策：把"估量级 → 算 → 回乘"练成三步一体的肌肉记忆。</b></div>
+<div class="blk b-de" data-page-node-id="NWZpVs7AeHrJIFWyo53KnK"><b class="t" data-page-node-id="HaZjLHdZFhZAGG1h6f4u6e">示例演示 · 五道纯量级估算小题（只估不精算，练手指感）</b>
+<div class="q" data-page-node-id="DSxhaj3LaSnmru5bwkBWh5">
+① <code data-page-node-id="Wv8W9YM72HAcZ6yY6D3pWJ">8680 ÷ 1.084</code> ≈ ？　→ 想 1.084×8000 = 8672 → <span class="ans" data-page-node-id="VRKO8HfL6YvebMQr1w8X28">≈ 8000（八千多）</span><br data-page-node-id="8XKCVacedDfQuhIginYI3i">
+② <code data-page-node-id="XZDLFNm3XlRzeiq3oP7ykX">7280 ÷ 0.936</code> ≈ ？　→ 分母 &lt;1，结果 &gt;7280；0.936×7800 = 7300 → <span class="ans" data-page-node-id="QVrk0nQ5U05OPlgJdNdar6">≈ 7780</span><br data-page-node-id="Nx2Zt3J8GzthDWSrZqviZV">
+③ <code data-page-node-id="7trdBpelxHk1YdMhlWFCz1">5430 ÷ 7</code> ≈ ？　→ 7×700=4900、7×800=5600 → <span class="ans" data-page-node-id="rGs791XB5KXNvRK1Tci54b">≈ 776</span><br data-page-node-id="nySHGD2eraPoEEgQdsm2XC">
+④ <code data-page-node-id="RnRHlvuj2agHxVFGIB7YZx">48810 × 4.6%</code> ≈ ？　→ 48810×0.046 ≈ 2245，比 48810 小两个量级 → <span class="ans" data-page-node-id="YcIN3dg42nXKWWHDu7adah">≈ 2245（注意还要 ÷1.046 才是增量）</span><br data-page-node-id="caAiGaVGh6vUkbFuTMFLfp">
+⑤ <code data-page-node-id="Z2GLrtakOnmRjwpfvlytWq">159.4万亿 ÷ 51.2万亿</code> ≈ ？　→ 同单位可直接比，51.2×3 = 153.6、51.2×3.2 = 163.8 → <span class="ans" data-page-node-id="7K6dc9GXx5H313CRFjMkSX">≈ 3.1 倍</span>
+</div></div>
+</div>
+
+<h3 class="grp" data-page-node-id="MHO4OgJ1OTIAUYE4n92qoi">资料分析 · 用时与取舍</h3>
+<div class="card" data-page-node-id="HaX9CO97bx1AkUbDd4Wvnp">
+<h4 data-page-node-id="JxAiZJ4FRfjCwYa30QNbiR"><span class="no" data-page-node-id="9v84ejXORXs7BtoaQmCh53">✓</span>资料分析用时分配与超时兜底</h4>
+<table data-page-node-id="6q7GuNKJ6E9s2dKNGJX6XY">
+<tr data-page-node-id="gW1aFpMOxlpvtSJCVNaHUu"><th data-page-node-id="YMFHmDi8uMxfbc6YAeOs29">题型</th><th data-page-node-id="KU7YG9OHLTSQ9F8AKUqY3D">单题红线</th><th data-page-node-id="vNZXrbB0QstPLtyP1IVmEI">提速要点</th></tr>
+<tr data-page-node-id="T1cyBQhDBYQswSNAgVz7ei"><td data-page-node-id="y6AQ9cVae0VqlJuT64DheO">简单查找 / 计数 / 排序</td><td data-page-node-id="DFeMiMh16Gm1BZn6LQXtGN"><b data-page-node-id="EH7AJB1pIg5ekJmwO3p9uH">40 秒</b></td><td data-page-node-id="Ah0wvtxy5Jx7nGLLQUBjyC">定位即出，门槛词分清 &gt; 与 ≥</td></tr>
+<tr data-page-node-id="NoxRdFMithCBNstE74k1et"><td data-page-node-id="XgjxfvasAnkvh43F9NKEGz">增长率 / 增长量</td><td data-page-node-id="VMZ7fz4ZC5he8dTMwHVck7">50—60 秒</td><td data-page-node-id="cuaWFvJv39rDoC0uqoBtwH">415 份数法 + 回乘</td></tr>
+<tr data-page-node-id="rblCYNMkJ7TCkeZGw1KyPt"><td data-page-node-id="AOBh8Akf5DgR4BF3CYdRn9">比重 / 平均数 / 倍数</td><td data-page-node-id="RHvlZLRaTaUL4J2sdKSYdG">60—70 秒</td><td data-page-node-id="kidCjzbCLCjrsQf00rg9oX">先定性后定量，两步出结果</td></tr>
+<tr data-page-node-id="mlcMkCxLqkzgjtiJLDNyJ9"><td data-page-node-id="2766AUIxYZWPvMElTBRbKK">基期量 / 隔年</td><td data-page-node-id="zvUvAUEaUtK75tqpl1uill">70 秒</td><td data-page-node-id="3w9eh9x7PIrcOAPVAcqnKk">先定界（增长则小、下降则大）再截位</td></tr>
+<tr data-page-node-id="fm3s3eluETGe6l1Utb3Upj"><td data-page-node-id="99OKfq2n4ldey9FyjwJwWo"><b data-page-node-id="27U9slsVJ5h2Qh5CV5GieV">综合分析题</b></td><td data-page-node-id="7GhfP3MQZspyWEJAOtuBmd"><b data-page-node-id="igLCHXBvIm6f0p4ShKPncR">90 秒</b></td><td data-page-node-id="80wlr1EuV64yVPTL1icTk7">按优先级验，验出即收手</td></tr>
+<tr data-page-node-id="m4fndmudcEsIqyMz2xB2Yz"><td data-page-node-id="9FI9z6AWLevDIm4DPHTZbQ"><b data-page-node-id="y9cKzFSgXx2JRII57SGlv4">合计（15—20 题）</b></td><td data-page-node-id="gZqRp44OGCzcFhniAa9vZG"><b data-page-node-id="L6FYJkK3HbaRO4rf3QrwgW">18—22 分钟</b></td><td data-page-node-id="4TY2P8GB7OYbG0XA9GOuNG">目标正确率 <b data-page-node-id="GbSke1KE6LFDJ4CxTKAXpX">85—90%</b></td></tr>
+</table>
+<div class="tip" data-page-node-id="lD7WTkXuCKcpHYYxiRV8mF"><b data-page-node-id="8mprDSiS1QCv99ttvtqPbB">超时兜底规则：</b>① 单题超 90 秒无思路 → 立刻在题号旁画圈，蒙一个（优先蒙"与已算结果同量级"的），跳下一题；② 一篇材料卡了 2 题以上 → 整篇先跳过，做完下一篇再回头（换材料换脑，命中率上升）；③ <b data-page-node-id="7wgqRS6vs06zRoq416XSoL">综合分析题永远放在该篇最后做</b>，前 4 题算过的数据常能直接复用；④ 全部做完后若有剩余时间，优先回头检查<b data-page-node-id="u73S5yPAkAIjqv2OjLqRO7">标圈的题</b>，不要检查已确定的题。</div>
+</div>
+
+<footer data-page-node-id="vkH7SN8Tk2LUFy1AEIM4hO">
+本手册为方法论框架整理，公式与速算技巧为通用应试方法总结。<br data-page-node-id="PG5m5WORS3jkaTTUursJKG">
+招录政策、考试时间等以官方公告为准。
+</footer>
+
+</div>
+</body>
+</html>

@@ -302,20 +302,20 @@ function computeSearchData() {
           excerpt: plain,
         });
       } else {
-        // 原始 HTML 页面（无 .md）：取 <title> 与 <header> 文本作为搜索条目
+        // 原始 HTML 页面（无 .md）：取 <title> 与 <header>/<h1> 文本作为搜索条目
         const htmlPath = path.join(CONTENT, dir, page.file + '.html');
         if (fs.existsSync(htmlPath)) {
           const html = fs.readFileSync(htmlPath, 'utf-8');
           const tm = html.match(/<title>([^<]*)<\/title>/);
-          const hm = html.match(/<header>([\s\S]*?)<\/header>/);
-          const excerpt = hm
-            ? hm[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)
-            : '西安渭南进面分数线总览（2022—2026）';
+          const sm = html.match(/<header[^>]*>([\s\S]*?)<\/header>/) || html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+          const excerpt = sm
+            ? sm[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 120)
+            : (page.subtitle || page.title || '');
           entries.push({
             path: (dir ? sec.id + '/' : '') + page.file + '.html',
             title: tm ? tm[1] : page.title,
             section: sec.title,
-            keywords: '渭南,事业单位,进面分数线,数据报告,岗位',
+            keywords: page.keywords || '',
             excerpt,
           });
         }
@@ -384,15 +384,21 @@ function buildPage(section, page, depth) {
 
 /**
  * 给原始 HTML 页面注入「返回站点」导航条（保持独立页与主站连通）
+ *
+ * 插入位置为页面自身的 .wrap 容器内首行，这样导航条自动沿用该页的
+ * 版心宽度（各独立页 max-width 从 800px 到 1080px 不等）。
  */
-function injectReturnBar(html, homeHref) {
+function injectReturnBar(html, homeHref, subtitle) {
   const bar =
-    '<div style="max-width:1080px;margin:18px auto 0;padding:0 20px;font-size:13px;line-height:1.7;">' +
+    '<div style="margin:0 0 14px;font-size:13px;line-height:1.7;">' +
     `<a href="${esc(homeHref)}" style="color:#2563eb;text-decoration:none;font-weight:600;">← 返回 SaDuck 考公知识库</a>` +
-    '<span style="color:#9ca3af;margin-left:12px;">西安 · 渭南 进面分数线总览（事业编 · 省考 · 国考）</span>' +
+    (subtitle ? `<span style="color:#9ca3af;margin-left:12px;">${esc(subtitle)}</span>` : '') +
     '</div>';
-  // 原报告结构为 <body><div class="wrap">，在该边界插入导航条
-  return html.replace('<body><div class="wrap">', '<body>' + bar + '\n<div class="wrap">');
+  // 优先插入 .wrap 容器内；无该容器时退回插入 <body> 之后
+  if (/<div class="wrap"[^>]*>/.test(html)) {
+    return html.replace(/(<div class="wrap"[^>]*>)/, '$1' + bar);
+  }
+  return html.replace(/(<body[^>]*>)/, '$1' + bar);
 }
 
 function writeSite() {
@@ -427,7 +433,7 @@ function writeSite() {
         console.log('  ✓', path.relative(SITE, outPath));
       } else if (fs.existsSync(htmlPath)) {
         // 原始 HTML 页面：原样拷贝，注入返回站点导航条
-        const raw = injectReturnBar(fs.readFileSync(htmlPath, 'utf-8'), relTo(depth, 'index.html'));
+        const raw = injectReturnBar(fs.readFileSync(htmlPath, 'utf-8'), relTo(depth, 'index.html'), page.subtitle);
         fs.writeFileSync(outPath, raw);
         console.log('  ✓ (raw) ', path.relative(SITE, outPath));
       } else {

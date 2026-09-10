@@ -49,7 +49,49 @@
         { "file": "gongji", "title": "公共基础知识" },
         { "file": "fenlei", "title": "岗位类别 A–E" },
         { "file": "shaanxi", "title": "陕西考情" },
-        { "file": "beikao", "title": "备考计划" }
+        { "file": "beikao", "title": "备考计划" },
+        {
+          "file": "kaoqing-2026h2",
+          "title": "陕西考情资料（2026下半年）",
+          "subtitle": "陕西事业单位考情资料 · 2026 年下半年",
+          "keywords": "陕西事业单位,2026下半年,考情,招录,联考,西安"
+        },
+        {
+          "file": "plan-37tian",
+          "title": "A类37天复习规划",
+          "subtitle": "陕西事业编 A 类 · 37 天复习规划（9/10—10/17）",
+          "keywords": "陕西事业编,A类,复习规划,37天,冲刺,备考计划"
+        }
+      ]
+    },
+    {
+      "id": "zhice",
+      "title": "职测手册",
+      "pages": [
+        {
+          "file": "sukuai",
+          "title": "三模块速查手册",
+          "subtitle": "职测三大模块速查手册（A 类）· 资料分析 · 判断推理 · 言语理解",
+          "keywords": "职测,速查手册,资料分析,判断推理,言语理解,事业单位,A类"
+        },
+        {
+          "file": "panduan-yanyu",
+          "title": "精细框架·判断推理与言语理解",
+          "subtitle": "职测精细答题框架手册 · 判断推理 · 言语理解",
+          "keywords": "职测,答题框架,判断推理,言语理解,事业单位,A类"
+        },
+        {
+          "file": "shuliang-changshi",
+          "title": "精细框架·数量关系与常识判断",
+          "subtitle": "职测精细答题框架手册 · 数量关系 · 常识判断",
+          "keywords": "职测,答题框架,数量关系,常识判断,事业单位,A类"
+        },
+        {
+          "file": "ziliao",
+          "title": "精细框架·资料分析",
+          "subtitle": "职测精细答题框架手册 · 资料分析",
+          "keywords": "职测,答题框架,资料分析,速算,事业单位,A类"
+        }
       ]
     },
     {
@@ -109,7 +151,12 @@
         { "file": "guokao2026", "title": "国考陕西职位分析" },
         { "file": "shengkao2026", "title": "省考陕西职位分析" },
         { "file": "shiye2026", "title": "事业编联考职位分析" },
-        { "file": "weinan-report", "title": "西安渭南进面总览" },
+        {
+          "file": "weinan-report",
+          "title": "西安渭南进面总览",
+          "subtitle": "西安 · 渭南 进面分数线总览（事业编 · 省考 · 国考）",
+          "keywords": "渭南,事业单位,进面分数线,数据报告,岗位"
+        },
         { "file": "duibi", "title": "西安 vs 各地市" },
         { "file": "xuangang", "title": "选岗策略" }
       ]

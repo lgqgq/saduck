@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="WogEylC6XP8VZfbrN5LgBe">
+<head data-page-node-id="bcYw7EJ8fzoIP3DTOfNB9v">
+<meta charset="UTF-8" data-page-node-id="DOUCpidksAkhc2UmD5wh4f">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="RXC5OvVucg5eD25iSvMyrS">
+<title>职测精细答题框架手册 · 数量关系 · 常识判断</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:#f5f6f8;color:#1f2329;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+header{background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;border-radius:14px;padding:26px 24px;margin-bottom:22px;box-shadow:0 4px 18px rgba(124,58,237,.18)}
+header h1{font-size:23px;font-weight:700;margin-bottom:8px;letter-spacing:.5px}
+header p{font-size:13.5px;opacity:.94}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-meta span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12.5px}
+h2.mod{font-size:19px;font-weight:700;margin:32px 0 6px;padding-left:12px;border-left:5px solid #7c3aed;color:#1a1a1a}
+.mod-sub{font-size:13px;color:#6b7280;margin-bottom:16px;padding-left:14px}
+h3.grp{font-size:16px;font-weight:700;margin:22px 0 10px;color:#6d28d9;background:#f3edff;display:inline-block;padding:4px 12px;border-radius:6px}
+.card{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h4{font-size:15.5px;font-weight:700;margin-bottom:12px;color:#111;display:flex;align-items:center;gap:8px}
+.card h4 .no{background:#7c3aed;color:#fff;font-size:12px;width:22px;height:22px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.blk{border-left:4px solid #ccc;border-radius:0 8px 8px 0;padding:9px 14px;margin-bottom:10px;font-size:14px;background:#fafbfc}
+.blk b.t{display:block;font-size:13px;margin-bottom:4px;letter-spacing:.3px}
+.b-id{border-color:#2b5cff;background:#f2f6ff}.b-id b.t{color:#2b5cff}
+.b-th{border-color:#f59e0b;background:#fffaf0}.b-th b.t{color:#b45309}
+.b-ru{border-color:#10b981;background:#f0fdf6}.b-ru b.t{color:#047857}
+.b-op{border-color:#8b5cf6;background:#f8f5ff}.b-op b.t{color:#6d28d9}
+.b-tr{border-color:#ef4444;background:#fef4f4}.b-tr b.t{color:#b91c1c}
+.b-de{border-color:#64748b;background:#f8fafc}.b-de b.t{color:#334155}
+.blk ul{margin:4px 0 2px 18px}
+.blk li{margin:2px 0}
+.blk ol{margin:4px 0 2px 18px}
+.blk ol li{margin:3px 0}
+code{background:#eef0f3;padding:1px 6px;border-radius:4px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;color:#c7254e}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+th,td{border:1px solid #e3e6ea;padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#f4f6f9;font-weight:600;color:#333}
+tr:nth-child(even) td{background:#fcfcfd}
+.q{background:#fffbea;border:1px dashed #f0c674;border-radius:8px;padding:10px 14px;font-size:14px;margin:6px 0}
+.q .ans{color:#b91c1c;font-weight:600}
+.tip{background:#f3edff;border:1px solid #d5c4f7;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#5b21b6;margin:10px 0}
+.warn{background:#fef4f4;border:1px solid #f5b5b5;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#b91c1c;margin:10px 0}
+.chip{display:inline-block;background:#f1f5f9;border:1px solid #dbe1e8;color:#334155;border-radius:5px;padding:1px 8px;font-size:12.5px;margin:2px 3px 2px 0}
+footer{margin-top:40px;text-align:center;font-size:12.5px;color:#9aa1ab;line-height:1.9}
+@media(max-width:640px){.wrap{padding:16px 12px 60px}header h1{font-size:19px}.card{padding:14px 14px}}
+</style>
+</head>
+<body data-page-node-id="3LXW7oXemHb9B6h7pMfXgH">
+<div class="wrap" data-page-node-id="OD2a2ajMbQJr17I4oCbCuD">
+
+<header data-page-node-id="7PTpkqEuhCsaoHoS7DtA0p">
+  <h1 data-page-node-id="IoHuMO1UxS0OMXD8tcABwX">职测精细答题框架手册 · 数量关系 · 常识判断</h1>
+  <p data-page-node-id="d5zZYQcYPK3bsE3K9AqASM">事业单位联考 A 类《职业能力倾向测验》｜六段式解题框架：识别标志 → 思考路径 → 判定标准 → 选项处理 → 高频陷阱 → 示例演示</p>
+  <div class="hero-meta" data-page-node-id="RStZgQs99Za6LwL6ejpmA5">
+    <span data-page-node-id="uyHTC5gI88Q4gTwFGD3rxR">数量关系 14 份框架</span>
+    <span data-page-node-id="0DaiHDfEvpkdsIAdAQMFnB">常识判断 4 份框架</span>
+    <span data-page-node-id="UguEx3yZLMVMiTJ5XcVDTA">性价比排序与取舍策略</span>
+    <span data-page-node-id="iiFUaPoZiq5cF7ie2YGnDd">含用时与兜底</span>
+  </div>
+</header>
+
+<div class="tip" data-page-node-id="TBzLe9LR6Rh3LmeK4BJV82">
+<b data-page-node-id="mTap8qKLeZqNLYzrd4QFro">这两块的正确定位：</b>数量关系不是"要把题做完"，而是"<b data-page-node-id="dyVWVMesHZlQnoawig92IE">只做会的 3—4 题，其余统一蒙同一选项</b>"；常识判断不是"要比谁懂得多"，而是"<b data-page-node-id="KS9YFQTLevySixzj9wya7p">会就选、不会就蒙、绝不纠结</b>"。它们的目标正确率都只有 50% 左右，<b data-page-node-id="ZseLAtuTg7eAKYbZxv7Hir">省下的时间全部补给资料分析和判断推理</b>。
+</div>
+
+<!-- ============ 数量关系 ============ -->
+<h2 class="mod" data-page-node-id="07t7AcZgfiAhMrhT370G9T">模块一 · 数量关系</h2>
+<div class="mod-sub" data-page-node-id="TbIiU8gGvBTQPd34JdML3p">目标用时 6—9 分钟 ｜ 目标正确率 50% ｜ 题量通常 5—10 题（陕西联考 A 类）</div>
+
+<h3 class="grp" data-page-node-id="HvjFKLCzJXtFWEGSvg19xQ">A. 整体策略（1 份，最重要）</h3>
+
+<div class="card" data-page-node-id="xtC8StQhB1cy6apDoQzXqA">
+<h4 data-page-node-id="gFNtJvzgDD0LlvoI6od3KP"><span class="no" data-page-node-id="OhFDWikN1GBDTuBHg5Kx6R">1</span>数量关系整体策略与取舍</h4>
+<div class="blk b-id" data-page-node-id="yslKgVDa6JpwSgFg6OGpyD"><b class="t" data-page-node-id="bEFbp14bUS4LmivRpqLaad">识别标志</b>进入数量关系模块即调用。判断"要不要做这道题"只看三件事：<b data-page-node-id="xGjUcax6IIEesmCZjzXnH5">题干是否 ≤2 行、是否属于固定模型、选项是否是具体数值</b>。三个条件占两个才动笔。</div>
+<div class="blk b-th" data-page-node-id="ZmyOE0LLEqlBCeLjie34bv"><b class="t" data-page-node-id="H0soNyPIzftkjHkPhGbZMC">思考路径</b>
+<ol data-page-node-id="hVpo3aUfKFIVcsrVBpmU3a">
+<li data-page-node-id="fDFzC1GTCIcuIqqvRNW3iJ"><b data-page-node-id="u60H8YWyEQHFnFORfnq0dH">扫题分堆（60 秒内）</b>：不计算，只判题型，把题分成 A/B/C 三堆。
+<ul data-page-node-id="9Ofgj5ZMpcyJV0iTtD5zhe">
+<li data-page-node-id="Ar4bHETXTFuKkf5C9nwJE7"><b data-page-node-id="emkCuS1myOTtHVraTO2gBY">A 堆（必做）</b>：工程、容斥、年龄、利润、浓度、简单几何</li>
+<li data-page-node-id="AGygk44b7gHtvgsxmrcfRf"><b data-page-node-id="YTt5wt1Dxa6out4AF1WmhT">B 堆（有余力做）</b>：行程基础、植树方阵、日期周期、鸡兔同笼</li>
+<li data-page-node-id="5FZH99e98Y5G6tlXiEVW8j"><b data-page-node-id="V4LZgWVFi4FwSPlAOmHLdJ">C 堆（必跳）</b>：排列组合、概率、最值、多阶段行程、题干超 3 行的新情境题</li>
+</ul></li>
+<li data-page-node-id="oxTlzu9xNXfjvE7X5zHTfK"><b data-page-node-id="yK4f5UpbHfJloVnDkCWpBr">先做 A 堆</b>：每题硬上限 90 秒，做完 3—4 题立即收手。</li>
+<li data-page-node-id="5vxwhHVIvS74WSHo1uLGFU">时间有余再挑 1 题 B 堆。</li>
+<li data-page-node-id="KjJxuQqQxcDxi1UhGhkcYO"><b data-page-node-id="e5rpTLin4tAol5YE1DcZwT">剩余全部统一蒙同一选项，30 秒涂完。</b></li>
+<li data-page-node-id="n5RVK7ROcV9v9ms1HFPFUr"><b data-page-node-id="oSNcxajEaAQZOTRX4EdOF1">绝不回头检查数量关系。</b></li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="QNRRBfs3CkQqr1Dp1mbP65"><b class="t" data-page-node-id="XvAGghruM1qE9k89V8WcHM">判定标准 · 性价比排序（先做上面，跳过下面）</b>
+<table data-page-node-id="9hRZnd1nT1s9WlptoPYdqb">
+<tr data-page-node-id="ZFJQRyazwefltL3nfioe1D"><th data-page-node-id="BObdwGfL0j9xmZlopBhz7v">优先级</th><th data-page-node-id="GspMpwtaJ2OmB6nqzrjM5H">题型</th><th data-page-node-id="xOP2G6NziDnsjtuNeW9CCZ">理由</th><th data-page-node-id="ishhg0jiP96TP0vrpweuxS">目标用时</th></tr>
+<tr data-page-node-id="yn3xE9vg5G89ZomivOtWe4"><td data-page-node-id="UIAdiKGhOr53cMls9BAkfo"><b data-page-node-id="CkhgRVlO2bh7dYrmbAorWD">1 必做</b></td><td data-page-node-id="2E9udsAP30ZAzBWAlwbEa3">工程、容斥、年龄</td><td data-page-node-id="NLhIxjIs9T81SD7oRMzkWO">模型最固定，赋值/套公式即可，几乎不翻车</td><td data-page-node-id="1Ww7GI1Or7rkZigFhH3xyl">50—70 秒</td></tr>
+<tr data-page-node-id="AvOfXAnfVQQbDMwaOQJq4s"><td data-page-node-id="KdrffK2ivh8ZTUkvpUNpl1"><b data-page-node-id="4xB7Rec1XHHvvgKI5d5TDM">2 优先</b></td><td data-page-node-id="wQtfwCa6rdkLENlWHbVBi5">利润、浓度、简单几何</td><td data-page-node-id="YxLOoYOou5FGtKrchroT5s">赋成本 100 / 溶质守恒 / 套公式，一步到位</td><td data-page-node-id="D7n8UAef21r0yIT60UF91q">70—90 秒</td></tr>
+<tr data-page-node-id="FEbBjBnDNsfNo4aGmzCKEu"><td data-page-node-id="0Arm5wvDHULaeRABCq5UW3"><b data-page-node-id="PgSmRR2VH1lX3riZ4C5WCa">3 选做</b></td><td data-page-node-id="cbxVrFAQh3mRxTYclxiTbr">行程基础与相遇追及、植树方阵、日期周期、鸡兔同笼</td><td data-page-node-id="sjtmiN2shnkstxK2B1xEzS">只需列一次方程</td><td data-page-node-id="LQd1Nq8JPwybkqxV1rVkdk">90—120 秒</td></tr>
+<tr data-page-node-id="NOgZvABEGQUqgyrdo8qEDo"><td data-page-node-id="xDUPgrnEgXE4YPVp4q3UN4"><b data-page-node-id="p37jKDx4gfs7DXKU2n7O18">4 慎做</b></td><td data-page-node-id="71WPpzILmnQAykwURRnmmC">排列组合、概率、最值、多次相遇、三集合极值</td><td data-page-node-id="nyj9MHHwMQ6ywgKGjMYjYt">陷阱密、算错率高</td><td data-page-node-id="dUyqn0L27EznVZqV9rfA4D">≥2 分钟</td></tr>
+<tr data-page-node-id="2QCP0USiJQeeUWMnvpLqCy"><td data-page-node-id="pRaiLmhCbUAoSmRMKmY1kp"><b data-page-node-id="CLxgwka1pOv6q4iwhFQ9TL">5 必跳</b></td><td data-page-node-id="J1g9blMNGKZPfdJHDU3dUk">题干超 3 行 + 多主体多阶段、"以下正确的是/错误的是"、函数图像、复杂计数</td><td data-page-node-id="kASTBtetJFwaGKonn05FqN">时间黑洞，正确率与蒙接近</td><td data-page-node-id="m2U8uTpvkPOXHgDTggGWvT">0 秒</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="eK8kX2zKrZXD91XtyGVvQq"><b class="t" data-page-node-id="KAUiHAab5NOVnGRtMrnrjW">选项处理 · 蒙题原则（核心取舍策略）</b>
+<table data-page-node-id="teVCJeQztANRXsgDYEYNem">
+<tr data-page-node-id="Q77Fh6QjwSGNBVjsl7Gjzb"><th data-page-node-id="iBFREAs3w4A4YPuu8KyGog">规则</th><th data-page-node-id="AAeCrzXzocyAY4AaiJPjzC">操作</th></tr>
+<tr data-page-node-id="m0H5YtENiAxjLSsZTPgChb"><td data-page-node-id="qm5ym4Xze2jeWK8BOtgTkL"><b data-page-node-id="LdcoTVX5p7yotkalhAOulJ">蒙哪个选项</b></td><td data-page-node-id="0vPXFhsKUZ2NGVodDqFcbW">数一遍已做题目选了什么，<b data-page-node-id="IMSPT3RNRKqILcMmrUMFwu">统一蒙"已做答案中出现次数最少"的那个选项</b>。已做 4 题选了 C、A、C、B（C 两次、A/B 各一次、D 零次）→ 剩余题<b data-page-node-id="nSjxlGIeWzg68J5lYA1n7Y">全部蒙 D</b></td></tr>
+<tr data-page-node-id="BdEU5JEiFenXWQHRYBu6OO"><td data-page-node-id="OhqDuJGIo2XWifGD0G5HpL"><b data-page-node-id="aFDZiGxFqhNyzCNhB7heUb">为什么统一蒙</b></td><td data-page-node-id="OJdMiWHpkrigH8zjdWkuDU">真题答案 ABCD 分布趋于均匀（各约 25%）。分散蒙与统一蒙期望值相同，但统一蒙有三个红利：吃到分布均匀的补偿效应、省时间、不会涂串行</td></tr>
+<tr data-page-node-id="CAQcEfp9NCJl6jiJgwkuZM"><td data-page-node-id="AiaPtCn8hhy6Um8jNXUrNM">问"最大/至多"</td><td data-page-node-id="PHuGEbftlgvz3raDZj4pkM">排除选项中最小的那个</td></tr>
+<tr data-page-node-id="nXwSy1u83jXt1XLUiDfyW5"><td data-page-node-id="03Rht5gGWAdd6bI19zxeZM">问"至少/最少"</td><td data-page-node-id="FkkIWCk0Y1yAZGMiTFFDAZ">排除选项中最大的那个</td></tr>
+<tr data-page-node-id="hdA8hF5eboLqA0WFv5ojs9"><td data-page-node-id="CbiQK4fgHWLMy3JycypNf5">出现"平均/每/人数/个数/整除"</td><td data-page-node-id="l2EV07iFPEjUJUyHSAKAdm">答案多为整数或特定倍数，优先蒙整数项</td></tr>
+<tr data-page-node-id="Mo9kvzN3JI65fpmLuSMYDg"><td data-page-node-id="NlVguvS09TuV1nBsdEiRye">选项成"倍数对"</td><td data-page-node-id="ii7GRKhTp9YwXTKeD31Yir">如 12 与 24、30 与 60 → 答案多在此二者之一</td></tr>
+<tr data-page-node-id="DzeRegDdEtIDpMGuyVH7h7"><td data-page-node-id="7nxCJ1voooYyeiUGKYNFFr">算出的数选项里没有</td><td data-page-node-id="s0BYtYCPDhWhz1q5cC1PbX">90% 是单位或倍数错，别改答案，直接查单位；查不出就蒙，不纠缠</td></tr>
+<tr data-page-node-id="woK1FRerNhCvRm15RoDJaT"><td data-page-node-id="pOtgq1p136sDWOyAKaos8F"><b data-page-node-id="4BtCtifhYD9FcfDY2ddktG">绝对禁止</b></td><td data-page-node-id="Eb2DtQTNxjI0dmofctRDQk">不检查、不验算、不返工、不用最后 2 分钟抢救数量关系</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="wbcoYBzU3sbRoFVpVD0WG7"><b class="t" data-page-node-id="KEuaIKdeyX0SPv3g4fQvQL">高频陷阱</b>
+<ul data-page-node-id="6ZEMxbwG2rIZ9BCOUeYebg">
+<li data-page-node-id="QaB4IUZlANZ2lD1H918596"><b data-page-node-id="5S6oWANrlzEOIzsMOB61lE">恋战</b>：一题耗 3 分钟，等于白丢 2 道题的时间。</li>
+<li data-page-node-id="dIOF1oVZAJV3rodrtIvR6l"><b data-page-node-id="pA5eVJ2mIpAf069R97h0l0">不做取舍、全蒙</b>：会做的 3 题是"确定分"，放弃等于主动降 30% 正确率。</li>
+<li data-page-node-id="Mgv8WwXhBOAcHnbhYILjPm"><b data-page-node-id="0cv31f8dWNj4RPyKgzSIBB">蒙题分散</b>：自以为"随机一点更准"，实际既费时又无收益。</li>
+<li data-page-node-id="r6LYNTBXvMcB7HCO1NbKVM"><b data-page-node-id="RGleDbEOqk4OYbGqwYRG8V">把数量关系放在最前面做</b>：脑子最清醒时应给资料分析/判断推理。</li>
+<li data-page-node-id="HPCPsSuiwujurwCnqsDyB4">算完不扫一眼<b data-page-node-id="DjsJcIevNqKu08RYFBffuU">单位与是否需要取整</b>。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="DjMCA9OTb0ohMnZnr0VLug"><b class="t" data-page-node-id="ZJKwZLoBFXywNEW2NPIDvU">示例演示 · 一场 10 题的 7.5 分钟作战</b>
+<table data-page-node-id="3lQuH7tvIe5n05eJP7mC5W">
+<tr data-page-node-id="xpLBdvMRAxzCgco98HuQ8G"><th data-page-node-id="V97GbT0CuWdQNtXBpu1oqD">时间</th><th data-page-node-id="FGJCK5nseuvtnv8gcDDWCM">动作</th><th data-page-node-id="uuQSbtHuvqgdyPYI2OtpNV">结果</th></tr>
+<tr data-page-node-id="PIqU7aUgrA1RY2jyGmEEWc"><td data-page-node-id="blH0HMEWZNtedAGoC2YtFd">0:00—1:00</td><td data-page-node-id="0YCPP9R1Ssqo2u61VB1pPn">扫题分堆。A=工程/容斥/年龄/利润/浓度；B=几何/日期；C=行程/排列/最值</td><td data-page-node-id="MjdTM42vG0F5PENAQoULIR">—</td></tr>
+<tr data-page-node-id="CCIESJKyn1Ik0NQlDJzMRn"><td data-page-node-id="owNWXe4U2HZ3hrfZBBuQZp">1:00—2:00</td><td data-page-node-id="HwcgNEsVD3MqLuxDwF1Nii">做工程（赋值 60）</td><td data-page-node-id="phnVZJdaPZ983M11HE6Gif">选 <b data-page-node-id="bfhd8TJCPl3BA9xP5jwJsy">C</b></td></tr>
+<tr data-page-node-id="tdqDUNK1wfSwk7RmMaR2M0"><td data-page-node-id="gO82pXlkqabgzrhd48n5be">2:00—2:50</td><td data-page-node-id="8VVmbqN3OhXHtDmzBpfUZt">做容斥（两集合公式）</td><td data-page-node-id="UZaCCIFGbR1hGuDeFw3GUL">选 <b data-page-node-id="XO72NAip1GVxC4VBEfRoif">A</b></td></tr>
+<tr data-page-node-id="58himgZnIrd2hTESrc9ni7"><td data-page-node-id="DzCVvAuoafk2i5EkolNvhk">2:50—3:50</td><td data-page-node-id="VQyJ6VjM8POhCmoKtsmYpa">做年龄（年龄差不变）</td><td data-page-node-id="tbDuL7w47syTrvjZQ993Zr">选 <b data-page-node-id="R0VEV835mhEnut9lI3Z1pX">C</b></td></tr>
+<tr data-page-node-id="9KBr50Ji7yCfADf4CucAGe"><td data-page-node-id="yAdtrGj7Ho6ayl2e7bamgN">3:50—5:10</td><td data-page-node-id="m6UUfUquiQKUNSgdTKYtBI">做利润（赋成本 100）</td><td data-page-node-id="hZ8D8aEPBtVCvh2E05rnrz">选 <b data-page-node-id="rHYPIAjlEfrIJFYXWJlDNJ">B</b></td></tr>
+<tr data-page-node-id="a2rIjgActjDPV190DiGyOU"><td data-page-node-id="2OCwk2KhrDmIIEAxYktXO9">5:10—6:30</td><td data-page-node-id="4HzCsMc8TyGDI13pIrEMwu">做浓度（溶质守恒）</td><td data-page-node-id="4WRH8naLxNws3Av5hvUWuh">选 <b data-page-node-id="c2MlOCzxd05JmMmy7xOuKh">C</b></td></tr>
+<tr data-page-node-id="kybDALyqlL8i3qfpIS5J6w"><td data-page-node-id="ggvBpHoT8SUm7tyyMFkn6W">6:30—7:00</td><td data-page-node-id="DlSyrlbMPAb5g5X9D3bZ49">已做：C、A、C、B、C → C 三次、A/B 各一次、<b data-page-node-id="dYzUq8C83usHVmaAnEVHqE">D 零次</b> → 剩余 5 题统一蒙 <b data-page-node-id="cXp5gCooJkRY2nccDSQQla">D</b>，涂卡</td><td data-page-node-id="MeL9sR9TNsmPwQnN6NtbZf">—</td></tr>
+</table>
+结果：实做 5 题（对 4—5），蒙 5 题（命中约 1），共对 5—6 题，正确率 50—60%，耗时 7.5 分钟。<b data-page-node-id="JSuiy7X7KcUNpK29GZH5sU">这就是数量关系的标准打法。</b></div>
+</div>
+
+<h3 class="grp" data-page-node-id="OFAiuscP35aSnBRhKlxFoq">B. 高频题型（13 份）</h3>
+
+<div class="card" data-page-node-id="cr8IexBoI63fkGZjyHm9G2">
+<h4 data-page-node-id="eSXHj5HDeFy39CT5bqnC4E"><span class="no" data-page-node-id="vPEf0RyD5zi9r1ol2tFynL">2</span>工程问题（含牛吃草）</h4>
+<div class="blk b-id" data-page-node-id="F36fQW23ydOVH92fSWo1t1"><b class="t" data-page-node-id="4wxqGowM6A5AZylLuRYyi7">识别标志</b>"一项工程/任务/水池/文件/收割"；给出各主体<b data-page-node-id="wLNKYEAJKcWUKdhgefHXHT">单独完成时间</b>、<b data-page-node-id="ABkqdknNrCsrcFmrrvzz8c">效率比</b>、或<b data-page-node-id="fjh99YciNXVzXkVqLbGPS5">人数/机器数</b>；问"几天完成""还需几天""中途加入/离开/休息"。牛吃草（草在长、水池在进水、排队在加人）是它的变种。</div>
+<div class="blk b-th" data-page-node-id="9uar2lq5bFCHjrHRiGSKnS"><b class="t" data-page-node-id="CPy6twMDUYNUDVPHmhjnBH">思考路径</b>
+<ol data-page-node-id="oCvcHLEmIWxta2HCAnkVjE">
+<li data-page-node-id="FpGvaqqc38uHJPGBBVczu8">判给定的是什么 → 决定赋什么值。</li>
+<li data-page-node-id="PCsLqapODV8fCtS7Cvs7Jb"><b data-page-node-id="vSKLCbGWfk3gshtK5h0eI1">给定时间型</b>：赋工作总量 = 各时间的最小公倍数（保证效率为整数）。</li>
+<li data-page-node-id="MAiL16jnLrBtq6EtBCWlvt"><b data-page-node-id="A7JV4uFjvl5fY0vk6spVRe">给定效率比型</b>：直接赋效率 = 比例值，总量 = 效率和 × 时间。</li>
+<li data-page-node-id="ec3ZQsCZHLig8XNLgWHrNm"><b data-page-node-id="2F1sX3PAigABISaB5kfCaX">给定人数/机器数型</b>：赋每人/每台效率 = 1，总量 = 人 × 天。</li>
+<li data-page-node-id="E96RVowei5gsCirSRpBPGM">中途加入/退出/休息 → <b data-page-node-id="ZlYyPEVWznGN2nDFzpiAWo">按时间段切段</b>，各段工作量相加 = 总量。</li>
+<li data-page-node-id="I5uIimSSYcvN3AdEJRutvB">效率提高 p% → 新效率 = 原效率 ×(1+p%)。</li>
+<li data-page-node-id="hFhSFCE5zF4nlWcerFbKwu">交替工作 → 先算一个完整周期的产出，总量 ÷ 周期产出，余数单算。</li>
+<li data-page-node-id="wx5fnCLs8Yz7syu3cPAn45">牛吃草：草长速度 <code data-page-node-id="oQXEik9pFeqmPd91ED7lJ6">x = (N₁T₁ − N₂T₂)/(T₁ − T₂)</code> → 原有草量 <code data-page-node-id="xNFqPGU7ggBjKG2TozNXup">= N₁T₁ − xT₁</code> → 天数 <code data-page-node-id="lrrh1PkRNQruNeRO7tbYwj">= 原草 ÷(N − x)</code>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="5nXh05w5oJsq0vGsfT09P6"><b class="t" data-page-node-id="KQw7Gk3onJHF07bj55f80G">判定标准 · 公式清单</b>
+<table data-page-node-id="ZHphu63zE8S5643SUbM0c3">
+<tr data-page-node-id="icuMt4Q04ZP7U5QGirc0pn"><th data-page-node-id="KA8zFNDAzGEZCpr0Grzim5">公式 / 结论</th><th data-page-node-id="cYA0imqGXTEFa2Otg8107C">说明</th></tr>
+<tr data-page-node-id="pgqlMjCNADGvpYROlDwONf"><td data-page-node-id="vrwdjCwzfIxnuh707Asz7k">工作总量 = 效率 × 时间</td><td data-page-node-id="sTJco14hXFjDnxoxCjGVd0">核心</td></tr>
+<tr data-page-node-id="zNISClSPBLeKdMOBabXHVn"><td data-page-node-id="sTnWqb4OboTRYUrWWERz1a">合作效率 = 各效率之和</td><td data-page-node-id="qKU40F45Jan5lAuMi0u0Qc">合作</td></tr>
+<tr data-page-node-id="4F1kneJ3n0tsaX1KDi9KVp"><td data-page-node-id="9tdKBJGuqbYe8Ju1FrIuWD"><b data-page-node-id="pGi1ZLtB1nQ6x1LY1bpNDl">两人合作时间 =（甲时 × 乙时）÷（甲时 + 乙时）</b></td><td data-page-node-id="BTJb76Pt48Ah797jwJoCZj">秒杀公式，12 与 15 → 180/27 ≈ 6.7</td></tr>
+<tr data-page-node-id="VGc0EGruipjYQNaSMHCH2p"><td data-page-node-id="Rxhwx4WpVxMgiSvpvgNmwM">新效率 = 原效率 ×(1 ± p%)</td><td data-page-node-id="RTrHYUWYYTBEydKy4DU8h9">效率变化</td></tr>
+<tr data-page-node-id="rWGpefH4X5mBSbZnKqNYzR"><td data-page-node-id="0OXbx8th4JAE8htFfCoMam">草长速度 =（N₁T₁ − N₂T₂）/（T₁ − T₂）</td><td data-page-node-id="TNUchmtgXreHkh0b7a4jQN">牛吃草</td></tr>
+<tr data-page-node-id="Fwl9oi8LoZoz0tU2RLTup0"><td data-page-node-id="angWBomvAFkrES10HkTCia">天数 = 原草量 ÷（N − 草长速度）</td><td data-page-node-id="fLjeybg2RZbS5EvKsZwCEw">N 必须 &gt; x，否则"永远吃不完"</td></tr>
+</table>
+<b data-page-node-id="uJ10WyCBH296N1YFFnZCgz">赋值口诀：时间给最小公倍数，效率给比例，人数给每人效率 1。</b></div>
+<div class="blk b-op" data-page-node-id="QK1Z61ZVOwCwX2gMizNrz9"><b class="t" data-page-node-id="siKypgI4pUUGNIAk4GnONN">选项处理</b><b data-page-node-id="EYgK4e4ZNFSVHpwoJkss6i">范围夹逼</b>：两人合作时间必介于"最快单独时间的一半"与"最快单独时间"之间。甲 12 乙 15 → 合作时间必在 (6, 12)，选项 &lt;6 或 &gt;12 直接排。也可把选项作天数代入 <code data-page-node-id="aLQwwnDRT9C1SgnT4JApP3">Σ效率×时间 = 总量</code> 验算。</div>
+<div class="blk b-tr" data-page-node-id="gbYvN5Q6GvQDstRGhATbi8"><b class="t" data-page-node-id="ecztvovG9A5nVMZ8izv8Vx">高频陷阱</b>
+<ul data-page-node-id="RJLdkvH3w2vjYviZE1gwH0">
+<li data-page-node-id="fEau6QAgPfxG7QG40hsEpL"><b data-page-node-id="UoyBPYoNBazf57EBEeknXf">中途休息</b>：休息日不产生产出，必须分段。</li>
+<li data-page-node-id="UWoHu58qixM9V2SICepDBB"><b data-page-node-id="6bIXA0qYwNsWqsQl2wrrkj">"效率提高 20%" ≠ "总量提高 20%"</b>。</li>
+<li data-page-node-id="DZs4mbzIwXz6xoboovsd7w"><b data-page-node-id="ch9CuIGINeEsfgexZ8O0B3">"完成了 1/3" 与 "完成了剩下的 1/3"</b> 完全不同。</li>
+<li data-page-node-id="nTKZQMtrPQs6hVXzfwKd03"><b data-page-node-id="7LSQNSDKHjFXFMA12d3iTH">交替工作最后一个不完整周期</b>要单独算。</li>
+<li data-page-node-id="5yDDeebhsidqNv9lQFbkPE"><b data-page-node-id="1zpncnxDGADIDYIMzO4H4J">"第几天完成"要向上取整</b>，"几天完成"可保留分数。</li>
+<li data-page-node-id="IcJCwIvQT4RlC9dGVsCSrg">牛吃草中草长速度是<b data-page-node-id="OxfmrZusEH4yqS7P0Ba6IC">每天</b>的量。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="7lCYzgeKs1ERP5V3lvYHTD"><b class="t" data-page-node-id="Hohy4aDmvhYV19ctC6yTVp">示例演示</b>
+<div class="q" data-page-node-id="pUoPRBH4gVcTH2IIMm7iJn">一项工程甲单独 20 天完成，乙单独 30 天完成。两人合作，中途甲休息 3 天，问从开工到完工共用多少天？</div>
+赋总量 = 60（20、30 最小公倍数）→ 甲效率 3，乙效率 2。设共用 T 天，甲实际工作 (T−3) 天：<br data-page-node-id="PHpSkN3T8ytVtRVVRbCmu2">
+<code data-page-node-id="mqDDdOTbaj6armeEDk5LG6">3(T−3) + 2T = 60 → 5T − 9 = 60 → T = 13.8</code>　<span class="ans" data-page-node-id="KUnbjUwUEkD2KIMk3Q7HwR">答案 = 13.8 天</span>（若问"第几天完工"则答第 14 天）</div>
+</div>
+
+<div class="card" data-page-node-id="2a1DP0uEzLh8birMJehEc6">
+<h4 data-page-node-id="vEm3W8y0ld3J8TsjA9bCaV"><span class="no" data-page-node-id="FBV84MKtalhQEkh7EkFFTC">3</span>行程问题</h4>
+<div class="blk b-id" data-page-node-id="zi8S25Yy2Ii5bZ2lcFLgQL"><b class="t" data-page-node-id="c62F19VkNriVGdg3rTHBJh">识别标志</b>路程、速度、时间；"相向/同向""相遇/追上""顺水逆水""往返""第 n 次相遇""上下坡""提前/晚出发"。</div>
+<div class="blk b-th" data-page-node-id="x1b532QGwBOlbWmne7G8mL"><b class="t" data-page-node-id="35nc9O0lkqydSasJ9gmGMw">思考路径</b>
+<ol data-page-node-id="zK9p67y3cLnuHFJoQbFwfo">
+<li data-page-node-id="g8TWpepmij66LnbklMuQfs"><b data-page-node-id="5LLhs94vlOI4yesbiJgzYh">画线段图</b>（必做，别心算）。</li>
+<li data-page-node-id="4oSwUbfoUk6Ib4rTbFHTPm"><b data-page-node-id="ycrw60lEUfn8vYr1KajgwO">统一单位</b>：km/h 与 m/s（1 m/s = 3.6 km/h）、分钟与小时。</li>
+<li data-page-node-id="7ba62Zf6qKZi9Kf3caIJLD">判子题型：相向→相遇（路程<b data-page-node-id="5hcV4VWYeec1cBtBtWmccK">和</b>）；同向→追及（路程<b data-page-node-id="9MUFrsrA6HgyuW9TKw1zlE">差</b>）；有水流/电梯→顺逆水；封闭环形→圈数；两端往返第 n 次相遇→共走 (2n−1)S；等距离→调和平均。</li>
+<li data-page-node-id="w4tXP5eG6vxqlHEf0b9bwQ">找等量关系（时间相等 / 路程相等 / 路程和差）列方程。</li>
+<li data-page-node-id="7QaDBDDx2nALszoCsUIkgC">用<b data-page-node-id="U0vtKSN7wgNjD8fySEjHIq">比例法</b>提速：路程相同时，速度比 = 时间反比。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="yrjEunuxYnVwOQnvAaLv6I"><b class="t" data-page-node-id="i3vUNmoGCSiNV3OyDez381">判定标准 · 公式清单</b>
+<table data-page-node-id="A8oNE8fHagmmRzMX4zNCVu">
+<tr data-page-node-id="N3OqvpUb2aO3vnSK5ECvQA"><th data-page-node-id="JPazA0M2qx3KfWekmXtmTa">公式 / 结论</th><th data-page-node-id="P602Pha2PdTwR4mtWSrQkg">说明</th></tr>
+<tr data-page-node-id="EFm1YmH8Hpq7IJUlOo7fsC"><td data-page-node-id="T0nqCBxWDYLvJcewdRrtOV">S = v × t</td><td data-page-node-id="FWq6XGgoJS1eDQkDc7q4uq">核心</td></tr>
+<tr data-page-node-id="qmn7t5FL2Jm5x2bHL5Mrom"><td data-page-node-id="wHQXnBt0skGViPDrObnYVZ">相遇：S和 =（v₁+v₂）× t；追及：S差 =（v₁−v₂）× t</td><td data-page-node-id="ECD3COqK4eJClz69GnJG4h">—</td></tr>
+<tr data-page-node-id="ZBxCfxoywDTmYyuer9xQGp"><td data-page-node-id="ODBEKRdSva0a242haI9nRC">v顺 = v船 + v水；v逆 = v船 − v水</td><td data-page-node-id="dPIJe3I949XWCeool4MUPm">流水</td></tr>
+<tr data-page-node-id="e6QWN5uHF4OnrzxBh33Pu1"><td data-page-node-id="net1UbCM2WlhAzMzY0E9gT"><b data-page-node-id="tdBarszWZzhJvSWda8Cjzt">v船 =（顺+逆）/2；v水 =（顺−逆）/2</b></td><td data-page-node-id="rENlhQtvB5XZAsonV1iAGi">流水秒杀</td></tr>
+<tr data-page-node-id="wST2GC5B20oVsmUTcJXJoO"><td data-page-node-id="GP93EgGjCmUUmQtFFMMbL4"><b data-page-node-id="ZHwTK7OowEzr0uaAWJZetX">船追落水漂流物：追及时间 = 掉落后到发现的时间</b></td><td data-page-node-id="Fe30lE3qrAeIDFxBPFU0zg">相对速度 = 船速，与水流无关</td></tr>
+<tr data-page-node-id="cdqSJdfoGAv6FtF300hEWc"><td data-page-node-id="NWy4Y1h2kzJjh3G8PMpqRO">环形第 n 次相遇：同向路程差 = n×周长；相向路程和 = n×周长</td><td data-page-node-id="oKw6OGDvWFBO7HOSHCeRDF">环形</td></tr>
+<tr data-page-node-id="cZRl20vg5crQ19vhB1x1AI"><td data-page-node-id="4yVZSdEfkmEoAD5gijDO2O"><b data-page-node-id="3432dfLmqNjvCY3AvhtEmI">直线两端往返第 n 次相遇：共走 (2n−1)S</b></td><td data-page-node-id="aTrVaN2H6PGfGLFcXC9COx">第二次相遇共走 3S，<b data-page-node-id="13GTTACjcexTKnmp9HCMwI">不是 2S</b></td></tr>
+<tr data-page-node-id="swez7mE9oujVFYAEJijlHF"><td data-page-node-id="LhDF9ShOaX3fG2ZsFRIAXW">等距离平均速度 v = 2v₁v₂/(v₁+v₂)</td><td data-page-node-id="LBLBXESzcrvwfpL3IuAJ4m">调和平均，必 &lt; 算术平均</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="Lmiil6YJRW1bzOgslW49Gm"><b class="t" data-page-node-id="AiBXSRhenRsbDBbsFnxuwF">选项处理</b><b data-page-node-id="2AKgzUSNeSCFSWp5Ygv0AR">平均速度夹逼</b>：等距离平均速度必介于 v慢 与 (v₁+v₂)/2 之间，超出即排。<b data-page-node-id="YquvQRndWMQq7VyCJfH5jE">相遇时间夹逼</b>：相遇时间 &lt; 任一人单独走完全程的时间。先看选项单位是 km/h 还是 m/s，常在这里设错。</div>
+<div class="blk b-tr" data-page-node-id="j3EBZ9GeLHJHfIBpGR8rmA"><b class="t" data-page-node-id="OHhW2qPeElztSGmeqq4YcX">高频陷阱</b>
+<ul data-page-node-id="EvI6DpOzGaqV4w4cIiX9Lu">
+<li data-page-node-id="cpKd9QYG0aRD0DVGBntwwo"><b data-page-node-id="GQlikvRbagLDG2VwUfLhh5">单位不统一</b>（km/h 与 m/s、分钟与小时）。</li>
+<li data-page-node-id="eVM5i7100sljk8aya3S6Gn"><b data-page-node-id="bTsEmDpmg7jtGnGuzMhgFY">出发时间不同</b>：先走的那一段要先减掉。</li>
+<li data-page-node-id="KfAm4g6nso2HUMAw9vvu5t"><b data-page-node-id="LrLO4q4NatC2aXzVOzYv7Z">"第二次相遇"共走 3S</b>，不是 2S；第 n 次是 (2n−1)S。</li>
+<li data-page-node-id="E1prRwxJdbY5nwpSm1Rr4v"><b data-page-node-id="AVGNNGw77LetJVuBVQSXvX">平均速度误用算术平均</b>：只有等距离才用调和平均。</li>
+<li data-page-node-id="S1m35CE8IMQFYJGbSC2xDd">追及的<b data-page-node-id="2AJufF8TZ5XtekNMdywYd5">初始距离</b>是否识别正确。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="l3ZHC7KaH1Xmv9AvGR48Jc"><b class="t" data-page-node-id="uoAA6X67rDMLDm8avTmqBS">示例演示</b>
+<div class="q" data-page-node-id="9ufwC9iZjwUBh0tH0Qh1YG">A、B 两城相距 240 km，甲从 A（60 km/h）、乙从 B（40 km/h）同时相向出发，各自到达对方城市后原路返回。问第二次相遇点距 A 城多少 km？</div>
+第二次相遇共走 3S = 720 km → <code data-page-node-id="qkrPZA4p2agMCt9owWUPll">t = 720 ÷ 100 = 7.2 h</code> → 甲共走 <code data-page-node-id="z31Cw44ih8s6urdJjWCPsv">60×7.2 = 432 km</code><br data-page-node-id="cZxJlaG5Bs6tcxR6EaJAhK">
+甲轨迹：A→B 用掉 240，剩余 192 从 B 往回（朝 A）走 → 距 A = <code data-page-node-id="qXeI31nACPE0D82Nw9VJxG">240 − 192 = 48 km</code>　<span class="ans" data-page-node-id="u32JgoTV29wtnAyz5J4Zih">答案 = 48 km</span></div>
+</div>
+
+<div class="card" data-page-node-id="woQhrAtgScFft3BrROxK2h">
+<h4 data-page-node-id="Obm8rwsmvlBskXgEepzICn"><span class="no" data-page-node-id="YUvIb4mmmhxINkFPQBSKdN">4</span>利润问题（含分段计费）</h4>
+<div class="blk b-id" data-page-node-id="qMkHx6kvG7UGBq379guG9s"><b class="t" data-page-node-id="wwUtzkOjddLvM5GhNLtul9">识别标志</b>成本/进价、定价/标价、售价、利润、利润率、打折（x 折）、满减、买几送几；以及<b data-page-node-id="awYjUDuLolbI1OsRBmqibm">分段计费</b>（水费、电费、停车费、个税、快递费）。</div>
+<div class="blk b-th" data-page-node-id="JEWER6NUwl6T0gcB7AjHys"><b class="t" data-page-node-id="45AGav1SiCi5r2U9Fw2ack">思考路径</b>
+<ol data-page-node-id="SM4GjBUUDSGH3s1cGYijM8">
+<li data-page-node-id="Hy9GKZ6ElqTaA2gngBD1gw"><b data-page-node-id="uIKJBgIOLjbRxrsXKitrnB">赋值</b>：涉及利润率 → 赋成本 = 100；涉及折扣 → 赋原价 = 100；求总利润 → 赋销量 = 1 或 10。</li>
+<li data-page-node-id="CiyHx3XV3SWeSK2DDolAGc">顺推链条：成本 → 定价 → 打折后售价 → 单件利润 → 总利润。</li>
+<li data-page-node-id="aMZ79fSiEAWgRvcgbshovO">倒推：定价 = 成本×(1+利润率) ÷ 折扣。</li>
+<li data-page-node-id="R6o50H5fCI7UBRmDpFWHxZ">分段计费：先判断落在第几档，再"前段全额 + 超出部分按本档单价"累加。</li>
+<li data-page-node-id="RZticc2aqYNwgWRgKyBx2t">用 <code data-page-node-id="TYEMX41O5G6J4EzXhnUDPf">售价 = 成本 ×(1+利润率)</code> 作唯一方程。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="yZ8qXvyOoVwZCXY3NL7ocY"><b class="t" data-page-node-id="IAI47rRrKi7FOoTN90LC8m">判定标准 · 公式清单</b>
+<table data-page-node-id="vrdqBspTWbedh7tvDTY0yM">
+<tr data-page-node-id="j8G756MSJMq5s68MQFO7UC"><th data-page-node-id="uHUZvLTZvoyci1TOsiyju4">公式 / 结论</th><th data-page-node-id="fF9sXNW8KNunpVdxUqM2TU">说明</th></tr>
+<tr data-page-node-id="AJPtldDyCSZ1X6wgqzc7D9"><td data-page-node-id="6m2kLN29kJGW0UgdCMXRCe">利润 = 售价 − 成本</td><td data-page-node-id="4lfYUrdL4xWscbE6d7PcHz">定义</td></tr>
+<tr data-page-node-id="Hv2u12mEGM7Tit7MuJfLWX"><td data-page-node-id="u5FukFRVFvl2fSUEpwnG7p"><b data-page-node-id="nZFu5I7xuvP3S0c7Q3RHrc">利润率 = 利润 ÷ 成本</b></td><td data-page-node-id="2wCrNtxKal0fzqyaQYojSp"><b data-page-node-id="IibykNifn5nuHySDI4B2Ws">分母是成本</b>（最高频错误点）</td></tr>
+<tr data-page-node-id="tdjYB4s7GJHRZM887ruitA"><td data-page-node-id="5rJEu7WFXqlPnfRwEgm6Dx">售价 = 成本 ×(1+利润率)；成本 = 售价 ÷(1+利润率)</td><td data-page-node-id="q9GSlutPiZEr7vBpLxcaoh">互推</td></tr>
+<tr data-page-node-id="Qw7t8s7Yngjy064DLXdBiB"><td data-page-node-id="WnLAc3lvr5az3ipyePPpfm">打 x 折 = 原价 × x/10</td><td data-page-node-id="6HcoasC9x1DVTAxmV1g06T">8 折 = ×0.8</td></tr>
+<tr data-page-node-id="JEe7D826OzziH0KauZBZnJ"><td data-page-node-id="rbbukEGh2DB09P5pYZvJF5"><b data-page-node-id="fn9f3e4xVpoX3R6AWOw8lS">"降价 20%" = ×0.8；"降到 8 折" = ×0.8；"降价 8%" = ×0.92</b></td><td data-page-node-id="fsEvEMre2S99rkJD1pkzu2">三种说法三种值</td></tr>
+<tr data-page-node-id="ylb3Y8IWJg0HGFT1pMm7pC"><td data-page-node-id="JdN82c13Rg9y96seS6MK0y">买三送一 = 75 折；买四送一 = 8 折</td><td data-page-node-id="OAvKNkQN092PVBHcwYCjG5">促销</td></tr>
+<tr data-page-node-id="9MxvKuvV2aQW8wTfpWAWi6"><td data-page-node-id="yW6g0I1XWbUtsojPKLRcbL"><b data-page-node-id="v1tL4dawZSNzrp6UrSNQl0">先涨 a% 再降 a% → 净变化 = −(a²/100)%</b></td><td data-page-node-id="hbfR4Qh67N4pTy803INlGR">涨 10% 降 10% = −1%</td></tr>
+<tr data-page-node-id="QzYDqZWEY1QTfiopFbjZzQ"><td data-page-node-id="BooYdHC6yDQqDKLY8CNwn0">总利润 = 单件利润 × 销量</td><td data-page-node-id="IEJlW2Ky1YjfrrtjUL8I5B">—</td></tr>
+<tr data-page-node-id="8RREyWoEx2NO68mhShDeBy"><td data-page-node-id="PmpEhdVK7stJyLDra5P7B4">"A 比 B 贵 20%" → A = 1.2B；"B 比 A 便宜 20%" → B = 0.8A</td><td data-page-node-id="l7FwkyZWTd7SrXEiMY8AdN">分母不同</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="c8voJcMiAXRmICsaCnCzAI"><b class="t" data-page-node-id="ziqNno6gObXzwLJ9algQ96">选项处理</b>赋 100 后定价应为整齐数，若算出 137.5 之类乱数，多半折扣代反了。问"至多打几折仍能盈利" → 从选项<b data-page-node-id="qeQ0H2M3WKQahX13TNf6YU">最大</b>的折扣开始代；问"至少打几折" → 从最小开始代。分段计费先用选项反推落在哪一段再验算。</div>
+<div class="blk b-tr" data-page-node-id="ji0QjqCUGAZhBqD6nLO4kq"><b class="t" data-page-node-id="PGnRpSovuTZbB2VFeuLyYf">高频陷阱</b>
+<ul data-page-node-id="DqN1FFC5wethxeWU0d8Luz">
+<li data-page-node-id="aJqNwlXh2bBmLYCd5U0jT4"><b data-page-node-id="t7cUsE0L6nUj1ZfAYgDyAs">利润率分母是成本，不是售价</b>。</li>
+<li data-page-node-id="Am1AKpD9h55UOOweRLveJ7"><b data-page-node-id="H7fgDZ8hXguKZgkYf3gimG">"打 8 折"（×0.8）与"降价 8%"（×0.92）混</b>。</li>
+<li data-page-node-id="p1sZ0wphLFnA71IkrldEdA"><b data-page-node-id="ASy4EILnElofARqEFkz4px">"A 比 B 贵 20%" 与 "B 比 A 便宜 20%" 不等价</b>。</li>
+<li data-page-node-id="perCnDFBBrE3AcXOOLz23w"><b data-page-node-id="o809SmAtpZlWPfGrn5mbkl">分段计费</b>：只有超出部分按高档价，不是全额重算。</li>
+<li data-page-node-id="yG6tqnUBMdt86r2DYcjbqr">问"利润多少元"别答成百分比；问"利润率"别答成金额。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="FQFozNrmGNBLlRCR6ZyDo7"><b class="t" data-page-node-id="YoUCk5fcnSOIVitt69P7JB">示例演示</b>
+<div class="q" data-page-node-id="3A2gDnNgial1R7oyKDQ8Yt">某商品按定价的 8 折出售，利润率为 20%。若按定价的 9 折出售，利润率是多少？</div>
+赋成本 = 100 → 8 折售价 = 120 → 定价 = <code data-page-node-id="e97lKnIGkfjTTjbUrihcqC">120 ÷ 0.8 = 150</code> → 9 折售价 = <code data-page-node-id="t4G5t4NEgUQDvKhRnPPqAJ">150×0.9 = 135</code><br data-page-node-id="beCTmroymZQlIg7QIhKEqX">
+利润率 = <code data-page-node-id="oZEvad2OPgbrV3B8Ph6gyB">(135−100)/100 = 35%</code>　<span class="ans" data-page-node-id="aZjnDrHoWsuZj0jSEiovPK">答案 = 35%</span></div>
+</div>
+
+<div class="card" data-page-node-id="MBi7MwaGTDNhUIuWrKv2hW">
+<h4 data-page-node-id="t4UGTBHgcmZOLhhHW9DQGD"><span class="no" data-page-node-id="ZHUty5RIsHYEh8SOo3UngK">5</span>排列组合</h4>
+<div class="blk b-id" data-page-node-id="XMmyaT9LoTMFwLbh8s7qBp"><b class="t" data-page-node-id="MVLS7HOdnhARtgiYCAgFGK">识别标志</b>"排队""选出""分配""编号""路线""涂色"；问"多少种不同的方法/方案/情况"。</div>
+<div class="blk b-th" data-page-node-id="MUucCFarnQv0dCGGtYgP7A"><b class="t" data-page-node-id="WKbBcDj1nweuC4rUP5Du5z">思考路径</b>
+<ol data-page-node-id="uqMLCdktoRxUhHGxTJEQyR">
+<li data-page-node-id="Sfl05Ir1JoLO1sMvP9T7FP"><b data-page-node-id="ulF1K7lluegnUed5sA1lLM">判有序还是无序</b>：交换两个元素是否产生新情况 → 有序用 A，无序用 C。</li>
+<li data-page-node-id="zKiFQppcDy809Yw2wrhgvg"><b data-page-node-id="NHPWB17d8spgCTKDSsBAJZ">判元素相同还是不同</b>：相同物品分配 → 隔板法；不同物品 → 排列。</li>
+<li data-page-node-id="KLZ3DehOhaUciY2I0qGo3B"><b data-page-node-id="dkxE7LvKxrA2GriDORmhC2">判约束类型</b>："必须相邻"→捆绑法；"不能相邻"→插空法；"某人在某位置"→优先安排特殊元素；"至少 1 个"→反向（总数 − 全不满足）。</li>
+<li data-page-node-id="PfmUMNoiwAfM0N71664uEB"><b data-page-node-id="16kYhEZTM3aIa7RRONxBfw">分类用加法、分步用乘法</b>：分类要不重不漏，分步要步步相乘。</li>
+<li data-page-node-id="srIahWhRg4aJakxtWp1q8M"><b data-page-node-id="QVEBfzqXC6g8WsQWB4Kxof">先算总数再减不符</b>往往比正面分类更快。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="xuIS7rAPv70RMtz0joFMGr"><b class="t" data-page-node-id="WGSwyH6f487Eklr3H4XLMb">判定标准 · 公式清单</b>
+<table data-page-node-id="qM22AAD8IzIMjPoOsQLf0U">
+<tr data-page-node-id="G0WBUEvhatM60771plAlCl"><th data-page-node-id="ZiJ9eQyxC9J1GvAaI2vNGA">公式 / 结论</th><th data-page-node-id="0r7w33cZgIs30uqVQ6EtYn">说明</th></tr>
+<tr data-page-node-id="UX5H6J2onHwHvQUST5AGBd"><td data-page-node-id="hszXBw8Ds87aFaKAdR1GZI">A(n,m) = n!/(n−m)!；C(n,m) = n!/[m!(n−m)!]</td><td data-page-node-id="ZQUZJ6uDlky2F7lRHmje9a">基本</td></tr>
+<tr data-page-node-id="64YvP5fL5OJwZ6DyMltosi"><td data-page-node-id="4KoOpSiFNAQmB86hDQp2aC">C(n,m) = C(n,n−m)</td><td data-page-node-id="V7O5MBNuLr6d8vN0ibYd8M">对称性</td></tr>
+<tr data-page-node-id="Oa7mtgC4jpkZmXyaZYiAFc"><td data-page-node-id="XKnClC8c01WAClQQcZXNcC"><b data-page-node-id="fcFV7ErlbkaIjQb1OBVlPl">捆绑法</b>：整体全排列 × 内部全排列</td><td data-page-node-id="43gGbueAWDVMBPqlJVmnty">相邻</td></tr>
+<tr data-page-node-id="hZFCEJ96Bw7p86dqA7Vmp1"><td data-page-node-id="bh3YrgejY3KGgudStB1prq"><b data-page-node-id="E8RG0xGvgsgUqG8A6VNeF8">插空法</b>：先排其他 → 插入空位（n 个元素有 <b data-page-node-id="3QkRFfYC3I5Cp17FEeFRIl">n+1</b> 个空，含两端）</td><td data-page-node-id="8MAVcvq3DsW3B5jMaJUV20">不相邻</td></tr>
+<tr data-page-node-id="EHQopVIfrQbA50Rpvet8qx"><td data-page-node-id="TtU8ZWMXfpCpL2t05h8lnT">环形插空：n 个元素围成圈有 <b data-page-node-id="d8qNDwNnPi0OEz68dQ2mqn">n</b> 个空</td><td data-page-node-id="KuMIyDWC7MOSvbAjvHqfpR">不相邻</td></tr>
+<tr data-page-node-id="635bd6d1j8cbjyaOZCWO6E"><td data-page-node-id="PaWtscyfdwG7jVApYao3V0"><b data-page-node-id="gwMdj4ktsLE1xRv4ZnAslw">隔板法</b>：n 个相同元素分 m 份，每份 ≥1 → C(n−1, m−1)；每份 ≥0 → C(n+m−1, m−1)</td><td data-page-node-id="QynLzIfNChqwPa3a5OhmUV">相同元素</td></tr>
+<tr data-page-node-id="FMdPgLjyHjpC16Ai83gcp9"><td data-page-node-id="3FwTS4pUbcQhDJ6e2vWstG"><b data-page-node-id="aE9UmlKVvEX2M4A7exUp9B">环形排列</b>：n 人围一圈 = (n−1)!</td><td data-page-node-id="VuSVMW64AjaFp1dS8ZDvGv">旋转等价</td></tr>
+<tr data-page-node-id="Qd0rThBihpfbASIyIUGAzq"><td data-page-node-id="E4tXMbBqYeqUtrjZNF3d60"><b data-page-node-id="XpgZGWJHQ8EeeO0otGAGwp">平均分组要除以组数阶乘</b>：6 人平分 3 组 = C(6,2)C(4,2)C(2,2)/3! = 15</td><td data-page-node-id="u2GIY97FSzDV1jbsjxPEFv">极易错</td></tr>
+<tr data-page-node-id="iqZVI6IqPSEX3EmBn8dWap"><td data-page-node-id="XwrVfwiT8Sm1ueqZOnJoRq">错位排列：D₁=0, D₂=1, D₃=2, D₄=9, D₅=44</td><td data-page-node-id="YVCace3CrVFCuRNzt6B5CO">全错排</td></tr>
+<tr data-page-node-id="GKSMWKZpDxgx9qvtAyI56T"><td data-page-node-id="2jimCHVTFiqyReLlOOssNr">常用数：C(4,2)=6, C(5,2)=10, C(6,2)=15, C(6,3)=20, C(7,2)=21, C(8,2)=28, C(10,2)=45</td><td data-page-node-id="OpAgDCdbA3ICjAOXoeGQDp">背下来</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="4FAxvWkOCLdrE4COHkxqLS"><b class="t" data-page-node-id="OA7JSSIfDAbHM8plol9m5g">选项处理</b>算出的数远大于选项 → 多用了一次 A（该用 C）或漏除了平均分组的 m!。上界排除：5 人选 3 人最多 C(5,3)=10，若选项出现 20 说明题中有序。n ≤ 4 时可手算全排列验证。</div>
+<div class="blk b-tr" data-page-node-id="5rSHZHB8bXE6hp3Hx6id3i"><b class="t" data-page-node-id="mHH37Q8bL65ZLy0WQG3gGK">高频陷阱</b>
+<ul data-page-node-id="5m3nLZJ6nAk0icwD1bXMgh">
+<li data-page-node-id="yzPjAKiD7VCJo5tsBB2WmQ"><b data-page-node-id="HnA6UPL5kuGnsBOOSYPa86">有序/无序搞反</b>（"选出来"用 C，"排成一排"用 A）。</li>
+<li data-page-node-id="2B9A2R9epNp2ecdJLO2Zfy"><b data-page-node-id="ReDwbAnI5ehiZ43FFoQH13">平均分组忘记除以 m!</b>。</li>
+<li data-page-node-id="SV0pW6AXf3pUeKM9e4TyCT"><b data-page-node-id="vxZRmHQzcEPq4FuL1dVhD7">插空时漏掉两端空位</b>（n 个元素是 n+1 个空）。</li>
+<li data-page-node-id="U3zax4xh5EKbIdCHgoLlqB"><b data-page-node-id="n3lEvufkL8BzKFNr2R41D8">环形排列忘了 (n−1)!</b>。</li>
+<li data-page-node-id="MRhRkQDCBhrqxcEDxdQBz9"><b data-page-node-id="gPBKIhM8cd32KKoykAdqc0">"至少 1 个"正面分类重漏</b>，应用"总数 − 全不满足"。</li>
+<li data-page-node-id="6wUQnPl85hbzBZk5SMx8gy">隔板法前提是"元素相同 + 每份至少 1"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="ADe5jv1EJkpKlNJF8EYf3F"><b class="t" data-page-node-id="TV07sRKhYiXW4WyYuECzIA">示例演示</b>
+<div class="q" data-page-node-id="jVB9STkECyygh76G95U4P7">6 人排成一排，其中甲乙必须相邻，丙丁不能相邻，共有多少种排法？</div>
+先捆绑甲乙为 X → X、丙、丁、戊、己 共 5 个元素：<code data-page-node-id="zBwuUuuEdROgprS7lYcykA">5! × 2 = 240</code><br data-page-node-id="syCC0C61c90tHzJBXgd0go">
+减去丙丁也相邻的情况：再捆绑丙丁为 Y → X、Y、戊、己 共 4 个元素：<code data-page-node-id="d3qmglzeDZRMdQGpsLRCgN">4! × 2 × 2 = 96</code><br data-page-node-id="cuDIVZikbh8C1r3EXdcgGF">
+<code data-page-node-id="cesh7PXT5Y97ELUQB2QP7W">240 − 96 = 144</code>　<span class="ans" data-page-node-id="7L0EE8YtPGceETjXGjX3Tu">答案 = 144 种</span></div>
+</div>
+
+<div class="card" data-page-node-id="ztdpr8e426tlx8sDkLnUJl">
+<h4 data-page-node-id="Hlnl8MKF1bIiA30B0snlfZ"><span class="no" data-page-node-id="MPWG4BkiJp5Gm87VbJvqFc">6</span>概率问题</h4>
+<div class="blk b-id" data-page-node-id="ZnEcwIZoukfBlglsCGUmcp"><b class="t" data-page-node-id="kJr2HfbCIXQihAmqqECsng">识别标志</b>"概率""可能性""随机抽取""至少……的机会"；摸球、抽签、掷骰子、比赛胜负、约会等待（几何概型）。</div>
+<div class="blk b-th" data-page-node-id="Lxkz1zjWWqxQuajXO3HLUP"><b class="t" data-page-node-id="5XSfVc8i23gNqD2R8em02r">思考路径</b>
+<ol data-page-node-id="KzwP04m4KnvesFyuqAJKOi">
+<li data-page-node-id="gUpE41rUvlkirUNhVHVvmm">判古典概型（有限等可能）还是几何概型（长度/面积/时间比）。</li>
+<li data-page-node-id="VrMcUDRMFITjtNOzarQu0M">古典概型：分子 = 满足条件数，分母 = 总情况数，<b data-page-node-id="99W8S7Ssa4MlVqWbuoRckP">分子分母必须用同一计数口径</b>（都用 C 或都用 A）。</li>
+<li data-page-node-id="hwAq6ac3LCqIWPOchfggi9">见"至少" → <b data-page-node-id="jAWwq12jATXVBvWHu5ALi1">1 − 对立事件</b>。</li>
+<li data-page-node-id="9nCf6zRQSXUwnP3Vlee9kD">见"第一次……第二次……" → 分步相乘；分清<b data-page-node-id="BdLsbIxdW9hUA2lsBNFbBY">放回</b>（总数不变）与<b data-page-node-id="BYF4sHlviPmHtQI2Vmbkoz">不放回</b>（总数递减）。</li>
+<li data-page-node-id="VkQJ7OBexghw8sT4EiPeHu">多次独立试验 → <code data-page-node-id="jBaY77ca8H9EzQZChQurfO">C(n,k)pᵏ(1−p)ⁿ⁻ᵏ</code>。</li>
+<li data-page-node-id="iss2L4aKg7WWKPEH30EWJI">几何概型 → 画区域图，求面积（或时间区间长度）比。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="W2lsvFGhGx4cvJAlnlPxTf"><b class="t" data-page-node-id="dYftvvLnBxOFXX5He2H4zr">判定标准 · 公式清单</b>
+<span class="chip" data-page-node-id="wGXGZgsBYPdQCCE8xHZRFc">P = 满足条件数 ÷ 总情况数</span>
+<span class="chip" data-page-node-id="it6q2dqzP3I5qw1cJz0sVz">P(Ā) = 1 − P(A)</span>
+<span class="chip" data-page-node-id="Z84T0UV12FVSYYTQo5uer0"><b data-page-node-id="an1BMkQ7ToRBeQ5afBSODH">"至少 1 个" = 1 − 全不是</b></span>
+<span class="chip" data-page-node-id="Cjrs7y5BuVxoJh1c1nnMuf">"至少 2 个" = 1 −（0 个 + 1 个）</span>
+<span class="chip" data-page-node-id="FRkqpGBASZEEbBZIEzYO4a">独立同时发生相乘；互斥至少一个相加</span>
+<span class="chip" data-page-node-id="Peajpo5ZsfN6d8OcU0Lt81">恰好 k 次：C(n,k)pᵏ(1−p)ⁿ⁻ᵏ</span>
+<span class="chip" data-page-node-id="KdqJLkhGH1s94eTiRxL2Fk">不放回抽 n 个：分母 = C(N,n)</span>
+<span class="chip" data-page-node-id="O8zMEDqnZZMjlSWMPHHOXl">几何概型：有利长度(面积) ÷ 总长度(面积)</span>
+</div>
+<div class="blk b-op" data-page-node-id="r0PESOLfB1f0KWNhAnMbMb"><b class="t" data-page-node-id="LX4BNZzDKI1DgtswiDGLXl">选项处理</b>先排 &gt;1 或 &lt;0 的选项（必错）。"至少一个"答案通常较大（&gt;0.5），若算出很小，检查是否算成了"恰好"。选项成对出现（1/3 与 2/3、1/7 与 6/7）→ 答案多在其中，值得认真判断。</div>
+<div class="blk b-tr" data-page-node-id="p8Ny89vqNDFseG18baFCBB"><b class="t" data-page-node-id="yB8ZoTWFVGialbUn0ABvrN">高频陷阱</b>
+<ul data-page-node-id="Hi0YmF4DkVxRVmKP0lz8zQ">
+<li data-page-node-id="CHtm8HDaCssk8FOUKmzHze"><b data-page-node-id="wfsAdzT1gzZ9EyAqiE37aC">放回与不放回混淆</b>。</li>
+<li data-page-node-id="js3AgrksuRPLUNdMHIJkOK"><b data-page-node-id="dBWU9WElryvKY4RHnOgv7X">分子分母计数口径不一致</b>（分子组合、分母排列）。</li>
+<li data-page-node-id="6IOinWDupuhkCp1fpCo6WT"><b data-page-node-id="ebBAXwiS37nYXrgfckpKtZ">"至少"没用补集</b>，正面算漏。</li>
+<li data-page-node-id="3O99PpQE41fNlvQ9bryYs7"><b data-page-node-id="2KrgSRUB6YTjgl1Pn21AT1">把"恰好"当成"至少"</b>。</li>
+<li data-page-node-id="QUrDM9GJXCWGTr1RXF3802"><b data-page-node-id="9ZETPexyg6OtdMZFPUEKKP">几何概型把面积比算成边长比</b>。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="9FwLvnO2O0ssMG3vd2iCup"><b class="t" data-page-node-id="Hqh1s3At6cvsRY3PTNw2m4">示例演示</b>
+<div class="q" data-page-node-id="JfEW2lvPJ0KedWVFQAfpX5">袋中有 4 红、3 白、2 黑共 9 球。任取 3 个，恰好三种颜色各 1 个的概率？</div>
+总情况数 <code data-page-node-id="5FTRg6AWvMqT8U1tirVwah">C(9,3) = 84</code>；满足条件数 <code data-page-node-id="T1LVkgv7HlxuCErJETCDpm">C(4,1)×C(3,1)×C(2,1) = 24</code><br data-page-node-id="XG7p6uGzfpoqXItnAelruc">
+<code data-page-node-id="tn6Si9DwjmKGxdo3c9BhQ4">P = 24/84 = 2/7</code>　<span class="ans" data-page-node-id="Dljg26GHIqbT24RivSK1qF">答案 = 2/7</span></div>
+</div>
+
+<div class="card" data-page-node-id="vmskCyzT4HmuZ38t3qlMAS">
+<h4 data-page-node-id="51NODaWNxDjDBGzfZl4SsV"><span class="no" data-page-node-id="5BWBunanH5GekmFD2VNGTR">7</span>容斥问题</h4>
+<div class="blk b-id" data-page-node-id="GH8iuJJRvwmrBiUyycGYiP"><b class="t" data-page-node-id="R2DYdVnhFgWyAGEmJf4uCs">识别标志</b>"既……又……""至少满足一项""都不""只满足一个""恰好满足两项""至少两项"；常见的"会开车/会游泳/会外语"调查类题目。</div>
+<div class="blk b-th" data-page-node-id="3tS4s2rJFzBg3Hp7uGpCL4"><b class="t" data-page-node-id="xwSW46xgWtaS2Zw2R1EmAm">思考路径</b>
+<ol data-page-node-id="6u9TIeH4NHE9Mf06tSsniC">
+<li data-page-node-id="9hUUJYSD4Tsz2QFecvm1NZ">判两集合还是三集合。</li>
+<li data-page-node-id="RyFFwFqFVCSbhBOTVa2q3O"><b data-page-node-id="OipLctjja24zEi9KCBWnRJ">判公式类型（关键）</b>：题干给出"同时参加 A 和 B"（含 C 的）→ <b data-page-node-id="kvEqA72FR5xVlmCAbHkQqp">标准型</b>；给出"只满足两项""满足三项"→ <b data-page-node-id="juepfQIvCMEBy3cDLsz3Hk">非标准型</b>。</li>
+<li data-page-node-id="3XACx6B0necErnSFPHuEeM">画文氏图，<b data-page-node-id="oijJNII4lndqEVQgG3LE4M">从最里层（三项交集）往外标注</b>。</li>
+<li data-page-node-id="LPC9rh5E2Zuf3GleLtzwie">套公式求未知量；最后若有"都不"，用"总 − 至少一项"求。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="Pxuqp0HRkukYr4oER5JKwt"><b class="t" data-page-node-id="DdOa23hBaWsqYM2fACttFI">判定标准 · 公式清单</b>
+<table data-page-node-id="qVh3sf7RsFJhCJzR7ph6mQ">
+<tr data-page-node-id="NDZm4snBAd3rNri2CqbQB1"><th data-page-node-id="GKwod94ysDeoaPgelmv3vY">公式</th><th data-page-node-id="80LDzffVf9IF2DuSAHT8KM">说明</th></tr>
+<tr data-page-node-id="87gR3Hb6J1G19CeRHeoGBK"><td data-page-node-id="uWl9pQ63fJFCbDzqsmlyWh">A + B − AB = 总 − 都不</td><td data-page-node-id="rz7ccSxwrFxFCYgx5qNouA">两集合</td></tr>
+<tr data-page-node-id="F8jhS642QCfb3W2hOadwAR"><td data-page-node-id="Ux2X08jPHWWkOsZkAOhiyT">AB = A + B −（总 − 都不）；都不 = 总 − A − B + AB</td><td data-page-node-id="T9kMV5iITGRF9EuxDT5M0g">求交集 / 求都不</td></tr>
+<tr data-page-node-id="HGF4k3AxRKFFsJmlwghubY"><td data-page-node-id="JhV0gQIGfDaGx4IonkVhak"><b data-page-node-id="MwoYCYVAiupgyq9aa7Gbdu">三集合标准型</b>：A+B+C − AB − AC − BC + ABC = 总 − 都不</td><td data-page-node-id="1kCldDBBawmc2ZkSxmm7jk">口诀"<b data-page-node-id="AUgfjBTaWlJHzVxZILKVin">加三减二加一</b>"</td></tr>
+<tr data-page-node-id="YXbm8Tcx4oWVIjQ69CERGR"><td data-page-node-id="5iqww52xCUQ0zrhE10LtUu"><b data-page-node-id="PAvWWrkYH9ac7QvvV9aWaf">三集合非标准型</b>：A+B+C − <b data-page-node-id="1SSwz91iNlgy7H164Q2IH1">只满足两项</b> − <b data-page-node-id="iPLfCij8v7RtdqAHvwoGxF">2×满足三项</b> = 总 − 都不</td><td data-page-node-id="YoUFKpproRfl8HFyEieiBI">注意是减 2 倍</td></tr>
+<tr data-page-node-id="LZ4dEokGwbjIQFhz6aBdcW"><td data-page-node-id="df8H0hBikgiZTHJFzRXPLm">满足至少一项 = 总 − 都不</td><td data-page-node-id="7CG3x7ZZTvtbha2rkkJSsB">—</td></tr>
+<tr data-page-node-id="YSxOFhaGAEdAjhiE7UAYUu"><td data-page-node-id="CnKsusOEVuFJ6fo9YO1LyN"><b data-page-node-id="TWK5ptB8SOvLlURLo2DgZZ">至少两项 = 只两项 + 三项</b>（≠ 只两项）</td><td data-page-node-id="MMdmsa0JN9xSLcbVejOZmT">高频陷阱</td></tr>
+<tr data-page-node-id="gHmTQaGFT8H6mriAKOGrT1"><td data-page-node-id="QGgwH12y4qST3wztPn5J0W">三项都满足的最小值 = max(0, A+B+C − 2(总−都不))</td><td data-page-node-id="DGTdYXYX54WEuQ6Tr9LdYf">求"至少"</td></tr>
+<tr data-page-node-id="YdFhDEn2zpiX7m82AwPH1o"><td data-page-node-id="bRIzncGIZlP8GHNfokzQCT">三项都满足的最大值 ≤ min(A,B,C)</td><td data-page-node-id="FnoZ47BxEHA7XUoZZPxBJG">求"至多"</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="FwswgtZG5jBGaeOaeMsX4A"><b class="t" data-page-node-id="nQKBqdbKUrYNAmYyrkVjRs">选项处理</b>上界排除：交集不可能大于任一单集合（AB ≤ min(A,B)）。下界排除：AB ≥ A + B − 总。人数/次数必为整数，算出小数说明公式用错。极值题把选项代入"能否构造出其余区域非负"验证。</div>
+<div class="blk b-tr" data-page-node-id="IO4WTcvpWGsHDSYvPZAQHu"><b class="t" data-page-node-id="HIaUAUq8sIc4L9FzenoUc8">高频陷阱</b>
+<ul data-page-node-id="1eanrVeco251CDpKHZ5qzS">
+<li data-page-node-id="ai3lCcuZD3TbWgAIEfsXVH"><b data-page-node-id="s5t0UzSvVCgfUFC74BHBey">"只 A" 与 "A" 混淆</b>（A 包含只 A、AB、AC、ABC）。</li>
+<li data-page-node-id="XXSkVP7Tb9FR5UyQ3CBp1B"><b data-page-node-id="UjaW2auIyFrpVugZoKY8to">"至少两项" = 只两项 + 三项</b>，不是只两项。</li>
+<li data-page-node-id="7X2qicXIjJnDy26ZrPqPAD"><b data-page-node-id="iEcIOnqEIYFHn70YRTwIE2">标准型"加 ABC"与非标准型"减 2×ABC"混用</b>。</li>
+<li data-page-node-id="pkD2avtAP0bey92pvC9hjN">问"都不"忘记最后用总数减。</li>
+<li data-page-node-id="iVQcQ7DWiy0sJeYE4rHP2A">题干中"同时参加 AB"是否含 C（一般含，除非写"只"）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="BCBnveTbLLkAtjmPXVgfi5"><b class="t" data-page-node-id="qIBsye8r7eBm4LEWAlkiaS">示例演示</b>
+<div class="q" data-page-node-id="HjwGIHwb5s7Up3kTUD3Jqh">某单位 100 人，会开车 60、会游泳 50、会烹饪 40；同时会开车游泳 30、开车烹饪 25、游泳烹饪 20；三种都会 10。问三种都不会的有多少人？</div>
+至少会一项 = <code data-page-node-id="UqX7AZgX4hnbkkLcRyitE4">60+50+40 − 30−25−20 + 10 = 85</code>　→ 都不会 = <code data-page-node-id="CPw4rqrltEJg7MS2ov7PBQ">100 − 85 = 15</code>　<span class="ans" data-page-node-id="PXEBewYBSxrYYL09Fl2dhD">答案 = 15 人</span></div>
+</div>
+
+<div class="card" data-page-node-id="6JXaFGrEzhoN0Tb0cnaTH8">
+<h4 data-page-node-id="pYxWIt3IdPIXZZPmj953wM"><span class="no" data-page-node-id="qDUIFUhTTkvcypHvxONSPg">8</span>最值问题（最不利原则 · 构造数列 · 均值不等式）</h4>
+<div class="blk b-id" data-page-node-id="wSBLqOLhbKiAap9heq135R"><b class="t" data-page-node-id="Kz0hw0G8FGKy2LwOIM7ki3">识别标志</b>"至少……才能保证""最多/最少""至多""最大/最小""保证""一定"；或"总和固定，第 k 名最多/最少"；或"面积最大/用料最省"。</div>
+<div class="blk b-th" data-page-node-id="jAuCfAOZ37lOmZE3CHIemO"><b class="t" data-page-node-id="zp3Vvl559zm29mk68uqHEA">思考路径</b>
+<ol data-page-node-id="Ffa8fn3D2tsnQH4ZogPGLP">
+<li data-page-node-id="VLzggbbY3HI5A3m2BXxvV0">见 <b data-page-node-id="MZpANttU3uAu5On9ZoojNo">"保证""一定"</b> → 最不利原则（抽屉原理）。</li>
+<li data-page-node-id="T8Kc4K02CsBeFxFu0LSe1z">见 <b data-page-node-id="AU1Ixn0tvEW5IZP6JYnJYR">"总和固定 + 某个量最大/最小"</b> → 构造数列：求"第 k 名<b data-page-node-id="r8NR3gxkQBBWgrPB59iP7o">最多</b>"→ 让其他人尽可能<b data-page-node-id="7xibvXmnRDHbjNjPGagzfi">小</b>；求"第 k 名<b data-page-node-id="IfUnGsYx4n8k1c7D9tVgRj">最少</b>"→ 让其他人尽可能<b data-page-node-id="6euYAZVC3TfqsXmUEVOchO">大</b>。</li>
+<li data-page-node-id="kIhJB7d0PTzCRENVouBRVP">见 <b data-page-node-id="NHFvRVC1o8zrBPkiYdJXUC">"面积最大/周长最小/用料最省"</b> → 均值不等式或二次函数顶点。</li>
+<li data-page-node-id="LaDYKWqfe9aKuGEUmSQhcN">全程注意<b data-page-node-id="zu7D4D8xChun0GXd36fW4m">整数约束</b>：至少→向上取整，至多→向下取整。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="Ll1bpuiwu8MtcQ782ivcsC"><b class="t" data-page-node-id="MKyvOmAXiCX6Z6PuCKUrLd">判定标准 · 公式清单</b>
+<table data-page-node-id="2SOsYhCTRA5JZAngwGKoLT">
+<tr data-page-node-id="r96zZri7dWz8UT5Ys2upUC"><th data-page-node-id="u85BpTFucfttyHiCBb4vml">公式 / 结论</th><th data-page-node-id="oFalBMnwsEdDbjofx1uHIM">说明</th></tr>
+<tr data-page-node-id="75xlOTNF9IPdvainxPl4bc"><td data-page-node-id="7apU6LBKsDjqYN6WtycgxT"><b data-page-node-id="FJQljTaUKiLUcXMhUJPHCH">最不利：最少次数 = 最不利情况 + 1</b></td><td data-page-node-id="dH3WNsDMM0AI4E5UXi5mBG">保证型核心</td></tr>
+<tr data-page-node-id="uqedW3aQZOg4duTHH9J4Vm"><td data-page-node-id="8EZRvGmEBY19iErTX0kNnd">n 种物品，保证取到 k 个同种 → n(k−1) + 1</td><td data-page-node-id="F0yg6iLIVfzOWAIBeeXRXr">抽屉原理</td></tr>
+<tr data-page-node-id="34nkI4ZLhwIRU424BnNPAA"><td data-page-node-id="k3n2aFfybsZAUdUCC4runB"><b data-page-node-id="6T4bgNT72Z7ZlM0EsAJfgF">某类总数不足 k 时，该类全部取完</b>（不能取 k−1）</td><td data-page-node-id="78xvQVXLoVJgBBx6ux7SL6">高频变体</td></tr>
+<tr data-page-node-id="rkqSxxQcjhDolkwmXOOSmj"><td data-page-node-id="o1RiNZ9WfPq0dSzhrA5BLU">m 个物品放 n 个抽屉，至少一抽屉有 ⌈m/n⌉ 个</td><td data-page-node-id="lHnJZmL5VXjkQozvCzpRwp">抽屉原理</td></tr>
+<tr data-page-node-id="lDuUEHqQcm5zN5rJxWSDIi"><td data-page-node-id="mu5TWNfY6YLB1lIVyxgdvF"><b data-page-node-id="mvweUB8HwIJZU06VRGh4nS">和定最值</b>：设第一 x，其余最多 x−1 → x + (n−1)(x−1) ≥ S</td><td data-page-node-id="yhE0HNIY2b40TDF1kz56UZ">向上取整</td></tr>
+<tr data-page-node-id="ruYS3WD4Dy9JELp3eMWaQJ"><td data-page-node-id="ahiFhTTTQ0JpaWci5BOc1R">均值不等式：a + b ≥ 2√(ab)，等号在 a = b 时取到</td><td data-page-node-id="hrji9OR8ghNQqMluonfER6">和定积最大、积定和最小</td></tr>
+<tr data-page-node-id="ZPMG0ThGAp8UTsiYChY54J"><td data-page-node-id="iSGf9bxtHMpB5w5LdZC3hs">周长固定的矩形中，正方形面积最大</td><td data-page-node-id="uSYhJXblxyFsZsTAVEBiqT">—</td></tr>
+<tr data-page-node-id="KJECQGIQb9F8hCpbHweHHi"><td data-page-node-id="vdn6n1PmGp2IISyd9IsFf9">二次函数顶点 x = −b/2a，取整数需比较两侧整数点</td><td data-page-node-id="Utty4PbOXEOHJJICzBh6q4">—</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="E2oIkOPJWsPnaALoif9gOt"><b class="t" data-page-node-id="54rJz7vLCxX5qnBbMF14aO">选项处理</b>问"至少……保证"→ 答案偏大，先排除最小项。构造数列题用代入法最稳：问"第一名至少多少"→ 从<b data-page-node-id="7HtQhb9zoIliG5lGJFpyrn">最小</b>选项开始代，验证其余能否构造出来。下界排除：第一名至少 ≥ ⌈总分 ÷ 人数⌉。极值题选项常成对（20 与 21），差 1 就是取整方向问题。</div>
+<div class="blk b-tr" data-page-node-id="2nU4twKNWACaPm1NsYlPHw"><b class="t" data-page-node-id="DLJj0WwiePcbSF4JDhdIGK">高频陷阱</b>
+<ul data-page-node-id="MIHB6EgSkuVXV8NaoQ1jug">
+<li data-page-node-id="ZVD66eGmcsei5jfp898CEf"><b data-page-node-id="EV6nhNL9SCsXl1wD3wpt1e">"保证"与"可能"混淆</b>（保证 = 最不利；可能 = 最好情况）。</li>
+<li data-page-node-id="zhcRGLm1k7wNSGG6yZ4GAh"><b data-page-node-id="FJi83bLTsHJIAB2v3wYExM">取整方向反了</b>：至少→向上取整，至多→向下取整。</li>
+<li data-page-node-id="OZavRHeqpVCF2WTgTTxDKq">构造数列忽略"互不相同""必须是整数"。</li>
+<li data-page-node-id="J0vTISC7ZZ0baVFYRgfdir"><b data-page-node-id="EfYdeKVOZrgtdGF6MKTzT2">最不利只想到一种"差一步"</b>，遗漏其他情况。</li>
+<li data-page-node-id="aG7G4qqNI9rxvWXbl5KDea">均值不等式忽略取等条件是否可达。</li>
+<li data-page-node-id="qLfuim0WW8vIDa4x23dyhz">问"第 k 名"还是"前 k 名总和"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="hQdSOb94CToa7s3mFBtThC"><b class="t" data-page-node-id="GpjqCjLnWkcmpsXXJAY5XS">示例演示</b>
+<div class="q" data-page-node-id="AZSIdyUmCSWLQuWNrFkf5n">袋中有红球 8、黄球 7、蓝球 5、绿球 4。一次至少摸出多少个，才能保证有 6 个球同色？</div>
+最不利构造：红取 5、黄取 5、蓝取 5、<b data-page-node-id="Te96y3A2Q7gfMJuMq6HXxj">绿只有 4 个全部取完</b>（不足 6，取不到 5）<br data-page-node-id="tuzyB8UMUpAqdwCxGA16BS">
+最不利总数 = <code data-page-node-id="gxiU5V84vShHjVPrBrn27T">5+5+5+4 = 19</code> → <code data-page-node-id="N4Pvh9FuBxhKNAQ0oYLsO9">19 + 1 = 20</code>　<span class="ans" data-page-node-id="viAUviE4DCIPBpboASQuFY">答案 = 20 个</span><br data-page-node-id="VGME014fsUriy7mEzL3cw5">
+<div class="warn" data-page-node-id="ACalbrD69R20GfvWXES0fC">若误按"4 种颜色 × 5 + 1 = 21"就掉进了"绿球不足 6"的陷阱。</div></div>
+</div>
+
+<div class="card" data-page-node-id="xLElQ59OZgCXdTiCSfPAWD">
+<h4 data-page-node-id="MFCnaEU5o0GRBvSJnEj5sn"><span class="no" data-page-node-id="nrgEsgsBGP6942W5T3hNoz">9</span>年龄问题</h4>
+<div class="blk b-id" data-page-node-id="71PgoZO9ZCWHzh3bBficVk"><b class="t" data-page-node-id="LA1QwWfZmOO26Hc1h7F1Lb">识别标志</b>"今年/几年前/几年后""是……的几倍""比……大几岁"；涉及生肖、属相、本命年（周期 12）。</div>
+<div class="blk b-th" data-page-node-id="6zdd8zkOvEaXaU0ySy2E3P"><b class="t" data-page-node-id="KMSSGJhFGataiEQlAdMvQb">思考路径</b>
+<ol data-page-node-id="FVe1ESiFhttttMxQDLLdhk">
+<li data-page-node-id="BzYZY1EfSbCXODs6yMDw9d"><b data-page-node-id="HRWAAyNWqi36tCCQsivRrY">首选"年龄差不变"</b>（最快，多数题 30 秒出答案）。</li>
+<li data-page-node-id="7FWBaUEm88xPHYDWHyC67T">若"n 年后 A 是 B 的 m 倍" → 那时 B 的年龄 = 年龄差 ÷(m−1)，A = m × B，再倒推回今年。</li>
+<li data-page-node-id="6a790VJjK2zqu1CLiiWVNH">三人以上、多个时点 → 列表法或方程法。</li>
+<li data-page-node-id="Yao6LaHpEGpdAuyIwmoq42"><b data-page-node-id="XbNzZaGzcaOU2Mkg9LDoW9">选项简单时直接代入排除</b>（比列方程快）。</li>
+<li data-page-node-id="IlFIDslx6xNH76J6KkrsQs">画时间轴：过去减、未来加；<b data-page-node-id="YCioBSvQinwyXH3RzEuzfz">n 年前某人可能尚未出生</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="AhysSX9YQpxR6uyniObQRm"><b class="t" data-page-node-id="5EAovhIQaQPZTpvoE2m2Dy">判定标准 · 公式清单</b>
+<span class="chip" data-page-node-id="C1ceiMSVLYwgxl1GqfYH0f"><b data-page-node-id="cf6fkY1Oqep1tMkHIpaP9E">年龄差恒定</b>（最核心）</span>
+<span class="chip" data-page-node-id="NU8NINFZu7YGNAOi3VjzKw">m 倍时刻：小的 = 年龄差 ÷(m−1)，大的 = m × 小的</span>
+<span class="chip" data-page-node-id="o4QlhLWx7n1jlZgJx68OiZ"><b data-page-node-id="GtEqhxDFbZPcoRvAIN9iZV">"A 是 B 的 n 倍" → A = nB；"A 比 B 多 n 倍" → A = (n+1)B</b></span>
+<span class="chip" data-page-node-id="EV6JjNyOuqOH4XS0CcCxBX">三人：n 年后三人年龄和增加 3n</span>
+<span class="chip" data-page-node-id="DMWOPiN0v1B7SrOa0vQNfS">生肖 12 年一轮，同属相年龄差是 12 的倍数</span>
+</div>
+<div class="blk b-op" data-page-node-id="2pRduoKPogSNBLaBKXCpSA"><b class="t" data-page-node-id="kBjlcYqruc6CkAU4QsqFPA">选项处理</b>代入法：把选项当作"几年后"或"今年年龄"代入，看倍数关系成不成立。差值校验：任意两个年龄之差必须等于题干给的年龄差。合理性排除：年龄应在 0—100 之间，算出负数说明时点设反了。</div>
+<div class="blk b-tr" data-page-node-id="uDnGrqal6HxNskvYq2Qozo"><b class="t" data-page-node-id="su8quGxovKS44NuDTVEXOO">高频陷阱</b>
+<ul data-page-node-id="2kdQHZ2XRsZKuQoKIVF6nG">
+<li data-page-node-id="BwCo80gzV5Ik4A7OFUHyAO"><b data-page-node-id="UfQiNJZoLxELfFSE4HTmtH">"是 n 倍"与"多 n 倍"</b>（多 n 倍 = 是 n+1 倍）。</li>
+<li data-page-node-id="n19LHvG4huVzuxNS3s4aX5"><b data-page-node-id="v88CPJ4aotOH0iXjtNTrCK">"几年前"用减、"几年后"用加，方向搞反</b>。</li>
+<li data-page-node-id="MeKe3Oh6EryLOLnhDhyR1L"><b data-page-node-id="rDqG2eeA98obOpUpIRqsCc">三人问题年龄和</b>：n 年后总长增加 3n，不是 n。</li>
+<li data-page-node-id="HKvDU5etUoGiESbF4rLw6l">忽略"n 年前某人未出生"（年龄不能为负）。</li>
+<li data-page-node-id="SVaFWpwWYyaduuRe5OIg4O">问"今年"还是"n 年后"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="GcBnbV3NqQBXMVZXhgLV7S"><b class="t" data-page-node-id="Fw61Yj84L3VhzjHnOxMF45">示例演示</b>
+<div class="q" data-page-node-id="OhVj7pe6xMkVuUQX5BsEGj">父亲比儿子大 28 岁，4 年后父亲的年龄是儿子的 3 倍。问儿子今年多少岁？</div>
+年龄差 28 恒定。4 年后：父亲 = 3×儿子 → 差 = 2×儿子 = 28 → 那时儿子 14 岁<br data-page-node-id="FGn3agwvm9ClobJ2O6HOim">
+今年儿子 = <code data-page-node-id="ykM64PanM6hm3DeyPq1xHJ">14 − 4 = 10</code> 岁（父亲 38 岁）。验算：4 年后 42 与 14，42 = 3×14 ✓　<span class="ans" data-page-node-id="DATfmZVEHaOdaTmntnALhT">答案 = 10 岁</span></div>
+</div>
+
+<div class="card" data-page-node-id="FBRkSvAERi5wPFxxUFbsNp">
+<h4 data-page-node-id="aLfhvKJmKhusE2hBTGytLD"><span class="no" data-page-node-id="by11uhZGA4qcwfCbOvwZDi">10</span>浓度问题</h4>
+<div class="blk b-id" data-page-node-id="IZu8N5eC2HkbBguTctZvng"><b class="t" data-page-node-id="aCk8q7QwQR02x84TIR9cIz">识别标志</b>浓度、盐水/酒精/糖水、"加水稀释""蒸发""混合""倒出再加满""反复操作"。</div>
+<div class="blk b-th" data-page-node-id="ggq7Af454u9EMZXjnnXlBs"><b class="t" data-page-node-id="KvfOl4DoFZAbYPMK6lLkKA">思考路径</b>
+<ol data-page-node-id="bIVUXrBIJnJfzdwGYYX6fS">
+<li data-page-node-id="Gwukt9AkjC8DSGoaTKV0MF">抓<b data-page-node-id="IyKJVx8ulnkSRJoS4m2Ld9">溶质守恒</b>：加水/蒸发时溶质不变 → 原溶液×原浓度 = 新溶液×新浓度。</li>
+<li data-page-node-id="JgqzShBIPCirDBsrvuHvbr">混合：<code data-page-node-id="N0KYOmGczpi8iYMEXoeptr">C混 = 总溶质 ÷ 总溶液</code>。</li>
+<li data-page-node-id="G4UltSgNUMKp789ReQpUBo"><b data-page-node-id="2KrfVBr7KIcFhS7bjVaPx8">两溶液混合求配比 → 十字交叉法</b>。</li>
+<li data-page-node-id="g1ZymEt1WftRJhFMkMscvQ"><b data-page-node-id="GLn7sEWbCVHai4FAMOMG0y">反复倒出再加满</b> → 每次浓度 ×(V−a)/V，n 次后 × [(V−a)/V]ⁿ。</li>
+<li data-page-node-id="KdKeayTYInQokU1huTRuCV">加纯溶质/纯水 → 视作浓度 100%/0% 的溶液，仍可用十字交叉。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="KjEKriKsIrwdOHRpe8N8AH"><b class="t" data-page-node-id="coBrlGNeSeBvmZOVOINaWJ">判定标准 · 公式清单</b>
+<table data-page-node-id="PFWSAFOF18nPrDvoi2OnED">
+<tr data-page-node-id="YvT5K5Mp9UgYJHCvU7tErv"><th data-page-node-id="V1BVoRa9bHMYwtwMoYhLRE">公式 / 结论</th><th data-page-node-id="mSbt0ehZpaJg5BhkBSO2st">说明</th></tr>
+<tr data-page-node-id="jXVtcLk4A3A5QGrqlTgxaf"><td data-page-node-id="C2ecDuW2EfYVFVKztWsOlB">浓度 = 溶质 ÷ 溶液 ×100%；溶液 = 溶质 + 溶剂</td><td data-page-node-id="gBZHztIUpoqFBDHnVUIA2c">定义</td></tr>
+<tr data-page-node-id="VuVGiMdCJjZUKW3OV7wTVB"><td data-page-node-id="rYQQNrSfAW5kC2BArpH5xN">加水/蒸发：溶质不变</td><td data-page-node-id="159ozRlLDJOYUCuKgkva7g">守恒核心</td></tr>
+<tr data-page-node-id="KPYra6gRuOuiN6HcWh6Fi1"><td data-page-node-id="jxVN2NhyGJBGonSj3VQF4C">C混 =（m₁C₁ + m₂C₂）÷（m₁ + m₂）</td><td data-page-node-id="lPnkbJcqmBUF8q2ZlgLHY0">混合</td></tr>
+<tr data-page-node-id="ipprRGQdltN7r5pAseuUS4"><td data-page-node-id="g5wImP5KTbscBfYITIsaeH"><b data-page-node-id="RCx2h2mrf1ZRURYYJA2qhu">十字交叉</b>：高浓度份数 : 低浓度份数 =（C混 − C低）:（C高 − C混）</td><td data-page-node-id="DDevTaxXHFMINvXr4CF2Vd">交叉相减，横看比例</td></tr>
+<tr data-page-node-id="E6Eyjv3fxDNsK9MDtu8IuD"><td data-page-node-id="zK7cWoNasapbn73WaQFvde"><b data-page-node-id="AUfyEGUOywG4SRDPq7FYfE">反复倒出 a 再加满水，n 次后浓度 = 原浓度 × [(V−a)/V]ⁿ</b></td><td data-page-node-id="aEyPEZc4vhcH5xfxclHJSE">秒杀公式</td></tr>
+<tr data-page-node-id="2JFaKwUZ6dkWZ0G2rDLJZk"><td data-page-node-id="72AZuSpuUJjQnNJjhBnYyz">混合浓度必介于两原浓度之间</td><td data-page-node-id="DKu9wtHVZcHbiCQqdRAsOh">校验用</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="K20IuU2lgqDYGilE6E7wtW"><b class="t" data-page-node-id="dsrEIi96gcASaxU2g6IJ2w">选项处理</b>区间排除：混合浓度必在两原浓度之间。反复操作题答案常是"原浓度 × 整齐分数的幂"，选项中找等比衰减的一组（如 48% → 36% → 27%，每次 ×3/4）。验算用"溶质 = 溶液 × 浓度"回代。</div>
+<div class="blk b-tr" data-page-node-id="zUtyEvahkrFu4eQFJELylx"><b class="t" data-page-node-id="TzJRsveWOArbf5pgVU8k9a">高频陷阱</b>
+<ul data-page-node-id="bJ7NySm3lfR4yBmkkjaGAn">
+<li data-page-node-id="GftBDJGP96MkZmc61HXYJz"><b data-page-node-id="vwkIQdvnWUHrRhL56aysi1">"倒出再加满水" 与 "倒出后不加水"</b> 完全不同。</li>
+<li data-page-node-id="W5FRh9CdiH8ZWOvbCZoSQT"><b data-page-node-id="Nmpx3YP3hT4Rr3KQgpx9jZ">加溶质时溶液质量也增加</b>。</li>
+<li data-page-node-id="SaJOpfiU8yc3Kfl2mPFg8H">十字交叉得到的是<b data-page-node-id="DmNXyE3QXAFC7HKBv8wmjz">质量比</b>，给体积需换算。</li>
+<li data-page-node-id="pFrd1e38uDDSYwSt1EkrOz">白酒度数是<b data-page-node-id="bJ7vE9qcnzwqGihzeakkPY">体积分数</b>。</li>
+<li data-page-node-id="VYzhiXSuKR0pdgy5kAGr85">蒸发量：先由"溶质 ÷ 新浓度"得新溶液，差值才是蒸发的水。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="eUn0WxgFL1gNVGijwBxYje"><b class="t" data-page-node-id="cD4OVTVeHXWFI2a9glWhZx">示例演示</b>
+<div class="q" data-page-node-id="mo4H6QPnpGkvVJAJW8KMwh">500 g 浓度 20% 的盐水。先倒出 100 g，加满水；再倒出 100 g，加满水。求最终浓度。</div>
+每次"倒出 100 g 再加满水"，浓度变为原来的 <code data-page-node-id="rfamBldEpBkyxnN1TpC53S">(500−100)/500 = 0.8</code><br data-page-node-id="RgBeS6bQmLGUQqIYnX3pZ4">
+操作两次：<code data-page-node-id="Qj40wCE8NaJzAuW8LkF1WW">20% × 0.8² = 20% × 0.64 = 12.8%</code>　<span class="ans" data-page-node-id="HrR4YaBiltF0CEK9g8vzug">答案 = 12.8%</span></div>
+</div>
+
+<div class="card" data-page-node-id="wsrGcuxSUB2gYHe1lWRVEs">
+<h4 data-page-node-id="3CXOXtP2sBDrriLo5QVnGQ"><span class="no" data-page-node-id="hdESVGOJ7SdVYBDVWAPZCv">11</span>几何问题</h4>
+<div class="blk b-id" data-page-node-id="FU9NKxVu9YXiTrUC2CsHxZ"><b class="t" data-page-node-id="BQb9CwFacri054C3Xd0R3N">识别标志</b>长度、角度、周长、面积、表面积、体积；图形折叠与展开、"蚂蚁爬行最短路径"、相似、内切外接、在图形上种树/铺砖/刷漆。</div>
+<div class="blk b-th" data-page-node-id="WJjRKvSnzrkIIzGH8E0BYF"><b class="t" data-page-node-id="gc0kxioSeGqbiAFhxDFiBs">思考路径</b>
+<ol data-page-node-id="yZnJSfuteWlZ1GCsOQ7MtD">
+<li data-page-node-id="5x7x5PdDyrGJBSaGze80h8"><b data-page-node-id="pMobJgaS5hJ5HUethNFfd8">无图必画草图</b>，标出全部已知量。</li>
+<li data-page-node-id="cEuYISi7aokWOe7X5Tx1UV">找等量关系：等底等高、等体积、相似、勾股。</li>
+<li data-page-node-id="OZy8FviTIQp2tSAkan4LCl">缺条件 → 找隐藏条件：直径所对圆周角 90°、正方形对角线 = √2×边长、正三角形高 = √3/2×边长。</li>
+<li data-page-node-id="WDvnhZrNLcE50zBlndpacG"><b data-page-node-id="htAy3urEDjq930BB4i5ui2">最短路径</b>：展开成平面 → 两点之间直线最短（要比较<b data-page-node-id="9XJbV5K3BOdhg6engGfyjE">多种展开方式</b>取最小）。</li>
+<li data-page-node-id="JgBDicgW2dG924jQ2liZRg">不规则图形 → 割补法。相似：边长比 k → 面积比 k² → 体积比 k³。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="tsDcD0UJi8hI4vfPPFpzBR"><b class="t" data-page-node-id="F43dF3v76dPmtWNy4NFHFK">判定标准 · 公式与常用结论</b>
+<table data-page-node-id="n23pOrGaWpplBAT4xVNGLn">
+<tr data-page-node-id="uxhF83jVvx55OgVBpxfPwz"><th data-page-node-id="djJTEx3mCqZm97vAbFN0dl">图形</th><th data-page-node-id="Da0aEN4hqi1K8N3Jo58Ecj">周长 / 表面积</th><th data-page-node-id="bsHMRkAAJQJMbDrAL11RxA">面积 / 体积</th></tr>
+<tr data-page-node-id="C08flAZlOV8N4h0CRpEIR3"><td data-page-node-id="S3FpBJsEH0CMgGLDgD5i1I">正方形</td><td data-page-node-id="DF2IDNnbj02UW2SPdnJHqI">4a</td><td data-page-node-id="KryH4hVHfJdM1Hf2TFBNFq">a²</td></tr>
+<tr data-page-node-id="kcQDBjExmtfNzZ0UFWXgEn"><td data-page-node-id="eCQgJTAyYjG9vtRhs0UW9C">长方形</td><td data-page-node-id="3o6lCQp4H4zTo5Gznv48Bk">2(a+b)</td><td data-page-node-id="ZLwfPY80pTTLRaaa6IbdDy">ab</td></tr>
+<tr data-page-node-id="zN3oWTYEAsnl3evFKZAXwz"><td data-page-node-id="AbjUfBzo7AMbsZx66YHReC">三角形</td><td data-page-node-id="tGGbFcI2c6cQsNwXdC8lXm">a+b+c</td><td data-page-node-id="q6P2h9heosLRVRXjWMAD9u">底×高/2</td></tr>
+<tr data-page-node-id="1mx78WfUQFHRn4sY7glAX3"><td data-page-node-id="sfkg0ItugxnAnFRAhvIqGa">梯形</td><td data-page-node-id="JKDmstaeRLFJgjqhqtk1dW">四边和</td><td data-page-node-id="uJ5P48AyYrAaRmdQ3BmJ04">(上底+下底)×高/2</td></tr>
+<tr data-page-node-id="uAnNgpGPfYtCIp3IKT6DQD"><td data-page-node-id="uckBxvSsOgw3OVWuDHPIvj">圆</td><td data-page-node-id="NJ1jFPph1AERaac6LBTnEh">2πr</td><td data-page-node-id="WLkxtf8bvTHn7qh8gOFUM1">πr²</td></tr>
+<tr data-page-node-id="3WtfJSkQHlAVFeDJ4DZsBR"><td data-page-node-id="J8xNKvBknNV63kRki2ZgGs">扇形</td><td data-page-node-id="8Fm9BTM9GSd4bgHTmS1HAB">2r + 弧长</td><td data-page-node-id="msZxckEEYZjRtBIM79DA4I">nπr²/360 = ½×弧长×r</td></tr>
+<tr data-page-node-id="xqijklzKpJAAz1LjRLeojq"><td data-page-node-id="bA9q0IUhoBkEHzFxuN5RxV">正方体</td><td data-page-node-id="9b17Ujn1m0dpkFE4SDHyxF">6a²</td><td data-page-node-id="3MJo2kPenqYyNsrH9PwLrV">a³</td></tr>
+<tr data-page-node-id="Qa2aGmI59zDAsq7BEmKz7l"><td data-page-node-id="Q4N5SsTDW0fv29G7n78o39">长方体</td><td data-page-node-id="iBqXGe1J7SfKbJDLYHczgT">2(ab+bc+ac)</td><td data-page-node-id="JBQjz0G3nGlh65vYG0Hg8R">abc</td></tr>
+<tr data-page-node-id="HWINADyxEusfVgiB1lYzED"><td data-page-node-id="tzVafZqBvLDjZ7tTX5bwJf">圆柱</td><td data-page-node-id="u8EjUUs8ndAue41A9hm99J">2πr² + 2πrh</td><td data-page-node-id="SvkisG7w4WNxK8FCEkluxC"><b data-page-node-id="GJ8wxlEV4Js7a89kuQqLQW">πr²h</b></td></tr>
+<tr data-page-node-id="qGVFxXRijBzly5F2RMuPYw"><td data-page-node-id="gjFX8pxh7G1XGL1xukbHto">圆锥</td><td data-page-node-id="uHKIqRUSJLBnrWQsmbTJZ9">πr² + πrl</td><td data-page-node-id="2W7HVH5SYx53aHSkIr9hQT"><b data-page-node-id="ECs6NdRYgGrzmmOhcTFRTA">πr²h/3</b>（别忘 ÷3）</td></tr>
+<tr data-page-node-id="3q343gPwBqfFEvVvcL7Wd3"><td data-page-node-id="HgnRNjERbAyNKJjfSZsswS">球</td><td data-page-node-id="okyZVoijRp2VoicYWfNOe1">4πr²</td><td data-page-node-id="w5R46ViSQEDHfUrmuDC8Ag"><b data-page-node-id="ILk0jeDQH817kZ0sU1fxi6">4πr³/3</b></td></tr>
+</table>
+<b data-page-node-id="IxAPdfygfw1ni1gH7HhnEa">常用结论</b>：勾股数 3-4-5、6-8-10、5-12-13、8-15-17、7-24-25；30° 直角三边比 1:√3:2，45° 为 1:1:√2；三角形三边 <code data-page-node-id="Q5HFRD06VsX04nceA0IHdn">|a−b| &lt; c &lt; a+b</code>；圆柱侧面展开 = 长方形（长 2πr、宽 h）；圆锥侧面展开 = 扇形（弧长 = 2πr、半径 = 母线 l）；正方体展开图共 11 种；相似比 k → 面积 k²、体积 k³。</div>
+<div class="blk b-op" data-page-node-id="nh0NEvLIIaPioChcI9Fikz"><b class="t" data-page-node-id="YpODKDHyqVbAL0tdHLaTG5">选项处理</b>先判断是否含 π：题中数据若能约掉 π，答案不含 π → 排除含 π 项。夹逼估算：不规则图形用外接矩形/内接图形估上下界。最短路径必须算出 2—3 种展开方式再取最小。</div>
+<div class="blk b-tr" data-page-node-id="vUj8aLy8vBJk80fEIHzNNY"><b class="t" data-page-node-id="DFMLMPIMAWpJQJpBYoMF0z">高频陷阱</b>
+<ul data-page-node-id="sp5zlGXML4ybazivDqwAly">
+<li data-page-node-id="sUM7XMStWe5pkakDnjBk69">单位不统一（cm 与 m、面积与体积）。</li>
+<li data-page-node-id="bLO9TD7luJJqQWrSn0QjBf"><b data-page-node-id="mEO4T56UNqTkTjwwuT8IjX">"表面积" vs "侧面积"</b>（无盖水箱、只刷四周）。</li>
+<li data-page-node-id="UBQdrKLugWioeXZpm9g5U7">三角形三边关系未验证。</li>
+<li data-page-node-id="RWyrlDJAGQW1xxObOnDTQ5">相似比方向搞反。</li>
+<li data-page-node-id="jpngiIP15aRHRuA7tAyv3e"><b data-page-node-id="fMG3NQIqj3vMHCnL47Mw5z">圆锥/球体积忘记 ÷3 或 4/3</b>；"增加 1 倍" = ×2。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="ZOMz2VwE9CoKc2wPzJGcos"><b class="t" data-page-node-id="gBaiNZnnjBAL2EogGullBa">示例演示</b>
+<div class="q" data-page-node-id="0aQhkpI6LHvWr5m711LdiH">圆柱形容器底面半径 3 dm、高 10 dm，装水深 6 dm。将底面半径 2 dm、高 5 dm 的圆柱铁块竖直沉入水底，问水面上升多少 dm？</div>
+水体积 = <code data-page-node-id="lNwFpz3PczkMoaZeB0ApdX">π×3²×6 = 54π</code>。<b data-page-node-id="AzC1VffxNcu2BhV6V6FKf1">先判断铁块是否被淹没</b>：若水面 h ≤ 5，水占据底面积 = <code data-page-node-id="JE2hLCM4OsDbTWLFURwRW2">9π − 4π = 5π</code>，<code data-page-node-id="WeDeyZqyowLIqBc6UNCSyG">5πh = 54π → h = 10.8 &gt; 5</code> 矛盾 → <b data-page-node-id="b5LJCtaNk4FDdUa2EEWiAx">铁块被完全淹没</b><br data-page-node-id="2SvrbezjP1zWfiAaJ9FBnG">
+淹没时：<code data-page-node-id="BZWlmXBOsBIyEvq6LTNCuy">54π + π×2²×5 = π×3²×H → 74 = 9H → H = 74/9 ≈ 8.22</code><br data-page-node-id="hH085A4jptp1IFqwzErFZi">
+上升 = <code data-page-node-id="wRljpX69YgKqE64to49xyr">74/9 − 6 = 20/9 ≈ 2.22 dm</code>　<span class="ans" data-page-node-id="O9AHI3FiGEOoAcnFTLIDCl">答案 = 20/9 dm</span><br data-page-node-id="QxGL97AWXRgEJDuOdD9EPQ">
+<div class="warn" data-page-node-id="HEotXLDCvXpZVlX7f7VoWR">若忽略"是否被淹没"，直接用"排水体积 ÷ 底面积"会得 4 dm 的错误答案。</div></div>
+</div>
+
+<div class="card" data-page-node-id="fxchqWFCi0Fi8lNGVoPPJ5">
+<h4 data-page-node-id="h7xaJyg0QMuyhHgAFLMOyD"><span class="no" data-page-node-id="ebJnEHb3zFcWdjllaTDq3u">12</span>周期与日期问题</h4>
+<div class="blk b-id" data-page-node-id="GZ9Bqxrxfl22DRkVRDfAFi"><b class="t" data-page-node-id="V3gDAyjfAamvwkanRKOHsL">识别标志</b>"星期几""闰年/平年""每隔几天""第 n 个是什么""轮流值日/值班""生肖/属相""循环往复"。</div>
+<div class="blk b-th" data-page-node-id="I85bviK6uFW5k2uiEkCX2F"><b class="t" data-page-node-id="NlpPJrNEeFJ8Co9wwaBjlf">思考路径</b>
+<ol data-page-node-id="RJVW2IvxtNLOsv8wK90P0B">
+<li data-page-node-id="0wccLGciTdrco66tWodjlX"><b data-page-node-id="caDDCFKDtWHZ9DwYml2kpR">找周期 T</b>（星期 7，生肖 12，甲乙丙轮流 3，干支 60）。</li>
+<li data-page-node-id="8MOvMeKTfsEi7GWgFfcLFn">算"经过天数"，注意<b data-page-node-id="WuUY3xV2zQECX94oDvTbik">算头不算尾</b>（第 1 天到第 n 天经过了 n−1 天）。</li>
+<li data-page-node-id="qTOChfbaXhYrkNUiO6IjO2">天数 mod T，余数对应位置（余 0 取周期最后一个）。</li>
+<li data-page-node-id="6a6iDjMQ1N7PraWovLyiuA"><b data-page-node-id="2BSS8Rtwz9XIMMaA25rPZh">跨年推算星期</b>：平年 +1，闰年 +2；判断依据是"期间是否跨过 2 月 29 日"。</li>
+<li data-page-node-id="F9j29plXitakoG9k2Rww3e">循环问题：总量 ÷ 周期，看余数定位。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="3cPBQ51ydOLDMUxpCz5f8W"><b class="t" data-page-node-id="kCzJVD1GMBD191IMz8Yn56">判定标准 · 公式清单</b>
+<table data-page-node-id="X3MNFtUCeZ2qGDRnYRstud">
+<tr data-page-node-id="P5xBLmgp18DT6Jtn5iiMQ8"><th data-page-node-id="LVKUWFLcSuzK9LlNboBOT6">公式 / 结论</th><th data-page-node-id="CZr3EkNBcBtgyXm1uV4nyG">说明</th></tr>
+<tr data-page-node-id="x1r3FoRsfBEEgMXu7wWsfB"><td data-page-node-id="Afvd5BK6WvBmc1NBZTah5N">平年 365 = 52×7+1 → 同日期下一年星期 <b data-page-node-id="EQRTgYZuYI6r2Gq0YaxENn">+1</b>；闰年 <b data-page-node-id="UOwRzekRaYDpV0ZYIFi3HK">+2</b></td><td data-page-node-id="F6QxxljOmAptLUBsr0QR8K">—</td></tr>
+<tr data-page-node-id="f44QUye2ZszFXdI9yiz6CD"><td data-page-node-id="rkvlM5tvRqUzZR73JJZaFv"><b data-page-node-id="7E0a7WNvDjCEeqqMAw8W8D">闰年判断</b>：能被 4 整除但不能被 100 整除，<b data-page-node-id="f2hvdY7IM3e9pfx1OArG92">或</b>能被 400 整除</td><td data-page-node-id="yrriOxEdyHA93MmU6mtjDr">1900 非闰年，2000 是闰年，2024 是、2025/2026 不是</td></tr>
+<tr data-page-node-id="WLX4P0RbbnnNtTsajDnvFX"><td data-page-node-id="yEUniB9OAfTrC2W7Qx1xxY">跨年推算：期间跨过 2 月 29 日才 +2，否则 +1</td><td data-page-node-id="GoQlNa0j4Lj5yFzhl1jisH">不是"整年就 +2"</td></tr>
+<tr data-page-node-id="vrrakIeJbEpxPVWhoazhFR"><td data-page-node-id="zmtGiGpgXCzYIcDa8fPxUD">n 天后星期 =（原星期 + n）mod 7</td><td data-page-node-id="ULKWTPDL73x5Laf3lnQHTH">—</td></tr>
+<tr data-page-node-id="iTRzNX4TuG4eVyujfUmRgW"><td data-page-node-id="d0qiWgapYdAiVC1TYRui0Q"><b data-page-node-id="eiaq7GmjhUBAUMYG08QTkd">"每隔 n 天" = 每 n+1 天一次 → 周期是 n+1</b></td><td data-page-node-id="l8dmvqJlSA7Z1Cj2W9aXli">高频陷阱</td></tr>
+<tr data-page-node-id="Cth5GG19zrEtwTaDmzLOtV"><td data-page-node-id="sjwVFr6zVCsLwa4BxMZtdk">第 n 个 = 周期中第（n mod T）个，余 0 取第 T 个</td><td data-page-node-id="ullhy7623DCJeu2gkMKeLn">循环</td></tr>
+<tr data-page-node-id="xsOFWlIHE3VxHj7VTy9pQR"><td data-page-node-id="15iMeEMj2rBhqwYwFHL8pq">月天数：1、3、5、7、8、10、12 月 31 天；4、6、9、11 月 30 天</td><td data-page-node-id="a1PXQEoNU7GwXeaFVACI9F">—</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="tKMp4cWKL6oHgRZesH5MUs"><b class="t" data-page-node-id="8QAB7HDEIwvivxdQMAqzBG">选项处理</b>星期答案只有 7 种，先做首尾夹逼估算大致周几。若两个选项相差 7 天（日期题）或相差一周（星期题），答案多在其中之一。代入法：把选项日期代回算天数差，验证 mod 7 的余数。</div>
+<div class="blk b-tr" data-page-node-id="RU69N3FPzHs0UkTi4EEDSW"><b class="t" data-page-node-id="IYumafnp6YZARcYDumqeyv">高频陷阱</b>
+<ul data-page-node-id="W8wm65B26qvIR8jsbAc8hI">
+<li data-page-node-id="BzT0RY8SP19dpH3z7lmYAx"><b data-page-node-id="FOr47onnSqUTHoDgDyxfHN">"每隔 3 天" = 每 4 天一次</b>（周期是 4 不是 3）。</li>
+<li data-page-node-id="gmAx7yvzUHL4I7OascbCFk"><b data-page-node-id="GeTvvPGAeHx1uGFWw1JKeS">闰年判断</b>：世纪年必须被 400 整除。</li>
+<li data-page-node-id="bcele2UpaK20THcEwETvD1"><b data-page-node-id="8U3pW9hnoJO7EnbooolMbH">跨年 +1 还是 +2</b>：看有没有跨过 2 月 29 日。</li>
+<li data-page-node-id="ZoaVCqDBX0yhi1CaoJzRdF"><b data-page-node-id="cpNvBqAL0jI0APaVJlGJkP">"第 n 天"与"过了 n 天"差 1</b>。</li>
+<li data-page-node-id="unvgHYS0895bBL83kG0eNq">循环题的起始基准点搞错。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="Z5AwZFLL3UzQe7qHsZDNRd"><b class="t" data-page-node-id="bVtavhaR649HknhG26jq4Y">示例演示</b>
+<div class="q" data-page-node-id="CdTeZqe1jJkvN6FW15mYur">已知 2026 年 6 月 1 日是星期一，问 2026 年 10 月 1 日是星期几？</div>
+6/1→7/1 经 30 天；7/1→8/1 经 31 天；8/1→9/1 经 31 天；9/1→10/1 经 30 天 → 共 122 天<br data-page-node-id="faXQbOabPuLjCxwUXWTCfq">
+<code data-page-node-id="iIcPXD543xbPSSyVBR03N5">122 ÷ 7 = 17 余 3</code> → 星期一 + 3 = <span class="ans" data-page-node-id="lM7hoIeb7IODKAM92F7djG">星期四</span></div>
+</div>
+
+<div class="card" data-page-node-id="TdR4drkHrKleDjTCa1f79Y">
+<h4 data-page-node-id="S1oS9CQle0gl99UmUBax4F"><span class="no" data-page-node-id="HQ9XDsaAiwFiU9aYoSpC3T">13</span>植树与方阵问题</h4>
+<div class="blk b-id" data-page-node-id="USyBlHgcQZSqjd3LxYWUD4"><b class="t" data-page-node-id="3dX9IfKfFXaChwb0wD9KUK">识别标志</b>种树、装路灯、立旗杆、车队长度、队伍长度；<b data-page-node-id="lWwCeGwNm6iPjUOTymSD5L">锯木头、爬楼梯、敲钟</b>（同属"间隔模型"）；队列方阵、方阵最外层、空心方阵。</div>
+<div class="blk b-th" data-page-node-id="WApTckWOvhBmCsWbTkim4G"><b class="t" data-page-node-id="G5FpnBSI6gfNQYXzHMSIcw">思考路径</b>
+<ol data-page-node-id="08eECjWO2nqNlyVcPfXOZh">
+<li data-page-node-id="3Knka67NrR2dnWfrNG9M0n">判<b data-page-node-id="5TWJtyk92MduEAeVSJcL4v">线形 / 环形 / 楼间（两端有建筑）</b>。</li>
+<li data-page-node-id="MPWkX2vZpdXNX882kXHVyf">判两端：都栽 / 一端栽 / 两端都不栽。</li>
+<li data-page-node-id="SJPpfC4meCDGMd3mFOZzj6">棵数 = 间距数 +1 / 间距数 / 间距数 −1。</li>
+<li data-page-node-id="Jly5CBKBXH7R94sfAOGe4S"><b data-page-node-id="Y3lFGBXB9zbehXlNz3wdfs">间隔模型变形</b>：锯木头、爬楼梯、敲钟统一用"次数 = 段数 − 1"。</li>
+<li data-page-node-id="TPPFglBrbmsPAIZuWSmgTB">方阵：先求边长 n，再套最外层 4n−4、总数 n²。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="uyMla9X11kQm1isbtbhWnG"><b class="t" data-page-node-id="Rus3uop0RcR4qaAMFXOSZC">判定标准 · 公式清单</b>
+<table data-page-node-id="1gHOfj1ZNVYyrV2oNvHMlB">
+<tr data-page-node-id="yI5C5mmYHsk29t0E7CPpP5"><th data-page-node-id="C7WcuXfS2qsbCu1s6AjBhF">公式 / 结论</th><th data-page-node-id="PF5lk7lHP6VIoCYvKAxGiM">说明</th></tr>
+<tr data-page-node-id="YUSrv7QMIXNle60qZ4GQpB"><td data-page-node-id="D7B9hnrXIjj2wqdbbRaPYE">线形两端都栽：棵 = 段 + 1 = 总长÷间距 + 1</td><td data-page-node-id="d9PnifEEfaL3YWkW5qMqxe">—</td></tr>
+<tr data-page-node-id="2YOfxhy4HZAx9Zsbsb05yS"><td data-page-node-id="sMl4ZKBMjqFShwVok9V30n">环形 / 一端栽：棵 = 段 = 总长÷间距</td><td data-page-node-id="volgMNxLZNGIsDpV0cX7Om">封闭不加 1</td></tr>
+<tr data-page-node-id="fIjurTKUZqnCGErmEcyoDf"><td data-page-node-id="i7lP9wpCGhO32rxAkLXIuG">两端都不栽（楼间）：棵 = 段 − 1</td><td data-page-node-id="fAZhScbazIkOwa8EmzrlrM">—</td></tr>
+<tr data-page-node-id="hvNtWvSg3OnC6w09LCh7NX"><td data-page-node-id="01Ctd85F2Z6qf3DIp6rkuW"><b data-page-node-id="YJiMh3GdPMuyEEJgfVUHC7">每边 n 棵的正方形四周：总数 = 4n − 4</b></td><td data-page-node-id="5jfLWVeSzoTlD8wYCqHFUS">四角重复</td></tr>
+<tr data-page-node-id="9jZvhnI8uLIzgOSdCEFd3t"><td data-page-node-id="lwaoDHBAT5kLOFb0oyCTXB">方阵总人数 = n²；最外层 = 4n − 4</td><td data-page-node-id="3Ga21g16C2Wt76NGSeHFDQ">—</td></tr>
+<tr data-page-node-id="Srea2P4BDpflf0SMrvxx6n"><td data-page-node-id="YpIuP2IXXtSmCbb32ZR3YR">次外层 = 4n − 12；<b data-page-node-id="v17aQXHIKG6pCBC7UFyohB">相邻两层相差 8</b></td><td data-page-node-id="WAkn1XovY2XM9H7fGQaA7h">实心方阵</td></tr>
+<tr data-page-node-id="hG08vjZpiITNTNk7PNCDVi"><td data-page-node-id="JzdguuI5zcvJE5tBampMlO">空心方阵总数 = 外边长² − 内空心边长²</td><td data-page-node-id="yjnpshyfaVGAI1u1533Ep9">—</td></tr>
+<tr data-page-node-id="10K268BdYxGl3IUpx6maT6"><td data-page-node-id="zlXcNc9CyG5fsBzq2DAgZf"><b data-page-node-id="pRdAz2efUyezbyHnTsVWS4">锯木头</b>：锯成 n 段需锯 n−1 次</td><td data-page-node-id="XrZWDYNYVE5V4TfnCuFYw1">间隔模型</td></tr>
+<tr data-page-node-id="gKdvt2P2nq0uCUWLJCrw5G"><td data-page-node-id="GkryYKrxRyxTpu9LJizhZN"><b data-page-node-id="cKz5JphWUYk8clXU3sPZIo">爬楼梯</b>：1 楼到 n 楼走了 n−1 层</td><td data-page-node-id="9WbTmBampwzHkC4jPwlHiR">间隔模型</td></tr>
+<tr data-page-node-id="wIP8ykB527tENA6DdrStGN"><td data-page-node-id="QZuDxRhpv4pYAQze3pgdwL"><b data-page-node-id="Tzl8D8GWvukCHKkF9IYJCA">敲钟</b>：敲 n 下有 n−1 个间隔</td><td data-page-node-id="G0HWtuExHcJZLChDr32dl4">间隔模型</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="3OO4RVyFpvtG95SBQ2yzgg"><b class="t" data-page-node-id="x723uALnF2Jcu1aqVeKik6">选项处理</b>整数校验：总长 ÷ 间距 必须为整数，不整除说明模型判断错了。<b data-page-node-id="Tfm9IHnbAZaDdsgTELBJht">方阵题用整除性秒杀</b>：总人数必为完全平方数；最外层人数必能被 4 整除 → 可直接排除 2—3 个选项。爬楼梯题选项常成对差 1，注意"1 楼到 6 楼"是 5 层。</div>
+<div class="blk b-tr" data-page-node-id="65Vopesz5G2Kg0y2yMKUUj"><b class="t" data-page-node-id="UdGryN1Ay6Xq17OwcKyHcH">高频陷阱</b>
+<ul data-page-node-id="kFdHSOd9zHaysImoaAt2OK">
+<li data-page-node-id="GuT6HCw3pzfDbN9lrIIKHN"><b data-page-node-id="9Vqd95KfzgYP4gKlVKf9s6">环形 vs 线形混淆</b>（环形不加 1）。</li>
+<li data-page-node-id="TFB7BXHrk0crH65MUjWKBW"><b data-page-node-id="9YbXG1s2v7E5X38pYU4HcL">两端有建筑物/已有树</b> → 两端都不栽。</li>
+<li data-page-node-id="W72C3NJi7YngIanqu7evwC"><b data-page-node-id="JTG3rhExZa2r3se09LMdLC">锯木头/敲钟/爬楼的"次数 = 段数 − 1"</b>。</li>
+<li data-page-node-id="ZmH2po1cqnHhIeiQfIoCSU"><b data-page-node-id="Aeke4A8mebGZwqzsf7qwUU">最外层 = 4n − 4 而非 4n</b>。</li>
+<li data-page-node-id="hBLyToAyoMAcdt7wDHlelF">空心方阵内层边长 = 外层边长 − 2×层数。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="oWQIm4LsUajJYQOvfOCLcz"><b class="t" data-page-node-id="di9noKLurfHrfHLIEQNcUc">示例演示</b>
+<div class="q" data-page-node-id="bNxIV583N3rSHDhbsu14NV">正方形操场四周种树，每边都种 11 棵，四个角都必须种。一共要种多少棵？</div>
+四边共 <code data-page-node-id="poSPbddMo8CbLW6p79DCE3">11 × 4 = 44</code> 棵，但四角的树各被相邻两边数了 2 次，重复 4 棵 → <code data-page-node-id="lhQsFi22TYjaEuBSA5M0ki">44 − 4 = 40</code><br data-page-node-id="bqubgDkomBtv85LvlujJTo">
+（或用公式 <code data-page-node-id="xK6kOGApy9lYM68oxNbrpC">4n − 4 = 4×11 − 4 = 40</code>）　<span class="ans" data-page-node-id="lOa4F4bPZ0qkqLpYgtLYFw">答案 = 40 棵</span></div>
+</div>
+
+<div class="card" data-page-node-id="NKPUz0wrtONsrIPO7JuZSV">
+<h4 data-page-node-id="4kpn797FBiN2L3jHNjXCuO"><span class="no" data-page-node-id="TskuHFw7H5CimYDCSeQX41">14</span>不定方程与和差倍比（含鸡兔同笼）</h4>
+<div class="blk b-id" data-page-node-id="dEFChzXhHr1mWVhzTPBmU7"><b class="t" data-page-node-id="qts9u4hSoFv0yQBGkpp3Zm">识别标志</b>两个未知量但只有一个等量关系；"共花多少元、各买了多少"；鸡兔同笼、答题得分、门票；题干只给比例/分数、没给具体数值（→ 赋值）。</div>
+<div class="blk b-th" data-page-node-id="6uoUe0go4wAfVJvadedAOZ"><b class="t" data-page-node-id="7UzGVu3G4h04NWU7lUkb6t">思考路径</b>
+<ol data-page-node-id="Fc9Z7bzmLL8Q7EI6FOTW0d">
+<li data-page-node-id="HAjLrhzevL8kNizzIwFN03">列出 <code data-page-node-id="Lo4swSN9GyxnB9SMPGRW1K">ax + by = c</code>（x、y 为正整数）。</li>
+<li data-page-node-id="y81IXdBFyhQ2XBfhAFWqVa"><b data-page-node-id="okEOGAVf5FBFwcNXrwCKEq">尾数法</b>：ax 的尾数 + by 的尾数 = c 的尾数 → 锁定可能的尾数组合。</li>
+<li data-page-node-id="m3o3eQHmUh4jqIT7jpLf7D"><b data-page-node-id="RrFqZyjBlqpAoDpayGu9AQ">整除特性</b>：<code data-page-node-id="JfzY6kUJyFHdsoSQ4NM9fn">(c − by)</code> 必须能被 a 整除 → 枚举 y。</li>
+<li data-page-node-id="zq7Yt3Ybna1bnoylbCBXj3"><b data-page-node-id="FUlUYEpvzKyJQzf3oIW7uZ">奇偶性</b>快速缩小 y 的范围。</li>
+<li data-page-node-id="G28vXSvhu3y6Vp9EkmbuDg"><b data-page-node-id="8y0vLAXssZdJmv4ocepHkk">范围限定</b>：x ≥ 1、y ≥ 1，x ≤ c/a、y ≤ c/b → 大幅减少枚举量。</li>
+<li data-page-node-id="PryNxICuBQkq09TAlBP0VR">求"最多/最少" → 从边界开始枚举。</li>
+<li data-page-node-id="2OqJwOSghUPVttyp0xmJox"><b data-page-node-id="co5Rg4a81TtEZbrO8VIl0V">和差倍比</b>：见比例就设份数，多个比例要先<b data-page-node-id="ThWn2GNGlO8XAWk1eypg8c">统一不变量</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="rrmZoPvb8fDDG1FlRdBCDT"><b class="t" data-page-node-id="Mr3ibKzjsoSVQlkx8HkebG">判定标准 · 公式清单</b>
+<table data-page-node-id="uCvRUSs11DPIE1QLADDeG8">
+<tr data-page-node-id="3p9FJUi3k55ShSoGenPrh0"><th data-page-node-id="QSKEwmcELgE95i4lRamzRK">公式 / 结论</th><th data-page-node-id="JIPEugM7jX9H01QqrzbTRy">说明</th></tr>
+<tr data-page-node-id="XCubCAnhVHWSw12AohIUup"><td data-page-node-id="Ce8mVkgqHptxDhl0bU9kKy"><b data-page-node-id="tMO5TACScXLWteNIz5mMAY">鸡兔同笼</b>：兔 =（总脚 − 2×总头）/2；鸡 = 总头 − 兔</td><td data-page-node-id="OHjV5eXg7FBsRyctn1ClJs">假设全鸡</td></tr>
+<tr data-page-node-id="dj1nC1HlA97gLynqy4iGwI"><td data-page-node-id="Z8DzSYoKcNqb4ayUABv93J">通用：A 数 =（总值 − 小值×总数）÷（大值 − 小值）</td><td data-page-node-id="geHQo6LlvGnA3MnNHfekxj">通用公式</td></tr>
+<tr data-page-node-id="R7HFoAQK64qh4LgbssHgbt"><td data-page-node-id="lF9hGAvqIHT1UCCyW77XOZ"><b data-page-node-id="hBVZrtAWSTLfzUUSoga1kd">得分题</b>：答对 =（实得分 + 扣分×总题）÷（对得分 + 扣分）</td><td data-page-node-id="zkjAYm9ivYGyRKoKBdDChJ">假设全错</td></tr>
+<tr data-page-node-id="y5o7BsEBNy1DejWqmEonSz"><td data-page-node-id="EPrsY6bZJaMTBvwwXsxPR7">不定方程解法优先级：<b data-page-node-id="3uC03ABwMTMlDHy3QMpkUu">代入选项 &gt; 尾数 &gt; 整除 &gt; 奇偶</b></td><td data-page-node-id="Sr3faDdQofRhFtItCFIMso">实战顺序</td></tr>
+<tr data-page-node-id="XKGDfJnihXBxTgjsen4Jse"><td data-page-node-id="NkwyLMiQbTqnzlLDpZwczb">整除判定：被 2/5 看末位；4/25 看末两位；8/125 看末三位；3/9 看各位数字和；11 看奇偶位差</td><td data-page-node-id="YhH0fZ3TP7SS029q9YfBGu">—</td></tr>
+<tr data-page-node-id="prBzlAvfxgiuDSgEkjgvZh"><td data-page-node-id="DcyxYYqW4MlXHODmGHfe7b">和差问题：大数 =(和+差)/2，小数 =(和−差)/2</td><td data-page-node-id="gFAiyAdnjaoOV0NLcZLp1j">—</td></tr>
+<tr data-page-node-id="eJmLltcgJCS3v4ER4PRhdq"><td data-page-node-id="Bx8fJGFyjaL9g1ApASalzS"><b data-page-node-id="icsjd44ZMH0mMqwF9PxGx1">"甲比乙多 1/3" → 甲 = 4/3 乙 → 甲:乙 = 4:3</b></td><td data-page-node-id="sgQ22dgHQLBtRfcEvqEVI2">高频</td></tr>
+<tr data-page-node-id="N47CIPMuVEs3RbwYnHnLcp"><td data-page-node-id="uazKhjPkGPvmeDOVIw8v28">比例统一：甲:乙 = 2:3、乙:丙 = 4:5 → 乙统一为 12 → 8:12:15</td><td data-page-node-id="siHokE9eLUCPg33lBgBFjw">—</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="csqHIJkm3T7uUillhMMato"><b class="t" data-page-node-id="4IhDDtt173C5ttyCRecTgt">选项处理</b><b data-page-node-id="wxsRusRVdiW5uLGq1jmeKd">直接代入选项最快</b>：把选项作 x，求 y 看是否为整数、是否满足约束。问"x 最大"→ 从最大选项开始代。整除排除：答案必是某数的倍数 → 先排除非倍数项。尾数法只看个位数即可锁定，5 秒出结果。</div>
+<div class="blk b-tr" data-page-node-id="LHBqOUgIgWSlqvtxYG4bU3"><b class="t" data-page-node-id="ENsTR4ctYvCP4SjEQBoe97">高频陷阱</b>
+<ul data-page-node-id="hNaGFoNMWGJBDjqFm7qvVM">
+<li data-page-node-id="nvgxFMNNg4WIZTe36MGf0a"><b data-page-node-id="14HgxJMIcnvXZQroNKyH0G">"多 1/3" 与 "是 1/3" 混淆</b>（多 1/3 = 是 4/3）。</li>
+<li data-page-node-id="c7574xooiDVsprrmK3C5Nn">鸡兔同笼假设法后忘记用总数减。</li>
+<li data-page-node-id="BNfDETrjhKeMlE3n8q5EqW">不定方程忽略"正整数"约束导致多解。</li>
+<li data-page-node-id="yMjzDyXo9h5sdaCSCqFbiY">整除特性用错（被 6 整除需同时被 2 和 3 整除）。</li>
+<li data-page-node-id="BSqgMEYpDIA0K0pcpUVRpm"><b data-page-node-id="40YaHq0VLECRxRHvV94E2U">赋值法赋错对象</b>（应赋不变量）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="H8Cy3Oa2ry6BEmAZFsOAHw"><b class="t" data-page-node-id="9HV0HtgIrAxkIsBQE9AQ8f">示例演示</b>
+<div class="q" data-page-node-id="TtEJwDmqsOgPkZKvSNATpG">买 3 元的笔记本和 5 元的钢笔，共花 61 元，两种都买且笔记本多于钢笔。问笔记本最多买多少本？</div>
+<code data-page-node-id="J0whyfVPGbflFLtCV4i3Sc">3x + 5y = 61</code>，x &gt; y ≥ 1，求 x 最大 → 需 61 − 5y 被 3 整除<br data-page-node-id="y6GbyNPfgim6IVC0TdsaDl">
+y=2 → x=17（17&gt;2 ✓）；y=5 → x=12；y=8 → x=7（7&lt;8 ✗）；y=11 → x=2（✗）<br data-page-node-id="RTZluH1NdB3lnLEPt0A5kj">
+y=1、4、7、10 时 61−5y 不被 3 整除 → <span class="ans" data-page-node-id="dDWS8IbC34OFtDOGGozH6T">答案 = 17 本</span></div>
+</div>
+
+<h3 class="grp" data-page-node-id="dU8WOnw4G7wznR1ogEBBpV">数量关系 · 用时与取舍</h3>
+<div class="card" data-page-node-id="vG3zaXCHEPaI00qvgAXjM8">
+<h4 data-page-node-id="QovUiPrEKX4FrEAn6PJtQj"><span class="no" data-page-node-id="mXBhxmuNgjuL6rjNP2izCj">✓</span>数量关系用时分配与超时兜底</h4>
+<table data-page-node-id="Bwwr1UZGYudTTuruGR6AaK">
+<tr data-page-node-id="celomXSMSqAI7w1QvUHGcG"><th data-page-node-id="kgaREptoWgRKvVFeUi09bF">阶段</th><th data-page-node-id="4vu1ffyGZn3rj03ZL1sVF3">时间节点</th><th data-page-node-id="4vrkDaHFaJkdxwdbIpJEHL">动作</th><th data-page-node-id="tOtkGLikOiEQ2CyIoLH8Vk">超时兜底（触发即执行）</th></tr>
+<tr data-page-node-id="ooTWYipn4QZAwK0vqUgxFL"><td data-page-node-id="e1Xxdu94EAPJmJioBwgkOl"><b data-page-node-id="aj9rRA3ABE6jlBuEKt4Wnl">0 扫题分堆</b></td><td data-page-node-id="8gsTg4B7Y38KjG4CJUjDlD">0:00—1:00</td><td data-page-node-id="QKOXzdH6FyD2wVwy5kzAwI">不计算，只判题型，分 A（必做）/ B（选做）/ C（必跳）</td><td data-page-node-id="Q5lRfgcmCCr1kFpVjoSE0k">超 1:30 没分完 → 立即停止，直接挑<b data-page-node-id="r3C5Ix1VRnTeR5QmiD2kPx">题干最短的 3 题</b>开做</td></tr>
+<tr data-page-node-id="6SXwVVk3p9ZQ6mZV1tJ6ys"><td data-page-node-id="n0GmWVZaPD38mTPetF62l9"><b data-page-node-id="cv7z8l9aRDbPQeVr1gqa99">1 必做 1—3 题</b></td><td data-page-node-id="dLMFThrMJBKDg4pJDd3yhz">1:00—3:30</td><td data-page-node-id="W4y3qIB7j5oGtY8vzbAPpD">做 A 堆（工程/容斥/年龄/利润/浓度/简单几何）</td><td data-page-node-id="pPJ6lwBjEMOdVfFOirTG1u">任意一题超 <b data-page-node-id="cBSkOwhv7R3M4npz24qwCO">90 秒</b>未出结果 → 记下题号、蒙一个，跳下一题</td></tr>
+<tr data-page-node-id="bFMxc5Rma1zrC4BRjbuMEB"><td data-page-node-id="dTzO4gGuvjACsMh5PawGTt"><b data-page-node-id="GxbZtxD39Ovy8YOKtlOv3G">2 第 4 题（可选）</b></td><td data-page-node-id="tCx2kD5LDTiExXB0ebQvh9">3:30—5:00</td><td data-page-node-id="jhAORtZPeF2wFcTc0cIdRv">前 3 题顺利才做，选 A 堆剩余或 B 堆最简单的 1 题</td><td data-page-node-id="aLxVzSwg6s70DF98MZiFCx">已用满 <b data-page-node-id="cAsO3xE1hRlaBtNbZZbH5w">5 分钟</b> → 停止做题，转入蒙题</td></tr>
+<tr data-page-node-id="o1TwOghPgX3TGvKQgZ9e5U"><td data-page-node-id="TILGisQsfiCEtUeM0cR7E5"><b data-page-node-id="FoTrBTPlVRExMfCVIHJBa9">3 统一蒙 + 涂卡</b></td><td data-page-node-id="O31Bfau99MuPycZh1ssYnE">5:00—5:30</td><td data-page-node-id="85AVztcu9RxHdJyyl6rHgr">剩余题全部蒙"出现次数最少"的同一选项，一次涂完</td><td data-page-node-id="e8GUvgTBpqezVhdHiwJyui">必须留够 <b data-page-node-id="ofYwYi8Q5Lqg7bttaaYdsT">30 秒</b>涂卡，宁可少做 1 题</td></tr>
+<tr data-page-node-id="2CB9tDg4SZ5EEvClNTtBB8"><td data-page-node-id="mTtjRqg0iraeGXDbX4DIle"><b data-page-node-id="lVuDGM1NtAl9B2DoA5ErGV">合计</b></td><td data-page-node-id="lDDq3twHSyVSSsfoI3lZoW"><b data-page-node-id="6LztkohciNuv8zF8CdCpzd">理想 ≤6 分钟</b></td><td data-page-node-id="ZnCF0uKD6U93wHFWuRwgB2">实做 3—4 题（对 3），蒙 6—7 题（对 1—2），正确率 50%+</td><td data-page-node-id="imGsIPyphdfdChdbovYG4T"><b data-page-node-id="1SCWBGSKCSwceElouecdqT">硬上限 9 分钟</b>，到点必须停手离场</td></tr>
+</table>
+<div class="tip" data-page-node-id="Qf9jvkZQR3Cp8OhaaPPhFi"><b data-page-node-id="pMrR01fvPnERLTSN6XwZES">兜底红线：</b>① 单题 90 秒；② 模块 9 分钟；③ 蒙题不分散；④ 不返工检查；⑤ 数量关系<b data-page-node-id="j60vJv9ohhQbhAIYHgSLvV">永远不占用</b>资料分析/判断推理的时间。</div>
+</div>
+
+<!-- ============ 常识判断 ============ -->
+<h2 class="mod" data-page-node-id="NBg2kNG5LO1ZSTPD7VsB9Z">模块二 · 常识判断</h2>
+<div class="mod-sub" data-page-node-id="0wG7XY3rQknfIvBeGMGZ1p">目标用时 6—8 分钟 ｜ 目标正确率 50—55% ｜ 题量通常 20—25 题</div>
+
+<div class="card" data-page-node-id="K79BBbAUenxBAJl2mVep28">
+<h4 data-page-node-id="uQnCSLLPB4WaD1UUlE6GBa"><span class="no" data-page-node-id="7xMkrznjOqTKbnE0qpEx52">15</span>常识判断整体策略</h4>
+<div class="blk b-id" data-page-node-id="L3Qd2G0SJfyyZpoBLGjDtM"><b class="t" data-page-node-id="A1kVdzZaVobDAjNQwiFkHR">识别标志</b>进入常识模块即调用。常识是典型的"<b data-page-node-id="pRDt7E1W1ODVDbwvRb6uAz">会就会、不会就不会</b>"模块：<b data-page-node-id="0rYZoO136mecJ440KkX0FR">20 秒内没思路的题，再给 2 分钟也对不了</b>。</div>
+<div class="blk b-th" data-page-node-id="7EUNYrbMAQdgfp2JSXupJH"><b class="t" data-page-node-id="3a1M1FlIUZD5niHdHQO5FZ">思考路径</b>
+<ol data-page-node-id="AGTJ3OmPV7sC2Pr6aUJBlg">
+<li data-page-node-id="CQESNa6p610AMaUDjV3Hli"><b data-page-node-id="K75tPLcebwuAwli04zT9s7">位置选择</b>：可放开考第一模块（按卷面顺序，趁清醒快速过），也可放最后。<b data-page-node-id="WlF3qKfqYK5RjWNRd8rBRK">关键是严格卡时间</b>。推荐按卷面顺序做，设 7 分钟闹钟。</li>
+<li data-page-node-id="LDOjVOdblHPHnFR9vchFlX"><b data-page-node-id="SRYr44HqXqmYLEYL555vA8">单题标准流程（≤20 秒）</b>：读题干 → <b data-page-node-id="DVmzFDGaIsCIUzsrzWF4V9">圈出"正确 / 不正确"</b>（最关键一步）→ 圈限定词（主体、时间、范围、"最""首"）→ 扫 4 个选项，能排除几个排几个 → 剩 1—2 个立即选，不回想。</li>
+<li data-page-node-id="BGnGQda4Mwc3CdKQsai4zH"><b data-page-node-id="P35z6xD10YaHy7KS6RPs8p">三不原则</b>：不苦思回忆、不过度推理、不回头检查。</li>
+<li data-page-node-id="cWDTOWyjBOyDlehe2lBEoF"><b data-page-node-id="VVwiyzXpdaW4qHLEGIx4Dx">不会就蒙</b>：立刻选一个，<b data-page-node-id="G7U0MD6R7jQyg2dt8pgDWj">绝不空题</b>。</li>
+<li data-page-node-id="X0TfWmm3J5KQB1v0O76JNo">涂卡时<b data-page-node-id="b2FthtSEcFTysTBIDyav4q">对齐题号</b>（常识题量最大，最容易串行）。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="lPpILExrKZVnY6cVd4Ys6z"><b class="t" data-page-node-id="EdDKzviDNB7oSn5gzKQIjj">判定标准 · 会 / 半会 / 不会的判据</b>
+<table data-page-node-id="tjfvR0D6wzdUpP3efccvTz">
+<tr data-page-node-id="NHkCKyg2qEcmcr0YOEWyvp"><th data-page-node-id="OmUAeqEmgYxBoqtdB1iByk">状态</th><th data-page-node-id="dLCFFbJqVVKUB45Vba2nmA">判据</th><th data-page-node-id="Qh5K3EAbar5hmXtGZKUxCN">处理</th><th data-page-node-id="EniOTbMcoGO2KPwXKSb65e">用时</th></tr>
+<tr data-page-node-id="fcUahNWCRPJ5lRcy4kDYBW"><td data-page-node-id="Y9XRpZz6CaUdBdV5udg0Ir"><b data-page-node-id="HcoOOp2OanAGZp2qla9wY4">会</b></td><td data-page-node-id="mVz8EkVx9JimvQ7xGStHiq">看到选项立刻能确认（10 秒内）</td><td data-page-node-id="mg9s21NMNa60qnUfhKuo9m">直接选</td><td data-page-node-id="ELMd0kVXLQmVGFyP9qvwwW">≤10 秒</td></tr>
+<tr data-page-node-id="8kpS9a1y1Kmaecw6B97aG2"><td data-page-node-id="N7RNz7xsX0UeXfaIffBxJr"><b data-page-node-id="OTX59ltwKhBU4Ol7BgCCBZ">半会</b></td><td data-page-node-id="OsGWmAfH8Nhd3mIk6L8TY4">能排除 2 个，剩 2 个摇摆</td><td data-page-node-id="DMwUU9Hy4TU2rzSzR7hxXy">排除法 + 温和表述优先，选一个</td><td data-page-node-id="ik7zrDmGhZnNFZpdjCBTlj">≤20 秒</td></tr>
+<tr data-page-node-id="QlNFqLqDsyWjcOhGga6ZcC"><td data-page-node-id="8ur9qiIGZhm9VtZbbTbZH4"><b data-page-node-id="WTQRCsAofpYgW3Vysxr5S1">不会</b></td><td data-page-node-id="5Hv1iL7rCuX6Kvs3hbbCJp">只能排除 0—1 个</td><td data-page-node-id="HeKnfwwcPw1sjwjVvqFNey">立即蒙，不纠结</td><td data-page-node-id="gTQuGJ8k2AxZW1CJPEDEQL">≤10 秒</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="V2foN2WIGP96KD7k84UnX6"><b class="t" data-page-node-id="USPcwta40qxuMrHb6UlQUu">选项处理 · 蒙题与排除法原则</b>
+<table data-page-node-id="smYB1WuVr3V9BADOzaG9gF">
+<tr data-page-node-id="NxQMgwQmOCxhwgDDiJuTVB"><th data-page-node-id="DQlhiAei6px9sP94uGHeKH">原则</th><th data-page-node-id="FVI2kzYBkKxssRFHT320I6">操作</th></tr>
+<tr data-page-node-id="Njzsm4ZGyeZa1rt3BJpTjV"><td data-page-node-id="Q8i9MsTYr3JDtnTr5lPrxz"><b data-page-node-id="HT5mIG5kH5i5JuLOjM0gtd">绝对化排除</b></td><td data-page-node-id="yI5G4pD3IA3Ori4ELkM6og">含"一定/所有/都/必须/唯一/完全/永远/绝不"的选项多为错</td></tr>
+<tr data-page-node-id="rrmsIYcd3QJLe6Jtpps1ZF"><td data-page-node-id="ZCOetv4M7lK8xujQbc8v1J"><b data-page-node-id="i85ti53bNlHjec7JyGVvfC">温和表述优先</b></td><td data-page-node-id="nkftCZWE6rYn9oIAL8Iw28">含"通常/一般/可能/主要/在一定程度上"的正确率更高</td></tr>
+<tr data-page-node-id="yAHKvXFfvNvBG7mrxMD5o1"><td data-page-node-id="6g7hKQ89JmkFm4X9lgFfTr"><b data-page-node-id="rl8xBACngJOGxI2Gr45Gif">统一蒙</b></td><td data-page-node-id="y0tcBdIxDlRxAyGaN5LnP8">剩余题统一蒙"已确定答案中出现最少"的选项</td></tr>
+<tr data-page-node-id="dVEKBbOuuDBM59d2P3xUuA"><td data-page-node-id="5QghXt83uHsXjmaynoqfCs"><b data-page-node-id="esatDUyHyuwrrffNpBh50o">"以上都是"</b></td><td data-page-node-id="s11UlpK7cEsgt5dQbyvdor">三项中有一项能确认错 → 排除；三项均无法排除 → 选它的概率高</td></tr>
+<tr data-page-node-id="j6J22D71AKHQ4ovmnHHM6k"><td data-page-node-id="7y1tYrXwJBfwzk89y9AwT6"><b data-page-node-id="d3MLH5Z050FYxjqdLDpw8d">排序题</b></td><td data-page-node-id="wg2evVpuZ974td9FBtVpbP">先确定首尾两个最确定的事件，用首尾排除，通常能排掉 2 个</td></tr>
+<tr data-page-node-id="Nry5NUiT4ihyYntaCbNREd"><td data-page-node-id="RSXGtCizVynTViHx3eXYzD"><b data-page-node-id="atxwq6CE8CByypUFnjErfW">矛盾项优先</b></td><td data-page-node-id="4JF6VyzSkCUpBrPxkkYxqS">两个选项互相矛盾 → 答案必在其一，值得多花 15 秒判断</td></tr>
+<tr data-page-node-id="kcErtyIzd831uTXMEgmNH0"><td data-page-node-id="JnByRWjf20A4ROjn4iRcAN"><b data-page-node-id="9xsDEclVwP51j5PRxrkhza">数据极端</b></td><td data-page-node-id="XAk7qrlCdKQWqdebG46HtT">过于精确或极端的数据（100%、精确到小数点后两位）多为错</td></tr>
+<tr data-page-node-id="ngNtsLR2MJtRgbLQC4RPD6"><td data-page-node-id="YWZ22Gge2DjezY1EAM1fFQ"><b data-page-node-id="FjgaH5FPAhMQxNTb19yKDC">生活经验</b></td><td data-page-node-id="zixTB7F6UjGJeaRgyuuHS9">违背基本物理/生活常识的（"声音在真空中传播更快"）直接排</td></tr>
+<tr data-page-node-id="drb56JMjzjZ137awtnCjnq"><td data-page-node-id="FidBKB7Cuqrm9V8F1qz4Ok"><b data-page-node-id="pAvkdgFcWWiIm4SHJvyANc">第一直觉</b></td><td data-page-node-id="vfudoxeGOpgw5h5vuhSoEq">不要改答案，第一直觉命中率高于反复修改后的选择</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="w5XRsOuuiCwtwDvNtoDbNF"><b class="t" data-page-node-id="PjuF9TKJBF9wjAdA742U8K">高频陷阱</b>
+<ul data-page-node-id="TDSCI0VH4joDglNeaBMLOm">
+<li data-page-node-id="f1VEMkkM14AX4VvgRnh5uk"><b data-page-node-id="KTXciDPPXEEHcWoBrEojF0">把"不正确"看成"正确"</b>（必须圈出来，最高频失误）。</li>
+<li data-page-node-id="rpvLbOcJ2tQbqwqKzvF5XS"><b data-page-node-id="U6fQCHD5kiBxLJpHHRrLaj">在不熟的选项上纠结 1—2 分钟</b>，等于白丢 3—5 道题的时间。</li>
+<li data-page-node-id="BJUAq7aAAEUeFKuNg098uT"><b data-page-node-id="XdhJJmgGRq2HJVaPlOZkHZ">反复改答案</b>（第一直觉更准）。</li>
+<li data-page-node-id="EF3wFUhZk0wcnd2qJqVCkY"><b data-page-node-id="Li4fo7X08J5kbs4rTrxcFH">常识超时挤占资料分析/判断推理</b>（常识提分天花板最低）。</li>
+<li data-page-node-id="6JRuEWD4JUwerMQBIEuCOc"><b data-page-node-id="0elkavPbRvQavn8n7xtBqB">涂卡串行</b>。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="YecOw33aLmxvciGLoi2NvV"><b class="t" data-page-node-id="sEmCBTx7ykLEzrChUNlPyw">示例演示</b>
+<div class="q" data-page-node-id="cHVVkCwzU5aBZCbksDNhjX">下列说法正确的是：A. 我国地势东高西低，呈三级阶梯分布　B. 我国最大的淡水湖是鄱阳湖　C. 长江是我国最长的内流河　D. 黄河发源于巴颜喀拉山，注入黄海</div>
+圈"正确" → A"东高西低"应为<b data-page-node-id="pl7JcsnVj9R58irRZ8lF8D">西高东低</b> ✗（2 秒）→ B 保留 → C 长江注入东海是外流河，最长内流河是<b data-page-node-id="pkwHHPImBDV1FBYCC7Drub">塔里木河</b> ✗ → D 黄河注入<b data-page-node-id="NtiTWSHhgcDOBjbaTMz4q0">渤海</b>不是黄海 ✗<br data-page-node-id="h4Ft6OVz6OFKbFYUaAlJ2q">
+<span class="ans" data-page-node-id="MGGeDiSKayXSIWXXF4oj0y">答案 = B</span>（用时约 15 秒。C 与 D 是典型的"方位/归属错位"设错方式）</div>
+</div>
+
+<div class="card" data-page-node-id="Ip2ly9fHvr1SIzMVTReoER">
+<h4 data-page-node-id="G2RoPUd92R2EkvWg60yM1I"><span class="no" data-page-node-id="0Adpw3CNQLqphW9Fke70hx">16</span>政治 / 时政类</h4>
+<div class="blk b-id" data-page-node-id="XyYkwGQxqHgVnfUZnxDhbc"><b class="t" data-page-node-id="jbtCEodDE3f3fhlGCWZXxT">识别标志</b>出现"会议""全会""文件""规划""指出/强调/提出""首次""核心""根本""坚持以……为中心"；选项为长句表述或 ①②③④ 组合型。</div>
+<div class="blk b-th" data-page-node-id="TV1SqxsH6xoz5n5NYU5KQ8"><b class="t" data-page-node-id="9RaY1HJyFvVzoSZTEk0mEW">思考路径</b>
+<ol data-page-node-id="cr7EBlgE8FM8zOzSnuA0m6">
+<li data-page-node-id="0vd26mAg56vh22T1T7ZpPV"><b data-page-node-id="0VJEJLD4XT549D6qP2O9Un">先看问法</b>（正确 / 错误），圈出来。</li>
+<li data-page-node-id="8rsPXs7djqhOQpta7d3X3D"><b data-page-node-id="xiTmgWaY7shLqWdBOYph7W">拆主谓宾</b>：谁提出的？哪个会议通过的？哪个文件部署的？→ 查"主体—文件—内容"三者是否匹配。</li>
+<li data-page-node-id="8fz6npGN2n8o7beP8VrNLR"><b data-page-node-id="zzvp23FFXufPkP0Mf4ZGm2">查时间线</b>：会议/文件的年份与内容是否对得上。</li>
+<li data-page-node-id="qmop8NkQGdf3e0IlCzEwLr"><b data-page-node-id="Y11g9YaHFQZ9oMAq9bCScZ">查程度词</b>："首次""最""唯一""彻底""已经完成" → 高度警惕。</li>
+<li data-page-node-id="LpZutA56trLr5KkKFVHXU4"><b data-page-node-id="QvswGTrySTTXqnqBEtxfxy">查概念</b>：近义词是否被偷换（"基本实现"↔"全面实现"，"建设"↔"建成"）。</li>
+<li data-page-node-id="C4N0526EbUFZtIENMm8j75">不会 → 排除法，温和表述优先。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="nbv9MSOc7kgwJVelfO06C8"><b class="t" data-page-node-id="18easGFUY866BDQYawoNd9">判定标准 · 常见设错方式（只记设错套路）</b>
+<table data-page-node-id="d8Izd5msboRZF8PqCbJevv">
+<tr data-page-node-id="ZGpuaXnQelq33755IzlLD3"><th data-page-node-id="SF4pubqLAq7EuaIRlRbWGG">设错方式</th><th data-page-node-id="GnSIKDMDGWqBW4IVZTXj9N">表现</th><th data-page-node-id="Nd47bLU3lIMav78fJWkqln">破解</th></tr>
+<tr data-page-node-id="ziEq8FQz0qOQaHFxKYfFsp"><td data-page-node-id="2XyI7kKLRPGLdU7cr9SE06"><b data-page-node-id="ZCNuFubPtaqfsAFs8bJehX">时间错位</b></td><td data-page-node-id="vmNQY43c77FGzKRu35hbKT">把 A 会议的内容安到 B 会议</td><td data-page-node-id="PPomfHTPxpowbGWchirTxE">记"时间—会议—关键词"三元组</td></tr>
+<tr data-page-node-id="LNTLOxwlhJ5gUhPEMza9zx"><td data-page-node-id="woC3LChEDjIhO1NIkKxizH"><b data-page-node-id="AmhFWAHtn1C8VNUVj1rHHC">主体张冠李戴</b></td><td data-page-node-id="AB1bMUarbKlE3UC0YCE7vB">把某理论/战略归于错误的会议或文件</td><td data-page-node-id="qmFGUpPlxYar53DY2zha5G">查主体与内容是否匹配</td></tr>
+<tr data-page-node-id="DOmI3aYFet8OM4EE6ZkjIA"><td data-page-node-id="txyIxXXeTyQUuhoqsuXLCE"><b data-page-node-id="sIqlOhbX7zGNnbLKCjPyby">程度拔高</b></td><td data-page-node-id="GwPUxwhIGzuPGhGnEiesmq">"首次""最""唯一""彻底""已经全面完成"</td><td data-page-node-id="x7Q2OJ7DSwbGzNigvxMlKt">绝对化多为错</td></tr>
+<tr data-page-node-id="EAr8xYxSUG3r1goNFB8joH"><td data-page-node-id="svibJj3tS2hpAuHBfX9EYm"><b data-page-node-id="DsGbXbM5rFVYFXPAASmJFJ">范围扩大/缩小</b></td><td data-page-node-id="nuzICWyPuBLpXKbJHhOuXF">"所有""一律""只能""仅"</td><td data-page-node-id="kolEtyieBZN3JLECnDPXiG">扩大化多为错</td></tr>
+<tr data-page-node-id="O7rzWjWdxEvtadDGY3gvH7"><td data-page-node-id="ZufGG22GKYFxgsidEnAAvY"><b data-page-node-id="b0jthvFqDUhj0cSUZ2rgKz">偷换概念</b></td><td data-page-node-id="aUXghE9lFwqJAPI4BFDyl2">"基本实现"→"全面实现"；"建设"→"建成"</td><td data-page-node-id="dC5yqS05c7v5m2NfzvoXKT">盯住关键词一字之差</td></tr>
+<tr data-page-node-id="NcvkQ7D4FNfLuBdblHUuEF"><td data-page-node-id="lAFnk6eCqZ0BqepH3PdM6W"><b data-page-node-id="LuhKPBi3kuuGGg9yXDRssU">因果倒置</b></td><td data-page-node-id="QbqIeqOB04KXet4zRsLuIa">把"手段"说成"目的"</td><td data-page-node-id="GAJlDs3JbgRtbZNHmUneWr">通读一遍逻辑关系</td></tr>
+<tr data-page-node-id="ub0CIPvqR2WWD64jCupt2y"><td data-page-node-id="yoPEDLPcrcaAHYDhidNEie"><b data-page-node-id="zPXGS7jUahQEUc4bMX6w4U">阶段混淆</b></td><td data-page-node-id="w9qrBriGxRg69SpyetQqwD">战略目标的时间节点错位</td><td data-page-node-id="dhy6IFNJjSOMFG3xJ19FXN">记阶段划分的年份锚点</td></tr>
+<tr data-page-node-id="6BjLpJgoMx7jOqrIsMKKxH"><td data-page-node-id="hOjsTniKKy21Ry4S9WkNzp"><b data-page-node-id="FJ5dysADKWcpfRizZlc3W8">数字口径</b></td><td data-page-node-id="0jokKsqCnniWz2atixEDCn">增长率、比重、年份数字被改动</td><td data-page-node-id="m4ULIby4pyDSGkDBuBrRYo">数字是最常被改的设错点</td></tr>
+<tr data-page-node-id="UMWGnlQMBFPqleEfh3sKeG"><td data-page-node-id="JOECFricj6s8KiJwZM9afN"><b data-page-node-id="9bMuiBwcK0CNpwX7IIvkbc">新旧表述</b></td><td data-page-node-id="xzbwegn8WD18297H1czjuo">用已被替代的旧提法</td><td data-page-node-id="VKhBwf8cg2r9Ev1W6zamMk">关注"最新表述"</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="G9y0qnSzUt2KBEuEnEy66A"><b class="t" data-page-node-id="VreJV4ely8HxcRl8YCHJuu">选项处理 · 组合型选项是排除法效率最高的题型</b>只要能确定<b data-page-node-id="9y3oFa1AcIOgWL2TfTC69d">任意一个小项错</b>，就排除所有含它的选项，通常一步锁定答案。"以上都对"：先找明显错项，找不到则选它概率较高。两个表述几乎相同 → 二者多都错；两个完全矛盾 → 答案必在其一。</div>
+<div class="blk b-ru" data-page-node-id="lmrEdLYiBKTfb5LlmhhK20"><b class="t" data-page-node-id="JrcLEetQICsFHxtDSCC2QV">时政备考口径（记什么、怎么更新）</b>
+记每个时政点只需<b data-page-node-id="mJbvD3L4IMgR5D6IjIIpiy">四个要素</b>：① 时间（年、月）② 会议/文件<b data-page-node-id="bnlqCaLuxVnYsDI6Q5xPkG">全称</b> ③ 一句话核心关键词 ④ 地位表述（第几次 / 首次 / 里程碑）。<br data-page-node-id="wGZKADW2TB7C6uvWqyHMPU">
+<b data-page-node-id="WH5nXpwifSrTdkyxca34tl">自查清单</b>（用考前 3 个月内的官方发布更新，避免背过时版本）：党中央重要全会（全称、时间、通过的决定名称）｜全国两会与政府工作报告（年度主要预期目标数据）｜中央一号文件（当年主题）｜五年规划相关部署｜<b data-page-node-id="JiZBRFgDRt3fUuMkhPJpo8">新制定/修订的重要法律（通过日期 与 施行日期，两者常不同，高频考点）</b>｜重大科技成就｜重要主场外交与国际会议｜<b data-page-node-id="Z4J3zdDcCp5M4AV7u1x9GF">陕西省情（省内重要会议与政策、历史文化、地理区位、经济数据——陕西事业单位必考）</b>。<br data-page-node-id="Vamw1mZnCrstTTnbLBk1x5">
+<div class="warn" data-page-node-id="KvYnC7E4Dmar1BVICAlrYb">时政条目更新快，本框架只提供判定口径与设错识别方法，不填充具体表述，请对照上表用官方渠道（政府网、新华社、人民日报）在考前 3 个月内更新。</div></div>
+<div class="blk b-tr" data-page-node-id="kzYjzHBCeoRMf53W3V4D4c"><b class="t" data-page-node-id="NYKwg8UBBHKFF3IYALEo17">高频陷阱</b>
+<ul data-page-node-id="vJiaODPJNb48q3RXzr6d9C">
+<li data-page-node-id="noZtB7j51udCz2eOnCaHmm"><b data-page-node-id="NC5e9XcBUfucIWd7A8L0aw">记混会议届次</b>（几中全会、第几次）→ 只记关键词，不背长句。</li>
+<li data-page-node-id="9CxeBEJqjMsd2gUl6HFFDS"><b data-page-node-id="pQ72XMhcxfhJRSRaPBcqJF">"已经实现/全面完成" 与 "正在推进/基本实现"</b> 阶段混淆。</li>
+<li data-page-node-id="cwuhDqMtISSaGG9TTcFINo">把"战略目标"与"具体举措"混为一谈。</li>
+<li data-page-node-id="zVHrlltMWVTaQLIaDGfTW0">组合型选项漏看小项。</li>
+<li data-page-node-id="3BxQ2s7bvyINlGBhyfHQac"><b data-page-node-id="4p0VO1FnG6t87BQBCok71C">法律的"通过日期"与"施行日期"混淆</b>（二者常相差数月）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="VZV97bEwrS3PxZtSw3DHvu"><b class="t" data-page-node-id="8vTEe67YVIrJU2myCmJFHZ">示例演示</b>
+<div class="q" data-page-node-id="aSwXNeB74AlSpz79MFV4C1">关于我国重要法律的施行时间，正确的是：A. 《民法典》自 2020 年 5 月 28 日起施行　B. 自 2021 年 1 月 1 日起施行　C. 自 2020 年 10 月 1 日起施行　D. 自 2021 年 7 月 1 日起施行</div>
+四项互斥，属"必居其一"型，值得判。《民法典》于 <b data-page-node-id="BQzh9UTCvsEuTJ5zCEbLKT">2020 年 5 月 28 日通过</b>，<b data-page-node-id="IajKGvUl4x0tLqRkvp2tCW">2021 年 1 月 1 日施行</b><br data-page-node-id="M07UuNxAiflkQ7FEZWLGDD">
+A 把"通过日"当成"施行日" → 错（最高频设错方式）　<span class="ans" data-page-node-id="qUxBRmfD4Cs1HDKJtGZa8J">答案 = B</span></div>
+</div>
+
+<div class="card" data-page-node-id="ivEbq5CCP3mIajqKAfyynU">
+<h4 data-page-node-id="4f4IVEBx9ITNdh2ttxDKXI"><span class="no" data-page-node-id="WDMhYYKMJl3Hf82hi8tGlX">17</span>法律类</h4>
+<div class="blk b-id" data-page-node-id="94pnWJCaI18XfdqRKIlCUo"><b class="t" data-page-node-id="CLcFp37UgWwjXBGifBCh7u">识别标志</b>"根据《XX 法》，下列说法正确的是"；出现"应当承担/有权/无权""属于/不属于""应当/可以"；涉及年龄、时限、期限、责任形式、权利归属。</div>
+<div class="blk b-th" data-page-node-id="lyOXdE1C9NPPBNfo1Tfrr6"><b class="t" data-page-node-id="RPdPaLXCy1xuUhJh1RDcWN">思考路径</b>
+<ol data-page-node-id="S6Zpu3srMqAb8KWOsj0Kyi">
+<li data-page-node-id="hrs3TLyUXPD0frsbR0zG66"><b data-page-node-id="fmLOEUUihyWiN7X12hHxoX">先锁定部门法（最关键）</b>：宪法 / 民法 / 刑法 / 行政法 / 劳动法 / 诉讼法 —— 不同部门法规则完全不同，<b data-page-node-id="OA9fzJDXCe89iSDKS7ucMl">混用是最常见设错方式</b>。</li>
+<li data-page-node-id="2WEZ8IhWCRQMlRxwRCMGIe"><b data-page-node-id="cEdY47TJrkJgKDkfCyrEYk">再锁定考点类型</b>：主体资格（年龄/身份）、时限（诉讼时效/复议期限/起诉期限）、责任形式、权利归属。</li>
+<li data-page-node-id="WAP5j2X3oBMmoMZy4HI0tt"><b data-page-node-id="On9f5aMuuBfCGo11RdKkr3">用倾向性原则辅助</b>：民法/劳动法倾向保护弱势方；刑法坚持罪刑法定（法无明文不为罪）。</li>
+<li data-page-node-id="XfFn70sbpFNCdwLHvx0apA"><b data-page-node-id="9K7yyPn5Cog2rrqRExTjh9">数字优先记</b>：年龄节点、时限天数（性价比最高的考点）。</li>
+<li data-page-node-id="yAKAfeNlHwUIr7oFQZFSt4">无法确认 → 排除绝对化、排除部门法混用项。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="OO8OZz1wKcwKjjSwEr0sDQ"><b class="t" data-page-node-id="4HCuSxy5DwkXHrMmp6Mnc4">判定标准 · 高频考点与判定口径</b>
+<b data-page-node-id="rRUFIsmIt4pPFCTzXCiSTc">宪法</b>：根本大法，最高法律效力；全国人大是最高国家权力机关、行使立法权，国务院是最高行政机关；<b data-page-node-id="bUnJx9z7y2MZJAMLVDOHCF">宪法修改需全国人大全体代表 2/3 以上多数通过，法律和其他议案过半数</b>；国家宪法日 <b data-page-node-id="z2tFKiH2IVAal9CKX2xJzc">12 月 4 日</b>。<br data-page-node-id="uwG1HaSNYkaP5B5ogcLPnt">
+<b data-page-node-id="rlp6Oe0vneF3ucvAVgm1RF">民法典</b>：完全民事行为能力 ≥18（或 16 周岁以上<b data-page-node-id="hi3YhL2EWuT6lClqsLgPBx">以劳动收入为主要生活来源</b>视为完全）；限制 8 ≤ x &lt; 18；无 &lt; 8。<b data-page-node-id="wvYE5EF7NRKJWdLQcv3G6x">普通诉讼时效 3 年</b>（最长 20 年）。不动产<b data-page-node-id="xN2ACSLaIB7batGClWJJBv">登记生效</b>；居住权<b data-page-node-id="9vZ8LyKLsEkAisaBdijBLN">登记设立</b>（用益物权）。结婚年龄<b data-page-node-id="09MxsXpo9vxWNtoDHBIBUR">男 ≥22、女 ≥20</b>；<b data-page-node-id="VzjWaxRKfF7xEwM8lAi3xq">离婚冷静期 30 日</b>。继承第一顺序：配偶、子女、父母；<b data-page-node-id="PsPay2DHPzAl0ygl7mE72C">公证遗嘱不再优先，以最后的遗嘱为准</b>。无过错责任适用于产品责任、环境污染、高度危险作业、饲养动物损害。胎儿涉及遗产继承、接受赠与等<b data-page-node-id="YSfad3HCyK4tm1HFjNgLxQ">视为具有民事权利能力</b>。<br data-page-node-id="58SpESCvByVYukN6Tkc5qA">
+<b data-page-node-id="wqxJ2kAT5qqZxXZAoN6Gup">刑法</b>：三原则（罪刑法定、适用法律人人平等、罪责刑相适应）。<b data-page-node-id="VJSvRo1EclWYfhZXjvprJJ">刑事责任年龄</b>：≥16 完全负刑责；14 ≤ x &lt; 16 对故意杀人、故意伤害致人重伤或死亡、强奸、抢劫、贩卖毒品、放火、爆炸、投放危险物质 <b data-page-node-id="Yzteycn0Vtag4hWFNvJF0C">8 类重罪</b>负刑责；12 ≤ x &lt; 14 特定情形经最高检核准追诉的负刑责。主刑：管制、拘役、有期徒刑、无期徒刑、死刑；附加刑：罚金、剥夺政治权利、没收财产、驱逐出境。正当防卫明显超过必要限度造成重大损害 = <b data-page-node-id="O8oF2ECLchm6tkxBojW1rs">防卫过当</b>（应负刑责但应减轻或免除）。<br data-page-node-id="60HVQx0w4wmzRHDGeagNph">
+<b data-page-node-id="x5BwyVg7QIndcYnC8PRwSf">行政法</b>：行政处罚种类含警告、通报批评、罚款、没收、暂扣或吊销许可证件、限制开展生产经营活动、责令停产停业、行政拘留等；<b data-page-node-id="rEUUD3cTa5GMUoCbyiRoc4">处罚时效 2 年</b>（涉及公民生命健康安全、金融安全且有危害后果的为 5 年）；<b data-page-node-id="kDr2LlXYgxoh6ltrbDr1bq">行政复议 60 日内</b>申请；<b data-page-node-id="K0WdCKUnpHjLD9BMViYD6i">行政诉讼 6 个月内</b>起诉，<b data-page-node-id="fsMGP3cA5TE9QJPdWiZGiY">举证责任主要由被告（行政机关）承担</b>；行政强制措施（限制人身自由、查封、扣押、冻结）与行政强制执行（加处罚款、划拨、拍卖）不同。</div>
+<div class="blk b-op" data-page-node-id="cI9dB9lDmd7HO3mXTH7c6B"><b class="t" data-page-node-id="Pul6sAeUs7PebskFDk2AaG">选项处理 · 常见设错方式</b>
+<table data-page-node-id="1IhTl5SQpH3i7hznRLBSJf">
+<tr data-page-node-id="WRBM0CMeTFGxJ1QMFDtzBO"><th data-page-node-id="RRKc7xUV3qMFOozcOpHzvz">设错方式</th><th data-page-node-id="Ir3CSCqDRA6I3ZkTc7C8WV">典型表现</th></tr>
+<tr data-page-node-id="tpN87H1bIOUIwLPxD0iYCK"><td data-page-node-id="rx6hicr9iuB6UZ68jSWdOd"><b data-page-node-id="Stkj7KhE1zuv8Z2b0i9rtm">部门法混淆</b></td><td data-page-node-id="SMFM2pNMczOMF5DBbNb17n">把"罚金"（刑罚，法院判）说成"罚款"（行政处罚）</td></tr>
+<tr data-page-node-id="fippej5DXeMmT5jxMXHVZ0"><td data-page-node-id="vHZuulmSW8FDynVlJUPhtY"><b data-page-node-id="uA4gBLKmcCWVz0JjdFizO2">年龄节点错</b></td><td data-page-node-id="b3BkRl1v3H9zrqFmxGBVQB">把 8 周岁记成 10 周岁；16 与 18 混</td></tr>
+<tr data-page-node-id="VX7rCb2ZRdKNPF649Lhggh"><td data-page-node-id="pHHwS7BoW47WoU7bMQYifp"><b data-page-node-id="j5BQLG7ymalR1Zedp7DmQP">时限混淆</b></td><td data-page-node-id="eZOR699LByByFmUCZNKNzr">行政复议 60 日 vs 行政诉讼 6 个月 vs 诉讼时效 3 年</td></tr>
+<tr data-page-node-id="VDhxV4k4BHZ4SNGUAVsnFY"><td data-page-node-id="IRkEw5BF9CKj8z3xjmFyZ3"><b data-page-node-id="tGCxjJIcpSBnDOlPof3ueQ">主体错误</b></td><td data-page-node-id="AOPw7q7mBk3VrXz3Y7gf8K">行政处罚由"法院"作出</td></tr>
+<tr data-page-node-id="CMquWXZZbGbevtaKO21lMm"><td data-page-node-id="AVsC1p3sBV6Rxi39HjMAXg"><b data-page-node-id="4YYwcGjmsvcaGQJOiRKZxu">"应当"与"可以"互换</b></td><td data-page-node-id="k2WH32s0AyBmfsMTQ31BRG">"应当"= 必须，"可以"= 授权</td></tr>
+<tr data-page-node-id="gUIRqoBJJfiO8PY0lpqvo8"><td data-page-node-id="BryEitt0vI8OPqOEARBA7t"><b data-page-node-id="j6GenNbK0S1dRWlPgm3pae">权利类型错</b></td><td data-page-node-id="YGtHHbaAdoIA4gCdZ3nb2w">把"用益物权"说成"担保物权"</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="Z64xuCQwUi7q05jAlKRryZ"><b class="t" data-page-node-id="8qI9foAFcfQdM5FVnwZri4">高频陷阱</b>
+<ul data-page-node-id="rZKL4aAYJsRRFA7BsMh7bt">
+<li data-page-node-id="SucHt5n030QUciH7c7A5KM"><b data-page-node-id="lCp5c1HkiOOSeCPRcazyFW">"罚金"与"罚款"</b>（刑法 vs 行政法）—— 出现频率极高。</li>
+<li data-page-node-id="3foHjct6dGgzVNXqDYMDJ8"><b data-page-node-id="6q2RS9vSRNmpFHPpBbAL7A">"行政处罚"与"行政处分"</b>（外部行政行为 vs 内部人事处理）。</li>
+<li data-page-node-id="JQy9lUGqfFxXak985vi4RK">诉讼时效起算点（知道或应当知道权利受损<b data-page-node-id="sH4nbG5Xr8SjbcMgaZBAVJ">及义务人</b>之日）。</li>
+<li data-page-node-id="0zOO89NZQNCQtjFwAaLDuM">正当防卫与紧急避险混淆（避险损害的是<b data-page-node-id="H0D7HOVIoU7dAyst0uAPI8">第三方</b>合法权益）。</li>
+<li data-page-node-id="T1epivIdR0MHC7MmUyZkuF">民事行为能力年龄与刑事责任年龄混用。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="PQ6tsIHxzXzEN7Lc9VU2gK"><b class="t" data-page-node-id="4pJTEpucxzUm4euPzPuYTh">示例演示</b>
+<div class="q" data-page-node-id="oZbWgNkzCLCkItRKFxrS1m">下列说法正确的是：A. 8 周岁的小明独自购买 5000 元手机，该行为有效　B. 15 周岁的小红签订的买卖合同一律无效　C. 17 周岁的小刚以劳动收入为主要生活来源，视为完全民事行为能力人　D. 不能完全辨认自己行为的成年人属无民事行为能力人</div>
+A：8 周岁属限制民事行为能力人，大额交易<b data-page-node-id="DXCjjJAlP4NGB2dYxNHG4M">效力待定</b>，非"有效" ✗｜B：限制行为能力人订立的合同是<b data-page-node-id="luQjF3lBCrAYOH5UTw1x7x">效力待定</b>，不是"一律无效"（纯获利益的有效）✗｜C：16 周岁以上以劳动收入为主要生活来源 → <b data-page-node-id="SBTVYdSqhz1zMCCrYHLPFy">视为完全民事行为能力人</b> ✓｜D：不能完全辨认 → <b data-page-node-id="NQjh46wEWuJTYDwpc74AER">限制</b>；完全不能辨认才是无民事行为能力 ✗<br data-page-node-id="GqUHuibbZaUtPvQwcxLvKA">
+<span class="ans" data-page-node-id="y1kJBbiCXf50aD426VNTCK">答案 = C</span></div>
+</div>
+
+<div class="card" data-page-node-id="AocT7TVTAlBTnYAGaxNCUU">
+<h4 data-page-node-id="6AXDgPZ2lrySinKJyGKNOp"><span class="no" data-page-node-id="GDBtlrPtMNEsMWgo8yJRxe">18</span>经济 / 科技 / 人文 / 地理速判与排除法</h4>
+<div class="blk b-id" data-page-node-id="rEYUpAoVAGCnXiTZ7McgVd"><b class="t" data-page-node-id="doPbo5iJ4cI735QumCnFlz">识别标志</b>跨四个小模块，覆盖面最广。<b data-page-node-id="hKIdQzhsGZpmh0vQjytbr4">共同特征：大量"配对题"和"之最题"</b> —— 这正是排除法的用武之地。</div>
+<div class="blk b-th" data-page-node-id="QaKJLonkachkh5DnjwGg9u"><b class="t" data-page-node-id="avsTMGChGENE04HNMP1BSl">思考路径</b>
+<ol data-page-node-id="3cYwh25dKC9qfEcuK0ESNe">
+<li data-page-node-id="oCJvU0tRNoSvk78loYizUf"><b data-page-node-id="Av0U9nsOSXBQoNr6uAKg6W">分层处理</b>：不追求全覆盖，每个模块只记"锚点 + 排除规则"。</li>
+<li data-page-node-id="YIpxoqz3rFDS7udyUq6CLj"><b data-page-node-id="dFHUpz0AQoMZj2KRFaoxik">排序题</b>（朝代、事件先后）→ <b data-page-node-id="dtaNMrhOq9TDWk2USnJQZG">先定首尾</b>，通常能排掉 2 个选项。</li>
+<li data-page-node-id="JhW9uMkd1PIW2TVCTIv0l0"><b data-page-node-id="gaht4b6qfXvA04bEGaSyTD">配对题</b>（人物—作品、国家—首都、朝代—事件、诗句—节日）→ 找<b data-page-node-id="rswIaSqXccWdl3zi1k7cIZ">最确定的那一个配对</b>，从它突破：违反它的全排。</li>
+<li data-page-node-id="1YPZGPrXxs8f71zDDdisrJ"><b data-page-node-id="AQ32X6Ml6x2CxAk4QhEZbm">"之最"题</b> → 死盯<b data-page-node-id="8wTRukNqkxHbvs1QNZEiOP">限定词</b>：最大 vs 最长 vs 最深、中国 vs 世界、淡水湖 vs 湖泊、内流河 vs 外流河。</li>
+<li data-page-node-id="NWBxoaWYlwpJFLdmX3QTdb"><b data-page-node-id="Qt4uMOSyo5DaRTBL0oDerE">原理题</b>（物理化学生物）→ 用生活经验判，违背直觉的直接排。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="pejkRY4QImwq7CPX23E26N"><b class="t" data-page-node-id="G96Jqw2XD8kUIfpjJqQZNW">判定标准 · 四模块锚点清单</b>
+<b data-page-node-id="Zi95f4QKNOO0w2QLEZqYj7">经济</b>：GDP 按<b data-page-node-id="vfokB2WpasVF6ZSAQJIF0m">地域</b>（国内）、GNP 按<b data-page-node-id="yX7Q9373m9sjUnQzNoVzUQ">国民</b>；CPI 居民消费价格（上涨 = 通胀）、PPI 工业生产者出厂价格；恩格尔系数 = 食品支出÷总消费支出，<b data-page-node-id="EtaDF747QE7SkfKuFg7nNB">越低越富裕</b>；基尼系数 0—1，<b data-page-node-id="LtmlyJ1ebap4UGi6WiSTfd">0.4 为国际警戒线</b>；<b data-page-node-id="9CpSA2EZ3a2L9k9wX8COdB">财政政策 = 税收、政府支出、国债；货币政策 = 利率、存款准备金率、公开市场业务、再贴现</b>（最高频设错点）；经济过热/通胀 → 紧缩，衰退/通缩 → 扩张；本币升值 → 利进口、不利出口。
+<b data-page-node-id="gH93qBGt3YdLeZFOwAF6q7">科技</b>：光——反射（镜面、倒影）、折射（筷子弯折、海市蜃楼、透镜）、色散（彩虹、三棱镜）、直线传播（影子、日食、小孔成像）；声——音调 = 频率、响度 = 振幅、音色 = 发声体材料结构，<b data-page-node-id="yc6kOvGdARfE7iNNj9jKMw">真空不能传声</b>；物态——升华（干冰、樟脑丸变小、冰冻衣服变干）、凝华（霜、雾凇、窗花）、液化（露、"白气"）；<b data-page-node-id="o9xfa0B7sEFMaw0OEP2plk">"白气"是液化形成的小水滴，不是水蒸气（水蒸气不可见）</b>；燃烧三要素——可燃物、助燃物、温度达着火点，油锅着火用锅盖隔绝氧气<b data-page-node-id="hn2XNr8G9gYfayvCqXLsaU">不能用水</b>；酸雨 pH &lt; 5.6；温室气体 CO₂、甲烷；臭氧层破坏（氟利昂）；<b data-page-node-id="YQr0zw7EPds6iEurdreNAB">抗生素只对细菌有效，对病毒无效</b>；成就归属——神舟（载人飞船）、<b data-page-node-id="BtMCCEeIpGzfLBbdsQTENG">嫦娥（探月）</b>、<b data-page-node-id="OAvbY69YHYzSLWqDd4nAE4">天问（火星）</b>、北斗（导航）、天宫（空间站）、羲和/夸父（太阳）、蛟龙号/深海勇士/奋斗者号（深潜）、C919（大飞机）、神威·太湖之光/天河（超算）、九章/祖冲之号（量子计算）、墨子号（量子通信卫星）。
+<b data-page-node-id="5Xs53LKZH1VX4ryD6dl4XZ">人文</b>：朝代顺序——夏商与西周，东周分两段，一统秦两汉，三分魏蜀吴，二晋前后延，南北朝并立，隋唐五代传，宋元明清后；《史记》司马迁·纪传体通史·第一部，《资治通鉴》司马光·编年体，《汉书》班固·第一部纪传体断代史；四大发明——造纸（东汉蔡伦改进）、印刷（隋唐雕版、北宋毕昇活字）、火药（唐）、指南针（战国司南、北宋用于航海）；唐宋八大家——韩愈、柳宗元、欧阳修、苏洵、苏轼、苏辙、王安石、曾巩（<b data-page-node-id="xPpRARgjBZyWcQmCGSvc2i">无李白杜甫</b>）；诗人别称——李白诗仙、杜甫诗圣、王维诗佛、白居易诗魔、李贺诗鬼、刘禹锡诗豪；四书——大学、中庸、论语、孟子，五经——诗、书、礼、易、春秋；二十四节气——春雨惊春清谷天，夏满芒夏暑相连，秋处露秋寒霜降，冬雪雪冬小大寒；<b data-page-node-id="mtnb8nkiVzvukDI59l0gHP">清明是唯一既是节气又是节日</b>；端午（屈原）、重阳（登高、插茱萸、敬老）、中秋（赏月）。
+<b data-page-node-id="GX4x9rZfAkbKoxwtbvYNnU">地理</b>：地势<b data-page-node-id="LJSA5DNvgXhm4Vbv1pJZYu">西高东低</b>三级阶梯（一二级界线：昆仑山—祁连山—横断山；二三级：大兴安岭—太行山—巫山—雪峰山）；四大高原——青藏（最高·世界屋脊）、内蒙古（最平坦）、黄土（千沟万壑）、云贵（喀斯特）；<b data-page-node-id="gZH41jeDXymk1A9mhygQHu">秦岭—淮河：南北方分界、1 月 0℃ 等温线、800 mm 等降水量线、亚热带与暖温带分界</b>（超高频）；长江（最长，发源唐古拉山，注入<b data-page-node-id="6lyAi5AZcsQmPAPfxqSv68">东海</b>）、黄河（发源巴颜喀拉山，注入<b data-page-node-id="5XWIZ6D1FOK3VIsSDqvp3F">渤海</b>，下游"地上河"）、<b data-page-node-id="O606cA4jytvcBdi5UaxSiS">塔里木河是最长内流河</b>；<b data-page-node-id="wQrOSXVtsx3GXLYmuRSqRd">青海湖 = 最大湖泊、最大咸水湖；鄱阳湖 = 最大淡水湖</b>；五岳——东岳泰山（山东）、<b data-page-node-id="yS1mT1N0SHnx3M2rWR1hIv">西岳华山（陕西）</b>、南岳衡山（湖南）、北岳恒山（山西）、中岳嵩山（河南）；<b data-page-node-id="18an7Tb2OAqEE0XUny0hXb">陕西本地</b>——省会西安（十三朝古都）、<b data-page-node-id="FH0efbZLiQfJOcpymMmaHi">秦岭横贯</b>、陕北黄土高原—关中平原（八百里秦川）—陕南秦巴山地、黄河流经陕北、壶口瀑布、兵马俑、华山、法门寺、大雁塔。</div>
+<div class="blk b-op" data-page-node-id="EDnL7QjJuhAqC5g3ucYWuc"><b class="t" data-page-node-id="QpsNbUYQerTcQBEzCKki6z">选项处理（通用）</b>排序题先定首尾 → 排除 2 项 → 剩下 2 项只比较中间两项。配对题从最确定的配对切入。之最题死盯限定词。两项互相矛盾 → 答案必在其一。"以上都是" → 先找明显错项。数字/年份题：过于精确或罕见的多为错。</div>
+<div class="blk b-tr" data-page-node-id="ZEanL82sFptw6mizsKeLKQ"><b class="t" data-page-node-id="TepXzlWBayDewjDUsbCegl">高频陷阱</b>
+<ul data-page-node-id="qQsLr7kFLyvLG2H4w5T4mz">
+<li data-page-node-id="u3WRN97JCFD8WLvS6AHXWM">把"错误/不正确"看成"正确"（常识第一大失误）。</li>
+<li data-page-node-id="b81NUI455G2jHhL0Q7dYsC"><b data-page-node-id="EZFojBuInpkhDSAQxDedQb">"最大的湖泊"（青海湖）与"最大的淡水湖"（鄱阳湖）混淆</b>。</li>
+<li data-page-node-id="DAGPFZ47bSCBjcj91A7BV3"><b data-page-node-id="VitMThzJ7GskyiYZezdtZX">财政政策与货币政策混用</b>（"降低存款准备金率"是货币，不是财政）。</li>
+<li data-page-node-id="5AYMhNBwmNa3mdDnYuMIhs"><b data-page-node-id="r4IEEe8U8zNfxqgyO0MTab">"白气是水蒸气"</b> → 错，是液化小水滴。</li>
+<li data-page-node-id="a9LJOPHd09rtUwVyW8NNFD">朝代 / 人物 / 作品错配。</li>
+<li data-page-node-id="YyjYrhtBwY2mKFGffz4BhF"><b data-page-node-id="MRFCDuFAhqmVARCiOH8VCG">"抗生素能治病毒性感冒"</b> → 错。</li>
+<li data-page-node-id="MOocOaK0Hn7Wb2KDsZxNdg">地理方位记反（"东高西低""长江注入黄海"）。</li>
+<li data-page-node-id="m7FHeXkg6c8eGhZW4AWfEZ">科技成就张冠李戴（嫦娥说成火星、天问说成探月）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="d8RCd9DyHZUkcUtZttdSYD"><b class="t" data-page-node-id="FbRhFgdJ5uVsBdGTwJCxSx">示例演示</b>
+<div class="q" data-page-node-id="rqQ1jdZqCCwX0KOfizC6In">下列诗词与传统节日对应正确的是：A."爆竹声中一岁除，春风送暖入屠苏"——元宵节　B."清明时节雨纷纷"——清明节　C."遥知兄弟登高处，遍插茱萸少一人"——中秋节　D."但愿人长久，千里共婵娟"——重阳节</div>
+配对题 → 找最确定的一项突破：B 直接含"清明"→ 几乎必然正确，先锁定。<br data-page-node-id="e2jIkuau55hL08dtOZY8Uy">
+验证其余：A 出自王安石《元日》，写<b data-page-node-id="dw5NlzQhlheRscWnZtqfjY">春节</b>（一岁除、屠苏酒）✗｜C "登高""插茱萸" → <b data-page-node-id="B9Cvjcuib2iJYjQrJakJ73">重阳节</b>不是中秋 ✗｜D "婵娟"指月，出自《水调歌头·明月几时有》（丙辰中秋）→ <b data-page-node-id="DXUXkaMEI2zdw66ulQ1zZK">中秋节</b> ✗<br data-page-node-id="YDvMY4mLr4P41MgkLiz2D5">
+<span class="ans" data-page-node-id="MlbVP3cwyjQg4SJsqJBDT0">答案 = B</span>（用时约 15 秒，演示"从最确定配对切入 + 张冠李戴识别"）</div>
+</div>
+
+<h3 class="grp" data-page-node-id="Vf6MpvkGcANo8sS6c1EQRh">常识判断 · 用时与取舍</h3>
+<div class="card" data-page-node-id="G2kBn4Zi6FJngmqromWsp5">
+<h4 data-page-node-id="RdnQFCEB6sRcRuub6n6CwD"><span class="no" data-page-node-id="oySgK5dgt6xajRvPejb0Hz">✓</span>常识判断用时分配与超时兜底</h4>
+<table data-page-node-id="f0mUno0pLrGtM41eskjdVU">
+<tr data-page-node-id="2xroF3F5YaK3CG1snBKeiC"><th data-page-node-id="4MHZxe8TJXmGktVFVaPdh3">阶段</th><th data-page-node-id="WjGlRuHLiVWqDAsL6KRMnM">时间节点</th><th data-page-node-id="FfykAF03FcJYqMTxgrON0g">动作</th><th data-page-node-id="OqhgB6NE1sQHu8fOUypvbE">超时兜底（触发即执行）</th></tr>
+<tr data-page-node-id="6BP8CuxRcUvVQtkyXDZFXG"><td data-page-node-id="w4howx1o1awjQmdXstJnN2"><b data-page-node-id="AqM9YR78dJs7yFJ5sqM8JB">1 快速通刷</b></td><td data-page-node-id="HxzpcBGl3ALMsyS1nD7StW">0:00—4:00</td><td data-page-node-id="Y4RcWxINFRC5r9LLRd0kmE">前 12—15 题，每题 ≤20 秒；会就选，半会就排除，不会立刻蒙</td><td data-page-node-id="CMH63ThO0TP23ApWUYykKd">单题超 <b data-page-node-id="uR3p4X5sMDrtlapmfQqCrC">30 秒</b> → 立即蒙，标记跳过，<b data-page-node-id="tZC5UEHkI6xWCQur2FFYbk">绝不回头</b></td></tr>
+<tr data-page-node-id="6su7jfFts6b2pVvOiPnWVh"><td data-page-node-id="RzFEjiqyih92zQqyU5BaOj"><b data-page-node-id="kIA9FhztZL9IWOZ9B9ySKh">2 收尾冲刺</b></td><td data-page-node-id="k6WZk20O2UvyNhRYsQOwru">4:00—6:00</td><td data-page-node-id="401zkwQAjhtEr7FAx00OTE">剩余题每题 ≤10 秒，直接蒙（统一蒙"已确定答案中出现最少"的选项）</td><td data-page-node-id="iMlWND8I1BGDF8k9JnctDq">已到 6 分钟还有剩余 → <b data-page-node-id="qce7PAvBGopBombGAghCzN">整列统一蒙同一选项</b></td></tr>
+<tr data-page-node-id="CzqkiM8hMhevm6SfyEMyIO"><td data-page-node-id="jCYNu8czCMflICedFp9GeD"><b data-page-node-id="2jKikHsFOQySX9dlYg2Ka8">3 涂卡</b></td><td data-page-node-id="LDXHBHCDW6Gw5XsMoxtOSI">6:00—6:30</td><td data-page-node-id="uEeAd8ETsZvYz9CdhlEXZa">对齐题号涂卡（常识题量最大，最易串行，逐 5 题核对一次）</td><td data-page-node-id="V0nknXTM1TyceBWlZnqRXF">必须留够 <b data-page-node-id="ndPBEDyAdtUiwqVhoDcjWt">30 秒</b></td></tr>
+<tr data-page-node-id="1Ki59C8Ikp3s4PHAw5xjDp"><td data-page-node-id="wz9v7royWQGKyii9KMsFko"><b data-page-node-id="lPrM1EnWXRUw9roSTKnB1j">合计</b></td><td data-page-node-id="UkDMIo9B9ozKXlcNRPejiT"><b data-page-node-id="IX0dCvqC51kA6yh5fhOkYh">理想 ≤7 分钟</b></td><td data-page-node-id="DslaTfaUExFzIDZdCub6aU">目标正确率 <b data-page-node-id="34SRDfJvOchXTn0DEHHU3b">50—55%</b>（20 题对 10—11 题）</td><td data-page-node-id="umeN4avi0wYx2eF6h9xkV2"><b data-page-node-id="ZYB5B0YTpmpnoSFLuHbtao">硬上限 8 分钟</b>，到点必须停手</td></tr>
+</table>
+<div class="tip" data-page-node-id="2h7A9YIL4MQCkp8H0EimH9"><b data-page-node-id="y8PvDOYAWW6R5TOicOuCrf">兜底红线：</b>① 单题 30 秒；② 模块 8 分钟；③ 不空题、不回头、不改答案；④ 常识时间<b data-page-node-id="Usk27QhQQUS3kN4MpWsdbx">绝不</b>挤占资料分析与判断推理；⑤ 涂卡必对齐题号。</div>
+</div>
+
+<h2 class="mod" data-page-node-id="DQqHA8Vgn1ZtgYWjIrxkio">附 · A 类职测全卷时间轴（90 分钟）</h2>
+<div class="card" data-page-node-id="XO9NDX71JAodfhaIkk2tqz">
+<table data-page-node-id="xrzw5E8a1GyR6PDEMzWHYf">
+<tr data-page-node-id="wVPDCBi96IeQhH56ANRSJC"><th data-page-node-id="1TpJyYCMPXLAZGH9TDxMvg">顺序</th><th data-page-node-id="FYwKWKUc6z0rvZYowRj2cf">模块</th><th data-page-node-id="pumTw2MJVj2IzrC5MqVkX2">用时</th><th data-page-node-id="QVfMzlFN3HbGyPrxJq6Wwo">要诀</th><th data-page-node-id="881Z77036Pnzu5z9EMoTVq">目标正确率</th></tr>
+<tr data-page-node-id="Mlv4wLoiqGPzPDv1DGJ6aH"><td data-page-node-id="gIWjvX3DexS39l5jjGRVN7">1</td><td data-page-node-id="8ypF7QKwwJhiGWoJVj9jYZ">常识判断</td><td data-page-node-id="LJAH1ZP3qq6UzEQ34wNpjR">6—7 分钟</td><td data-page-node-id="E3oohjqEHmXAAB29Lgafwm">会就选不会就蒙，<b data-page-node-id="EZFp59k5aYAdvQCxyTnSQh">不纠结</b>，用来热身</td><td data-page-node-id="8hv41SNwh0dVqR2J3ROCJI">50—55%</td></tr>
+<tr data-page-node-id="1y57bnrFAREfeFvouXc0rw"><td data-page-node-id="jotStHbD0TrlMY5ogmlXIl">2</td><td data-page-node-id="BYGeB2hnzk0YDx8lM8GtQy"><b data-page-node-id="Jln9nBvWeJRujsNHykCxfD">资料分析</b></td><td data-page-node-id="ehofkQCgB4r8VGOYWARvWG">18—20 分钟</td><td data-page-node-id="lJRfNIwMS0nsZExp6BqL8B">清醒时先拿下，确定性最高</td><td data-page-node-id="7Tz3pAoRgUjBK9OotAveqt">85—90%</td></tr>
+<tr data-page-node-id="CnmrGzk9DUTbxwS8sabKMB"><td data-page-node-id="Es2h7MQxzufYJYI2TCmH1o">3</td><td data-page-node-id="TuGOsBm7rV1lxlD1aCFHNG">判断推理</td><td data-page-node-id="jVTaHT2hnnr30QvDyG4PDo">24—28 分钟</td><td data-page-node-id="Lsl0Q4PYcF6AojI5RT6wXF">类比抢时间，图形卡住就跳</td><td data-page-node-id="TibtHBU7V4VGlbKEcCR8OW">80%</td></tr>
+<tr data-page-node-id="xewu1YWLDX37A8xKevLNNn"><td data-page-node-id="alG04UWShIJuCbnFqhp1eG">4</td><td data-page-node-id="H6C01rmy3CgUJuaFqj9YNM">言语理解</td><td data-page-node-id="3dn9qf6Hbt3p3KYRDFkwYO">21—26 分钟</td><td data-page-node-id="GMOczC7TtSJ4w96N0T8xGY">填空靠语感，排序不恋战</td><td data-page-node-id="F1nkRZbBDTHu8D2EF5aPHb">78%</td></tr>
+<tr data-page-node-id="LGnQ3Nav2Q0UxNdl63LCKp"><td data-page-node-id="CH0FEcRVIzlHuMdXSvbff3">5</td><td data-page-node-id="hptOnDqLm9HxRanQyiKeB9"><b data-page-node-id="0hthzDkmpDkyaZGYDVmyoF">数量关系</b></td><td data-page-node-id="sQ5dpR0Y2CU9x1xvPoSQ4L">6—9 分钟</td><td data-page-node-id="tGOTC2G8pOQc9Fa6Afzb7N">只做 3—4 题，其余统一蒙同一选项</td><td data-page-node-id="h8Q9rAlSaR6xbUOLnyFRYo">50%</td></tr>
+<tr data-page-node-id="BcmIrz8lImcMX5ASRfi0RW"><td data-page-node-id="I6IPuB1H2Kf2NdT6os8CSi">6</td><td data-page-node-id="ZU6VZWSOtMC3qVVSkPk6fO"><b data-page-node-id="WzcEcSAxDvmE77fXpny3t3">涂卡 + 检查</b></td><td data-page-node-id="rMdTfRKAsVXPWxJsRmgY5k">7 分钟</td><td data-page-node-id="sKYdD2gSxKAU0QakuNrmJp"><b data-page-node-id="Hfv2lxmapM1uQWtY7pLmQo">做完一个模块涂一个模块</b>，绝不最后集中涂</td><td data-page-node-id="vVlz2Jiay5DOKB0OnkxQMo">—</td></tr>
+</table>
+<div class="warn" data-page-node-id="RajPEm3jTC34nxGgTcnO7Z"><b data-page-node-id="MW1jCi2kX5th7kTR4l90rp">提醒：</b>职测 08:30—10:00 与综应 10:00—12:00 连考，中间不休息。职测必须在 <b data-page-node-id="Rp8RTYiQUaBJ156cR7bfEs">09:50 前</b>做完并涂完卡，留 10 分钟收尾，别把疲劳带进综应。</div>
+</div>
+
+<footer data-page-node-id="r71XbiwIqDzZ14oXLx3HUT">
+本手册为方法论框架整理，公式与判定口径为通用应试技巧总结；时政条目更新快，请以考前 3 个月内官方发布为准。<br data-page-node-id="2qil1YRE61wstE8I0isl2a">
+招录政策、考试时间等以官方公告为准。
+</footer>
+
+</div>
+</body>
+</html>
