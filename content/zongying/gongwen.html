@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="EltvDUlkc4AJiBOBu1FMr8">
+<head data-page-node-id="5y01cQ5hpD2SYuvuuKY9p1">
+<meta charset="UTF-8" data-page-node-id="YthHyoeFdcBGCkF7ZDPvff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="32stOxrW638K3nM5cZwfgZ">
+<title>综应 A 类精细答题框架手册 · 公文写作与文章写作</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;background:#f5f6f8;color:#1f2329;line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:28px 20px 80px}
+header{background:linear-gradient(135deg,#ea580c,#fb923c);color:#fff;border-radius:14px;padding:26px 24px;margin-bottom:22px;box-shadow:0 4px 18px rgba(234,88,12,.18)}
+header h1{font-size:23px;font-weight:700;margin-bottom:8px;letter-spacing:.5px}
+header p{font-size:13.5px;opacity:.94}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-meta span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:3px 12px;font-size:12.5px}
+h2.mod{font-size:19px;font-weight:700;margin:32px 0 6px;padding-left:12px;border-left:5px solid #ea580c;color:#1a1a1a}
+.mod-sub{font-size:13px;color:#6b7280;margin-bottom:16px;padding-left:14px}
+h3.grp{font-size:16px;font-weight:700;margin:22px 0 10px;color:#c2410c;background:#fff1e7;display:inline-block;padding:4px 12px;border-radius:6px}
+.card{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h4{font-size:15.5px;font-weight:700;margin-bottom:12px;color:#111;display:flex;align-items:center;gap:8px}
+.card h4 .no{background:#ea580c;color:#fff;font-size:12px;width:22px;height:22px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.blk{border-left:4px solid #ccc;border-radius:0 8px 8px 0;padding:9px 14px;margin-bottom:10px;font-size:14px;background:#fafbfc}
+.blk b.t{display:block;font-size:13px;margin-bottom:4px;letter-spacing:.3px}
+.b-id{border-color:#2b5cff;background:#f2f6ff}.b-id b.t{color:#2b5cff}
+.b-th{border-color:#f59e0b;background:#fffaf0}.b-th b.t{color:#b45309}
+.b-ru{border-color:#10b981;background:#f0fdf6}.b-ru b.t{color:#047857}
+.b-op{border-color:#8b5cf6;background:#f8f5ff}.b-op b.t{color:#6d28d9}
+.b-tr{border-color:#ef4444;background:#fef4f4}.b-tr b.t{color:#b91c1c}
+.b-de{border-color:#64748b;background:#f8fafc}.b-de b.t{color:#334155}
+.blk ul{margin:4px 0 2px 18px}
+.blk li{margin:2px 0}
+.blk ol{margin:4px 0 2px 18px}
+.blk ol li{margin:3px 0}
+code{background:#eef0f3;padding:1px 6px;border-radius:4px;font-family:"SFMono-Regular",Consolas,monospace;font-size:13px;color:#c7254e}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13.5px}
+th,td{border:1px solid #e3e6ea;padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#f4f6f9;font-weight:600;color:#333}
+tr:nth-child(even) td{background:#fcfcfd}
+.q{background:#fffbea;border:1px dashed #f0c674;border-radius:8px;padding:10px 14px;font-size:14px;margin:6px 0}
+.q .ans{color:#b91c1c;font-weight:600}
+.tip{background:#fff1e7;border:1px solid #fbc7a3;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#9a3412;margin:10px 0}
+.warn{background:#fef4f4;border:1px solid #f5b5b5;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#b91c1c;margin:10px 0}
+.ans-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:12px 16px;font-size:14px;margin:8px 0;white-space:pre-wrap}
+.chip{display:inline-block;background:#f1f5f9;border:1px solid #dbe1e8;color:#334155;border-radius:5px;padding:1px 8px;font-size:12.5px;margin:2px 3px 2px 0}
+footer{margin-top:40px;text-align:center;font-size:12.5px;color:#9aa1ab;line-height:1.9}
+@media(max-width:640px){.wrap{padding:16px 12px 60px}header h1{font-size:19px}.card{padding:14px 14px}}
+</style>
+</head>
+<body data-page-node-id="OKiio6LPDTlgrkeH6CQxdE">
+<div class="wrap" data-page-node-id="RtO6PWO285DC4HaBKslN5X">
+
+<header data-page-node-id="HLDCB0BSUJ6EQrsoPnbAE9">
+  <h1 data-page-node-id="otdjxLsOkAKfBalinBdltG">综应 A 类精细答题框架手册 · 公文写作与文章写作</h1>
+  <p data-page-node-id="JcduuCl0vUCPRpZTzRFBud">事业单位联考 A 类《综合应用能力》｜六段式答题框架：识别标志 → 思考路径 → 判定标准 → 要点处理 → 高频陷阱 → 示例演示</p>
+  <div class="hero-meta" data-page-node-id="GmoTaXeoDvliGL7nHiRTWv">
+    <span data-page-node-id="Vmt4EyGeq61pC36Tj4KQFx">14 份框架</span>
+    <span data-page-node-id="h85pPoFOrFPfWocZv7bBVS">完整格式模板可照抄</span>
+    <span data-page-node-id="mLA8MLNYD1IIsKruWVHhFz">含规范表达素材库</span>
+    <span data-page-node-id="Juq6Ew2YC2us2nkPFE1gGZ">含卷面检查清单</span>
+  </div>
+</header>
+
+<div class="tip" data-page-node-id="sTUUYac6LNBIVUuzKaAix2">
+<b data-page-node-id="BQIeASG0FXUwN7Yuw9kbdO">公文写作的核心逻辑：</b>申论看"内容质量"，公文看"<b data-page-node-id="xeXrVHvU3u1mys0XyDKkQv">格式 + 内容 + 语气</b>"三件套。<b data-page-node-id="24G6NzgR8U347OxlDMlepp">格式分是白给的</b>——标题、称谓、正文、落款四项齐全就有分；内容分在材料里，把材料的关键词抄准抄全；语气分靠身份判断，你是"谁"决定了你用什么口吻说话。
+</div>
+
+<h2 class="mod" data-page-node-id="X5RknW21zNnSilsLO63Twi">第一组 · 公文写作总论</h2>
+<div class="mod-sub" data-page-node-id="WpzvqI1jIAzLr89TwQEETt">先掌握"骨架"，再往里面填"肉"。所有文种都共用这一套格式规范。</div>
+
+<div class="card" data-page-node-id="C3v2AOefjIboTb0aBTGO9C">
+<h4 data-page-node-id="zdM3APInbwjkk34dUPdd2E"><span class="no" data-page-node-id="xIAribHzP8Eb3UH32yRzZH">1</span>公文通用格式与规范（必先掌握）</h4>
+<div class="blk b-id" data-page-node-id="943CptbEs7bXFxvHvFOTFn"><b class="t" data-page-node-id="h6DHeFuhIPU5Z7duJPIRG1">识别标志</b>题目出现"请起草/拟写/撰写一份××"、"请以××名义写一份××"、"根据给定材料写一份××"。凡是要写"成文"的题，先套这一套骨架。</div>
+<div class="blk b-th" data-page-node-id="2zv8miCJvM2SzIYNPZd0tH"><b class="t" data-page-node-id="0jiIxUmDUIsRS28LS7iLNs">思考路径 · 四步搭骨架</b>
+<ol data-page-node-id="QMVWsbWKlhDjCux30Cr8ch">
+<li data-page-node-id="q0KACrzjhfapmq7ssPySmr"><b data-page-node-id="bO5dQmM2XaeD1ZbAbZD6Cq">先定文种</b>：题目说"通知"就是通知，说"倡议书"就是倡议书。<b data-page-node-id="I7BeJuHWC54hsxDi6JTMBE">不要自作聪明换文种。</b></li>
+<li data-page-node-id="vhwK73vUhEKi2D1Q6utxCo"><b data-page-node-id="ry0wrZwGyFhmLEGgqH1H6Z">再定身份与受文对象</b>：我是谁（发文机关）？写给谁（主送机关）？这两个确定了，语气就定了。</li>
+<li data-page-node-id="KVodEuTQL1UPrzwFzEDjDH"><b data-page-node-id="T4aOA1CXOdZbfOiTrEsne8">搭四段正文</b>：开头（缘由/背景/目的）→ 主体（事项/措施/要求，分条列）→ 结尾（号召/要求/请示语）→ 落款（机关名 + 日期）。</li>
+<li data-page-node-id="Esw96TdYB8JSpQCHSCdadx"><b data-page-node-id="NxDzcCuweVctADVONkJnLa">最后填内容</b>：从材料里找要点，逐条填进主体段。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="DqETYy1wiFB23ipWeYF1ah"><b class="t" data-page-node-id="mhfh1MMmOjQH70MULlhFZK">判定标准 · 格式要素齐全表（照着检查）</b>
+<table data-page-node-id="NFgEzgWhXbEB0mlDEqsePM">
+<tr data-page-node-id="RYzTXLg9a3ZPNg7URXMfYz"><th data-page-node-id="zb5jwR3fHxcZvon5vU5FPh">要素</th><th data-page-node-id="ZoRSWlHwq2PCHLHriKYkvV">写法</th><th data-page-node-id="RcxmBrFsrUPMwpH3bbhro0">是否必写</th></tr>
+<tr data-page-node-id="lkP5gusuvRBmnr2nJbhXRq"><td data-page-node-id="Cl27DSHJwbyY5jFlo6cQOO"><b data-page-node-id="HgCAK2mSn0mC7TOFaYAMYI">标题</b></td><td data-page-node-id="j9C23KDARqoL020NHS1OHu">发文机关 + 事由 + 文种（如"××市××局关于开展××工作的通知"）；题目未给机关名可省略为"关于开展××工作的通知"</td><td data-page-node-id="CZuTkJAihdbTazp2FyCf3b"><b data-page-node-id="Vw2Z92B9TOs6ddTOnCMNha">必写</b></td></tr>
+<tr data-page-node-id="UD5U8BgQvg7zDjTrQwZQNS"><td data-page-node-id="wxszZQLydiGqOcwkCqIBgF"><b data-page-node-id="oGV53WE1KYefOUkgK60gtR">主送机关（称谓）</b></td><td data-page-node-id="6GhZwKM1rzhgG0DReTXzTV">顶格写，后加冒号。如"各有关单位：""各位居民朋友："</td><td data-page-node-id="QFvRmvwxSxFCECJyG2Olq5">通知/通报/报告/请示/函 <b data-page-node-id="9vrpMzIS61hq4rFN6OnYd1">必写</b>；倡议书/宣传稿 <b data-page-node-id="R9tCpz20jVEWcj0gW4Xtvs">必写</b></td></tr>
+<tr data-page-node-id="g7w0HYI0EjYv5tfKAkbGDl"><td data-page-node-id="mVSIGpBGLu5ZU3rscHUDzo"><b data-page-node-id="aes5yQbwTXkjbRJvURlbSN">正文开头</b></td><td data-page-node-id="5G3wlVxWarY20BsfjDJ2vj">写缘由、目的、依据。常用句式见下方句式库</td><td data-page-node-id="zhwOeocpFN6kD5jSywR9k2"><b data-page-node-id="AUuCDW3HWjblPfncalbF2N">必写</b></td></tr>
+<tr data-page-node-id="cxhGQGcp0H8j0xzeKyvbY1"><td data-page-node-id="6GRaP7aRNvDHGqQ0jT5rja"><b data-page-node-id="yUvxxdsRgFNfFwYcR06Pcu">正文主体</b></td><td data-page-node-id="5Y6PHHn98Spc72o4nj7cHC">分条列点："一、……。二、……。三、……。"或"1. …… 2. ……"</td><td data-page-node-id="ILFbxsveS8lyiABXkWeD5E"><b data-page-node-id="8LKzg1GbEg3jCZBcHJw281">必写</b></td></tr>
+<tr data-page-node-id="siQqIa2yrqOljLLu9bqxR4"><td data-page-node-id="934EEPHCul0L7jgjUXg6oB"><b data-page-node-id="yOSMWSc5JFuNMHBYdby2y8">正文结尾</b></td><td data-page-node-id="2cIhMEdhbusS87qlBn9p3f">不同文种不同结尾语（见各文种框架）</td><td data-page-node-id="S4ez21nXGJtiKFs5uF85Tf">绝大多数<b data-page-node-id="PLNCsJEOzCQ7SG6XwfpCda">必写</b></td></tr>
+<tr data-page-node-id="rcNaiUVoI01T5l7c84d5VI"><td data-page-node-id="R9OOvJCZiasVRMuE5jG3zj"><b data-page-node-id="3mxojyNkPTazBIYWGOgoaI">落款机关</b></td><td data-page-node-id="ladXjelvElbcmqpnPH1aAG">右下角。发文机关全称或规范化简称</td><td data-page-node-id="lkZj215DAaFGCvEW0hLNn3">正式公文<b data-page-node-id="ubE71uxsDmsIs9wFgaG01B">必写</b>；讲话稿/倡议书视情况</td></tr>
+<tr data-page-node-id="9266NJPHw9MgBjDPKB2MvD"><td data-page-node-id="dbiq7pOdEf7ABrhgn9O58q"><b data-page-node-id="iJc3uOqZ8WuuqBCGDUqF0o">成文日期</b></td><td data-page-node-id="oJc0nrqJYT0GHjoqoF7xwf">右下角，机关名下方。<b data-page-node-id="IlHSaVIB5skcO44ZEWi3Q7">用"×年×月×日"占位</b>，不要编具体日期</td><td data-page-node-id="hVXdsfFQKf8RFjHCcYhIig">正式公文<b data-page-node-id="0ijjb5dsPkoFyvYFUqCenM">必写</b></td></tr>
+</table>
+<b data-page-node-id="nRgpg5sM21HPM3JLW8ncAG">格式占位惯例</b>：题目没给具体单位名、日期时，直接写"××市××局""×年×月×日"，<b data-page-node-id="0XpvqVzHiNoNLcH6XHLJKV">不要编造真实名称</b>，阅卷老师看的就是你会不会占位。</div>
+<div class="blk b-op" data-page-node-id="Q682TncasT9lpDVp1cErgi"><b class="t" data-page-node-id="PB0gw1ZBYGFPxN4cUkJABi">要点处理 · 常用句式模板库</b>
+<table data-page-node-id="qe5mR37nnGAxcxeWFGmPtA">
+<tr data-page-node-id="6ckIpeeZUxOYp9nc7uNmow"><th data-page-node-id="0V1m8OHUPzXEwJQuHTUTsO">段落</th><th data-page-node-id="U95Fg7YgTfuMlH5MPV8C3R">可套用句式</th></tr>
+<tr data-page-node-id="NhwHCVWF2GTh6g7cVUFEYr"><td data-page-node-id="idUa7uraAlkvhFlKVkeStO"><b data-page-node-id="FBRJDlUEnXm1SUFRJqn6Bf">开头·目的式</b></td><td data-page-node-id="TbuRmaHZFWn9IGMrhor8h0">为深入贯彻落实××精神，进一步加强××工作，切实解决××问题，现就有关事项通知如下：</td></tr>
+<tr data-page-node-id="V0n7mX4UFWT0ptcyFnROIT"><td data-page-node-id="BdDGIC5deudbAAXprPCD6z"><b data-page-node-id="d0WDi7a8GFd3Q5Sah68GHh">开头·背景式</b></td><td data-page-node-id="M0NZ7WlQPPstAYnuAVXHsa">近期，××问题日益凸显，给群众生产生活带来不便。为切实回应群众关切，现提出如下倡议：</td></tr>
+<tr data-page-node-id="sSFhftNtzXDtIANgegBj4V"><td data-page-node-id="fLmdnGT0rTTwHgzgFFB2jZ"><b data-page-node-id="rE2uzewsJC9TpGBKtQq4Eu">开头·依据式</b></td><td data-page-node-id="O77EZco2hTdS2uRunABESN">根据《××××》有关要求，结合我单位实际，现将××情况报告如下：</td></tr>
+<tr data-page-node-id="H4kvHNw9Q0CMV4gHqB7L2g"><td data-page-node-id="PINs0PKVkPPZ2XdkHD7HsI"><b data-page-node-id="CBKrm83SlBO6t4mz1hvi7m">主体·分条</b></td><td data-page-node-id="fluA9ymR0pjlnA5qQmFeVW">一、<b data-page-node-id="1jsWwrju4WmRJlFdPtBdML">加强××</b>。具体做法是……　二、<b data-page-node-id="BB1zOINema8BYSVnFiWFMO">完善××</b>。重点做好……　三、<b data-page-node-id="Z6kmWTQHIYXUZB72rq0yhG">落实××</b>。明确××责任</td></tr>
+<tr data-page-node-id="WIPTPCYroGS3K6SFMwVCML"><td data-page-node-id="aGRzFbi4e6vmhlsvMSNNM8"><b data-page-node-id="zvENqHPF3sW4EHHmV0xPwZ">结尾·要求式</b></td><td data-page-node-id="VABZ8JgHxjfNdHRRjYio7z">请各单位高度重视，认真组织实施，确保各项措施落到实处。</td></tr>
+<tr data-page-node-id="9QB4bdz0PM0JXYPN3JGgW7"><td data-page-node-id="5eq1jQX0FOWFX0CrkGuMaE"><b data-page-node-id="5bpWgoABXdCRHQiCQtcLrh">结尾·号召式</b></td><td data-page-node-id="6HyfAFGzdiMycb7ZORyqoM">让我们携起手来，从自身做起、从小事做起，共同为××贡献力量！</td></tr>
+<tr data-page-node-id="n7FvNq2OZERpQxPtSul0b6"><td data-page-node-id="VEKFgMIaesXWHjVIv4amJ5"><b data-page-node-id="JR8TjfgXWsLxEV2NfZuySB">结尾·请示式</b></td><td data-page-node-id="A86ggedfLidSdGN0KMO7gz">以上请示，妥否，请批示。（请示专用）</td></tr>
+<tr data-page-node-id="rwR0b1MUoDaM5tRm0jZYIF"><td data-page-node-id="DonVcscxEaun1WIrkeElIF"><b data-page-node-id="6ZEDBDjb5NW2JCaFe8YTcN">结尾·函复式</b></td><td data-page-node-id="rui8I6aGqJYCEdVWADDhp0">特此函复。（答复函专用）　特此函达。（商洽函专用）</td></tr>
+<tr data-page-node-id="W8U2n4X1ATko8aB30hpc6L"><td data-page-node-id="huVKkkoSaunPUHsCacxwSu"><b data-page-node-id="NV03vEhFJxTSLcMrsFnRbG">结尾·报告式</b></td><td data-page-node-id="tLmOLQCIXUyXOcwOIfmhxQ">特此报告。</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="oZeh8Y6hl1sm5xrLfNqnRB"><b class="t" data-page-node-id="UfjaWiFODnNIYPKdoyue8u">高频陷阱 · 公文八大扣分项</b>
+<ul data-page-node-id="K5uEafg4jhW1tlfDhORGjp">
+<li data-page-node-id="rAzH96qcWNCDxTndDxUJ5G"><b data-page-node-id="dySZZynZRSSgYCEPgq8SBK">漏格式</b>：忘写标题 / 忘写落款日期 → 直接扣格式分（最冤的失分）。</li>
+<li data-page-node-id="NtDybWryIy2ZzuV3ps3P4d"><b data-page-node-id="IVYTqxhND5cPXS2cN46EWA">身份错位</b>：以个人身份写公文，或越权承诺（基层单位承诺上级才能定的事）。</li>
+<li data-page-node-id="Oi4tURoGoNuRpZhGOw393E"><b data-page-node-id="ivGPBe0M0Yss6vyOziEpe4">称谓不符</b>：对内用"贵单位"，对外用"你单位"，搞反。</li>
+<li data-page-node-id="jKXQc5TiyFvlJM7O4Gto4Z"><b data-page-node-id="wOxugfeyyiXPlSiaqh0YgN">语体不对</b>：公文写成散文、抒情体；或口语化太重。</li>
+<li data-page-node-id="sN1HWfeStdnfAShGFtx8Tc"><b data-page-node-id="DggCc9H0fTvyJJPDhux79Z">不分条</b>：正文写成一整段，阅卷老师找不到采分点。</li>
+<li data-page-node-id="pvAdEzzjqgbvZULYjBsGZ5"><b data-page-node-id="wrW9ingxOONnExf8oA3SCq">要点头重脚轻</b>：开头铺垫写了 200 字，主体措施只有 50 字。</li>
+<li data-page-node-id="wrCXaSM1JH2T6yd6lptVp8"><b data-page-node-id="zynKQ8LgO5SuvN5OE98sWU">编造具体数字/人名/地名</b>：没有依据的细节不要写。</li>
+<li data-page-node-id="fSmkJmaBwZ6ao175qcD91V"><b data-page-node-id="lhhWx3Io4IRejArPbEJKRw">文种混用</b>：把"请示"写成"报告"（请示要批复、报告不要批复，两者不能混）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="H1uFoCV0Woupches1kqEJ3"><b class="t" data-page-node-id="tRuNubB1GkFjwIYYDraqIo">示例演示 · 通用骨架速记</b>
+<div class="ans-box" data-page-node-id="BuYzS4auAWx7n3lvbxj9ar">标题：××（机关）+ 关于××（事由）+ 的 + 通知/报告/请示/函
+
+称谓（顶格 + 冒号）：各有关单位：
+
+开头（2—3 行）：为（目的）……，根据（依据）……，现（文种动词）如下：
+
+主体（分条，占全文 70%）：
+一、××××。××××××××。
+二、××××。××××××××。
+三、××××。××××××××。
+
+结尾（1 行）：特此通知。/ 以上请示，妥否，请批示。/ 特此函复。
+
+落款（右下角）：
+　　　　　　　　　　　　　　××市××局
+　　　　　　　　　　　　　　×年×月×日</div>
+<b data-page-node-id="jT7L8vzTaV4NEKXjBDRp5B">记住这张骨架，所有文种都是往里填内容。</b></div>
+</div>
+
+<h2 class="mod" data-page-node-id="ehLEefgWBkH8qL8FswJtkh">第二组 · 法定公文（5 份）</h2>
+<div class="mod-sub" data-page-node-id="mJk3jLvbzSUbINt0WgopPV">通知、通报、报告、请示、函 —— 这五个是公文写作的核心，格式最严、语气最正式。</div>
+
+<h3 class="grp" data-page-node-id="hoWdXbu7DzvNGO8HeB9USK">法定公文</h3>
+
+<div class="card" data-page-node-id="M934sal0yAjP6uypSZYBgC">
+<h4 data-page-node-id="7TEkTtD1dVzTPbkSEcDWp8"><span class="no" data-page-node-id="5vGi9C95XRjBVlGH4duPBb">2</span>通知（布置工作 / 传达事项 / 印发文件）</h4>
+<div class="blk b-id" data-page-node-id="CnWW5nPfgZxQdL4riBfY2e"><b class="t" data-page-node-id="9HZMgVBHD4xvXfLTqKprCH">识别标志</b>"请拟写一份关于开展××活动的通知"、"就××工作作出部署，请写一份通知"、"请以××局名义印发××的通知"。<b data-page-node-id="CPkXBH4VYkjzhSixN0qG7m">关键提示词：部署、开展、组织、印发、传达。</b></div>
+<div class="blk b-th" data-page-node-id="XUtwybwSewBBEteAhXJIJi"><b class="t" data-page-node-id="xKqpvMvNVwpcwDKOv7XORu">思考路径</b>
+<ol data-page-node-id="lwPhrX9GHgBtvZq6iW8hhE">
+<li data-page-node-id="MEWkg1Cs02CNbh5CPPDXMJ">定通知类型：<b data-page-node-id="Ex02VBOA6K6DFJ8iOay06W">布置工作型</b>（最常见）/ 传达事项型 / 印发型 / 会议通知型。</li>
+<li data-page-node-id="sE3UV4ag12p9HoE4UzEgBr">定发文机关与受文对象：谁发的？发给谁？（通常是"各有关单位""各部门""各县（区）××局"）</li>
+<li data-page-node-id="PJ9dHBlVhMDXqIPZyZg2Ye">从材料里找三样东西：<b data-page-node-id="b0qMCNwHbFkF4RFBf5yaZn">为什么做（背景/依据）、做什么（任务事项）、怎么做（具体要求）</b>。</li>
+<li data-page-node-id="5OBEOzVQOk7wWSeVgDpDh4">主体部分把"做什么"分条列，每条写成"<b data-page-node-id="AD4vyApuztVhf8vIF89FYJ">动宾短语 + 具体展开</b>"。</li>
+<li data-page-node-id="oSzZloEv7AdjzWjjity9Vs">结尾提出执行要求（提高认识、加强领导、落实责任、及时反馈）。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="aw9eaeIJYmc3AFqHf1Tis5"><b class="t" data-page-node-id="xcZv6TZaRNdFCqE7lYSe6O">判定标准 · 格式模板（可照抄）</b>
+<div class="ans-box" data-page-node-id="trSmgAg9QBXaI35OFVPFvg">关于××××工作的通知
+
+各有关单位：
+
+开头段：【缘由 + 目的】为深入贯彻落实××精神／针对近期××问题，进一步做好××工作，现将有关事项通知如下：
+
+一、【任务一】××××。要求……（写清做什么、谁负责、什么标准）
+二、【任务二】××××。要求……
+三、【任务三】××××。要求……
+（一般 3—5 条，具体条款数看材料）
+
+结尾段：【执行要求】请各单位高度重视，明确责任分工，抓好贯彻落实，于×月×日前将工作情况报送××部门。
+
+　　　　　　　　　　　　　　××市××局
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="YKvIIY0pKFMohbdnsc5tYA"><b class="t" data-page-node-id="HuLyWS7boDHSiFoCnpV6Gr">要点处理</b>
+<span class="chip" data-page-node-id="N4lSIgeYiQTCYKjBEVBkcK">语体：正式、命令式但不生硬</span>
+<span class="chip" data-page-node-id="iwHEtjZFOAzg87pRqDueIF">人称：第三人称，不用"我"</span>
+<span class="chip" data-page-node-id="6Xt6564cvDMcBNzMfFC6XT">主体占全文 60—70%</span>
+<span class="chip" data-page-node-id="aunKosqbZoFJ61kQQdeC6P">每条 30—60 字</span>
+<span class="chip" data-page-node-id="d8AiuJeDnhVgrnzGkZWYrb">总量 400—600 字</span>
+<b data-page-node-id="jH8x1ssu0jZI0vkx8nERMk">主体写作公式</b>：动词（加强/完善/规范/落实/开展/建立）+ 对象（××工作）+ 具体措施（怎么做）+ 标准/时限。</div>
+<div class="blk b-tr" data-page-node-id="24edHZba1amcA18ucEMA18"><b class="t" data-page-node-id="Y6y2X62ym54Uy4lKyFyrPp">高频陷阱</b>
+<ul data-page-node-id="cl9QAlcXCdnvsHh7IHi13X">
+<li data-page-node-id="dIfF93nldyjUHgIxsDa7KC"><b data-page-node-id="V9FRWYWfnSxpORXtSGvsyf">漏写主送机关</b>（"各有关单位："这行最容易被忘）。</li>
+<li data-page-node-id="13j7NBJbYam79YrHC5WYEJ"><b data-page-node-id="GIbvCevQmdxZexNRiX5FBu">只写"要重视""要加强"，没有具体动作</b> —— 通知最忌空话，每条必须有可执行的动作。</li>
+<li data-page-node-id="3DtW2fCgRf3i5iCRVLhk6w"><b data-page-node-id="ubSuwXwWNDRIsBtA7o7SjX">任务条目数量不对</b>：材料里给了 4 项工作，只写 2 项 → 漏采分点。</li>
+<li data-page-node-id="aGCh00lGJA4HH0AZXXUlMS"><b data-page-node-id="wrPSADHhHzKpCRakBKmsVE">把通知写成倡议书</b>（语气太软，通知是要求执行、不是呼吁参与）。</li>
+<li data-page-node-id="uofSlSwupDiPolHEQpcyMt">结尾忘记提"反馈时限"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="Kx7dCo0OUozuPPOJDPKCCw"><b class="t" data-page-node-id="2x4FKZNlxIJFtCAcdvewo7">示例演示</b>
+<div class="q" data-page-node-id="Vvdxll8BytHjtXLUIbPegT">【题目】某市近期电信网络诈骗案件多发，市民财产损失较大。请以市××局名义，写一份关于开展反诈宣传工作的通知。不超过 500 字。</div>
+<div class="ans-box" data-page-node-id="oLzWNY9UjPR2dCHfT7n6Jr">关于开展防范电信网络诈骗宣传工作的通知
+
+各有关单位：
+
+近期，我市电信网络诈骗案件多发，群众财产损失较大，社会反映强烈。为切实提高群众防骗意识，有效遏制案件高发态势，现就开展反诈宣传工作通知如下：
+
+一、广泛开展宣传发动。各单位要组织工作人员深入社区、学校、企业，通过发放宣传手册、张贴海报、播放短视频等方式，向群众普及常见诈骗手法和识别技巧。
+
+二、突出重点人群防范。针对老年人、学生等易受骗群体，开展"面对面"讲解，帮助其安装注册国家反诈中心APP，讲解典型案例。
+
+三、畅通举报反馈渠道。公布本单位反诈咨询电话，安排专人值守，接到群众咨询或线索后及时核实处理并上报。
+
+四、压实工作责任。各单位要明确一名负责人牵头，建立工作台账，确保宣传活动覆盖到位，并于××月××日前将工作开展情况报送市××局。
+
+请各单位高度重视，确保各项措施落到实处。
+
+　　　　　　　　　　　　　　××市××局
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="C2exxUwPhbpZrAnYSm1GWk">
+<h4 data-page-node-id="SDfNYL2sM1EGn2OZQ8jEco"><span class="no" data-page-node-id="esiFUlnvx1RWN4Sk8DdhOc">3</span>通报（表彰先进 / 批评错误 / 传达情况）</h4>
+<div class="blk b-id" data-page-node-id="4G6jE3ryKVqB71hLPmOHdX"><b class="t" data-page-node-id="gYDxNzQPcwIgA4USm7cB6I">识别标志</b>"请就××事件写一份通报"、"对××予以表彰，请拟写通报"、"针对××违规问题予以通报"。<b data-page-node-id="kBlS7lZ5Y5L7SJz51GCO75">关键提示词：表彰、批评、通报、予以、警示。</b></div>
+<div class="blk b-th" data-page-node-id="XGTLqxki6rBNupbFziZuKS"><b class="t" data-page-node-id="wVVv5M6usVb08AFQZyGsxy">思考路径</b>
+<ol data-page-node-id="8PZMSYQLjiN7PuKJ3OGb8R">
+<li data-page-node-id="BeCYtBPwxKSyhtCoRgA7Br"><b data-page-node-id="aJ3qh0uBNpSpcJpTDLlmcZ">先判类型（决定全文基调）</b>：<b data-page-node-id="Ww7JoVJ8sujZ0wZ76ZDZT2">表彰性</b>（褒扬+号召学习）/ <b data-page-node-id="F2NrgqpHbWWZBpJbgL5ZVB">批评性</b>（指出问题+提出整改）/ <b data-page-node-id="mnKdW1uqMlhuMNOnAeboGn">情况通报</b>（陈述事实+提出要求）。</li>
+<li data-page-node-id="QSfElGAX8aIMpKzM5NtLQu">写清"<b data-page-node-id="ngIWEDwzfyJYiidSYpxqwB">三要素</b>"：什么事（事实经过）、怎么看（评价定性）、怎么办（要求或号召）。</li>
+<li data-page-node-id="nt4vGfVpm6fZBJmZpxTrBa">表彰性：重点写<b data-page-node-id="AAAouKuypBB5GW8FyZv28q">事迹 + 意义 + 学习号召</b>。</li>
+<li data-page-node-id="qggblS33lXaDUwuPax0A5E">批评性：重点写<b data-page-node-id="uW0YuCsvLCECt94lzRU72i">问题事实 + 危害分析 + 处理决定 + 整改要求</b>，注意措辞严肃但不辱骂。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="7wgalSNzI1AsZKNVmvunbY"><b class="t" data-page-node-id="xWkq4guNhctOpEGwvhLp7d">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="7UXdS2HyumvYzUNvfsriiB">【表彰性通报】
+关于表彰××同志的通报
+
+各××：
+
+近期，××同志在××工作中，××××（简述事迹）。其行为……
+
+为表彰先进、弘扬正气，经研究决定，对××同志予以通报表扬。
+
+希望全体干部职工以××同志为榜样，学习他××××的精神，在今后的工作中……
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日
+
+【批评性通报】
+关于××问题的通报
+
+各××：
+
+近期，经核查发现，××存在××问题（陈述事实）。
+
+上述问题反映出××××（分析原因/危害），性质较为严重，造成了不良影响。
+
+为严肃纪律、汲取教训，现提出如下要求：一、……　二、……　三、各单位要引以为戒，认真开展自查自纠，防止类似问题再次发生。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="Lro1QBwIEnFVd8udVxhXQo"><b class="t" data-page-node-id="cy0feZAYu8LlRXO2mZgwA9">要点处理</b>
+<span class="chip" data-page-node-id="FHumnkfR0uNlGGDkGi5KEk">表彰性：褒扬语气，多用"值得学习""充分体现"</span>
+<span class="chip" data-page-node-id="43Vip9lCzpTTTQz05oFspv">批评性：严肃但不情绪化，用"反映出""暴露出""应当"</span>
+<span class="chip" data-page-node-id="iJKa1tgbKLtBjRXunQEjVf">情况通报：客观陈述，不褒不贬</span>
+<span class="chip" data-page-node-id="IyKrCym7qgnQ0Y5FDArhtQ">总量 400—500 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="AVmQIjxUxXmLvV7kEsrtbg"><b class="t" data-page-node-id="MiXkx1grl6tGssM4IXRevJ">高频陷阱</b>
+<ul data-page-node-id="La2k4fUmOGjJNRK3MAM4EE">
+<li data-page-node-id="USqbuqcTPrlcIu8iLeM3Oa"><b data-page-node-id="lXH5TfdUyHIZYxQejgZERa">类型判断错</b>：材料是批评性质，却用表彰的语气写。</li>
+<li data-page-node-id="LjZsHSUuitzijPuzvVCEQC"><b data-page-node-id="gFUcWo15A0L2xZFPkmqga9">表彰性通报只写事迹不写号召</b>（末尾必须有"希望……学习"）。</li>
+<li data-page-node-id="FjliyEFYN3sT7xctn6ZADh"><b data-page-node-id="AL9TjoaQAsBk5s2LeeFBAj">批评性通报点名过于具体</b>，或反之过于含糊。按材料给的信息写，不编造。</li>
+<li data-page-node-id="FAxTDYmn9ljctpyA1TCPIH"><b data-page-node-id="7HFXZvd7JroWlrDTcjrigd">把通报写成通知</b>：通知重"布置任务"，通报重"褒贬定性"。</li>
+<li data-page-node-id="UuHd557hj8SRBYHSdXDust">漏写"经研究决定"这类程序性表述。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="vlmrkw899gnBbTG7VGZlMQ"><b class="t" data-page-node-id="i9eeLUr9FPL2oyCU5raGIQ">示例演示</b>
+<div class="q" data-page-node-id="G0bsOMqo3rFCPRHR8O7T44">【题目】某单位职工李××在上班途中发现一居民楼起火，及时报警并协助疏散居民，避免了重大伤亡。请写一份表彰通报。不超过 400 字。</div>
+<div class="ans-box" data-page-node-id="BuMfeDzxaXImDEnFugA4w1">关于表彰李××同志的通报
+
+各部门：
+
+近日，我单位职工李××在上班途中发现某居民楼发生火情，他第一时间拨打火警电话，并主动逐户敲门提醒，协助疏散居民二十余人，为救援争取了宝贵时间，避免了人员伤亡。
+
+李××同志临危不乱、见义勇为的行为，充分体现了强烈的社会责任感和良好的精神风貌，为单位赢得了荣誉。
+
+为表彰先进、弘扬正气，经研究决定，对李××同志予以通报表扬。
+
+希望全体干部职工以李××同志为榜样，学习他见义勇为、勇于担当的优秀品质，在今后的工作和生活中积极传递正能量，为营造和谐安全的社会环境贡献力量。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="GrEB3xbZiBwHQB1lFUHyVh">
+<h4 data-page-node-id="SmEuqPZpOh2cH0EMbFGmgs"><span class="no" data-page-node-id="8hPpVkVH0Um9b91iMBhFBn">4</span>报告（工作报告 / 情况报告 / 答复询问报告）</h4>
+<div class="blk b-id" data-page-node-id="h3yPcbI6b3tTuIxFTAoy1J"><b class="t" data-page-node-id="qWSdq3WwkitmCWlZuqH44q">识别标志</b>"请就××工作情况写一份报告"、"请将××情况向上级报告"、"写一份关于××的自查报告"。<b data-page-node-id="Rp0LAPZG2by7FyO5PN7DeI">关键提示词：汇报、报告、情况说明、上报。</b></div>
+<div class="blk b-th" data-page-node-id="7fuB2JapIJdH8zBtW41QDW"><b class="t" data-page-node-id="60B5rlcU4JmisLjrWLsQJ7">思考路径</b>
+<ol data-page-node-id="ISkFRCt8aEODwrfl7EsHjx">
+<li data-page-node-id="DB3A9ZANGXcjQLYbP3CMXR">报告是<b data-page-node-id="BpEv4LiBZYxlOeooVAXz7n">上行文</b>（写给上级），语气要<b data-page-node-id="QGC0KYm84v8CdEvisZqX9B">汇报性</b>，不要命令式。</li>
+<li data-page-node-id="uawRBHoOpJlqS1e4Hg96A4">主体按"<b data-page-node-id="gKfPIVOrNQnsIjID5pL9GB">基本情况 → 主要做法 → 存在问题 → 下步打算</b>"四段展开（这个结构最万能）。</li>
+<li data-page-node-id="IN0ayvEesxUd7WkpmTu8ZH">若题目只要求"情况报告"，则写"基本情况 + 已采取措施 + 下步安排"。</li>
+<li data-page-node-id="tmDUg9yAQcKX75iCkardgK"><b data-page-node-id="BElftjwwAXyda1o74iXHbP">报告不要求批复</b>，结尾用"特此报告"，<b data-page-node-id="Jl5VafiQBvs3m0Xy9LdAQk">绝不能写"请批示"</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="Smdg4sPkz9WJG5Kn7qetpu"><b class="t" data-page-node-id="G74TuauoiLWACScgpu0ccd">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="H56sdzz5o2n7gRAoNgyL3Y">关于××××工作情况的报告
+
+××××（上级机关）：
+
+根据××要求／按照××部署，我单位高度重视，认真组织开展了××工作。现将有关情况报告如下：
+
+一、基本情况。××××（时间、范围、总体成效，可用材料的核心数据）
+二、主要做法。（1）××××；（2）××××；（3）××××。
+三、存在问题。一是……；二是……。
+四、下步打算。下一步，我单位将××××。
+
+特此报告。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="xMdAz8Hj36FRvDzua3QegB"><b class="t" data-page-node-id="VFXMehCBvcNphYbFkbdvTM">要点处理</b>
+<span class="chip" data-page-node-id="HqqzTwMJ5z8lgZB4C03Bak">语气：汇报、谦逊，用"我单位""现将……报告如下"</span>
+<span class="chip" data-page-node-id="cyTLd9odWqobTuA7A9pIHn">主线：做法要分条，最好用"一是……二是……"</span>
+<span class="chip" data-page-node-id="Q7Ekl8MyMWHPEIPu0kCjXM">数据：能引用材料数据就引用，体现真实性</span>
+<span class="chip" data-page-node-id="lTxNnV1S0eMwq8KniIEiCZ">总量 500—700 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="SEl29Hx9WcSXZenEQuBH72"><b class="t" data-page-node-id="71XcQ2aMdGQIsyGNU85Nyn">高频陷阱</b>
+<ul data-page-node-id="0s09PIaFFOrRzbEsg4iXO7">
+<li data-page-node-id="aDV9P2rsJjOqymQ0Qm02VE"><b data-page-node-id="Q9eTxCMBDCQdIn3EiTD7En">报告里写"请批示"</b> —— 报告与请示最大的区别，报告不需要批复。写了直接扣分。</li>
+<li data-page-node-id="CfyJqkBb1DvywBUsrLRton"><b data-page-node-id="y4NTS7pr5K1uDLfCmHCIai">只写成绩不写问题</b>：报告一般要有"存在问题 + 下步打算"，否则显得不客观。</li>
+<li data-page-node-id="VRuLomiNrkiBH39yQ1CsG6"><b data-page-node-id="VGcc5U7t1Pzp0hZS453Smg">语气太硬</b>：用"必须""务必"这类词去命令上级。</li>
+<li data-page-node-id="3poETbIcaJxTuCXCRqIKwR"><b data-page-node-id="c9HFbGhdUhSM3XOlTcEIey">把自己写成上级</b>：报告是向上报，不能写"要求各单位……"。</li>
+<li data-page-node-id="XYv6182Sv3KW235AICH7X9">漏写"特此报告"。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="KJK5IfOnL4Pa3Aektsp16W"><b class="t" data-page-node-id="tC4We0NACIMNDOrTAlHHBg">示例演示</b>
+<div class="q" data-page-node-id="6g3TY4RVNIyfzIvg0ZQowf">【题目】某街道办开展了为期一个月的环境整治专项行动，取得了初步成效但仍有不足。请以街道办名义向区政府写一份情况报告，不超过 600 字。</div>
+<div class="ans-box" data-page-node-id="ybGT2DGWWrLdkiveel71UY">关于环境整治专项行动情况的报告
+
+××区人民政府：
+
+按照区政府关于提升人居环境的工作部署，我街道于××月××日至××月××日集中开展了环境整治专项行动。现将有关情况报告如下：
+
+一、基本情况。行动期间，累计清理各类垃圾××吨，整治乱堆乱放点位××处，规范店外经营××家，辖区环境面貌明显改善。
+
+二、主要做法。一是强化组织发动。成立专项工作小组，明确职责分工，实行网格化管理。二是聚焦重点突破。针对背街小巷、老旧小区、集贸市场等重点区域集中攻坚。三是广泛宣传引导。通过张贴公告、上门告知等方式，动员居民和商户主动参与。
+
+三、存在问题。一是部分居民环保意识不强，乱倒乱堆现象仍有反弹；二是长效管护机制不够健全，整治成果巩固难度较大。
+
+四、下步打算。下一步，我街道将健全日常巡查和考核机制，加大宣传力度，引导群众养成良好习惯，持续推进环境整治常态化长效化。
+
+特此报告。
+
+　　　　　　　　　　　　　　××街道办事处
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="uDTIXKt8aw8WctKzab9mlo">
+<h4 data-page-node-id="3ACgkXjKd0lyxN3LGVFNka"><span class="no" data-page-node-id="7XRr32zH38MGwze78FNsCS">5</span>请示（请求指示 / 请求批准 / 请求解决）</h4>
+<div class="blk b-id" data-page-node-id="Z3izxeKtIsaS4DfveMsx0F"><b class="t" data-page-node-id="Kik9CAlZsrDdwkDq5VxIUc">识别标志</b>"因××事项，需向上级请示，请拟写一份请示"、"请就××问题请求上级审批"。<b data-page-node-id="dBV7O76QX8E0Wx6O7gcrap">关键提示词：请求批准、请求指示、拨付、审批、同意。</b></div>
+<div class="blk b-th" data-page-node-id="9ridi8PBfVlUWUS2kW7KoU"><b class="t" data-page-node-id="E2kmBF6lJv3JDcgvFGZJdt">思考路径</b>
+<ol data-page-node-id="ieEHTSVcdD5JIW5AFqZ9mh">
+<li data-page-node-id="vu80qBjucoYxe1VUuWpGGH">请示是<b data-page-node-id="uWVcXekqmofttQKCGMUx2D">上行文</b>，必须"<b data-page-node-id="46Xm5YwcfZEsWPNOhih8nu">一文一事</b>"——只请求一件事，不要夹带多个诉求。</li>
+<li data-page-node-id="etxyQhMYJdiyaGQqrGw8QX">结构：<b data-page-node-id="qbbkYYIuSH4yVrHbcDHnxE">请示缘由（为什么）→ 请示事项（求什么）→ 请示语（请批示）</b>。</li>
+<li data-page-node-id="WO4W9YKFqljmIPZt2ZcmuJ">缘由要写足：说明困难、必要性、紧迫性，让上级有批复的理由。</li>
+<li data-page-node-id="MuRfgFlvFucSqUOZ3u2iAp">事项要具体：要多少钱、批什么、办什么，写清楚数额或范围。</li>
+<li data-page-node-id="ANK20waqtiuG1dT9RqtWeo">结尾必须是"<b data-page-node-id="iqWFKrZym4AyDX3VzO0mzM">以上请示，妥否，请批示</b>"或"<b data-page-node-id="cVnWEmO9YgyPFIHxF3KDv6">以上请示，请予批准</b>"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="ADy0OHFEaFJDwIWAT08JBn"><b class="t" data-page-node-id="gCuE0EdfF5SJ0U8p4zGgkA">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="CDhgh5FGk7OGN5hpxEwsVg">关于××××的请示
+
+××××（上级机关）：
+
+【缘由】近年来，××××（客观情况）。由于××××（原因分析），现有××已不能满足××需要，影响了××工作正常开展。
+
+【事项】为切实解决上述问题，拟××××（具体请求：申请经费××万元／申请批准××事项／请求指导××工作）。
+
+【说明】我单位已就××进行充分论证／已落实配套资金××，具备实施条件。
+
+以上请示，妥否，请批示。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="RV0FrKKE42sByDQm5AxWFi"><b class="t" data-page-node-id="Db0v6I2BLFpffdpdoC0h5x">要点处理</b>
+<span class="chip" data-page-node-id="TGoWIFMS7mdlw3A3i9lUtY">一文一事（最重要）</span>
+<span class="chip" data-page-node-id="8zF0M4KXt1Ugju019wnIlf">缘由：占 40%，写足必要性</span>
+<span class="chip" data-page-node-id="IY3WCZGuHnNy9WLWyZdOfL">事项：占 40%，写清具体内容</span>
+<span class="chip" data-page-node-id="H7Ebaz1IRBcggJzMEUWSWF">语气：恳请、恭敬，用"拟""恳请""妥否"</span>
+<span class="chip" data-page-node-id="6u5O4OYjQNHLBNFYtPNbpn">总量 300—450 字（请示宜短）</span>
+</div>
+<div class="blk b-tr" data-page-node-id="hMzBTYW4IXmSWnEUlM61Eu"><b class="t" data-page-node-id="hUBrhuaIImCW8y9Bcec6qR">高频陷阱</b>
+<ul data-page-node-id="ZT8zCtYt3jNu2TQsFGVTnF">
+<li data-page-node-id="gM6cKeOB8cDcGAmJW2tl9k"><b data-page-node-id="XiVA2sbuyhj5JVgWtJSRqH">一文多事</b>：在一份请示里请示两件以上的事 → 严重错误。</li>
+<li data-page-node-id="iFB3NpiGTn60fKY8OlsQdk"><b data-page-node-id="3XzCrPU1YuXUi5wvB8jWH9">结尾写成"特此报告"</b> → 请示必须请批复。</li>
+<li data-page-node-id="PwjkGfHVEfH4y4X6GUaa0S"><b data-page-node-id="lEJJ4hv6i62LaEgFZjPs0r">越权承诺</b>：把上级才有的权限写进自己的方案里。</li>
+<li data-page-node-id="MailFNYVhKWstZBruUasMP"><b data-page-node-id="CHFXioEFePzUAAzdX5avBp">只写请求不写理由</b> → 上级没理由批，采分点缺失。</li>
+<li data-page-node-id="biwvwmjlaDTSkgPYrZ14Zy">把请示写成通知（语气成了命令式）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="LZQAElsEGEW2jBtKxj4zaT"><b class="t" data-page-node-id="kvdhaAp2dkGDZGtB7kZhm3">示例演示</b>
+<div class="q" data-page-node-id="WcMdeOFY1LC7gy9ADXnuGW">【题目】某乡镇卫生院现有医疗设备陈旧，无法满足群众就医需求，拟申请购置一批新设备。请以卫生院名义向县卫健局写一份请示，不超过 400 字。</div>
+<div class="ans-box" data-page-node-id="ls22AEWSyIt74rcD1LMSeO">关于申请购置医疗设备的请示
+
+××县卫生健康局：
+
+近年来，随着我镇常住人口增加和群众健康需求提升，我院门诊量逐年增长。然而，现有多台诊疗设备购置年限较长、老化严重，故障频发，已难以满足日常诊疗需要，一定程度上影响了群众就近就医。
+
+为提升基层医疗服务能力，切实解决群众看病难问题，经研究，我院拟申请购置彩色多普勒超声诊断仪、全自动生化分析仪等设备共××台（套），所需经费约××万元。目前我院已落实部分配套资金，具备安装使用条件。
+
+以上请示，妥否，请批示。
+
+　　　　　　　　　　　　　　××镇卫生院
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="Sr2jfYLhjAWLmVgOMxG0uH">
+<h4 data-page-node-id="epCCnrT9TznJW3HiiIvf0l"><span class="no" data-page-node-id="tFDMaGbbDgJhEZhe5OuwIh">6</span>函（商洽函 / 请求函 / 答复函）</h4>
+<div class="blk b-id" data-page-node-id="MaHAezsi4fCAkbCZm8hn79"><b class="t" data-page-node-id="BtpSXqkPhryEe1omNaeoSy">识别标志</b>"××单位拟就××事宜与××单位协商，请写一份函"、"就××咨询/请求××单位协助，写一份函"。<b data-page-node-id="fBYXd0B9UIJTgfELiLmJiw">关键提示词：商洽、协商、协助、复函、答复。</b></div>
+<div class="blk b-th" data-page-node-id="sGDlPI5keziKEYhIKZ7lpa"><b class="t" data-page-node-id="asPl1QhrqLk0aS0zU6DRNk">思考路径</b>
+<ol data-page-node-id="ECh1tj0nCunX3wLBPpbkMr">
+<li data-page-node-id="SM9KNhhivESWhWqGWULopK">函是<b data-page-node-id="AcDSZSJB4RVJHV7zqX8nkN">平行文</b>（同级机关之间、或无隶属关系单位之间），语气要<b data-page-node-id="Iiw1gG8qDlxb3UlQOjr176">平等、客气</b>。</li>
+<li data-page-node-id="UEaFWqfHrj5A7kSwq6OO72">判类型：<b data-page-node-id="y63aG1CiQFNiEuEmomLaDb">商洽函</b>（商量一起做事）/ <b data-page-node-id="jFL0avwNSlVuFC6UvoJbcz">请求函</b>（请对方帮忙、咨询）/ <b data-page-node-id="6hw2JH0KGFXrB0qGBe1iQn">答复函</b>（回复对方）。</li>
+<li data-page-node-id="cyhuFu1pjLQTX0DFMlFz31">称谓用"<b data-page-node-id="CKAyqXMpjSBAvbPxuQ6PhB">贵单位</b>"（客气），不要用"你单位"（略生硬）。</li>
+<li data-page-node-id="k1XqeCPHTpY5vC4V9KCuC0">结构：缘由 → 事项 → 期望回复 → "特此函达"/"特此函复"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="kiJJIvqI5xTNY8WUWalGvf"><b class="t" data-page-node-id="PHuwo7BVdU6EY2o86CUMZ5">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="gIH0qPWS3b0gprw9gaffF0">【商洽函 / 请求函】
+关于××××的函
+
+××××（对方单位）：
+
+【缘由】为××××，我单位拟××××。
+
+【事项】现商请贵单位××××（具体请求：协助提供××／共同举办××／给予技术指导）。具体安排建议为……（可给简要方案）。
+
+【期望】如贵单位同意，请于×月×日前与我单位××科联系（联系人：××，电话：××××）。
+
+特此函达，盼予复函。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日
+
+【答复函】
+关于××××的复函
+
+××××（对方单位）：
+
+贵单位《关于××××的函》收悉。经研究，现答复如下：
+
+一、××××（逐条答复对方请求的事项）。
+二、××××。
+
+感谢贵单位对××工作的关注与支持。
+
+特此函复。
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="YXFWO8aYFd5S42Gr0EvUKK"><b class="t" data-page-node-id="QL3FJeIH2XkL0ZAGWnA0F8">要点处理</b>
+<span class="chip" data-page-node-id="XrNxIUFmF7VUNDtZlt0Hmy">语气：平等、客气、协商性</span>
+<span class="chip" data-page-node-id="H7NeKT9UVh8e272TG785uG">称谓："贵单位"</span>
+<span class="chip" data-page-node-id="Wquc0QVEjZJhr6RDI6wHsg">结尾："特此函达"/"特此函复"</span>
+<span class="chip" data-page-node-id="goGTeelCNhd2FMOOaXKJdp">答复函要逐条回应对方请求，不可遗漏</span>
+<span class="chip" data-page-node-id="ohR8GC2Gnx4zMAA7Wa2LtW">总量 300—450 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="KHamwyIyOtq4Bo0Sy8Ry7g"><b class="t" data-page-node-id="yvKxzNvPQdwB9GCqFJODpv">高频陷阱</b>
+<ul data-page-node-id="o82D7vVrHJ8rIEHtUlDjRD">
+<li data-page-node-id="MK9IPzAStjnxSlvmVC92P0"><b data-page-node-id="tZWRaPZwEC5zpUev1pn8O8">语气写成上下级</b>：函是平级，不能命令对方。</li>
+<li data-page-node-id="CZYL0dtT2UFbbX4kGegPCR"><b data-page-node-id="BZxjOQiB54Cgr1J2kGlOim">答复函漏答</b>：对方问了 3 件事，只答了 2 件。</li>
+<li data-page-node-id="a4OA4FSddN6ZQ2SFVX0huv"><b data-page-node-id="83dUn4XqRJkTY4OWyaP9gq">称谓用错</b>："贵单位"用于对方，"我单位"用于自己。</li>
+<li data-page-node-id="LXk8SS2C7IuwxK6vJ3mg7d"><b data-page-node-id="p7fSU7GIuszsLTXpsLtUDh">漏写联系方式</b>（商洽函里常见采分点）。</li>
+<li data-page-node-id="YzJUn6BhN2x1LuudP254fC">把函写成通知的格式和语气。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="lDiP2eFaPcXJvKWqUSko5k"><b class="t" data-page-node-id="KZVwW8ZDTBFne0H9H7Hx5S">示例演示</b>
+<div class="q" data-page-node-id="CfYCq3tW1VHk2yiLvTNmUq">【题目】某市××局拟联合市文化馆举办"全民阅读"主题活动，需借用文化馆场地。请写一份商洽函，不超过 400 字。</div>
+<div class="ans-box" data-page-node-id="cLv4DKxLFg00KDN5UfSV65">关于商请协助举办"全民阅读"主题活动的函
+
+××市文化馆：
+
+为深入推进全民阅读，营造"爱读书、读好书"的良好社会氛围，我局拟于××月××日举办"全民阅读"主题活动，面向全市市民开放。
+
+为确保活动顺利开展，现商请贵单位协助提供以下支持：一是提供报告厅一处，用于举办阅读分享会；二是提供广场场地，用于设置图书展销与交换专区；三是协助做好现场秩序维护与设备保障。
+
+如需我局提供活动方案、安全预案等材料，我们将及时送达。如贵单位同意，请于×月×日前与我单位宣传科联系（联系人：××，电话：××××）。
+
+特此函达，盼予复函。
+
+　　　　　　　　　　　　　　××市××局
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<h2 class="mod" data-page-node-id="0U9bKU6LAvFzE940VbNMkF">第三组 · 事务文书（4 份）</h2>
+<div class="mod-sub" data-page-node-id="UflFckiV2ngJ4YDFTQbKKn">倡议书、宣传稿、讲话稿、汇报提纲 —— 这几个更贴近"面向群众/面向同事说话"，语气可以更活。</div>
+
+<h3 class="grp" data-page-node-id="qPKyhhcR2HciHq3JUUhSVS">事务文书</h3>
+
+<div class="card" data-page-node-id="rZT4OemLSLtQWj8E20QEHp">
+<h4 data-page-node-id="GJ8Qu4FOJgjZM58fRDdBh2"><span class="no" data-page-node-id="anXlxbDntR2j6uKm9XTf9a">7</span>倡议书（号召参与 / 共同行动）</h4>
+<div class="blk b-id" data-page-node-id="MReQi6fFQ2H0hNYHHeVQRt"><b class="t" data-page-node-id="sAuIgLMrCt5XPsKPTUd6xu">识别标志</b>"请拟写一份倡议书"、"号召全市市民××，请写一份倡议书"、"为动员××，写一份倡议书"。<b data-page-node-id="yaiv5su27wVeNT0WHpbNHG">关键提示词：倡议、号召、共同、行动起来。</b></div>
+<div class="blk b-th" data-page-node-id="ID7RzI6cXaYAp6TSUG5Wcz"><b class="t" data-page-node-id="pHw5xDECpAZHZjPwOmlxMZ">思考路径</b>
+<ol data-page-node-id="B0wDetVkqG6znH1fn3T1Il">
+<li data-page-node-id="ETXgroWnmB7G9D8ORoehRg">对象是<b data-page-node-id="cwChIqPnxvVjaUCQSqpmYV">群众/全体成员</b>，语气要<b data-page-node-id="vket3RpcntV4Urnkl3zpsy">诚恳、有感染力</b>，可以有情感色彩（这是与通知最大的区别）。</li>
+<li data-page-node-id="TQBb7znk4EKYVGFIkeUqVK">结构：<b data-page-node-id="L1QnyxmGppV2s3TB5hd5eH">背景缘由（为什么倡议）→ 具体内容（倡议什么，分条）→ 号召（一起行动）</b>。</li>
+<li data-page-node-id="yNwJQC0ao4bQ42vYIThHZC">倡议内容分条时，用"<b data-page-node-id="m3olA1qDWYVGZ6Dsz9If4P">第一，从我做起……第二，……</b>"或"<b data-page-node-id="iIPvzFI4fmpNWPdATeqrG3">一、……。二、……</b>"。</li>
+<li data-page-node-id="iN2XEb0cBWldm7OLHOEzEZ">结尾必须有<b data-page-node-id="ERR1l3OfUF8TCI6elawRur">强有力的号召句</b>，这是倡议书的"标配"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="ZlKdx2TigmvMJ8TjgxbyEy"><b class="t" data-page-node-id="arExzP5rGnkr4ZSTkBjrS8">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="2gNGFfkH7XEUqxqEnSLfhU">关于××××的倡议书
+
+广大市民朋友们（或：全体干部职工）：
+
+【背景】××××（现状描述，点出问题或契机）。
+
+【意义】××××（这样做有什么好处，唤起认同）。
+
+为此，我们发出如下倡议：
+
+一、××××。××××××（具体做什么，用行动动词）。
+二、××××。××××××。
+三、××××。××××××。
+
+【号召】市民朋友们，××需要你我共同参与。让我们携起手来，从现在做起、从自身做起，为××××贡献自己的一份力量！
+
+　　　　　　　　　　　　　　××单位
+　　　　　　　　　　　　　　×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="lrUUwtkGKQ8Awfo3PAMQso"><b class="t" data-page-node-id="J6qebaQXIdmycBm2tyW0jj">要点处理</b>
+<span class="chip" data-page-node-id="qrKR3mLlQkCv8J6AzUJ1AQ">语气：诚恳、有感染力，可用排比与呼告</span>
+<span class="chip" data-page-node-id="JpaR1jl5gMkO5ij6CqpNvu">称谓：面向群众用"广大市民朋友们"</span>
+<span class="chip" data-page-node-id="ghOtcJ0C8d8BWGoFfeEeyS">主体：3—4 条，每条要"可做"</span>
+<span class="chip" data-page-node-id="SAODaF1Ll6OehQi6BexrU3">结尾：必须有号召句</span>
+<span class="chip" data-page-node-id="x41UP5Ski5ZgG0976N61sh">总量 400—600 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="kTRBHFvA9B9pTnZIN3FLzd"><b class="t" data-page-node-id="CpcIRfN3LCkCmg1rP7g3QF">高频陷阱</b>
+<ul data-page-node-id="SmgpWrEBCgRfOfKbzAzpXB">
+<li data-page-node-id="KNNFRgeNyPKWyNKeHYbV4K"><b data-page-node-id="hp5XuKIzOlL2GJCoTNCNe3">语气太硬</b>，写成命令式通知（"必须""严禁"用错场合）。</li>
+<li data-page-node-id="Gi7EmwXusgnlRWbrLXzCXK"><b data-page-node-id="mTc88GeO1JXOncxId01DvN">没有号召结尾</b> —— 倡议书少了号召，就像人少了魂。</li>
+<li data-page-node-id="AZ8zCUj4aPOAeyMeEJ0tdw"><b data-page-node-id="yVrQjmZt0KpzUq7andlXjR">倡议内容太虚</b>："要提高认识"→ 应改为"主动学习垃圾分类知识，按标准分类投放"。</li>
+<li data-page-node-id="GKgCUyv5ymVtVMFXrwWQMJ"><b data-page-node-id="NUunv2SnEOPx566AJdBB12">称谓缺失或写成"各位领导"</b>（对象错）。</li>
+<li data-page-node-id="9Vi9RPQluk7wTXm9FgLk9A">落款写成"××单位全体职工"（除非题目如此要求，否则用单位或倡议发起方）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="k9bCKCBwvKBBmmsNN7qL0p"><b class="t" data-page-node-id="3eZxDUQU169ewczklhgrpG">示例演示</b>
+<div class="q" data-page-node-id="QrhpbyUccBvDnD9eHHnWs1">【题目】某社区拟开展"光盘行动"宣传，倡导居民节约粮食。请写一份倡议书，不超过 500 字。</div>
+<div class="ans-box" data-page-node-id="OvcXv3WQpTX4Kp8kZIES2f">关于开展"光盘行动"的倡议书
+
+广大居民朋友们：
+
+餐桌虽小，却反映着一个社会的文明程度。当前，餐饮浪费现象仍时有发生，既造成资源浪费，也助长了不良风气。为弘扬勤俭节约的传统美德，我们发出如下倡议：
+
+一、理性点餐，按需购买。外出就餐时根据用餐人数合理点菜，践行"N－1"点餐模式；家庭采购时按需购买、避免囤积，从源头减少浪费。
+
+二、剩菜打包，拒绝浪费。用餐结束后主动将剩余食物打包带走，让"光盘"成为习惯，让打包不再难为情。
+
+三、言传身教，带动身边人。家长以身作则，教育引导孩子养成节约习惯；邻里之间相互提醒、相互监督，形成良好氛围。
+
+居民朋友们，节约是一种美德，更是一种责任。让我们携起手来，从每一餐做起、从自身做起，让"光盘"成为社区最美的风景！
+
+　　　　　　　　　　　　　　××社区居委会
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="uo16DWrv8cStnnmcFt0p3v">
+<h4 data-page-node-id="SODi5dJCSObvxlpRB3yOSd"><span class="no" data-page-node-id="2IAJSxTMZ4ymQhXwjkshum">8</span>宣传稿 / 宣讲稿</h4>
+<div class="blk b-id" data-page-node-id="kpvW9Jzm9mZad6CcUi6DU8"><b class="t" data-page-node-id="9L9gO66OVp0HTuG7uK0QOG">识别标志</b>"请写一份宣传稿/宣传材料"、"为推广××，撰写一份宣传稿"、"请写一篇宣讲稿向群众介绍××政策"。<b data-page-node-id="R6oAJSmYFdyJ8Zki4XQ0bB">关键提示词：宣传、推广、介绍、宣讲、普及。</b></div>
+<div class="blk b-th" data-page-node-id="HE5iA4dav1EHQIyX232DaS"><b class="t" data-page-node-id="4mUdFWO22707slEb2UUP7G">思考路径</b>
+<ol data-page-node-id="xQrpTrjzlDGREUKoR735VA">
+<li data-page-node-id="FBLDAEvUXGAw6eegWIWz3g">先定<b data-page-node-id="ewHKTFkgUfqmzDnZGG7kyg">受众</b>：面向群众（通俗、接地气）、面向企业（务实、讲政策红利）、面向同行（专业、讲做法）。</li>
+<li data-page-node-id="i12dBWZxV00W0yPC0dqb47">结构：<b data-page-node-id="EyleXt42ULEjP3Z5lEpMiI">引出话题（为什么值得关注）→ 核心内容（是什么、有什么好处、怎么做）→ 呼吁行动</b>。</li>
+<li data-page-node-id="uUXfIvEDAqyKI40R56CU4P">政策宣传类：突出"<b data-page-node-id="Ot04hxMlGRSbn4womHGB7z">群众能得到什么</b>"，多用"你""您"拉近距离。</li>
+<li data-page-node-id="8FaPwVy03tqtHYT58shGyf">做法宣传类：突出"<b data-page-node-id="teV94TzvoK8dKg5aLbAEMZ">我们是怎么做的、效果如何</b>"，可举材料里的例子。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="AGH0s1VmV4wasVaiwVXFc6"><b class="t" data-page-node-id="Gx2DQpJ5VqCszQbpyvQq3q">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="v2NG0EE47izjXoIPJhKdmo">【宣传稿（面向群众）】
+
+××××，您了解吗？
+
+【引】开头用一个现象、一句问话或一点背景，把读者的注意力引过来。
+
+【释】××××是什么／为什么要××××。（用通俗的语言解释，少用专业术语）
+
+【利】参与××××，您可以／能够××××。（讲对群众的好处）
+
+【行】具体怎么做：①……②……③……（给出清晰、简单的操作步骤）
+
+【呼】××××，从现在开始！让我们共同××××。
+
+【落款】××单位　×年×月×日（面向内部时写；面向媒体投稿可不写）</div></div>
+<div class="blk b-op" data-page-node-id="vQH2UEZ6xEW7xBIzSp82WC"><b class="t" data-page-node-id="daBJLpjpHI0NUyrF2tLxOC">要点处理</b>
+<span class="chip" data-page-node-id="yJCqzKKqdfr7c8X9MRuXcs">语言：通俗、生动，可设问、可排比</span>
+<span class="chip" data-page-node-id="EsKuCmy2bnrbI1n3CmyrSq">人称：面向群众多用"您""我们"</span>
+<span class="chip" data-page-node-id="QWuNStw24UT6uiz3jlbGAb">重点：讲清"对群众有什么好处"</span>
+<span class="chip" data-page-node-id="i1gxqZYdVQr6pAaPz9Skkj">总量 500—700 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="vyt5VHZ4fwLATiZALgAAmU"><b class="t" data-page-node-id="T83q4cRVhpw83iPFS8Lcn0">高频陷阱</b>
+<ul data-page-node-id="OVrGzZe1N5t80DXvgWmFgy">
+<li data-page-node-id="DSGBCLTP7SnQUbOET6TKud"><b data-page-node-id="fbn8erd9OREHBINFvbhmlX">写成公文通知</b>，全是"要××""应××"的行政口吻，群众不爱看。</li>
+<li data-page-node-id="nGiYg3XSWM7ETj90713iel"><b data-page-node-id="aOz6hrrTRo4XnP5aHnZeKa">专业术语堆砌</b>，不解释，受众看不懂。</li>
+<li data-page-node-id="kuCWPgDYryajD8KkoD5BtG"><b data-page-node-id="NYtmzLX1z13lQMe0qgvOA3">只讲政策不讲好处</b> → 群众没有参与动力。</li>
+<li data-page-node-id="8bxUzZlTqLaatqivcaFG8J"><b data-page-node-id="uWQ1zMp0u78SqdnTm8XpW4">漏掉"怎么做"</b> → 宣传稿必须给可操作的指引。</li>
+<li data-page-node-id="Nxw3XTUP5uFwW8e7yjfU1U">标题平淡无吸引力（宣传稿标题可以生动些，但要点明主题）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="GA4ooUhXlIFGcNoBRMcQye"><b class="t" data-page-node-id="LKgBWLstzq5DLkpBqeqoM8">示例演示</b>
+<div class="q" data-page-node-id="0BaXb1ZgzTuXXFLhryHYFg">【题目】某市推出"电子医保卡"，但使用率不高。请面向市民写一份宣传稿，推广电子医保卡，不超过 600 字。</div>
+<div class="ans-box" data-page-node-id="vahGQMeEVMEJyGYUiz5EYz">医保卡装进手机，看病购药更省心
+
+——"电子医保卡"邀您激活使用
+
+去医院忘带医保卡怎么办？排队缴费等太久怎么办？现在，一部手机就能解决这些问题。
+
+电子医保卡是国家医保局推出的医保电子凭证，与实体卡功能完全相同，是参保人办理医保业务的"电子身份证"。它不依赖实体卡片，只要在手机上激活，就可以看病、购药、结算，一码搞定。
+
+激活使用后，您能享受到这些便利：一是<b data-page-node-id="GSjAZ5E5iHeXPG9E7LRcfl">不怕忘带</b>。手机在手，随时可用，再也不用为丢卡、忘卡着急。二是<b data-page-node-id="Zu604H6Z8AAYjiJFuzRgEj">结算更快</b>。扫码即可完成挂号、缴费、取药，省去排队时间。三是<b data-page-node-id="R5s0HGxz59tzM0Y1J7pmBu">信息可查</b>。随时查看个人参保信息、消费明细，账目清清楚楚。四是<b data-page-node-id="H5F9ZzYAkygaW0MpIdgl1N">亲情可用</b>。通过亲情账户绑定，可为家中老人和孩子代刷医保码。
+
+怎么激活？很简单：①下载"国家医保服务平台"APP；②实名注册并登录；③在首页点击"医保电子凭证"，按提示完成人脸识别与激活；④使用时打开二维码，向药房或医院窗口出示即可。
+
+电子医保卡，让就医更便捷、让生活更从容。欢迎广大市民朋友尽快激活使用，把便利装进口袋！
+
+　　　　　　　　　　　　　　××市医疗保障局
+　　　　　　　　　　　　　　×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="GJ91TYSgqjck3LTIN6kotF">
+<h4 data-page-node-id="Oq82Yx9cflvc7ZqpwN5SRt"><span class="no" data-page-node-id="1wdEBiY5SBcbWGKoXpbHTM">9</span>讲话稿 / 发言稿</h4>
+<div class="blk b-id" data-page-node-id="WJfmwuYD7XSzX0SGG1PC19"><b class="t" data-page-node-id="QGFbRVUCuT3IwjiCYsvRnj">识别标志</b>"请为××领导拟写一份在××会议上的讲话稿"、"作为××代表，请写一份发言稿"、"在某活动上的致辞"。<b data-page-node-id="pONkfHDZ47umvo7eALNn9u">关键提示词：讲话、发言、致辞、开场、动员。</b></div>
+<div class="blk b-th" data-page-node-id="UHuGBqFDGpX5xmxSj3hOVW"><b class="t" data-page-node-id="25Cpug5ylwR1CcWpR2jZNe">思考路径</b>
+<ol data-page-node-id="sh80KoCpyQtsOyASIi3q0Y">
+<li data-page-node-id="rpf4X0r0iFi6uyDOqUEwBx">定<b data-page-node-id="OGaXC4k4xvhcnFPJrlUJvi">身份与场合</b>：领导工作部署会（务实、有要求）／经验交流会（介绍做法）／动员会（鼓舞士气）／表彰会（褒扬+号召）。</li>
+<li data-page-node-id="VDxVvxMlqjsWAODSmzHKzK">结构（万能四段）：<b data-page-node-id="Pbvy9zhGR9toQFYv2mYlSY">开场问候 → 回顾/背景 → 主体内容（做法/要求/部署，分条）→ 结语（希望/号召/感谢）</b>。</li>
+<li data-page-node-id="MOV5sIFbvcDXW8AQCF18PT">开场必须有称呼语："同志们""各位领导、各位同事"，也可加"大家好！"</li>
+<li data-page-node-id="uv0KzKCnypNyBjvwamyPer">主体部分若为部署工作，用"<b data-page-node-id="NKJ1WYhVzhtzyyAXb8TMGM">第一，要……第二，要……</b>"；若为经验交流，用"<b data-page-node-id="bYN8kVyJN8R9WrpmLXJ0cp">一是……二是……</b>"。</li>
+<li data-page-node-id="KHFTF9qNTnK6P0ivEfPD9b">结语：动员会写鼓劲的话，交流会写"感谢"与"共勉"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="Kt4WHSgixQUFYdV1askrJE"><b class="t" data-page-node-id="uWNK7S9RC2Xx85qEaKwjGP">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="mGGGNt4MPNYci1hFrr4dFt">在××××会议上的讲话
+
+（或：××××发言稿）
+
+同志们（各位领导、各位同事）：
+
+大家好！
+
+【开场】今天，我们在这里召开××会议，主要任务是××××。
+
+【回顾/背景】近年来，××××（成绩或形势分析）。
+
+【主体】围绕××工作，我讲三点意见（或：我谈几点体会）：
+第一，××××。××××××。（观点 + 具体展开）
+第二，××××。××××××。
+第三，××××。××××××。
+
+【结语】同志们，××××（号召/希望）。让我们××××，共同推动××工作再上新台阶！
+
+谢谢大家！
+
+【落款】视题目要求，可写"××　×年×月×日"</div></div>
+<div class="blk b-op" data-page-node-id="FAGHM7UPhMkwjO3nxI8jrh"><b class="t" data-page-node-id="rMYdlQY6m4R4CjzlkJqwPB">要点处理</b>
+<span class="chip" data-page-node-id="W7Pir74xLpNeuaBtklJqxG">必须有称呼语和"谢谢大家"</span>
+<span class="chip" data-page-node-id="HhRCM98fskRDm9WeNQepc4">主体分条，用"第一/第二"或"一是/二是"</span>
+<span class="chip" data-page-node-id="yhKv32zQoGoiWP4BrWXsS6">可以有口语化表达与适度情感</span>
+<span class="chip" data-page-node-id="miVnbtFd90JUctXO94Bnqw">总量 600—800 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="kZINxC5sxq4PbwusNKrYpe"><b class="t" data-page-node-id="Wd42fldyGUVdgSPKqZirUD">高频陷阱</b>
+<ul data-page-node-id="JsjiSC3xAQGpWHq7oOXK7D">
+<li data-page-node-id="MxqHqHS0lQ6lqmcmywxel8"><b data-page-node-id="gPWtirs36sWt0WpJ4mHrNS">漏称呼语</b>或漏结尾"谢谢大家"。</li>
+<li data-page-node-id="DOeOIlxNi0dHlv94GmpvdS"><b data-page-node-id="QLvcqqVg7EOQwHNiuvXcQj">身份错位</b>：以普通员工身份写领导部署讲话，口气太大；或反之。</li>
+<li data-page-node-id="honizpozt0ZhAcObBd6GxZ"><b data-page-node-id="zAKxNLISXEzaOvdaH05XC1">通篇喊口号</b>，没有实质内容（讲话稿也要有材料支撑）。</li>
+<li data-page-node-id="nFBNl2g3h1LADsk9HKzDAx"><b data-page-node-id="G5sATX3pmyEFNC3XW4n6m2">写成书面报告</b>，没有一点口语感，念出来很别扭。</li>
+<li data-page-node-id="BZSC5DDjAp6b1qNNRHg31G"><b data-page-node-id="oBTyLIpFFpXpIBDKa5n8B4">主体不分条</b>，一大段念完听众抓不住重点。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="krdvlDiHX1sT7sFz0g58mr"><b class="t" data-page-node-id="eEjcZCNh2V9GG1AkECWOBm">示例演示</b>
+<div class="q" data-page-node-id="A7FpS3AMsBbFzlEqhgQdX5">【题目】某街道召开"垃圾分类"工作推进会，你作为街道负责人作动员讲话。请拟写讲话稿，不超过 700 字。</div>
+<div class="ans-box" data-page-node-id="EaKkXjp4xmUuX9GPmG4hP9">在全街道垃圾分类工作推进会上的讲话
+
+同志们：
+
+大家好！今天我们召开这次会议，主要任务是部署推进全街道垃圾分类工作，动员大家统一思想、迅速行动。
+
+垃圾分类是关系群众生活环境、关系资源节约利用的"关键小事"，也是一件需要长期坚持的"民生大事"。从前期情况看，我街道垃圾分类工作取得了一定进展，但群众参与度不高、分类准确率偏低的问题仍然突出。
+
+围绕做好下一步工作，我讲三点意见：
+
+第一，要提高认识，把责任扛起来。垃圾分类不是可做可不做的"选择题"，而是必须完成的"必答题"。各社区、各科室要把这项工作摆上重要位置，明确专人负责。
+
+第二，要抓实宣传，把群众发动起来。要进小区、进学校、进商户，用群众听得懂的方式讲清楚"怎么分"；要发挥党员、楼栋长、志愿者的带头作用，用身边人带动身边人。
+
+第三，要建好机制，把工作落下去。要配齐分类设施，优化投放点设置；建立日常巡查和考核通报机制，对落实到位的表扬，对问题突出的督促整改。
+
+同志们，垃圾分类没有旁观者，人人都是参与者。让我们齐心协力、久久为功，把这项工作做实做细，让我们的社区更整洁、生活更舒心！
+
+谢谢大家！</div></div>
+</div>
+
+<div class="card" data-page-node-id="Xv4joDRHUhoAX3mAxJmQeV">
+<h4 data-page-node-id="ZrrXDAQy0EQMrMCiftyb6A"><span class="no" data-page-node-id="ThJGCEMCHe0HRbDBkbgxoH">10</span>汇报提纲 / 情况简报 / 会议纪要</h4>
+<div class="blk b-id" data-page-node-id="ZOsfcxCIBx6yMUTwGIM6ml"><b class="t" data-page-node-id="uealAXPq8GHl4MBUyy1cVq">识别标志</b>"请写一份汇报提纲"、"拟写一份工作简报"、"整理一份会议纪要"。<b data-page-node-id="TbagXhwO57COuXVFXR12cd">关键提示词：提纲、简报、纪要、要点、整理。</b></div>
+<div class="blk b-th" data-page-node-id="FUdopGgB3apDH9GOSvtuRg"><b class="t" data-page-node-id="pL3h1NXueBrWZ3VwanWDoV">思考路径</b>
+<ol data-page-node-id="AtsVbKuKeNxuyWjKVDMOgp">
+<li data-page-node-id="KEJcZX6PUm4F2vk5W7FH1k"><b data-page-node-id="pT7rFhWpfg1NNpnN5BMgtN">三者有区别，先分清</b>：<b data-page-node-id="UYJEsCeVenmJgVyur8cPlj">汇报提纲</b>=要点式，条目为主，不要求连贯行文；<b data-page-node-id="9OvjKYdW5lmm7lsK9SUjXi">情况简报</b>=简短报道体，有标题和导语；<b data-page-node-id="6MkRUsWttgaBx2IFTwGdrr">会议纪要</b>=客观记录会议议定事项。</li>
+<li data-page-node-id="fDOIn21ESDQlMoDvng1Ytc"><b data-page-node-id="TmDnGq0MQc2CnTAkQShj0W">汇报提纲</b>：按"工作进展 → 主要做法 → 问题困难 → 下步计划"分条，每条一句总括 + 简要展开，可用小标题。</li>
+<li data-page-node-id="Sf4qSd0QRfneZp7aqyKk6z"><b data-page-node-id="7yINCGEVEl3xXAkSijVAZR">情况简报</b>：标题（点明主题）→ 导语（何时何地何事）→ 主体（具体内容）→ 结语（展望/提示）。</li>
+<li data-page-node-id="4tzvAwImqGOLzfylTdG0dK"><b data-page-node-id="h43EIVURmmESb9MnzeiNtg">会议纪要</b>：会议基本情况（时间、地点、主持、参会、议题）→ 议定事项（分条，谁负责、做什么）。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="j2f7GjD0MHX2hEqhnsBnES"><b class="t" data-page-node-id="vbR06NfMAFDDDu83cA1AOM">判定标准 · 三种格式模板</b>
+<div class="ans-box" data-page-node-id="AdUK0GcOW0ARJ1j9jfUeno">【汇报提纲】
+关于××××工作的汇报提纲
+
+一、基本情况
+　1. ……
+　2. ……
+二、主要做法
+　1. ××××（做法一，一句总括 + 一句展开）
+　2. ××××
+三、存在问题
+　1. ……　2. ……
+四、下步打算
+　1. ……　2. ……
+
+【情况简报】
+××简报
+第×期
+
+××××工作取得阶段性成效
+
+【导语】近日，××单位组织开展了××工作，取得明显成效。
+【主体】一是……二是……三是……（可配简要数据）
+【结语】下一步，××单位将××××。
+（报送：××　编发：××　×年×月×日）
+
+【会议纪要】
+关于××××会议的纪要
+
+时间：×年×月×日　地点：××
+主持人：××　参加人员：××
+记录人：××
+
+会议听取了××工作情况汇报，就××问题进行了研究讨论。现将议定事项纪要如下：
+
+一、关于××问题。会议决定，由××负责××，于×月×日前完成。
+二、关于××工作。会议要求，××要××××。
+三、……
+
+××××（单位）
+×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="cfvA9jTgy5asHCXLGqovqp"><b class="t" data-page-node-id="ghR8o2EonaBNxad6GgjcE6">要点处理</b>
+<span class="chip" data-page-node-id="MKvjDAWMJ9kl1AH7AA6e4k">提纲：条目化，可用序号，不必成段</span>
+<span class="chip" data-page-node-id="cQykF7dHdmNxghEivSD71I">简报：有标题和导语，语言简练客观</span>
+<span class="chip" data-page-node-id="alv4gQgXBuGAjEfpIm8O1H">纪要：必须写清"谁负责、做什么、什么时限"</span>
+<span class="chip" data-page-node-id="GAQd5CpoRmCErvzXO58gVR">总量 300—500 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="6pKJvAmVeAnuuAwrqhyj9F"><b class="t" data-page-node-id="hTAFTZ2Iaw7j0aGwDZDQqF">高频陷阱</b>
+<ul data-page-node-id="0FggyImUhmf9H9iC5lTYpM">
+<li data-page-node-id="TWuMMRoyHNkVuzrcVAoas6"><b data-page-node-id="F8xjWw77xQaqK8ndzVQrhQ">会议纪要写成会议记录</b>：纪要是"议定了什么"，不是"谁说了什么"。</li>
+<li data-page-node-id="qSeGIwMseyHySvKAMmgLS5"><b data-page-node-id="Dto9As0eqyS5ALboGeKkXN">纪要漏定责任人</b>：只写"要抓好××"，没写谁负责。</li>
+<li data-page-node-id="GrERKCIVK71a3qXG5m9r9u"><b data-page-node-id="M2uykgdv2L3CdqMwQ7k2ZV">汇报提纲写成整篇文章</b>，失去"提纲"的简洁性。</li>
+<li data-page-node-id="D2HZJRuVdlujMJ8dexlo6F"><b data-page-node-id="NvDurKIEbrTFwBfvBuPnjO">简报缺少导语</b>，直接进入细节。</li>
+<li data-page-node-id="BGCNEPmG8NDOnAf1Yzcf4d">三者格式混用（题目要简报，写成纪要）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="0hNXPsQfc6uqJz3rlF1uJX"><b class="t" data-page-node-id="GqzgHy4RFX0iHzqJ1HHNB7">示例演示</b>
+<div class="q" data-page-node-id="9WpXDLsOkzdvebvMS4Q8YB">【题目】某单位召开专题会议，研究了办公区域节能降耗和公务用车管理两项工作，明确了责任科室。请整理一份会议纪要，不超过 400 字。</div>
+<div class="ans-box" data-page-node-id="mKN5ztSw0gHXNvPBHRBouh">关于办公节能与公务用车管理专题会议的纪要
+
+时间：×年×月×日　地点：单位三楼会议室
+主持人：×××　参加人员：各科室负责人
+记录人：×××
+
+会议就办公区域节能降耗、公务用车管理两项工作进行了研究，现将议定事项纪要如下：
+
+一、关于办公区域节能降耗工作。会议明确，由办公室牵头负责，各科室配合。一是下班后须关闭电脑、空调、照明等用电设备，由各科室指定专人每日下班前检查；二是推行无纸化办公，减少纸质材料印发；三是办公室每月通报各科室用电情况，并纳入年度考核。
+
+二、关于公务用车管理工作。会议决定，由后勤科负责修订公务用车管理办法，明确用车申请、审批、使用、归还全流程要求，实行"一车一档"管理，严禁公车私用。修订稿于×月×日前报单位领导审阅。
+
+会议要求，各责任科室要抓好落实，及时反馈进展。
+
+××单位
+×年×月×日</div></div>
+</div>
+
+<h2 class="mod" data-page-node-id="BEmUlArLfzFZpYQnZq93C7">第四组 · 实务类文书（4 份）</h2>
+<div class="mod-sub" data-page-node-id="hTsmC3a06H89SjYsqfw1hk">这一类最贴近综应 A 类的实务导向，考查"具体办事能力"。</div>
+
+<h3 class="grp" data-page-node-id="YERORNjlqjoAfWM8yAuIQL">实务文书</h3>
+
+<div class="card" data-page-node-id="ELPBn36S9fGdW23WUaLemk">
+<h4 data-page-node-id="8bcUT3tqId28Fq575HhHlB"><span class="no" data-page-node-id="T1CzFulfDH5euBBxCdbArS">11</span>调查问卷 / 调研方案</h4>
+<div class="blk b-id" data-page-node-id="wg1xkJfMPmmGhQJQxkYeEG"><b class="t" data-page-node-id="HkJplWuJM7TIS0UKKtDJIJ">识别标志</b>"请设计一份调查问卷"、"拟写一份调研方案"、"为摸清××情况，请设计调研提纲"。<b data-page-node-id="spb1NQJsXAvqSO8KG54q7p">关键提示词：调查、调研、问卷、摸底、了解情况。</b></div>
+<div class="blk b-th" data-page-node-id="doYXCFx6iCkF4uM1v2dR2s"><b class="t" data-page-node-id="xPfJUML7RBxtUWBcPysjTy">思考路径</b>
+<ol data-page-node-id="z16wRjHFBMCF8dzS30VSIT">
+<li data-page-node-id="yIDoEjAPOmSxvJzJYBwUU5"><b data-page-node-id="pma4V2QCiDTNxoO8wCg1bA">先明确调研目的</b>：要弄清什么？这决定了问什么问题。</li>
+<li data-page-node-id="0vmVOhpIonLwSHR77rYxoz">调研方案四要素：<b data-page-node-id="uL5BjT9Aiekis66w3djNaz">调研目的 → 调研对象与方式 → 调研内容（提纲）→ 时间安排与人员分工</b>。</li>
+<li data-page-node-id="aDx9Q9ADlPi66E58Jjfmvj">调查问卷结构：<b data-page-node-id="kR3y3pOwTomi8bj85YYw9B">标题 → 卷首语（说明目的、承诺保密）→ 基本信息 → 主体问题（封闭式为主）→ 结束语（致谢）</b>。</li>
+<li data-page-node-id="00kphfTSTMFdSIN4A3iH6i">问题设计要"<b data-page-node-id="56vVFkspRyhhOI0xxy8thx">围绕目的、选项穷尽、避免诱导性</b>"。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="9y3nSzinR0cUXtH6JL4xKs"><b class="t" data-page-node-id="ttsoGX1HNRxYOaJCuWvncV">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="oFyCRTFBE5afEP0iAaibCi">【调研方案】
+关于××××的调研方案
+
+一、调研目的
+为全面了解××××情况，找准××问题，为××提供决策依据。
+
+二、调研对象与方式
+（一）调研对象：×××、×××。
+（二）调研方式：采取实地走访、座谈交流、问卷调查、查阅资料相结合的方式。
+
+三、调研内容
+1. ××××（基本情况方面）
+2. ××××（存在问题方面）
+3. ××××（意见建议方面）
+
+四、时间安排
+×月×日—×月×日　开展实地调研与问卷发放
+×月×日—×月×日　整理汇总、撰写报告
+
+五、人员分工
+由××科牵头，抽调××、××组成调研组，××任组长。
+
+【调查问卷】
+关于××××的调查问卷
+
+亲爱的居民朋友：
+您好！为了解××××情况，更好地改进我们的工作，特开展本次调查。问卷采取匿名方式，结果仅用于统计分析，请您放心如实填写。感谢您的支持！
+
+一、基本情况
+1. 您的年龄：A. 18 岁以下　B. 18—35 岁　C. 36—59 岁　D. 60 岁以上
+2. 您的职业：A. 机关事业单位　B. 企业职工　C. 个体经营　D. 学生　E. 其他
+
+二、主体问题
+3. 您对××××是否了解？
+　A. 非常了解　B. 比较了解　C. 不太了解　D. 完全不了解
+4. 您认为当前××××存在的主要问题是？（可多选）
+　A. ……　B. ……　C. ……　D. 其他（请注明：______）
+5. 您对改进××××有什么建议？（开放题）
+　____________________________________
+
+感谢您的参与！</div></div>
+<div class="blk b-op" data-page-node-id="Ek7gBAJ781MHZjEZ9CBAIB"><b class="t" data-page-node-id="IlUT8nlTV8yyrZD8R58V6G">要点处理</b>
+<span class="chip" data-page-node-id="n2Kbfx2LZvgWLDcVDi6Elp">问卷必须有卷首语和致谢</span>
+<span class="chip" data-page-node-id="HUf3wPrS9O5eT0mnsLWjAx">问题 8—12 题为宜，选项要穷尽且互斥</span>
+<span class="chip" data-page-node-id="dJTubXcDUpaawZur8KcVg6">至少要有一道开放题</span>
+<span class="chip" data-page-node-id="YprfIjgAosrjDWq0eTSBLV">方案四要素齐全，时间节点要具体</span>
+<span class="chip" data-page-node-id="0owXnNA7WvUjdc9IgQ5LkV">总量 500—700 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="xF6EbpSwCd5SGqrCqYXATR"><b class="t" data-page-node-id="4CyJR0s0TDjErO5AuTbtd7">高频陷阱</b>
+<ul data-page-node-id="d4x1RCibCUVabOlMWUFbrY">
+<li data-page-node-id="DW6JgzcsyEDzDgrKjADOmC"><b data-page-node-id="rG70KGjoLoeP09cvBN1FRB">漏卷首语</b>（说明目的 + 承诺匿名，这是问卷必备）。</li>
+<li data-page-node-id="AMpypdJa0ImzYCXywRfnge"><b data-page-node-id="IJPJoaQmV7vAeImngIaJ2N">问题带有诱导性</b>："您是否也认为××做法很好？"</li>
+<li data-page-node-id="PxD2w7dd2sZJFd8pN6TlkJ"><b data-page-node-id="1Dt4atiXR3CKReYwL9ilov">选项不穷尽</b>：没给"其他"选项。</li>
+<li data-page-node-id="ODtw2kMcBRThBvC1MMrPXe"><b data-page-node-id="KHdS9RYYpvbD8jpoWsBHYd">调研方案漏人员分工或时间安排</b>。</li>
+<li data-page-node-id="QVWiinNZh2ImQITW3ZArh3">调研内容与调研目的脱节。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="xAN159X4OSQROZ0a4V9xsg"><b class="t" data-page-node-id="YBeLYQXb1rTfYl3oZayCBI">示例演示</b>
+<div class="q" data-page-node-id="vbeWPfFnHFq8f2In6QSMDh">【题目】某社区拟了解居民对社区公共文化服务的满意度，请设计一份调查问卷。不超过 500 字。</div>
+<div class="ans-box" data-page-node-id="eFIKtTKVEg7jI2nzeAvKyu">关于社区公共文化服务满意度的调查问卷
+
+亲爱的居民朋友：
+您好！为进一步提升社区公共文化服务质量，更好地满足大家的文体需求，特开展本次调查。问卷采取匿名方式，结果仅用于统计分析，请您放心填写。感谢您的支持！
+
+一、基本情况
+1. 您的年龄：A. 18 岁以下　B. 18—35 岁　C. 36—59 岁　D. 60 岁以上
+2. 您在本社区居住时长：A. 1 年以内　B. 1—5 年　C. 5 年以上
+
+二、主体问题
+3. 您是否知道社区设有文化活动室？
+　A. 知道并去过　B. 知道但没去过　C. 不知道
+4. 过去一年，您参加过社区组织的文化活动吗？
+　A. 经常参加　B. 偶尔参加　C. 从未参加
+5. 您希望社区增加哪些文化活动？（可多选）
+　A. 图书阅览　B. 舞蹈健身　C. 书画培训　D. 观影活动　E. 亲子活动　F. 其他（请注明：______）
+6. 您认为当前社区文化活动存在的主要问题是？（可多选）
+　A. 活动次数少　B. 开放时间不合适　C. 设施不完善　D. 宣传不到位　E. 内容不感兴趣　F. 其他（请注明：______）
+7. 您对改进社区公共文化服务有什么建议？（开放题）
+　________________________________________
+
+感谢您的参与！</div></div>
+</div>
+
+<div class="card" data-page-node-id="Z4a2Z54pfZsuXBv4DH0HT2">
+<h4 data-page-node-id="JNFHz4HVBGP69GNODKbq42"><span class="no" data-page-node-id="GLlHJUpUMffawIxY39Sn4H">12</span>活动策划方案</h4>
+<div class="blk b-id" data-page-node-id="kmZCKV9VpyXJoAUHwcYaOM"><b class="t" data-page-node-id="eJ2gYXNlccgH6oQh1EGHZE">识别标志</b>"请拟写一份××活动方案"、"为开展××主题活动，请制定实施方案"。<b data-page-node-id="Nau61XIeW1ZlogaxqS94dG">关键提示词：方案、策划、组织、实施、安排。</b></div>
+<div class="blk b-th" data-page-node-id="QACiJheuxzy180LZKHaKBL"><b class="t" data-page-node-id="7KccdDuFzhe94Tl8n3hLXd">思考路径</b>
+<ol data-page-node-id="6tjZ1z1STHFbkbSJr3otED">
+<li data-page-node-id="G629E7wtLwnaIftU8WCoDD">方案的<b data-page-node-id="5h54tiQxFBZZ1OrqBFgzlu">标准七要素</b>：<b data-page-node-id="xaAeDwzdXuWfGXUdTIw2mk">活动主题、活动目的、活动时间、活动地点、参加人员、活动内容与流程、保障措施</b>。</li>
+<li data-page-node-id="4A2fmlLRPl8HefxV0qmEot">写方案前先想清"<b data-page-node-id="yD4vNxRSSqlKbEf1HOjvLW">为了什么办这场活动</b>"，目的决定内容设计。</li>
+<li data-page-node-id="BqpDA9SKDlYaTFeRGw3StG">活动内容要分环节写清流程（几点做什么），并给每个环节的负责人或组织方式。</li>
+<li data-page-node-id="8eI2IzY3kzdgcSdFAVWvoE">保障措施覆盖：组织保障、经费保障、安全保障、宣传保障。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="YcqHdr6MkCTECBhdjUfEcw"><b class="t" data-page-node-id="vExtiMXFLxuCVu6aQFHNh6">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="D7hLNEbyoADDxTxhDDLjME">关于开展××××活动的方案
+
+一、活动主题
+××××（如：××××，共建共享）
+
+二、活动目的
+为××××，进一步××××，特制定本方案。
+
+三、活动时间
+×年×月×日（×周）×时—×时
+
+四、活动地点
+××××
+
+五、参加人员
+××××、××××
+
+六、活动内容与流程
+（一）活动内容：围绕××××，设置××××、××××等环节。
+（二）流程安排：
+　1. ××:××—××:××　××环节（负责人：××）
+　2. ××:××—××:××　××环节（负责人：××）
+　3. ××:××—××:××　××环节（负责人：××）
+
+七、保障措施
+（一）组织保障：成立活动工作小组，由××任组长，统筹协调各项工作。
+（二）经费保障：活动经费从××列支，严格按标准使用。
+（三）安全保障：提前排查场地安全隐患，安排专人负责现场秩序与应急处置。
+（四）宣传保障：通过公告栏、微信群等方式提前宣传，扩大活动影响。
+
+××单位
+×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="izsDmGq07e5rBGu72c8CG1"><b class="t" data-page-node-id="4c8blKC2IfJTxns44ntmbh">要点处理</b>
+<span class="chip" data-page-node-id="MbIbIZEBn3EXldHBwEgruG">七要素齐全（漏一个扣分）</span>
+<span class="chip" data-page-node-id="61XoEsJpDg8k9k0Vo4N9ZK">流程必须有时间节点</span>
+<span class="chip" data-page-node-id="AYFED9ABq13uvRPoFdogsL">保障措施要具体（谁负责、怎么落实）</span>
+<span class="chip" data-page-node-id="5wNi1hEYXZdCRpFeXlXMhj">总量 500—700 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="sdGlnB4O1aOW8CwrUz0bOD"><b class="t" data-page-node-id="GlWrTbmmkHKcvf7H8a2Dqy">高频陷阱</b>
+<ul data-page-node-id="1hWY50Fj9N1AeMdRJcbHEU">
+<li data-page-node-id="F6bW2HvB3BwHIvT8Ay52gy"><b data-page-node-id="waVDhJEDRhMHKjjr3EqEvj">漏时间或地点</b>（方案的硬要素）。</li>
+<li data-page-node-id="Qba9ae3fM76xSu1HCWN7Qw"><b data-page-node-id="Z1HLAAtKo6BsVXmBI3MAmA">流程不带时间点</b>，写着"上午进行讲座"却不知几点。</li>
+<li data-page-node-id="weRUmGF3tUusOygAFJkWQ6"><b data-page-node-id="8VFsIBkm0puaKgQUbxFGPc">保障措施空泛</b>："加强组织领导"没有说谁负责。</li>
+<li data-page-node-id="5r7umydQ2Q4KFs4gygupBU"><b data-page-node-id="Bc1qr4QNmH6PcnsrogZvBx">活动目的写成活动内容</b>。</li>
+<li data-page-node-id="HOcYvH2p20BJfkLZDDFNMd">参加人员范围不清（"相关人员"这种表述不可取）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="HlJqQNFWEdNP3GAlbqiTs7"><b class="t" data-page-node-id="jRoFQeSbjyBR64eTAPPcSO">示例演示</b>
+<div class="q" data-page-node-id="cAt80ORXBzwOXMKeEqRzPw">【题目】某单位拟在"世界读书日"前后组织一次职工读书分享活动，请制定活动方案，不超过 600 字。</div>
+<div class="ans-box" data-page-node-id="d0VlGsffuhlhB63A5tt3oj">关于开展"书香润心"职工读书分享活动的方案
+
+一、活动主题
+书香润心·共享阅读
+
+二、活动目的
+为营造浓厚的学习氛围，引导职工养成爱读书、读好书的习惯，丰富精神文化生活，增强团队凝聚力，特制定本方案。
+
+三、活动时间
+×年×月×日（周×）下午 14:30—16:30
+
+四、活动地点
+单位三楼多功能活动室
+
+五、参加人员
+全体在职职工，以科室为单位报名参加
+
+六、活动内容与流程
+（一）活动内容：设"我最想推荐的一本书"分享、"经典段落朗读"、"自由交流"三个环节。
+（二）流程安排：
+　1. 14:30—14:45　开场致辞与活动说明（负责人：办公室××）
+　2. 14:45—15:30　主题分享，每人 5—8 分钟，由各科室推荐的职工依次发言（负责人：××）
+　3. 15:30—16:00　经典段落朗读环节（负责人：××）
+　4. 16:00—16:30　自由交流与书籍交换，参与者互赠或交换图书（负责人：××）
+
+七、保障措施
+（一）组织保障：成立活动工作小组，由办公室牵头，负责方案落实与现场协调。
+（二）经费保障：书籍与纪念品经费从工会活动经费中列支。
+（三）宣传保障：提前一周通过公告栏和单位微信群发布通知，鼓励职工踊跃参与。
+
+××单位
+×年×月×日</div></div>
+</div>
+
+<div class="card" data-page-node-id="0kTFAqlAoUgVSk5xtq1UCz">
+<h4 data-page-node-id="Dv40NlPrL0GRzOzuCtBscm"><span class="no" data-page-node-id="FXhhLTBJSHwbeQA4jpZyVj">13</span>答复 / 回复（回应群众投诉、媒体质疑）</h4>
+<div class="blk b-id" data-page-node-id="9U37pvI4WnOhqFww5GBUKQ"><b class="t" data-page-node-id="tf8EbB4TDjmGRCHwzKPvaT">识别标志</b>"针对群众反映的××问题，请拟写一份答复"、"有网民质疑××，请以××名义作出回应"、"请就××投诉给予书面回复"。<b data-page-node-id="hYFE97waYKbRydm24zYqHa">关键提示词：回应、答复、回复、说明、解答。</b></div>
+<div class="blk b-th" data-page-node-id="ADm53G9V2Yw5Fyt54MqkVZ"><b class="t" data-page-node-id="mk3Qq8Lga4DKihHflYXkAh">思考路径</b>
+<ol data-page-node-id="ssITKPZUsqE5n7AaaoJCyI">
+<li data-page-node-id="HGolNj5EEdMAbU6PKnDNpi"><b data-page-node-id="7s7T40qFOOMdndACROtQFA">先定四件事</b>：谁在问（群众/媒体/上级）？问什么（几个问题）？我是什么身份（决定能承诺到什么程度）？已经做了什么？</li>
+<li data-page-node-id="dAKjuiQ0DSZGNBjvK4XpB5">结构：<b data-page-node-id="gmGKtWcTbodLSCEF22rKof">致谢/关注表态 → 逐条回应问题 → 说明已采取措施 → 下步安排 → 感谢监督</b>。</li>
+<li data-page-node-id="SL4UdUE4uXN9uBBUlKiuTm"><b data-page-node-id="ORyAr7lpSnR8Vjv4uVT3Ad">核心原则：逐条回应，不漏一条</b>。对方问 3 个问题就回 3 条，编号对应。</li>
+<li data-page-node-id="gGg0fB4pRfk2wjf3hkZNkW">已核实的说清事实，未核实的说明"正在核查"，<b data-page-node-id="gnfo1VpVqvzPBFNQP5fxCK">不推诿、不狡辩、不越权承诺</b>。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="XEJF3DEpr0azp0Tigsmpqh"><b class="t" data-page-node-id="ceGNKNjn7MgQnQIhWnZGwE">判定标准 · 格式模板</b>
+<div class="ans-box" data-page-node-id="Sxflv82WTvweWyE1rTa91l">关于××××问题的答复
+
+××××（或：尊敬的××先生/女士）：
+
+您好！您反映的××××问题已收悉。首先，感谢您对××工作的关注与监督。现将有关情况答复如下：
+
+一、关于××××问题。
+经核实，××××（说明事实）。目前，××××（已采取的措施）。
+
+二、关于××××问题。
+××××（说明情况或处理进展）。对您反映的情况，我们已安排专人跟进，将于×月×日前完成整改/给出结果。
+
+三、关于××××问题。
+××××。
+
+针对您反映的问题，我们已第一时间组织排查，并举一反三，从××方面完善工作机制，防止类似情况再次发生。
+
+再次感谢您的监督与支持。如还有疑问，欢迎随时与我们联系（联系电话：××××）。
+
+××单位
+×年×月×日</div></div>
+<div class="blk b-op" data-page-node-id="61t3c0xyZJM4L9zbUDyvuU"><b class="t" data-page-node-id="ojYhe85RbLhVxFruxC6sGc">要点处理</b>
+<span class="chip" data-page-node-id="RaXw3EE6CcYc9Muk3S8Mev">必须先表态、先致谢，不辩解</span>
+<span class="chip" data-page-node-id="NHwFizMcEdiCQjHTu0CJWd">逐条对应，序号一致</span>
+<span class="chip" data-page-node-id="e0edDzCABBsHxi7RIGT6nk">已办的讲清楚，未办的给出时限</span>
+<span class="chip" data-page-node-id="9fihuBG6FJ3lcC4WsPeQhS">留下联系方式（体现真诚）</span>
+<span class="chip" data-page-node-id="9eqXSme8Giff3eJXVsm1iN">总量 400—600 字</span>
+</div>
+<div class="blk b-tr" data-page-node-id="tlBVvEBUL2vxL8yqv49SSr"><b class="t" data-page-node-id="otcVlZ2GIG2OFjHtQG71BM">高频陷阱</b>
+<ul data-page-node-id="l3C0c2MM0aBvXy4mkVeID4">
+<li data-page-node-id="4x05byTUunkOPlot93CXGL"><b data-page-node-id="B4jvz50LPsTK3nzbkiwFlW">漏答</b>：群众反映 3 件事，只答了 2 件。</li>
+<li data-page-node-id="XJi7GO7oxm7JM1ojtK71QO"><b data-page-node-id="Dj3UZ6CsUeBYVTyn1TiV2X">语气对抗</b>：用"并无其事""纯属误解"等生硬表述，激化矛盾。</li>
+<li data-page-node-id="erVZnUATGbBPjEE0dLUfla"><b data-page-node-id="9mfQEzFZOYky7oY37AFr2J">越权承诺</b>：基层单位承诺上级才能决定的事（如免收费用）。</li>
+<li data-page-node-id="PHcxAEu83flXYbrG7C22di"><b data-page-node-id="AFzvA3V5mPpPGvLTkMBXJq">只讲困难不讲措施</b>，显得推诿。</li>
+<li data-page-node-id="sCRS7tNUNyzea7197cFsYH">没有给出整改时限，答复没有闭环。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="zpHpz1ZTFNPUwyp7PQxFOS"><b class="t" data-page-node-id="02xtFrVre46cuXyHcTxGjF">示例演示</b>
+<div class="q" data-page-node-id="rfQcfBO79pUUPkXWav9Hxd">【题目】有居民反映，某小区门前的道路夜间路灯长期不亮，多次反映未解决。请以相关部门名义作出书面答复，不超过 500 字。</div>
+<div class="ans-box" data-page-node-id="hfiTHn7wHnIEIcL0pnkZs7">关于小区门前道路路灯不亮问题的答复
+
+尊敬的居民朋友：
+
+您好！您反映的小区门前道路夜间路灯不亮的问题已收悉。首先，感谢您对我们工作的关注与监督，给您出行带来的不便，我们深表歉意。现将有关情况答复如下：
+
+一、关于路灯长期不亮的原因。经现场核查，该路段路灯因线路老化、部分灯管损坏及供电回路故障，导致夜间无法正常照明。您反映的情况属实。
+
+二、关于此前反映未及时解决的问题。经查，前期我单位已接到相关反映并派员查看，但因涉及线路整体更换、需协调供电部门，处置进度较慢，未能及时向您反馈进展。对此，我们诚恳接受批评。
+
+三、关于当前的整改安排。我单位已于××月××日组织施工力量进场，计划分两步实施：先于×月×日前修复现有线路、恢复照明，再于×月×日前完成灯头整体更换。整改期间将设置临时照明设备，保障居民夜间出行安全。
+
+下一步，我们将举一反三，对辖区内路灯开展全面排查，建立定期巡查和维护台账，避免类似问题再次发生。
+
+再次感谢您的监督与支持。如需进一步了解进展，欢迎致电××××。
+
+××单位
+×年×月×日</div></div>
+</div>
+
+<h2 class="mod" data-page-node-id="lKyf4GGyTgZByFRHxJ0qqu">第五组 · 文章写作与素材库（1 份框架 + 1 份素材）</h2>
+<div class="mod-sub" data-page-node-id="VilDIL18rnmPzvffPCpnM5">若题目考查议论文/短评/大作文，用这一组。素材库用于积累规范表达。</div>
+
+<h3 class="grp" data-page-node-id="kEKcP5BRnSkD7lIiSD2TEY">文章写作</h3>
+
+<div class="card" data-page-node-id="FJCHmHbCO19PsjAwQxRkUJ">
+<h4 data-page-node-id="u2jfxGcF5QpFqOZ2mBjhnc"><span class="no" data-page-node-id="QMXsGKeQe5P0CI7HncIRKv">14</span>文章写作通用框架（议论文 / 短评）</h4>
+<div class="blk b-id" data-page-node-id="jfawBAhqzpDunqT1AdMql6"><b class="t" data-page-node-id="VDCgfoBWryFCSjnHAxVKLk">识别标志</b>"请围绕××主题，自拟题目，写一篇议论文"、"就××现象写一篇短评"、"结合材料，谈谈你的思考"。<b data-page-node-id="nu2Pjjs9yIVAEPn8vAPkho">关键提示词：自拟题目、议论文、短评、论述、结合材料。</b></div>
+<div class="blk b-th" data-page-node-id="RbzUADfatkiaSjiybHJ6I3"><b class="t" data-page-node-id="LVzbESAGLoDexFuzV9Nk2w">思考路径 · 四步成文</b>
+<ol data-page-node-id="1ORd0oREcqC0GdO3z2APBM">
+<li data-page-node-id="eKagqvLmVsv16RM5T0MdEY"><b data-page-node-id="A4hbAXxq2GFOxsADPNZX6L">审题立意（5 分钟）</b>：抓题干核心词 + 材料的价值倾向，确定一个"<b data-page-node-id="IZc4yMCIGthOncIRu0FDVw">明确的中心论点</b>"（一句话能说清）。<b data-page-node-id="s3IQfMWEXkpC2krcYjKXl8">论点必须积极正向、符合主流价值</b>。</li>
+<li data-page-node-id="HWJ48bdZDwfF3Ou64CWjSY"><b data-page-node-id="gD5ISVAf10bIwOJyrOPF0z">拟标题（1 分钟）</b>：见下方标题写法库。</li>
+<li data-page-node-id="LC6etsNGrymnJXle4Ia9Ft"><b data-page-node-id="qfGZaXR5pqENWY7xgj0ql9">搭分论点骨架（5 分钟）</b>：围绕中心论点拆 3 个分论点。常用三法：<b data-page-node-id="ANoIcBw0Rt3egb7pyL0UyH">是什么—为什么—怎么办</b>；<b data-page-node-id="Foh0bHDbNGkocIeMpGqJlA">思想—制度—行动</b>；<b data-page-node-id="RUnS71TODF8mpam0Ryn4wh">个人—社会—国家</b>。</li>
+<li data-page-node-id="PLXBHE7Jm0BTtZmYB8DD5H"><b data-page-node-id="4Lrd3QzT93d1VORbqfkdUf">填充论据成文</b>：每段 = 分论点句 + 解释 + 例证/引用 + 回扣。首尾段各 100—150 字，中间三段各 200 字左右。</li>
+</ol></div>
+<div class="blk b-ru" data-page-node-id="wls2SuvPJlcwKuMiAC7oPr"><b class="t" data-page-node-id="YvSYz3xHAydES6JB1XIwYt">判定标准 · 标题库与结构模板</b>
+<b data-page-node-id="Zoh6wDCEGCXwc4naLvQhSn">标题写法（四种，挑最好写的）</b>
+<table data-page-node-id="l019nKnjqU4o0K4gcqsByf">
+<tr data-page-node-id="gNMLfGmNCt2lFLoJYqBBj5"><th data-page-node-id="Q4uCZ0RGFRXKBusyhsjk1F">类型</th><th data-page-node-id="aEAi2nBM55UFqxc54suIGe">公式</th><th data-page-node-id="g7YqKq9F3SZoxApnaVMA8c">示例</th></tr>
+<tr data-page-node-id="H3C4XdTGlgY7N3FsTAZX0t"><td data-page-node-id="6m89rwIn4foE63CCaiUmXW">动宾式</td><td data-page-node-id="1mL1mmlIGJUDLFmAxlDf3c">以××＋动词＋××</td><td data-page-node-id="GzEwaN6vXstHvPVdDsKARP">以创新驱动高质量发展</td></tr>
+<tr data-page-node-id="7yAbBVO2HiqFgBxdjXDMYd"><td data-page-node-id="hl9rpaZ1lRxGvKUfQP6Q14">对仗式</td><td data-page-node-id="l7A5ADnOdHS4F8tQ4IRntK">××××，××××</td><td data-page-node-id="wCKfvuJvOluLKsEihOqCrC">守正创新，行稳致远</td></tr>
+<tr data-page-node-id="LvgGjVtEuld88YLHRWDbCO"><td data-page-node-id="T2OuRKrMltymJ2GEMExIAT">观点式</td><td data-page-node-id="T3wtCcZ3D2ojlcrML7YQoD">直接亮明观点</td><td data-page-node-id="uVy1QOLKMPblZ4c8cPjZp0">让基层减负真正落到实处</td></tr>
+<tr data-page-node-id="YbHiNLc3v8E5D1Y9VXa62b"><td data-page-node-id="NEDvUpJB6l1apH3FKAVjQY">比喻式</td><td data-page-node-id="enbegFF2NFCrtvfkdADteV">把××作为××的××</td><td data-page-node-id="9PvrbG1BzkEVcZAyj0hqHN">把群众满意作为工作的"试金石"</td></tr>
+</table>
+<b data-page-node-id="AOCCbu5181aWcOgvdN7mog">结构模板（五段式，最稳）</b>
+<div class="ans-box" data-page-node-id="CDMSU2KHEjjwYuTroxV4zI">【标题】××××
+
+【第一段·开头】引出现象或问题（可用材料背景）→ 亮明中心论点。
+　可用句式："近年来，××××。然而，××××。在我看来，唯有××××，方能××××。"
+
+【第二段·分论点一】××××（观点句）。××××（解释）。正如……（例证/引用）。可见，××××。
+
+【第三段·分论点二】……
+
+【第四段·分论点三】……
+
+【第五段·结尾】总结升华 + 面向未来。
+　可用句式："××工作非一日之功。唯有以××为××、以××为××，才能××××，让××××。"</div></div>
+<div class="blk b-op" data-page-node-id="3xYz5iB0S2mgapINnfjtUc"><b class="t" data-page-node-id="dKYqIKmPPEAYt22lQfwrYR">要点处理</b>
+<span class="chip" data-page-node-id="mtVOMQ56P1hSfnrfPX8ANp">中心论点必须一句话说清，且在开头段出现</span>
+<span class="chip" data-page-node-id="eVkjGRLgObkoePAaRMDrez">分论点句式尽量整齐（形成排比感）</span>
+<span class="chip" data-page-node-id="LDCeOjDVlznKUUGbNvbrKF">每段必须回扣论点，不能只讲故事</span>
+<span class="chip" data-page-node-id="GolcLBvnVxnvkg25TYCjq0">字数：一般 800—1000 字（看题目要求）</span>
+</div>
+<div class="blk b-tr" data-page-node-id="GhBVKOLgSmKcR3LemPs7MQ"><b class="t" data-page-node-id="6OI3Xv0K9SYZvVKojLDhPy">高频陷阱</b>
+<ul data-page-node-id="5g9XWyvRdBTQhY2ghIdrPq">
+<li data-page-node-id="crr52UzIsYH64fhtlURJsn"><b data-page-node-id="vbAYO7rEruBWRKAbddBAcx">没有明确论点</b>，通篇叙述加抒情，像散文不像议论文。</li>
+<li data-page-node-id="ek7ungCAy468i0H7WnE1bC"><b data-page-node-id="CloARXyZsuSGqDyXO7hUua">分论点与中心论点脱节</b>，写着写着跑题。</li>
+<li data-page-node-id="KcHVpUygEGCQ1aIJkTcOyI"><b data-page-node-id="593zwzGIRiC1uDVLERuDRo">只堆例子不讲道理</b>：例子后面必须有一句"这说明……"回扣观点。</li>
+<li data-page-node-id="Oq8N6wu6vLHfFuZUGU4aLe"><b data-page-node-id="6aZ5UcxVuPl9GK7aL8cq0t">标题太长或太文艺</b>，看不出观点。</li>
+<li data-page-node-id="DQTmgrETO1fCt2VTd6Jl8k"><b data-page-node-id="FX9gKNXOlgEjAn9x60b4Cp">价值观跑偏</b>：观点消极、偏激，或站在群众对立面。</li>
+<li data-page-node-id="bPtq8RJt5RlVtX5QgHea6y">字数严重不足（少于要求 90% 直接扣分）。</li>
+</ul></div>
+<div class="blk b-de" data-page-node-id="OIjEZuy3YtNPUmT7llfLDN"><b class="t" data-page-node-id="zRxp81nhall7O2IH0K61BB">示例演示</b>
+<div class="ans-box" data-page-node-id="YC8D3sGoTzMAHJy7ZVd5Dg">【中心论点】基层工作要让群众满意，关键在于"沉下去"。
+【标题】让脚步沉下去，让满意升上来
+【分论点】沉下去，要沉到群众的"家门口"；沉下去，要沉到问题的"根子上"；沉下去，还要沉到长期坚持的"日常里"。
+【开头】近年来，各地持续推进基层治理创新，服务效能明显提升。但也有些地方，"门好进了、脸好看了，事还是难办"——原因就在于工作浮在表面、没沉到实处。在我看来，基层工作要让群众满意，关键在于真正沉下去。
+【结尾】为民服务不是一句口号，而是一步一个脚印。让脚步沉下去，让问题浮上来，让满意升上来——这才是基层工作应有的样子。</div></div>
+</div>
+
+<h3 class="grp" data-page-node-id="hTzd7EzLxRDrXzrNqyqani">素材库</h3>
+
+<div class="card" data-page-node-id="V22in4iAtDIFXvMWZc3hC3">
+<h4 data-page-node-id="az5tpneWTCfMXMNqsEfXEW"><span class="no" data-page-node-id="9UtGO18TnGZTaHcRLj6fyu">15</span>万能论据与规范表达素材库</h4>
+<div class="blk b-id" data-page-node-id="wHLQElXpszMJnWMJK1owPG"><b class="t" data-page-node-id="tLabjVZkppPa870OtAAZpw">识别标志</b>写公文或议论文时"没词可用"、表述口语化、不会升华。<b data-page-node-id="7uR0cn9JJmWqkrVnBiVIp2">这一份是查用型工具，写作用时随时翻。</b></div>
+<div class="blk b-th" data-page-node-id="RH1ISFOpY2Kp9LYLpiogPG"><b class="t" data-page-node-id="TeYlACPtcNnfnD2YMh8yp8">使用方法</b>按主题速查 → 借用句式 → 替换关键词。注意：<b data-page-node-id="MRJE1Zljt7O9fEDMrpSr4L">素材是"句式模板"，不是"万能答案"</b>，必须结合材料内容改写，直接照抄会跑题。</div>
+<div class="blk b-ru" data-page-node-id="rGDJgy41rxuHu7ytzJF0sE"><b class="t" data-page-node-id="iUPItJnxR0La0N35tkrGeu">分主题规范表述与金句</b>
+<table data-page-node-id="nxJJyYtSiKKSRqnRHoSEnI">
+<tr data-page-node-id="9NAkk4i1lHTLKCbiJHYb2W"><th data-page-node-id="IVcUhVSPq5upk4ENcauP8D">主题</th><th data-page-node-id="gVGPwZvQUTXBzZbwgslgVE">规范表述（可直接借用句式）</th></tr>
+<tr data-page-node-id="JAOivqnnEBi47m84dooN8f"><td data-page-node-id="cY9BdKADL4Gi47JlF49oZ7"><b data-page-node-id="zhBHSJ2TgTi79lFmHKqB8d">基层治理</b></td><td data-page-node-id="0SlXtA66BS5d1LbfnH5jCW">推动治理重心下移、力量下沉、资源下倾；把问题解决在基层、把矛盾化解在萌芽状态；构建共建共治共享的治理格局；变"单打独斗"为"多元共治"</td></tr>
+<tr data-page-node-id="GSF8hi0JD37FOwJYQM99SD"><td data-page-node-id="mP3OZXphdRSK27isoVJq9D"><b data-page-node-id="fBWH6yKI7hgy7tjB178HYH">公共服务</b></td><td data-page-node-id="kB0tnAGvHqjBwqUUvV9gRS">以群众需求为导向，把服务做到群众心坎上；从"有没有"转向"好不好"；让群众少跑腿、数据多跑路；推进服务标准化、规范化、便利化</td></tr>
+<tr data-page-node-id="qVgQtKIFEcH1HR8Nrf6Gwc"><td data-page-node-id="lSxDu9ThDNEHOzwUwjLqrb"><b data-page-node-id="b0wx54RoqDSyjAgpcUweqv">数字政府</b></td><td data-page-node-id="lkkVZW8mo9bHeXaiGE3t7s">打破数据壁垒、推进信息共享；让数据"活起来"、服务"快起来"；弥合"数字鸿沟"，为老年人等群体保留传统服务渠道</td></tr>
+<tr data-page-node-id="VVaP1Z21RblqIcY3fQXtjL"><td data-page-node-id="wgg6EC08ZNwYbDEtUsZIGp"><b data-page-node-id="9WUUINmDGzSHm4DqCMUx1m">乡村振兴</b></td><td data-page-node-id="AfzAlE5Qn1G30YAYy7HKJv">产业兴旺、生态宜居、乡风文明、治理有效、生活富裕；因地制宜发展特色产业；让农业更强、农村更美、农民更富</td></tr>
+<tr data-page-node-id="PZNd6AUKh68xCjNZSG1Hci"><td data-page-node-id="7VJNDrWtJeKZpSj8UHzRFb"><b data-page-node-id="35bHI88c9tDQjPhedsRsO1">生态文明</b></td><td data-page-node-id="Ducg5SEbeOFxd4VR6PYLXN">绿水青山就是金山银山；坚持生态优先、绿色发展；像保护眼睛一样保护生态环境；把生态优势转化为发展优势</td></tr>
+<tr data-page-node-id="1sAEAq5dXIHZo4XaapA2e5"><td data-page-node-id="eckwFsFh89mACBnhzFSQ5X"><b data-page-node-id="ohT5dPxkjfxlZoLQcz5a87">干部作风</b></td><td data-page-node-id="2Te4AbYeojGr0gHsjBcobB">以求真务实的作风抓落实；力戒形式主义、官僚主义；敢于担当、善于作为；把心思用在干事业上、把功夫下到察实情上</td></tr>
+<tr data-page-node-id="7nbFKbClZsQl0C0PY4GCpQ"><td data-page-node-id="YPPoN5BnjqDDQ7TXZ3xVWG"><b data-page-node-id="MZ8bS4P2jaw7omsyCOPil5">为民服务</b></td><td data-page-node-id="BN7SGTWtiNFSCRT8A25VRq">把群众"急难愁盼"作为工作着力点；用干部的"辛苦指数"换取群众的"幸福指数"；群众利益无小事，一枝一叶总关情</td></tr>
+<tr data-page-node-id="2sNTb31BIyHjkIHCNsIhfJ"><td data-page-node-id="NLfCU6i5FECBcDlNbQRzxS"><b data-page-node-id="oLe3211EefyZfeoJFcxkrq">改革创新</b></td><td data-page-node-id="DZjcLCI3Karsy1wyWr8pWi">以改革破解难题、以创新激发活力；敢于打破思维定式和路径依赖；在守正中创新、在创新中发展</td></tr>
+<tr data-page-node-id="X1EXRaNAU8umK2wSgFb9XE"><td data-page-node-id="X3AmOwuYAD1z5TAFowCjDb"><b data-page-node-id="IH3Tlv1veVSasH31UZQmRS">安全生产</b></td><td data-page-node-id="3PjHvYmY03tgpRhV9NrRfM">牢固树立安全发展理念；把隐患当事故对待；坚持底线思维、红线意识；宁可十防九空、不可失防万一</td></tr>
+<tr data-page-node-id="CRQ6N3GAgHbvmXjTqq0kLp"><td data-page-node-id="vEATHDG3tRutwzaHnG8eOM"><b data-page-node-id="upZXzqh55rpmAJNiazct2z">青年成长</b></td><td data-page-node-id="0zdilVjn5PCNSUz37JtcQd">把个人理想融入时代洪流；在基层一线经风雨、见世面、长才干；以奋斗姿态书写青春答卷</td></tr>
+</table></div>
+<div class="blk b-op" data-page-node-id="wKUpadtxtBvH51F8pKDBYS"><b class="t" data-page-node-id="wIYStSHtVj5XNNuSYZ6Lgn">要点处理 · 常用衔接与过渡表达</b>
+<table data-page-node-id="Caqv1i4C3QPpi5bIzHTDHi">
+<tr data-page-node-id="9dL0CHxeASNlzPAbOWAe3T"><th data-page-node-id="017vFH2Sjl5FBLcmmODBKb">功能</th><th data-page-node-id="freqXf1U09YeD1pKeenBJR">可用表达</th></tr>
+<tr data-page-node-id="RLi8uFSrEpfz0o7lbI8qGH"><td data-page-node-id="LEM3NKywvEBE3mpRmnPLpT">引出问题</td><td data-page-node-id="ifhexStsQznEWErZq8THeI">然而／与此同时，××问题也逐渐显现／不容忽视</td></tr>
+<tr data-page-node-id="mDOYFDXKxRdcaSlDwx6BM9"><td data-page-node-id="EuBGR0N23zDocPsHrXlqmN">分析原因</td><td data-page-node-id="pMPXdobHZLgpcyX0uTpbpp">究其原因，既有××的因素，也有××的原因／根本在于××</td></tr>
+<tr data-page-node-id="XGGnEohOP5K236n8DpvZtP"><td data-page-node-id="ENmH76wc4LBNTvJepDIKKE">提出对策</td><td data-page-node-id="rn9TrPMfkOixOfADVLdNb3">为此，应着力从××方面入手／关键在于做到××</td></tr>
+<tr data-page-node-id="J6EZcI00jN0MjjESxqgBRN"><td data-page-node-id="UHh90oyO0yIcrwW443V8qa">递进</td><td data-page-node-id="zGhyUogxhgEztoutgj6O7S">不仅……更……／既要……又要……／不但如此，还应……</td></tr>
+<tr data-page-node-id="dsLpjPMJlDjHa7vTA2ufHJ"><td data-page-node-id="bdU4L1SqGkeVryqPYyvGMH">举例</td><td data-page-node-id="VaieqyJDd9rBcruZYgXJ2J">以××为例／正如××所展现的</td></tr>
+<tr data-page-node-id="MtEjMB3PuXB6NLDCp55QPs"><td data-page-node-id="DVZPDvxw7iXgDRq1JjOpET">回扣论点</td><td data-page-node-id="wb4VXb0Y8RBZIwHf8EeVrZ">由此可见／这充分说明／唯有如此，方能××</td></tr>
+<tr data-page-node-id="PDL19obswYcsdTblAugZWB"><td data-page-node-id="MQqsW4ETmMV0hsgEdi4uUP">结尾升华</td><td data-page-node-id="NhZ65kn3AiHbE4CJhIWVQI">非一日之功，需要久久为功／既要行稳，更要致远</td></tr>
+</table></div>
+<div class="blk b-tr" data-page-node-id="fiLBeXCPRQjpbrhJQxCMmf"><b class="t" data-page-node-id="1V7wNBwfBqOlU5lnPCAe2A">高频陷阱 · 表述越界警示</b>
+<div class="warn" data-page-node-id="BiHNkp7gS1lQFnPSSvQoQY">
+<ul data-page-node-id="v0Zwo9VNPjiBhAfWwKBIp4">
+<li data-page-node-id="7mIo2yf1pP8TQATLiQMpV3"><b data-page-node-id="d2uN6Mg35k5pQ10spSGx1c">不要编造具体数据</b>（"据统计，全国有××%的人……"）。要用就用材料给的数据。</li>
+<li data-page-node-id="UTQRwNJZHcOMaaIwAg4G6i"><b data-page-node-id="I1KOjijFFX9ZGUjqm4FgP6">不要编造具体人名、地名、单位名</b>，需要例子时用"某地""某位基层干部"。</li>
+<li data-page-node-id="cCaUO1FTv4G8gHhiaQlwL5"><b data-page-node-id="aGm87y54ZiQCgGDeC7kseX">不要引用不确定的领导人讲话原文</b>，可用"有关部署明确要求"这类稳妥表述。</li>
+<li data-page-node-id="gmyFjHCpQbjR4nwCJbhTSP"><b data-page-node-id="7UTUWn9LF2JKt9isCuuwtj">不要使用过时提法</b>，政策表述随时间更新，拿不准就换成通用表述。</li>
+<li data-page-node-id="uj80T4ckkcfC6H4iTZliwP"><b data-page-node-id="QJOjqC7FFHa2ehSj8W81F7">不要出现消极、吐槽、抱怨式表达</b>（如"基层太难了""群众就是不配合"）。</li>
+<li data-page-node-id="ljCVbHoCAGfuMzB1LROOGg"><b data-page-node-id="3MXQ8hVkv9Zzx0XmV5jhZB">不要越权承诺</b>（"我单位决定给予补贴"——基层无权先定这类事）。</li>
+</ul>
+</div></div>
+<div class="blk b-de" data-page-node-id="kTBoWLTHqZpDEkaCieppZC"><b class="t" data-page-node-id="srUFPUBL110JbNBXs9F0Kd">示例演示 · 素材使用对比</b>
+<table data-page-node-id="Dq0m0IUFZesylH6teTUse1">
+<tr data-page-node-id="WgugLDlAdAc1TAXmuJD6zL"><th data-page-node-id="rkeqmLW8StFPsg9sSHK4iW">原始表达（不可取）</th><th data-page-node-id="ts6zjBqnqFDUwlT3RAFbAc">规范表达（可直接用）</th></tr>
+<tr data-page-node-id="c9ntuAhTqrDXLPbZBT0BP8"><td data-page-node-id="HOUrJ3DHLeyAIQQwfWQaEd">要加强宣传，让大家都知道</td><td data-page-node-id="prY4ZbWUcRWuFRQKlytlwD">创新宣传方式，通过张贴公告、入户走访、线上推送等渠道，扩大政策知晓率</td></tr>
+<tr data-page-node-id="azhEQD2xPyF2E9oJ6Kf6hC"><td data-page-node-id="bbYsXjPhoQKH7aJcruYLqO">这个事很重要，要重视</td><td data-page-node-id="Wh3nFufLj8Ny3ftGVLYUMa">把这项工作摆在突出位置，明确责任分工，确保各项举措落地见效</td></tr>
+<tr data-page-node-id="VncHjtEnP5CXr3Md5hU1D1"><td data-page-node-id="g2xefuggAoy7blzDUZ5bw3">群众不满意是我们做得不好</td><td data-page-node-id="LArRsxvCeLn67suC1ww1jl">群众"急难愁盼"就是工作的着力点，要切实把服务做到群众心坎上</td></tr>
+<tr data-page-node-id="kU9JtIvvIJLE3IDJPjnnYS"><td data-page-node-id="1DeeUYvSd3mc28rMpOyn8s">大家一起努力吧</td><td data-page-node-id="Ro9j8HV7FIEF8AS6Wmq0tr">唯有多方协同、久久为功，才能推动工作走深走实</td></tr>
+</table></div>
+</div>
+
+<h2 class="mod" data-page-node-id="UNwJEEBD43c4rmKaWI2F7J">附 · 时间分配与卷面检查</h2>
+
+<div class="card" data-page-node-id="FqBpFTHAQLmNTpKCreeHb2">
+<h4 data-page-node-id="HjimHfZ6aQdvIBM8kU4Jg4"><span class="no" data-page-node-id="Eb2lqAftRqRjpnuFYflL3w">✓</span>120 分钟时间分配与卷面检查清单</h4>
+<div class="blk b-th" data-page-node-id="tRv440wPYAbKU57D5S4S2U"><b class="t" data-page-node-id="3neTh9aEHpufQb1u9dvrPq">时间分配总表（4 道大题，满分 150 分）</b>
+<table data-page-node-id="iiheWDmpzxv3DVwRSC4NgF">
+<tr data-page-node-id="qsHwFT1MCkvrELUCbta78M"><th data-page-node-id="qj5kBUEU5beXJFVfYrVwHi">阶段</th><th data-page-node-id="1zWmDIdU15JIJv9jpgl4Wi">用时</th><th data-page-node-id="pyBLnjUi4cY73N1wxSvs41">做什么</th></tr>
+<tr data-page-node-id="anL3vrammilbw6pkJ8BDYF"><td data-page-node-id="wJefUCwJmFOteeNjCtwVIL"><b data-page-node-id="9jNtxAAWhOWAgqFND43pOD">通览全卷</b></td><td data-page-node-id="3YWwdSXJly5MiKsj32nBjX">3 分钟</td><td data-page-node-id="T1q6cz9vkJcfsAFll4W8hI">看 4 道题分别考什么文种/题型、各多少分、各要求多少字 → <b data-page-node-id="6OE5EfDNoBxsBRDkwJrHPR">先易后难排序</b></td></tr>
+<tr data-page-node-id="UftZFNPXdq0IToE84kewVx"><td data-page-node-id="1UFYVyhQqJL2bbr40ttUiD"><b data-page-node-id="NDAw5NFercoIFJKxIWj9Y9">第 1 题</b></td><td data-page-node-id="nwT1pfg5NQEhzLL951Rukr">25—30 分钟</td><td data-page-node-id="p4pyfPEeYyVmSb9ojnhvJa">审题 3 分 + 读材料勾画 8 分 + 列提纲 5 分 + 成文 12 分</td></tr>
+<tr data-page-node-id="8WHucuSiTj5O4xvkL7uNmA"><td data-page-node-id="JX0QTdxhs4kZFUMi5iuYGj"><b data-page-node-id="pBeGvLNZBfL9TT62ihNXJN">第 2 题</b></td><td data-page-node-id="Ms8aoZiyE3AbuKogjaA8Fd">25—30 分钟</td><td data-page-node-id="Q40Qr56l6rUCER5LgdGQux">同上节奏</td></tr>
+<tr data-page-node-id="drnMqYPEvNBYp32W94P0x7"><td data-page-node-id="IluSa9iu9tRqF1LDCXJ688"><b data-page-node-id="VHS89hrDylf7Gonr9jxHSx">第 3 题</b></td><td data-page-node-id="pqhrqfD4uB3pUmRbRNDF4V">25—30 分钟</td><td data-page-node-id="t0087Wn62TfuCDyNnqYmpe">同上节奏</td></tr>
+<tr data-page-node-id="SiMWpvylDy5okObiYtZTlX"><td data-page-node-id="efrIKyKOa2ElRGFRyCNFUe"><b data-page-node-id="MHvv5ka6OAEkGVIc4EhXwq">第 4 题</b></td><td data-page-node-id="kCgyPNMTA8cusXB1GBkxYD">25—30 分钟</td><td data-page-node-id="P9FWCB6lWZlc3AkuLFTuy6">同上节奏</td></tr>
+<tr data-page-node-id="7KoJ5pRXUVx2BOP7L3zU9A"><td data-page-node-id="UuhRBEgBJ1NQFRgSFWLGrE"><b data-page-node-id="rnQBsfENaBmwfyrey8w8Nx">检查</b></td><td data-page-node-id="aPHlEJX6kt6UYACzu3dGpy">8—10 分钟</td><td data-page-node-id="7Fnrnie7yoBPLe1DlpR4xz">格式、字数、错别字、分条序号、落款</td></tr>
+</table>
+<div class="tip" data-page-node-id="FquDVgLCnzrBJ6qIZiw7FP"><b data-page-node-id="nmIQeveQoFAb9daVN60jEm">单题节奏口诀：</b>审题 3 分（圈问法 + 圈身份 + 圈字数）→ 读材料 8 分（勾画要点）→ 列提纲 5 分（草稿纸上列条）→ 成文 12 分（誊写 + 补充）。<b data-page-node-id="9VW2Aj2V9TEjQlo0clr3Dk">宁可少写 50 字，也不要超时。</b></div>
+</div>
+<div class="blk b-tr" data-page-node-id="DuszMCEnsp2nyNhPdaQIag"><b class="t" data-page-node-id="T1FUXZ3jqbwVpjXGfIG0u1">卷面检查清单（检查阶段逐项打勾）</b>
+<ul data-page-node-id="pg73tygOWYflJe7S96Qv4j">
+<li data-page-node-id="71m9j2dC4LHDSkFwfGxmEB">□ <b data-page-node-id="7gCVvpNDs9A1lUlMsSk20r">问法核对</b>：要求"不正确/不属于"的，写反了吗？</li>
+<li data-page-node-id="sOQcWPcWssFiX4vQ67R0Me">□ <b data-page-node-id="ppW9owUI7JL8xyc1o6HSg4">格式齐全</b>：公文题有没有标题、称谓、落款、日期？</li>
+<li data-page-node-id="CiJMt3ANFyjrcOwqvDmZbV">□ <b data-page-node-id="nNW7rX5QssxqlVMsk6r71y">分条清楚</b>：主体是否用了"一、二、三、"或"1. 2. 3."？</li>
+<li data-page-node-id="ygbS0SIWuM3ky9raFZFopd">□ <b data-page-node-id="zzGwIdpM80Fklg7LkrofD9">字数达标</b>：是否达到要求字数的 90% 以上？超字数了吗？</li>
+<li data-page-node-id="jYr34l7xGwkmJXcxQyhkt6">□ <b data-page-node-id="SGd2Hf04zOGFZN5P1GFRjM">身份一致</b>：全文语气是否符合给定身份？有无越权承诺？</li>
+<li data-page-node-id="vL1rTcM95WqEHWEwg5pZAM">□ <b data-page-node-id="rCEueullAEmBggLkmRXRnZ">要点齐全</b>：材料里的关键点是否都覆盖了？有没有漏掉一整条？</li>
+<li data-page-node-id="Zdn8pAcFFbd7MdHQW8UIZn">□ <b data-page-node-id="RlrBvd7m4Ah4hwq8wRofmm">错别字</b>：公文常见的"其他/其它""截止/截至""进一步/近一步"。</li>
+<li data-page-node-id="NV0akg7WohdNFIX7a4aovT">□ <b data-page-node-id="Nc0bqIADI0JPowOZWWUU7P">卷面</b>：改动用单横线划掉，不要涂成黑疙瘩；字迹可辨认。</li>
+<li data-page-node-id="dtg51QoCyTiPp15GL5lbrV">□ <b data-page-node-id="WV31ZA7lhOKQ9ULmGzoR0i">不留白</b>：不会的题也要按结构写满，结构分是白给的。</li>
+</ul></div>
+<div class="blk b-ru" data-page-node-id="Cm9kFa1IgAmr4Hnl5jVNU5"><b class="t" data-page-node-id="kJeDmjYHvgxzMffW3uEwPB">120 分钟应急方案</b>
+<table data-page-node-id="EWx7BuK7k6aiRgh56x4BHk">
+<tr data-page-node-id="lt7pthqOAHQroDjohxy6AK"><th data-page-node-id="D1aPZkhmBrjqw6zy3pJtFD">情况</th><th data-page-node-id="RoUOq9pQdBBE3AyY9f4oAn">应对</th></tr>
+<tr data-page-node-id="dob7KkETJ80XBqjDfs3U4q"><td data-page-node-id="QyoCDBF8jG4DnI0lvJCwjp">某题完全没思路</td><td data-page-node-id="IUgrLQ7Q4Fan99FCncWoOc">先跳过，做完其余题再回头；回头仍无思路 → 按通用结构硬写（格式分 + 结构分至少能拿一半）</td></tr>
+<tr data-page-node-id="jxAeMhtR7oGBzTv7DD3E2Z"><td data-page-node-id="t3NPqm31xBB6jqV6jzQvE0">时间只剩 30 分钟还有 2 题</td><td data-page-node-id="0656feqWptdjuaNCqCP2Ub">两题各 15 分钟：只写"骨架"（标题 + 开头 + 分条要点 + 结尾），不展开</td></tr>
+<tr data-page-node-id="jaRkcUkP3nqZZF7JjMwktC"><td data-page-node-id="Jk21vIFQjpPcnAXqNbIdWq">时间只剩 10 分钟还有 1 题</td><td data-page-node-id="f5qIhbPc3RBCOUN608X023">直接分条列要点，不写过渡句，保证格式要素齐全</td></tr>
+<tr data-page-node-id="8RG12wMRNg6XH4HJ5K4zvc"><td data-page-node-id="4KTtC2XJF5tmNNAXDJF7Mk">材料太长读不完</td><td data-page-node-id="qafSFUrZ2zBwRWmCXDD5GE">先看题目问什么，带着问题跳读材料，只勾画与题目相关的部分</td></tr>
+</table></div>
+</div>
+
+<footer data-page-node-id="At8DlTpxjJJlORxaGk43YA">
+本手册为方法论框架整理，公文格式与答题结构为通用应试总结。<br data-page-node-id="3IMXdEwzkY6NGCY9gwqCEq">
+公文中涉及的机关名称、日期请按题目给定或使用"××"占位，不要编造；政策表述以最新官方发布为准。
+</footer>
+
+</div>
+</body>
+</html>
